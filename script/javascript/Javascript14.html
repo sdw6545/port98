@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        let id ="sdw6545";
+        let pw = "1234";
+        let userId = prompt("아이디는 무엇입니까?")
+        let userPw = prompt("비밀번호가 무엇입니까?")
+
+        if(id == userId){
+            if(pw == userPw){
+                document.write(userId+"님 반갑습니다.");
+            }else{
+                alert("비밀번호가 일치하지 않습니다.");
+                location.reload();
+            }
+        }else{
+            alert("아이디가 일치하지 않습니다.")
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

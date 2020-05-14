@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <div id="sample">
+        <div id="list1" class="list">
+            <li class="one1"><a href="#list2">one1</a></li>
+            <li class="one2"><a href="https://www.naver.com">one2</a></li>
+            <li class="one3"><a href="https://www.daum.net" target="">one3</a></li>
+            <li class="one4"><a href="#">one4</a></li>
+            <li class="one5"><a href="#">one5</a></li>
+            <li class="one6"><a href="#">one6</a></li>
+            <li class="one7"><a href="#">one7</a></li>
+            <li class="one8"><a href="#">one8</a></li>
+            <li class="one9"><a href="#">one9</a></li>
+            <li class="one10"><a href="#">one10</a>
+                <ul>
+                    <li style="width: 0; height: 0; overflow: hidden;">one10-1</li>
+                    <li style="opacity: 0;"> one10-2</li>
+                    <li style="visibility: hidden;">one10-3</li>
+                    <li style="display: none;">one10-4</li>
+                    <li >one10-5</li>
+                </ul>
+            </li>
+        </div>
+        <div id="list2" class="list">
+            <li class="one1"><a href="#">one1</a></li>
+            <li class="one2"><a href="#">one2</a></li>
+            <li class="one3"><a href="#">one3</a></li>
+            <li class="one4"><a href="#">one4</a></li>
+            <li class="one5"><a href="#">one5</a></li>
+            <li class="one6"><a href="#">one6</a></li>
+            <li class="one7"><a href="#"></a></li>
+            <li class="one8"><a href="#">one8</a></li>
+            <li class="one9"><a href="#">one9</a></li>
+            <li class="one10"><a href="#">one10</a></li>
+        </div>
+    </div>
+
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        // $("li").css("background-color","#bbdefb");
+        $("li").css("margin","3px");
+
+        //기본선택자
+        // $("li").css("border","1px dashed #303f9f");  //태그 선택자
+        // $(".one3").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //클래스 선택자
+        // $("#list1").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //아이디 선택자
+        // $("div,li").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //그룹 선택자
+        // $("*").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //전채 선택자
+
+        //계층 선택자
+        // $(".list li").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"}); //하위 선택자
+        // $(".list > li").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"}); //자식 선택자
+        // $(".one4 + li").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //형제 선택자 (그 다음 자식  선택한자식 x)
+        // $(".one4 ~ li").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //형제들 선택자 (그 다음 자식들 선택한자식 x)
+
+
+        //속성 선택자
+        // $("li a[href='#list2']").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});
+        // $("li a[href^='https']").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //~로 시작하는 태그 선택
+        // $("li a[href$='com']").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //~로 끝나는 태그 선택
+        // $("li a[href*='www']").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});
+        // $("li a[href!='https://www.naver.com']").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //선택단어 빼고 선택
+        // $("li a[href][target]").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //속성 중에  href , target 이 있는 모든 태그 선택 
+
+        //기본(:) 선택자
+        // $("li:eq(1)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //선택된 태그들의 번호를 통해 선택합니다. (0부터 시작)
+        // $("li:gt(4)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //형제들 선택자 (그 다음 자식들 선택한자식 x) (0부터 시작)
+        // $(".one4 ~ li").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //참고용 (위에 gt 선택자)
+        // $("li:lt(4)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //선택한것 보다 작거나 같은거 선택
+        // $(":header").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //(h1~h6)선택
+        // $("li:first").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //첫번째 자식 선택 (다른 첫번째 꺼 까지 같이 x)
+        // $("li:last").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //마지막 자식 선택 (다른 마지막 꺼 까지 선택 x)
+        // $("li:odd").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"}); //홀수 자식 선택  (h1 까지 포함)
+        // $("li:even").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"}); // 짝수 자식 선택 (h1 까지 포함)
+
+        //내용 필터 선택자
+        // $("li:contains('one5')").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //선택한게 일치한 문자 요소 선택
+        // $("li a").css ({"display":"block","height":"20px"}); //밑에꺼 보이는 용도
+        // $("li a:empty").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"}); //선택된 집합 요소에 텍스트가 없을 때 선택됩니다.
+        // $("li a:parent").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});   //선택된 집합 요소에 텍스트가 있들 때에 선택됩니다.
+        // $("li:has(li)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //li 안에 li 가 있으면 선택
+
+        //보임 필터 선택자 
+        // $("li:hidden").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //보이지 않는 요소를 선택합니다.
+        // $("li:visible").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //보이는 요소를 선택합니다.
+
+
+        //자식요소 필터 선택자
+        // $("li:first").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"}); //참고용
+        // $("li:first-child").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //첫번째 자식 선택 (다른 첫번째 꺼 까지 같이 O)
+        // $("li:last").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //참고용
+        // $("li:last-child").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //마지막 요소 선택 (다른 마지막 꺼 까지 선택 O)
+        // $("li:nth-child(3)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  // 3번째 자식 선택
+        // $("li:nth-child(even)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //짝수 자식 선택 (h1 까지 포함 안함)
+        // $("li:nth-child(odd)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //홀수 자식 선택  (h1 까지 포함 안함) 
+        // $("li:nth-child(3n+1)").css({"background-color":"#bbdefb","border":"1px dashed #303f9f"});  //3개째마다 선택 (+1은 시작을 1로 하기위해 ) 
+    </script> 
+</body>
+</html>

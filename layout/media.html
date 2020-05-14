@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Qusey</title>
+    <style>
+        body{background-color: #c8e6c9;}
+        h1::before{content: "1.";}
+        h1::after{content: " - 기본";}
+        
+        
+        /* 화면 너비1025px ~ 1920px : TV */
+        @media (max-width: 1280px){
+            body{background-color: #81d4fa;}
+            h1::before{content: "2.";}
+            h1::after{content: "- 0 ~ 1920px";}
+        }
+        /* 화면 너비961px~ 1024px : PC */
+        @media (max-width: 1024px){
+            body{background-color: #9fa8da;}
+            h1::before{content: "3.";}
+            h1::after{content: "- 0 ~ 1024px";}
+        }
+         /* 화면 너비769px ~ 960px : 노트북 */
+        @media (max-width: 960px){
+            body{background-color: #f48fb1;}
+            h1::before{content: "4.";}
+            h1::after{content: "- 0 ~ 960px"}
+        }
+        /* 화면 너비481px ~ 768px : 타블렛*/
+        @media (max-width: 768px){
+            body{background-color: #ef9a9a;}
+            h1::before{content: "5.";}
+            h1::after{content: "- 0 ~ 768px"}
+        }
+        /* 화면 너비321px ~ 480px  : 핸드폰*/
+        @media (max-width: 480px){
+            body{background-color: #90caf9;}
+            h1::before{content: "6.";}
+            h1::after{content: "- 0 ~ 480px"}
+        }
+         /* 화면 너비0 ~ 320px : old핸드폰 */
+        @media (max-width: 320px){
+            body{background-color: #80cbc4;}
+            h1::before{content: "7.";}
+            h1::after{content: "- 0 ~ 320px"}
+        }
+    </style>
+   
+</head>
+<body>
+    <h1>미디어 쿼리</h1>
+    <p>미디어 쿼리는 화면 크기에 따른 각각의 속성 값을 지정하여 여러가지 화면을 구성하는 기술입니다.</p>
+</body>
+</html>

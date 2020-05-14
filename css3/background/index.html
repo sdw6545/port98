@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="김용태">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, 김용태">
+    <title>김용태  background</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>background Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://sdw6545.dothome.co.kr" target="_blank">sdw6545.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">background</h2>
+
+                    <h3 class="pt30">문법</h3>
+                    <p class="bs-callout bs-callout-info">
+                        background-image : url | linear-gradient | radial-gradient | repeating-linear-gradient | repeating-radial-gradient | none;
+                    </p>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>url</td>
+                                    <td>background-image 주소를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>none</td>
+                                    <td>background-image를 설정하지 않습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>linear-gradient</td>
+                                    <td>선형 그라데이션 백그라운드를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>radial-gradient</td>
+                                    <td>원형 그라데이션 백그라운드를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>repeating-linear-gradient</td>
+                                    <td>반복 선형 그라데이션 백그라운드를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>repeating-radial-gradient</td>
+                                    <td>반복 원형 그라데이션 백그라운드를 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //Intro1 -->
+                <style>
+                    .sBox {
+                        background-color: #f4f8fa; padding: 15px; 
+                        overflow: hidden;}
+                    .sBox .box {
+                        width: 150px; height: 150px; 
+                        float: left; font-family: 'Abel'; text-align: center; line-height: 150px; color: #fff;
+                        border: 0; background: none;
+                    }
+                </style>
+
+                <style>
+                    .gradient1{background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);}
+                    .gradient2{background-image: linear-gradient(to left, #a18cd1 0%, #fbc2eb 100%);}
+                    .gradient3{background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);}
+                    .gradient4{background-image: linear-gradient(to bottom, #a18cd1 0%, #fbc2eb 100%);}
+                </style>
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">Gradient1</h2>
+                    
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient1">gradient1</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient2">gradient2</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient3">gradient3</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient4">gradient4</div>
+                        </div>
+                    </div>  
+<pre class="line-numbers language-css"><code>.gradient1{background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);}
+.gradient2{background-image: linear-gradient(to left, #a18cd1 0%, #fbc2eb 100%);}
+.gradient3{background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);}
+.gradient4{background-image: linear-gradient(to bottom, #a18cd1 0%, #fbc2eb 100%);}
+</code></pre>
+				</div>
+				<!-- //Intro2 -->
+                <style>
+                    .gradient5 {background-image: linear-gradient(0deg, #84fab0 0%, #8fd3f4 100%);}
+                    .gradient6 {background-image: linear-gradient(30deg, #84fab0 0%, #8fd3f4 100%);}
+                    .gradient7 {background-image: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);}
+                    .gradient8 {background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);}
+                </style>
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Gradient2</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient5">gradient5</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient6">gradient6</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient7">gradient7</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient8">gradient8</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient5 {background-image: linear-gradient(0deg, #84fab0 0%, #8fd3f4 100%);}
+.gradient6 {background-image: linear-gradient(30deg, #84fab0 0%, #8fd3f4 100%);}
+.gradient7 {background-image: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);}
+.gradient8 {background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);}
+</code></pre>
+                    
+				</div>
+                <!-- //Intro3 -->
+                <style>
+                .gradient9 {background-image: linear-gradient(140deg, #fa709a, #fee140);}
+                .gradient10 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a);}
+                .gradient11 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0);}
+                .gradient12 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff);}
+                .gradient13 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2);}
+                .gradient14 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2, #009efd);}
+                .gradient15 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2, #009efd, #2575fc);}
+                .gradient16 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2, #009efd, #2575fc, #72afd3);}
+                </style>
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Gradient3</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient9">gradient9</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient10">gradient10</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient11">gradient11</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient12">gradient12</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient13">gradient13</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient14">gradient14</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient15">gradient15</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient16">gradient16</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient9 {background-image: linear-gradient(140deg, #fa709a, #fee140);}
+.gradient10 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a);}
+.gradient11 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0);}
+.gradient12 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff);}
+.gradient13 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2);}
+.gradient14 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2, #009efd);}
+.gradient15 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2, #009efd, #2575fc);}
+.gradient16 {background-image: linear-gradient(140deg, #fa709a, #fee140, #fa709a, #30cfd0, #66a6ff, #764ba2, #009efd, #2575fc, #72afd3);}
+</code></pre>
+                    
+				</div>
+                <!-- //Intro4 -->
+                <style>
+                    .gradient17 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 20%, #453a94 100%);}
+                    .gradient18 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 30%, #453a94 100%);}
+                    .gradient19 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 40%, #453a94 100%);}
+                    .gradient20 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 50%, #453a94 100%);}
+                    .gradient21 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 60%, #453a94 100%);}
+                    .gradient22 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 70%, #453a94 100%);}
+                    .gradient23 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 80%, #453a94 100%);}
+                    .gradient24 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 90%, #453a94 100%);}
+                </style>
+                
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Gradient4</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient17">gradient17</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient18">gradient18</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient19">gradient19</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient20">gradient20</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient21">gradient21</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient22">gradient22</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient23">gradient23</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient24">gradient24</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient17 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 20%, #453a94 100%);}
+.gradient18 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 22%, #453a94 100%);}
+.gradient19 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 40%, #453a94 100%);}
+.gradient20 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 50%, #453a94 100%);}
+.gradient21 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 60%, #453a94 100%);}
+.gradient22 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 70%, #453a94 100%);}
+.gradient23 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 80%, #453a94 100%);}
+.gradient24 {background-image: linear-gradient(140deg, #f43b47 0%, #fa709a 90%, #453a94 100%);}
+</code></pre>
+				</div>
+                <!-- //Intro5 -->
+                <style>
+                    .gradient25 {background-image:linear-gradient(45deg, #c471f5 50%, #fa71cd 50%) ; }
+                    .gradient26 {background-image: linear-gradient(90deg, #c471f5 50%, #fa71cd 50%) ; }
+                    .gradient27 {background-image: linear-gradient(135deg, #c471f5 50%, #fa71cd 50%) ; }
+                    .gradient28 {background-image: linear-gradient(160deg, #c471f5 50%,#fa71cd 50%) ; }
+                </style>
+                
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Gradient5</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient25">gradient25</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient26">gradient26</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient27">gradient27</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient28">gradient28</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient25 {background-image:linear-gradient(45deg, #c471f5 50%, #fa71cd 50%) ; }
+.gradient26 {background-image: linear-gradient(90deg, #c471f5 50%, #fa71cd 50%) ; }
+.gradient27 {background-image: linear-gradient(135deg, #c471f5 50%, #fa71cd 50%) ; }
+.gradient28 {background-image: linear-gradient(160deg, #c471f5 50%,#fa71cd 50%) ; }
+</code></pre>
+				</div>
+                <!-- //Intro6 -->
+                <style>
+                    .gradient29 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient30 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient31 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient32 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient33 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient34 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient35 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                    .gradient36 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+                </style>
+                
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Gradient6</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient29">gradient29</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient30">gradient30</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient31">gradient31</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient32">gradient32</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient33">gradient33</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient34">gradient34</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient35">gradient35</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient36">gradient36</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient29 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient30 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient31 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient32 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient33 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient34 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient35 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+.gradient36 {background: linear-gradient(20deg, #fa709a, #fee140) fixed;}
+</code></pre>
+				</div>
+                <!-- //Intro7 -->
+                <style>
+                    .gradient37 {background: radial-gradient(#2a5298 0%, #209cff 20%, #68e0cf 100%);}
+                    .gradient38 {background: radial-gradient(#2a5298 0%, #209cff 30%, #68e0cf 100%);}
+                    .gradient39 {background: radial-gradient(#2a5298 0%, #209cff 40%, #68e0cf 100%);}
+                    .gradient40 {background: radial-gradient(#2a5298 0%, #209cff 50%, #68e0cf 100%);}
+                    .gradient41 {background: radial-gradient(#2a5298 0%, #209cff 60%, #68e0cf 100%);}
+                    .gradient42 {background: radial-gradient(#2a5298 0%, #209cff 70%, #68e0cf 100%);}
+                    .gradient43 {background: radial-gradient(#2a5298 0%, #209cff 80%, #68e0cf 100%);}
+                    .gradient44 {background: radial-gradient(#2a5298 0%, #209cff 90%, #68e0cf 100%);}
+                </style>
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Gradient7</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient37">gradient37</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient38">gradient38</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient39">gradient39</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient40">gradient40</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient41">gradient41</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient42">gradient42</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient43">gradient43</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient44">gradient44</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient37 {background: radial-gradient(#2a5298 0%, #209cff 20%, #68e0cf 100%);}
+.gradient38 {background: radial-gradient(#2a5298 0%, #209cff 30%, #68e0cf 100%);}
+.gradient39 {background: radial-gradient(#2a5298 0%, #209cff 40%, #68e0cf 100%);}
+.gradient40 {background: radial-gradient(#2a5298 0%, #209cff 50%, #68e0cf 100%);}
+.gradient41 {background: radial-gradient(#2a5298 0%, #209cff 60%, #68e0cf 100%);}
+.gradient42 {background: radial-gradient(#2a5298 0%, #209cff 70%, #68e0cf 100%);}
+.gradient43 {background: radial-gradient(#2a5298 0%, #209cff 80%, #68e0cf 100%);}
+.gradient44 {background: radial-gradient(#2a5298 0%, #209cff 90%, #68e0cf 100%);}
+</code></pre>
+				</div>
+                <!-- //Intro8 -->
+                <style>
+                    .gradient45 {background: radial-gradient(ellipse farthest-corner at center top, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient46 {background: radial-gradient(ellipse farthest-corner at left top, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient47 {background: radial-gradient(ellipse farthest-corner at right top, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient48 {background: radial-gradient(ellipse farthest-corner at bottom left, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient49 {background: radial-gradient(ellipse farthest-corner at bottom center, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient50 {background: radial-gradient(ellipse farthest-corner at center top, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient51 {background: radial-gradient(ellipse farthest-corner at left top, #f8bfa4 0%, #f33b4e 100%);}
+                    .gradient52 {background: radial-gradient(ellipse farthest-corner at right center, #f8bfa4 0%, #f33b4e 100%);}
+                </style>
+                
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">Gradient8</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient45">gradien45</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient46">gradient46</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient47">gradient47</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient48">gradient48</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient49">gradient49</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient50">gradient50</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient51">gradient51</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient52">gradient52</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient45 {background: radial-gradient(ellipse farthest-corner at center top, #f8bfa4 0%, #f33b4e 100%);}
+.gradient46 {background: radial-gradient(ellipse farthest-corner at left top, #f8bfa4 0%, #f33b4e 100%);}
+.gradient47 {background: radial-gradient(ellipse farthest-corner at right top, #f8bfa4 0%, #f33b4e 100%);}
+.gradient48 {background: radial-gradient(ellipse farthest-corner at bottom left, #f8bfa4 0%, #f33b4e 100%);}
+.gradient49 {background: radial-gradient(ellipse farthest-corner at bottom center, #f8bfa4 0%, #f33b4e 100%);}
+.gradient50 {background: radial-gradient(ellipse farthest-corner at center top, #f8bfa4 0%, #f33b4e 100%);}
+.gradient51 {background: radial-gradient(ellipse farthest-corner at left top, #f8bfa4 0%, #f33b4e 100%);}
+.gradient52 {background: radial-gradient(ellipse farthest-corner at right center, #f8bfa4 0%, #f33b4e 100%);}
+</code></pre>
+				</div>
+                <!-- //Intro9 -->
+                <style>
+                    .gradient53 {background-image: repeating-linear-gradient(45deg, transparent 5px, transparent 25px, #33691e 10px, #33691e 45px);}
+                    .gradient54 {background-image: repeating-linear-gradient(45deg, transparent 10px, transparent 25px, #33691e 10px, #33691e 45px);}
+                    .gradient55 {background-image: repeating-linear-gradient(45deg, transparent 15px, transparent 25px, #33691e 10px, #33691e 45px);}
+                    .gradient56 {background-image: repeating-linear-gradient(45deg, transparent 20px, transparent 25px, #33691e 10px, #33691e 45px);}
+                </style>
+                
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">Gradient9</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient53">gradient53</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient54">gradient54</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient55">gradient55</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient56">gradient56</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient53 {background-image: repeating-linear-gradient(45deg, transparent 5px, transparent 25px, #33691e 10px, #33691e 45px);}
+.gradient54 {background-image: repeating-linear-gradient(45deg, transparent 10px, transparent 25px, #33691e 10px, #33691e 45px);}
+.gradient55 {background-image: repeating-linear-gradient(45deg, transparent 15px, transparent 25px, #33691e 10px, #33691e 45px);}
+.gradient56 {background-image: repeating-linear-gradient(45deg, transparent 20px, transparent 25px, #33691e 10px, #33691e 45px);}
+</code></pre>
+				</div>
+                <!-- //Intro10 -->
+                <style>
+                    .gradient57 {background-image: repeating-linear-gradient(45deg, transparent 5px, transparent 25px, #33691e 10px, #7cb342 45px);}
+                    .gradient58 {background-image: repeating-linear-gradient(45deg, transparent 10px, transparent 25px, #33691e 15px, #7cb342 45px);}
+                    .gradient59 {background-image: repeating-linear-gradient(45deg, transparent 15px, transparent 25px, #33691e 20px, #7cb342 45px);}
+                    .gradient60 {background-image: repeating-linear-gradient(45deg, transparent 20px, transparent 25px, #33691e 25px, #7cb342 45px);}
+                </style>
+                <!-- Intro11 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro11" class="page-header">Gradient10</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient57">gradient57</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient58">gradient58</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient59">gradient59</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient60">gradient60</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient57 {background-image: repeating-linear-gradient(45deg, transparent 5px, transparent 25px, #33691e 10px, #7cb342 45px);}
+.gradient58 {background-image: repeating-linear-gradient(45deg, transparent 10px, transparent 25px, #33691e 15px, #7cb342 45px);}
+.gradient59 {background-image: repeating-linear-gradient(45deg, transparent 15px, transparent 25px, #33691e 20px, #7cb342 45px);}
+.gradient60 {background-image: repeating-linear-gradient(45deg, transparent 20px, transparent 25px, #33691e 25px, #7cb342 45px);}
+</code></pre>
+				</div>
+                <!-- //Intro11 -->
+                <style>
+                    .gradient61 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 10px);}
+                    .gradient62 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 15px);}
+                    .gradient63 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 20px);}
+                    .gradient64 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 25px);}
+                </style>
+                
+                <!-- Intro12 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro12" class="page-header">Gradient11</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient61">gradient61</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient62">gradient62</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient63">gradient63</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient64">gradient64</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient61 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 10px);}
+.gradient62 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 15px);}
+.gradient63 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 20px);}
+.gradient64 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 5px, #fda085 25px);}
+</code></pre>
+				</div>
+                <!-- //Intro12 -->
+                <style>
+                    .gradient65 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 10px, #fda085 10px);}
+                    .gradient66 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 15px, #fda085 15px);}
+                    .gradient67 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 20px, #fda085 20px);}
+                    .gradient68 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 25px, #fda085 25px);}
+                </style>
+                
+                 <!-- Intro13 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro13" class="page-header">Gradient12</h2>
+                    <div class="sBox">
+                        <div class="box gra1">
+                            <div class="gradient65">gradient65</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient66">gradient66</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient67">gradient67</div>
+                        </div>
+                        <div class="box gra1">
+                            <div class="gradient68">gradient68</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.gradient65 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 10px, #fda085 10px);}
+.gradient66 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 15px, #fda085 15px);}
+.gradient67 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 20px, #fda085 20px);}
+.gradient68 {background: repeating-radial-gradient(#f6d365, #f6d365 5px, #fda085 25px, #fda085 25px);}
+</code></pre>
+				</div>
+                <!-- //Intro13 -->
+                
+                 <!-- Intro14 -->
+                 <div class="bs-docs-section">
+					<h2 id="intro14" class="page-header">Gradient</h2>
+					<pre class="line-numbers language-css"><code></code></pre>
+				</div>
+                <!-- //Intro14 -->
+                
+                 <!-- Intro15 -->
+                 <div class="bs-docs-section">
+					<h2 id="intro15" class="page-header">Gradient</h2>
+					<pre class="line-numbers language-css"><code></code></pre>
+				</div>
+                <!-- //Intro15 -->
+                
+                 <!-- Intro16 -->
+                 <div class="bs-docs-section">
+					<h2 id="intro16" class="page-header">Gradient</h2>
+					<pre class="line-numbers language-css"><code></code></pre>
+				</div>
+				<!-- //Intro16 -->
+
+                
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">background</a></li>
+                        <li><a href="#intro2">Gradient1</a></li>                        
+                        <li><a href="#intro3">Gradient2</a></li>
+                        <li><a href="#intro4">Gradient3</a></li>
+                        <li><a href="#intro5">Gradient4</a></li>
+                        <li><a href="#intro6">Gradient5</a></li>
+                        <li><a href="#intro7">Gradient6</a></li>
+                        <li><a href="#intro8">Gradient7</a></li>
+                        <li><a href="#intro9">Gradient8</a></li>
+                        <li><a href="#intro10">Gradient9</a></li>
+                        <li><a href="#intro11">Gradient10</a></li>
+                        <li><a href="#intro12">background</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+</body>
+
+</html>

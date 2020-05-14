@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Respomsive Latoyt01</title>
+    <style>
+        * {margin: 0; padding: 0; background-color: #ede7f6;}
+        .container {width: 1200px; margin: 0 auto;}
+        header {width: 100%;height: 100px; background-color: #967acd;}
+        aside {width: 30%; height: 800px; background-color: #7f5ec2; float: left;}
+        section {width: 70%; height: 800px; background-color: #6844b7; float: left; }
+        footer {width: 100%; height: 100px; background-color: #5f3fb1; clear: both;}
+        
+        @media (max-width: 1220px){
+            .container {width: 95%}
+        }
+        @media (max-width: 768px){
+            .container {width: 100%}
+        }
+        @media (max-width: 480px){
+            aside {float: none; width: 100%; height: 400px;}
+            section {float: none; width: 100%; height: 400px;}
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div id="wrap">
+       <div class="container">
+            <header></header>
+            <aside></aside>
+            <section></section>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <style>
+        li {
+            margin: 8px;
+        }
+
+        a {
+            border: 1px solid #5f6368;
+            padding: 7px 20px 5px 20px;
+            display: inline-block;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #000;
+            margin: 4px;
+        }
+
+        .onRed {
+            padding: 4px 6px 2px 6px;
+            font-size: 90%;
+            color: #c7254e;
+            white-space: nowrap;
+            background-color: #f9f2f4;
+            border-radius: 4px;
+            border: 1px dashed #a51a3d;
+        }
+
+        .onBlue {
+            padding: 4px 6px 2px 6px;
+            font-size: 90%;
+            color: #3d90b7;
+            white-space: nowrap;
+            background-color: #e7f6fd;
+            border-radius: 4px;
+            border: 1px dashed #3d90b7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="choice">
+        <a href="#" class="btn1">addClass()</a>
+        <a href="#" class="btn2">each()</a>
+        <a href="#" class="btn3">setTimeout</a>
+    </div>
+
+    <div class="list">
+        <ul>
+            <li>.children() 선택한 요소의 바로 아래 자식 요소만 선택합니다.</li>
+            <li>.closest() 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.</li>
+            <li>.find()♥ 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.</li>
+            <li>.next() 선택한 요소를 다음 형제 요소를 선택합니다.</li>
+            <li>.nextAll() 선택한 요소의 다음 모든 형제 요소를 선택합니다.</li>
+        </ul>
+    </div>
+
+
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        //버튼1(선택자)을 클릭(이벤트)하면 리스트에 있는 글씨 색을 빨간색(매서드)으로 변경해주세요~
+        $(".btn1").click(function(){
+            $(".list li").addClass("onRed");
+        });
+
+        $(".btn2").click(function(){
+            $(".list li").each(function(){
+                $(".list li").addClass("onBlue");
+            });
+        });
+
+        $(".btn3").click(function(){
+            $(".list li").each(function(index){
+                setTimeout(function(){
+                    $(".list li").eq(index).addClass("onRed");
+                },1000*(index+2));
+            });
+        });
+
+    </script>
+</body>
+
+</html>

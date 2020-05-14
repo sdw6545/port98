@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript26</title>
+    <script>
+        let table = "<table border='1'>";
+        let num = "1";
+
+            for(let i=1; i<=50; i++){
+                table += "<tr>";
+                for(let j=1; j<=50; j++){
+                    table += "<td>"+num+"</td>";
+                    num++;
+                }
+                table += "</tr>";
+            }
+
+        table += "</table>";
+
+
+        document.write(table);
+    </script>
+</head>
+<body>
+    <!-- <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        
+    </table> -->
+</body>
+</html>

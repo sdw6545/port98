@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+<body>
+    <div class="choice">
+        <a href="#" class="btn1">클릭하면 select 클래스를 찾은 후 효과를 주세요!</a>
+    </div>
+
+    <div class="list">
+        <ul>
+            <li>.addClass() : 선택한 요소의 클래스를 추가합니다.</li>
+            <li>.attr() : 선택한 요소의 HTML 속성 값을 설정하거나 반환합니다.</li>
+            <li class="select">.offset() : 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
+            <li>.scrollTop() : 선택한 요소의 세로 스크롤 값을 설정하거나 반환합니다.</li>
+            <li>.toggleClass() : 선택한 요소에 클래스의 추가/제거를 연속하여 사용할 수 있습니다.</li>
+        </ul>
+        <p class="text"></p>
+    </div>
+
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        $(".btn1").click(function(){
+            if($(".list li").hasClass("select")){
+                $(".select").css({color:"red",fontSize:30});
+            }
+        });
+    </script>
+</body>
+</html>

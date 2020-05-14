@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid01</title>
+    <style>
+        .grid{
+            background: #f7f7f7;
+            border-radius: 3px;
+            padding: 20px;
+            counter-reset: items ;
+        }
+        .column{
+            border-radius: 3px;
+            background: #a2cbfa;
+            border: 1px solid #4390e1;
+            box-sizing: border-box;
+            box-shadow: 0 2px 2px rgba(0,90,250,0.05);
+            min-height: 100px;
+            color: #fff;
+            padding: 10px;
+        }
+        .column::before{
+            counter-increment:items ;
+            content:counter(items) ;
+        }
+        /* grld01 */
+        .grld01 {
+            display: grid;
+            /* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px; */
+            grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10%;
+        }
+        /* grld02 */
+        .grld02 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
+        }
+        /* grld03 */
+        .grld03 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
+            grid-gap: 2%;
+        }
+        /* grld04 */
+        .grld04 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr  ;
+            grid-gap: 2%;
+        }
+        /* grld05 */
+        .grld05 {
+            display: grid;
+            /* grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ; */
+            /* grid-template-columns:  repeat(8,100px) ; */
+            grid-template-columns:  repeat(8,1fr) ;
+            grid-gap: 2%;
+        }
+        .column05:first-child {
+            grid-column: span 1/6;
+        }
+        /* grld06 */
+        .grld06 {
+            display: grid;
+            grid-template-columns:  repeat(8,1fr) ;
+            grid-gap: 2%;
+        }
+        .column06:last-child {
+            grid-column: 8/9;
+        }
+        /* grld07 */
+        .grld07 {
+            display: grid;
+            grid-template-columns:  repeat(8,1fr) ;
+            grid-gap: 2%;
+        }
+        .column07:first-child {
+            grid-column:  1/2;
+        }
+        .column07{grid-column: 4/6;}
+        .column07:last-child {
+            grid-column: 8/9;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid grld01">
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+        <div class="column column01"></div>
+    </div>
+    <div class="grid grld02">
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+        <div class="column column02"></div>
+    </div>
+    <div class="grid grld03">
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+        <div class="column column03"></div>
+    </div>
+    <div class="grid grld04">
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+        <div class="column column04"></div>
+    </div>
+    <div class="grid grld05">
+        <div class="column column05"></div>
+        <div class="column column05"></div>
+        <div class="column column05"></div>
+        <div class="column column05"></div>
+    </div>
+    <div class="grid grld06">
+        <div class="column column06"></div>
+        <div class="column column06"></div>
+        <div class="column column06"></div>
+        <div class="column column06"></div>
+    </div>
+    <div class="grid grld07">
+        <div class="column column07"></div>
+        <div class="column column07"></div>
+        <div class="column column07"></div>
+    </div>
+</body>
+</html> 

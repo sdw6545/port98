@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex06</title>
+    <style>
+        .flex{
+            background: #f7f7f7;
+            border-radius: 3px;
+            padding: 20px;
+            counter-reset: items ;
+        }
+        .item{
+            border-radius: 3px;
+            background: #a2cbfa;
+            border: 1px solid #4390e1;
+            box-sizing: border-box;
+            box-shadow: 0 2px 2px rgba(0,90,250,0.05);
+            min-height: 100px;
+            color: #fff;
+            padding: 10px;
+        }
+        .item::before{
+            counter-increment:items ;
+            content:counter(items) ;
+        }
+        .choice a {
+            border: 1px solid #555; 
+            padding-top: 7px 20px; 
+            display: inline-block;
+            border-radius: 20px;
+            color: #555;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .choice a:hover {text-decoration: underline; }
+        /* flex21 */
+        .flex21{
+            display: flex;
+        }
+        .item21{
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex flex21">
+        <div class="item item21"></div>
+        <div class="item item21"></div>
+        <div class="item item21"></div>
+        <div class="item item21"></div>
+        <div class="item item21"></div>
+    </div>
+    <div class="choice">
+        <a href="#">flex:1 1 0</a>
+        <a href="#">flex:2</a>
+        <a href="#">flex:200px</a>
+        <a href="#">flex:2 200px</a>
+        <a href="#">flex:1 1 150px</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice a").click(function(){
+            let text = $(this).text();
+            $(".flex .item21").eq(1).attr("style",text);
+        });
+    </script>
+    
+
+</body>
+</html> 

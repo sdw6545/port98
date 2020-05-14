@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Respomsive Latoyt03</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #wrap { }
+        .container {margin: 0 auto;width: 1200px; }
+        header {width: 100%;height: 100px;background-color: #7ed4fa; }
+        aside {width: 30%; height: 900px; background-color: #49c4f7;float: left;}
+        .article1 {width: 70%;height: 300px; background-color: #1cb7f6;float: left;}
+        .article2 { width: 70%;height: 300px; background-color: #00abf4;float: left;}
+        .article3 { width: 70%;height: 300px; background-color: #009de5;float: left;}
+        footer { width: 100%;height: 100px; background-color: #008ad1;clear: both;}
+        
+        
+        @media(max-width:1220px){
+            .container {width: 100%; }
+            .article1 {height: 450px; }
+            .article2 {height: 450px; }
+            .article3 {width: 100%;}
+        }
+        @media(max-width:768px){
+            aside {width: 100%; height: 300px; }
+            .article1 {width: 50%; }
+            .article2 {width: 50%; }
+        }
+        @media(max-width:480px){
+            .article1 {width: 100%; }
+            .article2 {width: 100%; }
+
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <article class="article1"></article>
+            <article class="article2"></article>
+            <article class="article3"></article>
+            <footer></footer>
+            
+            
+            
+        </div>
+    </div>
+</body>
+</html>

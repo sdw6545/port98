@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="김용태">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, 김용태">
+    <title>김용태 Javascript</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>Javascript Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://sdw6545.dothome.co.kr" target="_blank">sdw6545.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">자바스크립트</h2>
+                    <p class="bs-callout bs-callout-info">자바스크립트는 객체 기반의 클라이언트 스크립트 언어로 웹 페이지에서 동작으로 만드는데 사용하는 언어입니다.
+                    </p>
+                    <ul>
+                        <li>자바스크립트는 인터프린터 언어입니다.</li>
+                        <ul>
+                            <li>자바스크립트 코드는 작성한 순서대로 구문 을 분석합니다. 만약 코드에 문제가 생기면 에러가 발생한 다음 줄 부터는 구문을 분석하지 않습니다. </li>
+                        </ul>
+                        <li>자바스크립트는 클라이언트 스크립트 언어입니다.</li>
+                        <ul>
+                            <li>자바스크립트는 서버에서 실행되지 않고, 사용자 컴퓨터에서 실행되는 클라이언트 언어입니다. 서버에서 운영이 되는 언어는 PHP,ASP,JSP 언어가 있습니다.
+                            </li>
+                        </ul>
+                        <li>자바스크립트는 객체 기반의 언어입니다.</li>
+                        <ul>
+                            <li>C++와 JAVA와 같이 클래스를 이용하여 객체를 생성하는 클래스 기반 객체 지향 언어입니다. 자바스크립트는 클래스가 아닌 프로토타입을 상속하는 프로토타입
+                                기반 객체 지향 언어입니다.</li>
+                        </ul>
+                        <li> 다양한 라이브러리가 지원되는 언어입니다.</li>
+                        <ul>
+                            <li>자바스크립트를 이용한 라이브러리에는 jQueyr, Angular.js, React.js, Node.js, Vue.js, Therr.js 등이 있습니다.
+                            </li>
+                        </ul>
+                    </ul>
+
+                </div>
+                <!-- //Intro1 -->
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">자바스크립트 기초</h2>
+                    <h3 class="pt40">자바스크립트 주석</h3>
+                    <p>자바스크립트 주석은 일반적으로 특정 코드에 대한 설명을 입력하거나 특정한 부분의 코드가 실행되지 않도록 사용합니다.</p>
+                    <p class="bs-callout bs-callout-info">
+                        /* */ : 여러 줄에 주석을 적용하는 경우<br>
+                        // : 한 줄에 주석을 적용하는 경우
+                    </p>
+                    <h3 class="pt40">자바스크립트 대문자
+                        소문자</h3>
+                    <p>자바스크립트는 대문자와 소분자를 구별합니다.</p>
+                    <p class="bs-callout-info bs-callout">
+                        배열 객체 생성 : New Array : (X)<br>
+                        배열 객체 생성 : new Array : (O)
+                    </p>
+                    <h3>자바스크립트 문법 주의 사항</h3>
+                    <p>1. 자바스크립트는 코드 한 줄을 작성한 후에는 세미콜론을 쓰는 것이 좋습니다.세미콜론을 쓰지 않으면 다음 예제처럼 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.
+                    </p>
+                    <p class="bs-callout-info bs-callout">
+                        document.write("hi") document.write("bye") (X)<br>
+                        document.write("hi"); document.write("bye"); (O)
+                    </p>
+                    <p>2. 코드를 작성할 때는 한 줄에 한 문장만 작성하는 것이 가독성을 위해 좋습니다.</p>
+                    <p>3. 문자형 데이터를 작성할 때는 큰 따옴표(" ")와 작은 따옴표(' ')의 겹침 오류를 주의해야 합니다.</p>
+                    <p class="bs-callout-info bs-callout">
+                        큰 따옴표 겹침 오류가<br>
+                        document.write("책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.");<br>
+                        잘된 예<br>
+                        document.write('책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.');<br>
+                        document.write("책에 \"자바스크립트는 대소문자를 구분해야 합니다\"라고 나와 있다.");
+                    </p>
+                    <p>4. 코드를 작성할 때 중괄호{} 또는 소괄호()의 짝이 맞아야 합니다.</p>
+                    <p class="bs-callout-info bs-callout">
+
+                        document.write("welcome!"; (X)<br>
+                        document.write("welvome!"); (O)
+                    </p>
+
+                    <h3 class="pt40">자바스크립트 사용방법</h3>
+                    <p>자바스크립트 사용하는 방법은 외부파일, 스크립트 태그, 태그에 직접 기술하는 방법이 있습니다.</p>
+                    <h5>자바스크립트 사용방법 <a href="Javascript01.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript &lt;/title&gt;
+
+    &lt;!-- 외부 파일로 로드하는 방법 --&gt;
+    &lt;script src="Javascript.js"&gt;&lt;/script&gt;
+
+    &lt;!-- 스크립트에 기술하는 방법 --&gt;
+    &lt;script&gt;
+        document.write("Javascript");
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 태그에 직접 기술하는 방법 --&gt;
+    &lt;a href="#" onclick="alert('Javascript')"&gt;클릭&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+
+                    <h3 class="pt40">자바스크립트 출력방법</h3>
+                    <p>자바스크립트 출력하는 방법은 내장 객체 콘솔(consile), document.write(), alert()을 이용하는 방법이 있습니다.</p>
+                    <h5>자바스크립트 출력방법 <a href="Javascript02.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //콘솔 로그를 이용하는 방법
+        console.log("01. 자바스크립트가 출력되었습니다.")
+
+        //웹 문서에 출력하는 방법
+        document.write("02. 자바스크립트가 출력되었습니다.")
+
+        //경고창을 이용하여 출력하는 방법
+        alert("03. 자바스크립트가 출력되었습니다.")
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;  
+</code></pre>
+
+                </div>
+                <!-- //Intro2 -->
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">변수</h2>
+                    <p class="bs-callout bs-callout-info">변수(Variables)는 변하는 <strong> 하나의 데이터</strong> 값을 저장하는 저장소입니다.
+                    </p>
+
+                    <h3 class="pt40">변수명</h3>
+                    <p class="bs-callout bs-callout-info">
+                        키워드 : 자바스크립트에서 사용하는 단어, 즉 자바스크립트 문법을 규정짓기 위해 자바스크립트에서 사용하는 특수한 키워드입니다. <br>
+                        식별자 : 사용자가 임의로 사용하는 단어, 즉 변수나 함수를 사용할 때 정의하는 키워드입니다.
+                    </p>
+
+                    <h4 class="pt20">식별자를 만드는 규칙</h4>
+                    <ul>
+                        <li>사용자가 사용할 수 있는 문자 : 알파벳(a~z,A~Z), 숫자(0~9), 특수기호('-','$') </li>
+                        <li>첫 글자는 숫자를 사용할 수 없습니다.</li>
+                        <li>공백을 사용할 수 없습니다. : 밑줄(_) 사용가능 하이픈 (-) 사용안됨</li>
+                        <li>특수기호는 사용할 수 없습니다. : 달러($)는 사용 가능</li>
+                        <li>키워드를 사용할 수 없습니다.</li>
+                    </ul>
+
+                    <h4 class="pt20">단어를 조합할 때 규칙</h4>
+                    <ul>
+                        <li>언더스코어 노테이션(스네이크 표기법) : color_top와 같이 중간에 '_' 를 사용합니다.</li>
+                        <li>캐멀 노테이션 : colorTop와 같이 두번 째 단어의 첫 글자를 대문자로 사용합니다.</li>
+                        <li>파스칼 노테이션 : ColorTop와 같이 모든 단어의 첫 글자를 대문자로 사용합니다.</li>
+                    </ul>
+                    <h3 class="pt40" id="intro3-1">변수 선언</h3>
+                    <p class="bs-callout bs-callout-info">
+                        var 변수명 = 값; or let 변수명 = 값
+                    </p>
+
+                    <h5>변수 <a href="Javascript03.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //변수 선언
+        var x = 100;                           //변수 x 에 숫자 100을 저장
+        var y = 200;                           //변수 y 에 숫자 200을 저장
+        var z = "자바스크립트";             //변수 z 에 문자 "자바스크립트"를 저장
+
+        document.write(x);
+        document.write("&lt;br&gt;");
+        document.write(y);
+        document.write("&lt;br&gt;");
+        document.write(z);
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //변수 선언
+        let a =100;
+        let b =200;
+        let c ="자바스크립트";
+
+        document.write(a);
+        document.write("&lt;br&gt;");
+        document.write(b);
+        document.write("&lt;br&gt;");
+        document.write(c);
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //변수 변경
+        x = 300;   //변수 x의 값이 100에서 300으로 변경
+        y = 400;   //변수 y의 값이 200에서 400으로 변경
+        z = "Javascript" //변수 z의 값이 "자바스크립트" 에서 "Javascript" 변경
+
+        document.write(x);
+        document.write("&lt;br&gt;");
+        document.write(y);
+        document.write("&lt;br&gt;");
+        document.write(z);
+        document.write("&lt;br&gt;&lt;br&gt;");
+        
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+                    </code></pre>
+
+                    <h3 class="pt40" id="intro3-1">변수 유형</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>변수의 유형</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>숫자(Number)</td>
+                                    <td>숫자를 사용할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>문자(String)</td>
+                                    <td>문자를 사용할 수 있습니다. 큰따움표 ("")또는 작은 따움표('')를 사용합니다. </td>
+                                </tr>
+                                <tr>
+                                    <td>논리형(boolean)</td>
+                                    <td>참(true)과거짓(false)을 사용할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>특수값(null)</td>
+                                    <td>아무런 값이 없을 경우 표현합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>특수값(undefined)</td>
+                                    <td>정의되지 않은 상태 표현합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>심벌(symbol)</td>
+                                    <td>자기 자신을 제외한 유일한 값일 때 표현합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>객체(object)</td>
+                                    <td>객체 형태도 사용 가능합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>함수(function)</td>
+                                    <td>함수형태도 사용 가능합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h5>변수 유형 <a href="Javascript04.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+       let x1 = 100;              //변수의 숫자를 저장
+       let x2 = "100";            //변수의 문자를 저장
+       let x3 = "Javascript";    //변수의 문자를 저장
+       let x4 = true;             //변수의 논리값를 저장
+       let x5 = false;            //변수의 논리값를 저장
+       let x6;                   //특수값
+       let x7 = undefined ;      //특수값
+       let x8 = function(){}     //변수에 함수를 저장
+       let x9 = {}                 //변수에 객체를 저장
+       let x0 = Symbol() ;      //변수에 심볼를 저장
+
+
+       document.write(typeof(x1), "&lt;br&gt;"  );
+       document.write(typeof(x2), "&lt;br&gt;"  );
+       document.write(typeof(x3), "&lt;br&gt;"  );
+       document.write(typeof(x4), "&lt;br&gt;"  );
+       document.write(typeof(x5), "&lt;br&gt;"  );
+       document.write(typeof(x6), "&lt;br&gt;"  );
+       document.write(typeof(x7), "&lt;br&gt;"  );
+       document.write(typeof(x8), "&lt;br&gt;"  );
+       document.write(typeof(x9), "&lt;br&gt;"  );
+       document.write(typeof(x0), "&lt;br&gt;" );
+
+    &lt;/script&gt;
+
+
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <!-- //Intro3 -->
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">배열</h2>
+                    <p class="bs-callout bs-callout-info">배열은 <strong> 여러 개의 데이터</strong> 를 순차적으로 저장하는 저장소입니다.</p>
+
+                    <h5>배열 <a href="Javascript05.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=Javascript05, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //변수 x = 100 변수 y = 200 을 저장한 다음에 출력해주세요!
+        let x = 100;
+        let y = 200;
+
+        document.write(x,"&lt;br&gt;" );
+        document.write(y,"&lt;br&gt;&lt;br&gt;" );
+
+        //배열을 선언하고 데이터 입력
+        const arr1 = new Array(); 
+        arr1[0] = 100;    //첫번째 배열 저장소에 100을 저장
+        arr1[1] = 200;    //두번째 배열 저장소에 100을 저장
+
+        document.write(arr1[0],"&lt;br&gt;");
+        document.write(arr1[1],"&lt;br&gt;&lt;br&gt;");
+
+        //배열을 선언하고 동시에 데이터 입력
+        const arr2 = new Array(100,200);
+        
+        document.write(arr2[0],"&lt;br&gt;");
+        document.write(arr2[1],"&lt;br&gt;&lt;br&gt;");
+
+
+        //배열을 선언하지 않고 데이터 입력
+        const arr3 = []
+        arr3[0] =100;
+        arr3[1] =200;
+
+
+        document.write(arr3[0],"&lt;br&gt;");
+        document.write(arr3[1],"&lt;br&gt;&lt;br&gt;");
+
+
+        //배열을 선언하지 않고 동시에 데이터 입력
+        const arr4 = [100,200,300];
+
+        document.write(arr4[0],"&lt;br&gt;");
+        document.write(arr4[1],"&lt;br&gt;");
+        document.write(arr4[2],"&lt;br&gt;&lt;br&gt;");
+
+        //배열의 크기 구하기
+        const arr5 = [100,200,300,400,500]
+
+        document.write(arr5.length);
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //배열 가져오기
+        const arr6 = [100,200,300,400,500,600,700,800];
+        //반복문
+                // i = 0;  0&lt;8;  1
+                // i = 1;  1&lt;8;  2
+                // i = 2;  2&lt;8;  3
+                // i = 3;  3&lt;8;  4
+                // i = 4;  4&lt;8;  5
+                // i = 5;  5&lt;8;  6
+                // i = 6;  6&lt;8;  7
+                // i = 7;  7&lt;8;  8
+        for(let i=0; i&lt;arr6.length; i++){
+            document.write(arr6[i]);
+        }
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //배열의 합 구하기
+        const arr7 = [100,200,300,400,500];
+        let sum = 0;
+
+        for(let i=0; i&lt;arr7.length;i++){
+            sum = sum + arr7[i];
+        }
+        document.write(sum);
+        
+        
+
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">연산자</h2>
+
+                    <h3 id="intro5-1">산술연산자</h3>
+                    <div class="table-reponsive">
+                        <h5>산술연산자 <a href="Javascript06.html">VIEW</a></h5>
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>연산자</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>+</td>
+                                    <td>x + y</td>
+                                    <td>더하기</td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>x - y</td>
+                                    <td>빼기</td>
+                                </tr>
+                                <tr>
+                                    <td>*</td>
+                                    <td>x * y</td>
+                                    <td>곱하기</td>
+                                </tr>
+                                <tr>
+                                    <td>/</td>
+                                    <td>x / y</td>
+                                    <td>나누기</td>
+                                </tr>
+                                <tr>
+                                    <td>%</td>
+                                    <td>x % y</td>
+                                    <td>나머지</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let num1 = 15;
+        let num2 = 2;
+        let result;
+        result = num1 + num2;
+        document.write(result, "&lt;br&gt;");
+        result = num1 - num2;
+        document.write(result, "&lt;br&gt;");
+        result = num1 * num2;
+        document.write(result, "&lt;br&gt;");
+        result = num1 / num2;
+        document.write(result, "&lt;br&gt;");
+        result = num1 % num2;
+        document.write(result, "&lt;br&gt;");
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+                    </div>
+                    <h3 id="intro5-2">대입연산자</h3>
+                    <h5>대입연산자 <a href="Javascript08.html">VIEW</a></h5>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>연산자</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>+=</td>
+                                    <td>x+=10</td>
+                                    <td>x = x + 10</td>
+                                </tr>
+                                <tr>
+                                    <td>-=</td>
+                                    <td>x-=10</td>
+                                    <td>x = x - 10</td>
+                                </tr>
+                                <tr>
+                                    <td>*=</td>
+                                    <td>x *= y</td>
+                                    <td>x = x * 10</td>
+                                </tr>
+                                <tr>
+                                    <td>/=</td>
+                                    <td>x /= y</td>
+                                    <td>x = x / 10</td>
+                                </tr>
+                                <tr>
+                                    <td>%=</td>
+                                    <td>x %= y</td>
+                                    <td>x = x % 10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let num1 = 10;
+        let num2 = 3;
+
+        num1 += num2;
+        document.write(num1,"&lt;br&gt;");
+        num1 -= num2;
+        document.write(num1,"&lt;br&gt;");
+        num1 *= num2;
+        document.write(num1,"&lt;br&gt;");
+        num1 %= num2;
+        document.write(num1,"&lt;br&gt;");
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+                    </div>
+                    <h3 id="intro5-3">증감연산자</h3>
+                    <h5>증감연산자 <a href="Javascript07.html">VIEW</a></h5>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>연산자</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>++</td>
+                                    <td>x++ 또는 ++x</td>
+                                    <td>x = x + 1</td>
+                                </tr>
+                                <tr>
+                                    <td>--</td>
+                                    <td>x-- 또는 --x</td>
+                                    <td>x = x - 1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pre class = "line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let num1 = 10;
+        let num2 = 20;
+        let result;
+
+        num1--;
+        document.write(num1,"&lt;br&gt;");
+        num1++;
+        document.write(num1,"&lt;br&gt;");
+        result = num2++;
+        document.write(result,"&lt;br&gt;");
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+                    </div>
+                    <h3 id="intro5-4">비교연산자</h3>
+                    <h5>비교연산자 <a href="Javascript09.html">VIEW</a></h5>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>연산자</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>==</td>
+                                    <td>x == y</td>
+                                    <td>좌변과 우변이 같다</td>
+                                </tr>
+                                <tr>
+                                    <td>===</td>
+                                    <td>x === y</td>
+                                    <td>좌변과 우변이 같다. 데이터형도 같다.</td>
+                                </tr>
+                                <tr>
+                                    <td>!=</td>
+                                    <td>x != y</td>
+                                    <td>좌변과 우변이 다르다.</td>
+                                </tr>
+                                <tr>
+                                    <td>!==</td>
+                                    <td>x !== y</td>
+                                    <td>좌변과 우변이 다르다. 데이터형도 다르다.</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;</td>
+                                    <td>x &gt; y</td>
+                                    <td>좌변이 우변보다 크다</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;</td>
+                                    <td>x &lt; y</td>
+                                    <td>좌변이 우변보다 작다</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;=</td>
+                                    <td>x &gt;= y</td>
+                                    <td>좌변이 우변보다 크거나 같다</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;=</td>
+                                    <td>x &lt;= y</td>
+                                    <td>좌변이 우변보다 작거나 같다</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let a =10;
+        let b =20;
+        let c =10;
+        let f ="20";
+        var result;
+
+        result = a&gt;b;
+        document.write(result,"&lt;br&gt;");
+        result = a&lt;b;
+        document.write(result,"&lt;br&gt;");
+        result = a&lt;=b;
+        document.write(result,"&lt;br&gt;");
+        result = b==f;
+        document.write(result,"&lt;br&gt;");
+        result = a!=b;
+        document.write(result,"&lt;br&gt;");
+        result = b===f;
+        document.write(result,"&lt;br&gt;");
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+                    </div>
+                    <h3 id="intro5-5">논리연산자</h3>
+                    <h5>논리연산자 <a href="Javascript10.html">VIEW</a></h5>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>연산자</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>&&</td>
+                                    <td>x && y</td>
+                                    <td>둘다 true인 경우에 true를 반환합니다.[AND]</td>
+                                </tr>
+                                <tr>
+                                    <td>||</td>
+                                    <td>x || y</td>
+                                    <td>둘 중의 하나 이상이 true인 경우 true를 반환합니다.[OR]</td>
+                                </tr>
+                                <tr>
+                                    <td>!</td>
+                                    <td>!x</td>
+                                    <td>반대 값을 반환합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let a=10;
+        let b=20;
+        let m=30;
+        let n = 40;
+
+        let result;
+
+        result = a&gt;b || b&gt;= m || m &gt;n;
+        document.write(result,"&lt;br&gt;");
+
+        result = a&gt;b || b&gt;= m || m &lt;=n;
+        document.write(result,"&lt;br&gt;");
+
+        result = a&lt;=b && b&gt;= m && m &lt;= n;
+        document.write(result,"&lt;br&gt;");
+
+        result = a&lt;=b && b&lt;= m && m &lt;= n;
+        document.write(result,"&lt;br&gt;");
+
+        result = !(a&gt;b);
+        document.write(result,"&lt;br&gt;");
+
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">조건문</h2>
+                    <p class="bs-callout bs-callout-info">조건문은 조건식의값이 참(true)인지 거짓(false)인지에 따라 자바스크립트 코드를 제어합니다.</p>
+
+                    <h3 id="intro6-1" class="page-header">if 문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        if(조건식)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;;//실행코드<br>
+                    </p>
+                    <h5>if 문 <a href="Javascript11.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //변수 num에 숫자 100을 저장하고 출력하시오.
+        let num =100;
+
+        document.write(num);
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //변수 num2에 값이 숫자 200보다 크면 출력하시오.
+        let num2 = 201;
+        if(num2 &gt; 200){
+            document.write(num2);
+            document.write("&lt;br&gt;&lt;br&gt;");
+        }
+
+        //조건값이 true 무조건 실행
+        if( true ){
+            document.write(num2);
+            document.write("&lt;br&gt;&lt;br&gt;");
+        }
+
+        //if문 약식
+        if( true )document.write(num2);
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //짝수
+        let num3 = prompt("숫자를 입력해주세요!");
+
+        if( num3 % 2 ===0 ){
+            document.write("당신이 입력한 숫자는 짝수입니다.");
+            document.write("&lt;br&gt;&lt;br&gt;");
+        }
+
+        //방문자 이름 
+        let userName = prompt("당신의 이름은 무엇입니까?");
+
+        if(userName){
+            document.write(userName+ "님 방갑습니다. 방문을 환영합니다.");
+        }
+
+
+
+            
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h3 id="intro6-2" class="page-header">if~else 문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        if(조건식){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;//참(true)실행코드<br>
+                        }else{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;//거짓(false)실행코드<br>
+                        }
+                    </p>
+                    <h5>if~else문 <a href="Javascript12.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let num = 200;
+
+        if( num &gt; 100){
+            document.write("숫자가 100보다 큽니다.&lt;br&gt;&lt;br&gt;");
+        } else {
+            document.write("숫자가 100보다 작습니다.&lt;br&gt;&lt;br&gt;");
+        }
+
+        //짝수 홀수 구하기
+        let num2 =prompt("당신이 좋아하는 숫자는 무엇입니까?");
+
+        if (num2 % 2 ==0){
+            document.write("당신이 좋아하는 숫자는 짝수입니다.&lt;br&gt;&lt;br&gt;");
+        } else {
+            document.write("당신이 좋아하는 숫자는 홀수입니다.&lt;br&gt;&lt;br&gt;");
+        }
+
+        //아이디 비밀번호 구분하기
+        let userID = prompt("아이디를 입력하세요");
+        let userPW = prompt("비밀번호를 입력하세요");
+
+        if( userID == "sdw6545" && userPW == "1122"  ){
+            document.write("환영합니다.&lt;br&gt;&lt;br&gt;");
+        } else {
+            document.write("아이디 또는 비밀번호가 틀렸습니다.&lt;br&gt;&lt;br&gt;");
+        }
+
+        //확인하기
+        let result = confirm("정말로 회원을 탈퇴하겠습니까?");
+
+        if(result){
+            document.write("탈퇴 처리되었습니다.")
+        } else{
+            document.write("탈퇴 취소되었습니다.")
+        }
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h3 id="intro6-3" class="page-header">다중 if문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        if(조건식1){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; //참 일때 실행코드<br>
+                        } else if(조건식2){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;//앞 조건이 거짓일 때 실행코드<br>
+                        }else if(조건식3){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;//앞 조건이 거짓일 때 실행코드<br>
+                        }else if(조건식4){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;//앞 조건이 거짓일 때 실행코드<br>
+                        }<br>
+                        ............. <br>
+                        } else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; //앞의 모든 조건이 거짓일 때 실행코드<br>
+                        }
+                    </p>
+                    <h5>다중 if문1 <a href="Javascript13.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let food = prompt("다음 중 가장 먹고 싶은 음식은? 1.카레, 2.레몬, 3.팝콘, 4.커피, 5.초코릿");
+
+        if(food == "카레"){
+            document.write("매콤한 음식을 고른 당신은 사람에게 첫눈에 반하기 보다는 서서히 사랑에 빠지는 스타일입니다.")
+        } else if(food == "레몬"){
+            document.write("새콤한 과일을 고른 당신은 쉽게 마음을 열고 또 쉽게 사람을 믿는 스타일입니다.")
+        }else if(food == "팝콘"){
+            document.write("짭짤하고 고소한 팝콘을 고른 당신은 오래 알고 지낸 사람들에게서 보이는 의외에 모습에 약한 스타일입니다.")
+        }else if(food == "커피"){
+            document.write("쌉싸름한 커피를 고른 당신은 사랑에 누구보다 적극적인 스타일입니다.")
+        }else if(food == "초코릿"){
+            document.write("달콤한 초코릿을 선택한 당신은 금방 사랑에 빠지는 스타일입니다.")
+        }else {
+            document.write("해당 과일이 없습니다.")
+        }
+        
+        
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5>다중 if문2<a href="Javascript13-1.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        var mon = prompt("현재는 몇 월입니까?","0");
+
+        if(mon &gt;=9 && mon &lt;=11){
+            document.write("독서의 계절 가을이네요!!");
+        }else if(mon &gt;=6 && mon &lt;=8){
+            document.write("여향가기 좋은 여름이네요!!");
+        }else if(mon &gt;=3 && mon &lt;=5){
+            document.write("햇살 가득한 봄이네요!!");
+        }else {
+            document.write("스키의 계절 겨울이네요!!");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h3 id="intro6-4" class="page-header">중첩 if문</h3>
+                    <p class="bs-callout bs-callout-info">
+                    if(조건식1){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; if(조건식2){
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//실행문
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    }
+                    </p>
+                    <h5>중첩 if문 <a href="Javascript14.html">VIEW</a></h5>
+<pre class = "line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let id ="sdw6545";
+        let pw = "1234";
+        let userId = prompt("아이디는 무엇입니까?")
+        let userPw = prompt("비밀번호가 무엇입니까?")
+
+        if(id == userId){
+            if(pw == userPw){
+                document.write(userId+"님 반갑습니다.");
+            }else{
+                alert("비밀번호가 일치하지 않습니다.");
+                location.reload();
+            }
+        }else{
+            alert("아이디가 일치하지 않습니다.")
+            location.reload();
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h3 id="intro6-5" class="page-header">switch문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        var 변수 = 초깃값; <br>
+                        switch(조건을 체크할 변수){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case 값1: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//조건에 체크할 변수가 값1을 가지면 실행 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case 값2: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //조건에 체크할 변수가 값2을 가지면 실행 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case 값3: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//조건에 체크할 변수가 값3을 가지면 실행 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.................. <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;default: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //해당되는 값을 가지고 있지 않을 경우에 실행 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        }
+                    </p>
+                    <h5>switch문1<a href="Javascript15.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let first = prompt("제일 먼저 잡고 싶은 물건은? 1.과일, 2.떡, 3.수정구슬, 4.현찰, 5.반지");
+
+        switch(first){
+            case "과일":
+                document.write("생각이 많고 진지해 보이는 이성 타입입니다.")
+            break;
+
+            case "떡":
+                document.write("무드에 약하고 화술과 매너가 좋은 이성 타입입니다.")
+            break;
+
+            case "수정구슬":
+                document.write("정열적이고 열중하는 이성 타입입니다.")
+            break;
+
+            case "현찰":
+                document.write("부드럽고 따듯한 이성 타입입니다.")
+            break;
+
+            case "반지":
+                document.write("자기를 보호해 줄 수 있는 이성 타입입니다.")
+            break;
+
+            default:
+                document.write("잘못 선택했습니다.")
+            break;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <!-- 69페이지 다중 if > switch변경 -->
+                    <h5>switch문2<a href="Javascript16.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        var mon = prompt("현재는 몇 월입니까?");
+
+        switch(mon){
+            case"9":
+            case"10":
+            case"11": 
+                document.write("독서의 계절 가을이네요!!");
+            break;
+
+            case"6":
+            case"7":
+            case"8": 
+                document.write("여향가기 좋은 여름이네요!!");
+            break;
+            case"3":
+            case"4":
+            case"5": 
+                document.write("햇살 가득한 봄이네요!!");
+            break;
+            case"1":
+            case"2":
+            case"12":  
+            document.write("스키의 계절 겨울이네요!!");
+            break;
+            default: 
+                document.write("잘못 입력하셨습니다.");
+            break;
+        }
+    
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h5>switch문3<a href="Javascript17.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let site =prompt ("네이버, 다음, 네이트, 구글 중 즐겨 사용하는 사이트는?")
+        let url = "0";
+        switch(site){
+            case"네이버": url ="https://www.naver.com/";
+            break;
+            case"다음": url ="https://www.daum.net/";
+            break;
+            case"네이트": url ="https://www.nate.com/";
+            break;
+            case"구글": url ="https://www.google.co.kr/";
+            break;
+            default: document.write("그런 사이트 없어요~");
+            break;
+        }
+        // alert(url)
+        if(url)location.href = url
+
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+    
+</code></pre>
+                    <h5>switch문4<a href="Javascript18.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        let site =prompt ("네이버, 다음, 네이트, 구글 중 즐겨 사용하는 사이트는?")
+        let url = "0";
+
+        if(site == "네이버"){
+            url = "https://www.naver.com/";
+        } else if(site == "다음" ){
+            url ="https://www.daum.net/";
+        }else if(site == "네이트" ){
+            url ="https://www.nate.com/";
+        }else if(site == "구글" ){
+            url ="https://www.google.co.kr/";
+        }else {
+            document.write("그런 사이트 없어요~");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h3 id="intro6-5" class="page-header">조건부 연산자(삼항 연산자)</h3>
+                    <p class="bs-callout bs-callout-info">
+                        (조건) ? (참일때 실행코드) : (거짓일 때 실행코드)
+                    
+                    </p>
+                    <h5>조건부 연산자(삼항 연산자)<a href="Javascript19.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //사용자가 숫자를 넣으면 짝수인지 홀수인지 구분하는 스크립트를 작성하시오!
+        let num=prompt("숫자를 입력하세요")
+        if( num % 2 === 0){
+            document.write("짝수")
+            
+        }else{
+            document.write("홀수")
+        }
+
+        //상항 연산자
+        (num %2 == 0) ? document.write("짝수") : document.write("홀수"); 
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <!-- //Intro6 -->
+
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">반복문</h2>
+                    <p class="bs-callout bs-callout-info">자바스크립트는 객체 기반의 반복문을 사용하면 코드를 원하는 횟수만큼 반복하여 실행할 수</p>
+
+                    <h3 id="intro7-1" class="page-header">whlie문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        var 변수 = 초깃값;<br>
+                        whlie( 조건식 ){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;증감식<br>
+                        }
+                    </p>
+                    <h5>whlie문<a href="Javascript20.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //100보다 작은수 출력하기
+        let num= 0;         //초깃값 설정
+        while( num  &lt; 100){      //조건식 설정
+            num++;
+            document.write(num, "&lt;br&gt;");
+        }
+
+        //100보다 작은수 출력하기
+        let num2=0;
+        while(num2 &lt;= 100){
+            if(num2 % 2== 0){
+                document.write(num2, "&lt;br&gt;");
+            }
+            num2++;
+            
+        }
+
+        //100보다 작은수(4의배수) 출력하기
+        let num3=0;
+        while(num3 &lt; 100){
+            if(num3 % 4 == 0){
+                document.write(num3, "&lt;br&gt;");
+            }
+            num3++;
+            
+        }
+
+        //100보다 작은수(4의배수와 6의배수) 출력하기
+        let num4 = 1;
+        while(num4&lt;=100){
+            if(num4 %4==0 || num4 % 6 ==0 ){
+                document.write(num4);
+            }
+            num4++;
+        }
+
+            //1~100까지 짝수는 파란색, 홀수는 빨간색으로 출력하세요~
+            let num5 = 1;
+        while(num5 &lt;= 100){
+            if(num5 % 2 ==0){
+                document.write( "&lt;span style='color:blue'&gt;"+num5+"&lt;/span&gt;" )
+            } else {
+                document.write( "&lt;span style='color:red'&gt;"+num5+"&lt;/span&gt;" )
+            }
+            num5++
+        }
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h3 id="intro7-2" class="page-header">do~whlie문</h3>
+                    <p>whlie문은 조걱을 검사하고 코드를 반복적으로 실행합니다. 첫 조건이 거짓이라면 코드를 실행하지 않을 수 있습니다. 하지만 do whlie문은 조건이 참,거짓과 상관없이 최소한 한번은 실행합니다.</p>
+                    <p class="bs-callout bs-callout-info">
+                        var 변수 = 초깃값;
+                        do{
+                        &nbsp;&nbsp;&nbsp;&nbsp;실행문;
+                        &nbsp;&nbsp;&nbsp;&nbsp;증감식;
+                        }whlie(조건식)
+                    </p>
+                    <h5>do~whlie문<a href="Javascript21.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //while문을 이용해서 1~20까지 출력하세요~
+        let num = 0;
+        while(num &lt; 20){
+            num++;
+            document.write(num);
+        }
+        document.write("&lt;br&gt;");
+
+
+        //do while문을 이용해서 1~20까지 출력하세요~
+        let num2 = 0;
+        do{
+            num2++;
+            document.write(num2);
+        }while(num2&lt;= 19);
+
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+                    <h3 id="intro7-3" class="page-header">for문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        for(초깃값; 조건식; 증감식){
+                            //반복 실행 코드
+                        }
+                    </p>
+
+
+                    <h5>for문<a href="Javascript22.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //브라우저에 1~10 까지 출력해주세요~
+        let num=12345678910;
+        document.write(num);
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //for문을 이용해서 1~100까지 출력~
+        for(let i = 1; i&lt;=100; i++){
+            document.write(i,",")
+        }
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //for문을 이용해서 1~100까지(짝수만) 출력~
+        for(let i=1; i &lt;= 100; i++){
+            if(i  % 2 ==0){
+                document.write(i)
+            }
+        }
+        document.write("&lt;br&gt;&lt;br&gt;");
+
+        //for문을 이용해서 5의 배수 빨간색, 7의 배수일 때 초록색
+        //5와 7의 배수는 아쿠아 색으로 출력하세요~
+        for(let i = 1; i &lt;=100; i++){
+            if(i % 5 ==0 && i % 7 !=0){
+                document.write("&lt;span style='color:red'&gt;" +i+"&lt;/span&gt;")
+            }
+            if(i % 7 ==0 && i % 5 !=0){
+                document.write("&lt;span style='color:green'&gt;" +i+"&lt;/span&gt;")
+            }
+            if(i % 5 ==0 && i % 7 ==0){
+                document.write("&lt;span style='color:blue'&gt;" +i+"&lt;/span&gt;")
+            }
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h3 id="intro7-4" class="page-header">for in문</h3>
+                    <p class="bs-callout bs-callout-info"></p>
+
+
+                    <h5>for in문<a href="Javascript23.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>
+
+                    </code></pre>
+
+                    <h3 id="intro7-5" class="page-header">중첩 for문</h3>
+                    <p class="bs-callout bs-callout-info">
+                        for(var i = 0; i&lt; 100; i++){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for(var j-0; j&lt; 100; j++){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//반복코드<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </p>
+
+
+                    <h5>중첩 for문1<a href="Javascript24.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //for문을 이용해서 1부터 10까지 출력 해주세요~~
+        for( let i=1; i&lt;=10; i++ ){
+            document.write(i)
+        }
+        //중첩 for문
+        document.write("&lt;br&gt;&lt;br&gt;")
+        for( let i=1; i&lt;=10; i++ ){
+            for( let j=1; j&lt;=10; j++ ){
+                document.write(i+","+j,"&lt;br&gt;");
+
+            }
+        }
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+                    <h5>중첩 for문2<a href="Javascript25.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript25&lt;/title&gt;
+    &lt;script&gt;
+        //2단~9단 (i=2; i&lt;=9; i++)
+        //1~9       (j=1; j&lt;=9; j++ )
+
+        // i * j  = sum
+        //2*1 =2
+        //2*2 =4
+        //2*3 =8
+        //2*4 =8
+        //2*5 =10
+        //2*6 =12
+        //2*7 =14
+        //2*8 =16
+        //2*9 =18
+
+        for(let i=2; i&lt;=9; i++){
+            for(let j=1; j&lt;=9; j++){
+                let sum = i * j;
+                document.write(i + "*" +j+ "="+sum);
+                document.write("&lt;br&gt;")
+            }
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h5>중첩 for문3<a href="Javascript26.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript26&lt;/title&gt;
+    &lt;script&gt;
+        let table = "&lt;table border='1'&gt;";
+        let num = "1";
+
+            for(let i=1; i&lt;=50; i++){
+                table += "&lt;tr&gt;";
+                for(let j=1; j&lt;=50; j++){
+                    table += "&lt;td&gt;"+num+"&lt;/td&gt;";
+                    num++;
+                }
+                table += "&lt;/tr&gt;";
+            }
+
+        table += "&lt;/table&gt;";
+
+
+        document.write(table);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;4&lt;/td&gt;
+        &lt;/tr&gt;
+        
+    &lt;/table&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h3 id="intro7-6" class="page-header">break문</h3>
+                    <p class="bs-callout bs-callout-info"></p>
+
+
+                    <h5>break문<a href="Javascript.html">VIEW</a></h5>
+                    <pre class="line-numbers language-markup"><code>
+
+                    </code></pre>
+                </div>
+                <!-- //Intro7 -->
+
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">함수</h2>
+                    <p class="bs-callout bs-callout-info">
+                        함수는 하나의 실행문을 저장하고 변수는 하나의 데이터를 저장하여 사용합니다. 함수는 스크립트실행문을 보관하는 역활을 하기 때문에 반복 사용되는 코드를 구조화하거나 재활용을 목적으로 사용합니다.
+                    </p>
+                    <h5>함수를 사용하는 이유<a href="Javascript27.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //"이것은 빨간색입니다. "문자열을 출력해주세요~
+        document.write("이것은 빨간색입니다.")
+        document.write("&lt;br&gt;&lt;br&gt;")
+        //"이것은 빨간색입니다. "문자열을 출력해주세요~*10
+        for(let i= 1;i&lt;=10; i++){
+            document.write("이것은 빨간색입니다.","&lt;br&gt;")
+        }
+        document.write("&lt;br&gt;&lt;br&gt;")
+        //1.이것은 빨간색입니다.2.이것은 빨간색입니다. 문자열을 출력해주세요~ *10
+        for(let i=1;i&lt;=10; i++){
+            document.write(i+".이것은 빨간색입니다.","&lt;br&gt;")
+        }
+        document.write("&lt;br&gt;&lt;br&gt;")
+        //이것은 검은색입니다. *10
+        for(let i= 1;i&lt;=10; i++){
+            document.write("이것은 검은색입니다.","&lt;br&gt;")
+        }
+        document.write("&lt;br&gt;&lt;br&gt;")
+        //이것은 파란색입니다. *10
+        for(let i= 1;i&lt;=10; i++){
+            document.write("이것은 파란색입니다.","&lt;br&gt;")
+        }
+        document.write("&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;")
+
+
+        function colorName(color){
+            for(let i= 1;i&lt;=10; i++){
+            document.write("이것은 "+color+"입니다.","&lt;br&gt;")
+            }
+        }
+        colorName("빨간색")
+        colorName("파란색")
+        colorName("검은색")
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h2 id="intro8-1" class="page-header">함수 종류</h2>
+                    <p class="bs-callout bs-callout-info">
+                        function 함수명(){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;//실행함수<br>
+                        }<br>
+                        함수명() --> 함수 호출
+                    </p>
+                    <h5>함수 종류<a href="Javascript28.html">VIEW</a></h5>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Javascript&lt;/title&gt;
+    &lt;script&gt;
+        //선언적 함수
+        function func1(){
+            document.write("1.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        }
+        func1();
+
+        //익명 함수
+        const func2 = function(){
+            document.write("2.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        }
+        func2();
+
+        //매개변수 함수
+        function func3(str){
+            document.write(str);
+        }
+        func3("3.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+
+
+        //리턴값(결과값)이 있는 함수
+        function func4(){
+            const str ="4.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;";
+            return str;
+        }
+        const val = func4();
+        document.write(val);
+
+
+        //재귀함수: 함수 정의문 내에 함수를 호출하여 실행하는 함수
+        function func5(){
+            document.write("5.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+            //func5();
+        }
+        func5();
+
+
+        //재귀함수2: 함수를 여러번 실행하고 싶을 때
+        function func6(num){
+            if(num ==0 ){
+                document.write("6.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+            }else{
+                document.write("6.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+                func6(num - 1);
+            }
+        }
+        func6(9);
+
+
+        //콜백함수 : 함수를 변수에 저장하고 변수를 함수의 인자로 사용하여 매개변수 전달하는 함수
+        function callback(num){
+            //for문을 5번 실행
+            for(let i=1; i&lt;=5; i++ ){
+                num(i);
+            }
+        }
+        const fnuc7 = function(i){
+            document.write("7.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        }
+        callback(fnuc7);
+
+        //내부함수 : 함수 안에 함수를 선언하는 함수
+        function fnuc8out(){
+            function fnuc8out(){
+                document.write("8.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+            }
+            fnuc8out()
+        } 
+        fnuc8out()
+
+        //화살표 함수 - 선언적 함수
+        func9 = () =&gt;{
+            document.write("9.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        }
+        func9();
+
+        //화살표 함수 - 익명 함수
+        const func10 = () =&gt; {
+            document.write("10.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        }
+        func10();
+
+        //화살표 함수 - 리턴문
+        func11 = () =&gt; {
+            const str ="11.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;";
+            return str
+        }
+        const val11 = func11();
+        document.write(val11);
+
+        //화살표 함수 - 매개변수, 괄호
+        const func12= (str) =&gt;{
+            return str;
+        }
+        const val12 = func12("12.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        document.write(val12);
+
+        //화살표 함수 - 매개변수, 괄호 생략
+        const func13= str =&gt;{
+            return str;
+        }
+        const val13 = func13("13.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        document.write(val13);
+
+
+        //화살표 함수 - 리턴 생략
+        const func14= (str) =&gt;str;
+        const val14 = func14("14.함수가 실행되었습니다.&lt;br&gt;&lt;br&gt;");
+        document.write(val14);
+
+
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre>   
+
+                    <h2 id="intro8-2" class="page-header">함수</h2>
+                    <h2 id="intro8-3" class="page-header">함수</h2>
+                    <h2 id="intro8-4" class="page-header">함수</h2>
+                    <h2 id="intro8-5" class="page-header">함수</h2>
+                    <h2 id="intro8-6" class="page-header">함수</h2>
+                    <h2 id="intro8-7" class="page-header">함수</h2>
+                    <h2 id="intro8-8" class="page-header">함수</h2>
+                </div>
+                <!-- //Intro8 -->
+
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">객체</h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                </div>
+                <!-- //Intro9 -->
+
+
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">자바스크립트</a></li>
+                        <li><a href="#intro2">자바스크립트 기초</a></li>
+                        <li><a href="#intro3">변수</a>
+                            <ul class="nav">
+                                <li><a href="#intro3-1">변수 선언</a></li>
+                                <li><a href="#intro3-2">변수 유형</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro4">배열</a></li>
+                        <li><a href="#intro5">연산자</a>
+                            <ul class="nav">
+                                <li><a href="#intro5-1">산술 연산자</a></li>
+                                <li><a href="#intro5-2">대입 연산자</a></li>
+                                <li><a href="#intro5-3">증감 연산자</a></li>
+                                <li><a href="#intro5-4">비교 연산자</a></li>
+                                <li><a href="#intro5-5">논리 연산자</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro6">조건문</a>
+                            <ul class="nav">
+                                <li><a href="#intro6-1">if문</a></li>
+                                <li><a href="#intro6-2">if~else문</a></li>
+                                <li><a href="#intro6-3">다중if</a></li>
+                                <li><a href="#intro6-4">중첩 if</a></li>
+                                <li><a href="#intro6-5">switch문</a></li>
+                                <li><a href="#intro6-6">조건부 연산자</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro7">반복문</a>
+                            <ul class="nav">
+                                <li><a href="#intro7-1">whlie문</a></li>
+                                <li><a href="#intro7-2">do~whlie문</a></li>
+                                <li><a href="#intro7-3">for문</a></li>
+                                <li><a href="#intro7-4">for in문</a></li>
+                                <li><a href="#intro7-5">중첩 for문</a></li>
+                                <li><a href="#intro7-6">break문</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro8">함수</a></li>
+                        <li><a href="#intro9">객체</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+</body>
+
+</html>

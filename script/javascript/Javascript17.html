@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        let site =prompt ("네이버, 다음, 네이트, 구글 중 즐겨 사용하는 사이트는?")
+        let url = "0";
+        switch(site){
+            case"네이버": url ="https://www.naver.com/";
+            break;
+            case"다음": url ="https://www.daum.net/";
+            break;
+            case"네이트": url ="https://www.nate.com/";
+            break;
+            case"구글": url ="https://www.google.co.kr/";
+            break;
+            default: document.write("그런 사이트 없어요~");
+            break;
+        }
+        // alert(url)
+        if(url)location.href = url
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

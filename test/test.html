@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><img src="images/logo2.jpg" alt="정부24"></h1>
+            <div class="menu">
+                <ul>
+                    <li class="sub-menu">
+                        <a href="#">서비스</a>
+                        <ul>
+                            <li>분야별 정책정보</li>
+                            <li>정책뉴스</li>
+                            <li>연구보고서</li>
+                            <li>간행물</li>
+                            <li>정책자료</li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#">정책정보</a>
+                        <ul>
+                            <li>분야별 정책정보</li>
+                            <li>정책뉴스</li>
+                            <li>연구보고서</li>
+                            <li>간행물</li>
+                            <li>정책자료</li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#">기관 정보</a>
+                        <ul>
+                            <li>분야별 정책정보</li>
+                            <li>정책뉴스</li>
+                            <li>연구보고서</li>
+                            <li>간행물</li>
+                            <li>정책자료</li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#">고객센터</a>
+                        <ul>
+                            <li>전화</li>
+                            <li>안받으니</li>
+                            <li>전화하지</li>
+                            <li>마세요</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+        <section id="contents">
+            <article id="col1">
+                <img src="images/zzz.jpg" alt="">
+            </article>
+            <article  id="col2">
+                <h2><a href="#" class="dds" >자주 찾는 서비스 </a> |   <em><a href="#" class="wwwwwq">키워드 서비스</a> </em></h2>
+                <ul class="dddd">
+                    <li><a href="#"><img src="images/zzz1.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz1.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz1.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz1.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz1.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                </ul>
+                <ul class="sssss">
+                    <li><a href="#"><img src="images/zzz2.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz2.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz2.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz2.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                    <li><a href="#"><img src="images/zzz2.jpg" alt="주민"><strong>주민등록표</strong> </a></li>
+                </ul>
+            </article>
+            <article  id="col3">
+                <div class="zzz">
+                    <h2>공지사항</h2>
+                    <img src="images/zzz6.jpg" alt="앙">
+                    <ul>
+                        <li>dddddddddddddddddddddddddddd</li>
+                        <li>dddddddddddddddddddddddddddd</li>
+                        <li>dddddddddddddddddddddddddddd</li>
+                    </ul>
+                    <a href="#"><img src="images/zzz13.jpg" alt="더봐"></a>
+                </div>
+                <div class="xxx">
+                    <h2>공지사항</h2>
+                    <img src="images/zzz6.jpg" alt="앙">
+                    <ul>
+                        <li>dddddddddddddddddddddddddddd</li>
+                        <li>dddddddddddddddddddddddddddd</li>
+                        <li>dddddddddddddddddddddddddddd</li>
+                    </ul>
+                    <a href="#"><img src="images/zzz13.jpg" alt="더봐"></a>
+                </div>
+                <div class="ccc">
+                    <h2>공지사항</h2>
+                    <img src="images/zzz6.jpg" alt="앙">
+                    <ul>
+                        <li>dddddddddddddddddddddddddddd</li>
+                        <li>dddddddddddddddddddddddddddd</li>
+                        <li>dddddddddddddddddddddddddddd</li>
+                    </ul>
+                    <a href="#"><img src="images/zzz13.jpg" alt="더봐"></a>
+                </div>
+            </article>
+        </section>
+        <footer id="footer">
+            <ul>
+                <li class="aaa"><a href="#"><img src="images/zzz9.jpg" alt="정부"></a></li>
+                <li class="sss">아알하러앛퍼파어ㅡㄹ아팣<br>아ㅡ하ㅏㅡㄷ,ㅡ드러ㅡㄹㅊ팡<br>리이이응ㅍ이;ㅍㅇ</li>
+                <li class="ddd"><a href="#"><img src="images/zz10.jpg" alt="sns"></a></li>
+            </ul>
+
+        </footer>
+    </div>
+    <script src="script/jquery.min.js"></script>
+    <script>
+        $(".sub-menu ul").hide();
+        $(".sub-menu a").click(function(){
+            $(this).next("ul").slideToggle(100);
+        });
+        $(".sssss").hide()  
+        $(".dds").click(function(){
+            $(".dddd").show();
+            $(".sssss").hide();
+        });
+        $(".wwwwwq").click(function(){
+            $(".sssss").show()
+            $(".dddd").hide()
+        });
+    </script>
+</body>
+
+</html>

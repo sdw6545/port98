@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respomsive Latoyt04</title>
+
+    <style> 
+        *{margin: 0;padding: 0;}
+        #wrap {width: 100%; height: 327px; background:url(../site-webstandard/img/header_bg.jpg) repeat-x center top  ; }
+        .cscs {width: 1200px; margin: 0 auto; }
+        #header .container {width: 1200px; margin: 0 auto;}
+        .header { height: 327px;  }
+        .header .header-meun {text-align: right; }
+        .header .header-meun a {color: #fff; padding: 8px 0 6px 10px; display: inline-block; transition:color 0.3s ; }
+        .header .header-meun a:hover {color: #ccc; }
+        .header .header-tit {text-align: center;margin-top: 55px; }
+        .header .header-tit h1 {background: #51b0dc; color: #fff; font-size: 30px;display:inline-block; padding: 5px 30px; }
+        .header .header-tit a {color: #fff; display:inline-block; background:#4a9abf; font-size: 16px; padding: 10px 20px; margin-top: -7px;}
+        .header .header-icon {text-align: center; margin-top: 30px; }
+        .header .header-icon a { display: inline-block; width: 60px; height: 60px; background-image: url(../site-webstandard/img/icon.png);}
+        .header .header-icon a.icon1 {background-position: 0 0;}
+        .header .header-icon a.icon2 {background-position: 0 -60px; }
+        .header .header-icon a.icon3 {background-position: 0 -120px; }
+        .header .header-icon a.icon4 {background-position: 0 -180px; }
+        .header .header-icon a.icon1:hover {background-position: -60px 0;}
+        .header .header-icon a.icon2:hover {background-position: -60px -60px; }
+        .header .header-icon a.icon3:hover {background-position: -60px -120px; }
+        .header .header-icon a.icon4:hover {background-position: -60px -180px; }
+        #container1 {overflow: hidden;}
+        #container1 .section2-Box1 {width: 30%; height: 400px; float: left; background-color: #ab47bc ; }
+        #container1 .section2-Box2 {width: 70%; height: 200px; float: left; background-color: #9c27b0 ;}
+        #container1 .section2-Box3 {width: 70%; height: 200px;; float: left; background-color: #8e24aa ;}
+        #container2 {overflow: hidden;}
+        #container2 .section3-Box1 {width: 33.33333333%; height: 300px; background-color: #7b1fa2 ; float: left;}
+        #container2 .section3-Box2 {width: 33.33333333%; height: 300px; background-color: #6a1b9a ; float: left;}
+        #container2 .section3-Box3 {width: 33.33333333%; height: 300px; background-color: #4a148c ; float: left;}
+        #container3 {width: 100%; overflow: hidden; background-color: #ea80fc ; }
+        #container3 > div {width: 23%;  margin: 1%; height: 250px; float: left; background-color: #6200ea; border-radius: 10px;}
+        #footer {width: 100%; height: 100px; background-color: #e040fb ; }
+
+        @media(max-width:1220px){
+            #header .container {width: 100%;}
+            .cscs {width: 100%; }
+            #container2 .section3-Box1 {width: 50%;}
+            #container2 .section3-Box2 {width: 50%;}
+            #container2 .section3-Box3 {display: none;}
+            #container3 > div {width: 31%;}
+            #container3 .section4-Box4 {display: none;}
+            
+        }
+
+        @media(max-width:780px){
+            #container2 .section3-Box1 {width: 100%; }
+            #container2 .section3-Box2 {width: 100%; }
+        }
+
+        @media(max-width:480px){
+            #container1 .section2-Box1 {width: 100%; height: 200px; }
+            #container1 .section2-Box2 {width: 100%; height: 200px;}
+            #container1 .section2-Box3 {width: 100%; height: 200px;}
+            #container3 > div {width: 98%; }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="cscs">
+            <header id="header">
+                <div class="container">
+                    <div class="header">
+                        <div class="header-meun">
+                            <a href="">sdw</a>
+                            <a href="">dwfw</a>
+                            <a href="">sfwf</a>
+                        </div>
+                        <div class="header-tit"> 
+                            <h1>www14w44w</h1><br>
+                                <a href="http://sdw6545.dothome.co.kr/">sdw6545.dothome.co.kr</a>
+                        </div>
+                        <div class="header-icon">
+                            <a href="#" class="icon1"></a>
+                            <a href="#" class="icon2"></a>
+                            <a href="#" class="icon3"></a>
+                            <a href="#" class="icon4"></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section id="container1">
+                <div class="section2-Box1"></div>
+                <div class="section2-Box2"></div>
+                <div class="section2-Box3"></div>
+            </section>
+            <section id="container2">
+                <div class="section3-Box1"></div>
+                <div class="section3-Box2"></div>
+                <div class="section3-Box3"></div>
+            </section>
+            <section id="container3">
+                <div class="section4-Box1"></div>
+                <div class="section4-Box2"></div>
+                <div class="section4-Box3"></div>
+                <div class="section4-Box4"></div>
+            </section>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>

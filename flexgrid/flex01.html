@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex01</title>
+    <style>
+        .flex{
+            background: #f7f7f7;
+            border-radius: 3px;
+            padding: 20px;
+            counter-reset: items ;
+        }
+        .item{
+            border-radius: 3px;
+            background: #a2cbfa;
+            border: 1px solid #4390e1;
+            box-sizing: border-box;
+            box-shadow: 0 2px 2px rgba(0,90,250,0.05);
+            min-height: 100px;
+            color: #fff;
+            padding: 10px;
+        }
+        .item::before{
+            counter-increment:items ;
+            content:counter(items) ;
+        }
+        /* flex01 */
+        .flex01{display: flex;}
+
+        /* flex02 */
+        .flex02{display: flex; }
+        .item02 {flex-grow: 1;}
+
+        /* flex03 */
+        .flex03{display: flex; }
+        .item03{flex-grow: 1;}
+        .item03 + .item03 {margin-left: 2%;}
+
+        /* flex04 */
+        .flex04{display: flex; }
+        .item04{flex-grow: 1;}
+        .item04:nth-child(4) {flex-grow: 2;}
+        .item04 + .item04 {margin-left: 2%;}
+
+        /* flex05 */
+        .flex05{display: flex;flex-direction: row-reverse; }
+        .item05{flex-basis: 200px;margin-left: 2%;}
+
+        /* flex06 */
+        .flex06{display: flex;}
+        .item06{flex-basis: 10%;}
+        .item06 + .item06 {margin-left: 2%;}
+        .item06:last-child{margin-left: auto;}
+
+        /* flex07 */
+        .flex07{display: flex;justify-content: space-between;}
+        .item07{flex-basis: 100px;}
+        .item07:nth-child(1){flex-basis: 100px;}
+        .item07:nth-child(2){flex-basis: 300px;}
+        .item07:nth-child(3){flex-basis: 100px;}
+    </style>
+</head>
+<body>
+    <div class="flex flex01">
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+        <div class="item item01"></div>
+    </div>
+    <div class="flex flex02">
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+        <div class="item item02"></div>
+    </div>
+    <div class="flex flex03">
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+        <div class="item item03"></div>
+    </div>
+    <div class="flex flex04">
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+        <div class="item item04"></div>
+    </div>
+    <div class="flex flex05">
+        <div class="item item05"></div>
+        <div class="item item05"></div>
+        <div class="item item05"></div>
+        <div class="item item05"></div>
+    </div>
+    <div class="flex flex06">
+        <div class="item item06"></div>
+        <div class="item item06"></div>
+        <div class="item item06"></div>
+        <div class="item item06"></div>
+        <div class="item item06"></div>
+    </div>
+    <div class="flex flex07">
+        <div class="item item07"></div>
+        <div class="item item07"></div>
+        <div class="item item07"></div>
+    </div>
+</body>
+</html> 

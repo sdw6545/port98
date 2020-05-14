@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <style>
+        li {
+            margin: 8px;
+        }
+
+        a {
+            border: 1px solid #5f6368;
+            padding: 7px 20px 5px 20px;
+            display: inline-block;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #000;
+            margin: 4px;
+        }
+
+        .onRed {
+            padding: 4px 6px 2px 6px;
+            font-size: 90%;
+            color: #c7254e;
+            white-space: nowrap;
+            background-color: #f9f2f4;
+            border-radius: 4px;
+            border: 1px dashed #a51a3d;
+        }
+
+        .onBlue {
+            padding: 4px 6px 2px 6px;
+            font-size: 90%;
+            color: #3d90b7;
+            white-space: nowrap;
+            background-color: #e7f6fd;
+            border-radius: 4px;
+            border: 1px dashed #3d90b7;
+        }
+    </style>
+</head>
+<body>
+    <div class="choice">
+        <a href="#" class="btn1">이미지크기 100px</a>
+        <a href="#" class="btn2">주소값 가져오기</a>
+        <a href="#" class="btn3">alt 가져오기</a>
+        <a href="#" class="btn4">이미지 주소값 변경 </a>
+    </div>
+    <div class="list">
+        <p class="text"></p>
+        <img src="../../illustrator/img/sample01.jpg" alt="이미지">
+    </div>
+
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        //버튼1을 클릭하면 이미지 사이즈를 100px로 변경해주세요~
+        $(".btn1").click(function(){
+            $(".list img").css("width","100px");
+        });
+
+        $(".btn2").click(function(){
+            let text = $(".list img").attr("src");
+            $(".list .text").text(text);
+        });
+
+        //버튼3을 클릭하면 이미지의 alt값을 가져와서 출력시켜주세요~
+        $(".btn3").click(function(){
+            let text = $(".list img").attr("alt");
+            $(".list .text").text(text);
+        });
+
+        $(".btn4").click(function(){
+            $(".list img").attr("src","../../illustrator/img/sample03.jpg")
+        });
+    </script>
+</body>
+</html>

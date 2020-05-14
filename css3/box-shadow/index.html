@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="김용태">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content=" 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인">
+    <title>김용태 | box-shadow</title>
+ 
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>box-shadow v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://sdw6545.dothome.co.kr" target="_blank">sdw6545.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+					<h2 id="intro1" class="page-header">box-shadow</h2>
+					<p class="bs-callout bs-callout-info">box-shadow 속성은 박스 요소의 그림자를 설정합니다.</p>	
+                    <h3 class="pt30">문법</h3>
+                    <p class="bs-callout bs-callout-info">box-shadow : none | h-shadow | v-shadow | blur | spread |
+                        color | inset </p>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>none</td>
+                                    <td>박스에 그림자를 적용하지 않습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>h-shadow</td>
+                                    <td>그림자의 수평(X축) 거리를 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>v-shadow</td>
+                                    <td>그림자의 수직(Y축) 거리를 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>blur</td>
+                                    <td>그림자의 흐림정도 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>spread</td>
+                                    <td>그림자의 거리 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>color</td>
+                                    <td>그림자의 색 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>inset</td>
+                                    <td>그림자를 내부에 적용할 수 있습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+				</div>
+				<!-- //Intro1 -->
+                <style>
+                    .sBox{background-color: #f4f8fa; padding: 15px; overflow: hidden;}
+                    .sBox .box{width: 150px; height: 150px; border: 1px solid #ccc; float:left; font-family: 'Abel'; text-align: center; line-height: 150px; color:#fff; }
+                    .sBox .box > div{ transition: all 0.3s;}
+                    .sBox .box > div:hover{box-shadow: none;}
+                    .sBox .box.sha1{ background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);}
+                    .sBox .box.sha2{ background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);}
+                    .sBox .box.sha3{ background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);}
+                    .sBox .box.sha4{ background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);}
+                    .sBox .box.sha5{ background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%); }
+                    .sBox .box.sha6{ background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); }
+                  
+
+                </style>
+                <style>
+                    .shadow01{box-shadow: 0px 0px 5px rgba(0,0,0,0.8);}
+                    .shadow02{box-shadow: 2px 2px 5px rgba(0,0,0,0.8);}
+                    .shadow03{box-shadow: 4px 4px 5px rgba(0,0,0,0.8);}
+                    .shadow04{box-shadow: 6px 6px 5px rgba(0,0,0,0.8);}
+                    .shadow05{box-shadow: 8px 8px 5px rgba(0,0,0,0.8);}
+                    .shadow06{box-shadow: 10px 10px 5px rgba(0,0,0,0.8);}
+                    .shadow07{box-shadow: 12px 12px 5px rgba(0,0,0,0.8);}
+                    .shadow08{box-shadow: 14px 14px 5px rgba(0,0,0,0.8);}
+
+                </style>
+
+                
+                    <!-- 
+                   
+                	
+                
+                	.sBox>.box.sha7*10>.shadow$$@61{shadow$$@61}
+                	.sBox>.box.sha8*10>.shadow$$@71{shadow$$@71}
+                    .sBox>.box.sha9*10>.shadow$$@81{shadow$$@81} -->
+
+
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+					<h2 id="intro2" class="page-header">Sample01</h2>
+                    <div class="sBox">
+                        <div class="box sha1">
+                            <div class="shadow01">shadow01</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow02">shadow02</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow03">shadow03</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow04">shadow04</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow05">shadow05</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow06">shadow06</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow07">shadow07</div>
+                        </div>
+                        <div class="box sha1">
+                            <div class="shadow08">shadow08</div>
+                        </div>
+                    </div>
+
+<pre class="line-numbers language-css"><code>.shadow01 {box-shadow: 0px 0px 5px rgba(0,0,0,0.8);}
+.shadow02 {box-shadow: 2px 2px 5px rgba(0,0,0,0.8);}
+.shadow03 {box-shadow: 4px 4px 5px rgba(0,0,0,0.8);}
+.shadow04 {box-shadow: 6px 6px 5px rgba(0,0,0,0.8);}
+.shadow05 {box-shadow: 8px 8px 5px rgba(0,0,0,0.8);}
+.shadow06 {box-shadow: 10px 10px 5px rgba(0,0,0,0.8);}
+.shadow07 {box-shadow: 12px 12px 5px rgba(0,0,0,0.8);}
+.shadow08 {box-shadow: 14px 14px 5px rgba(0,0,0,0.8);}
+</code></pre>            
+
+				</div>
+				<!-- //Intro2 -->
+                
+                <style>
+                    .shadow09{box-shadow: 4px 4px 0 rgba(0,0,0,0.8);}
+                    .shadow10{box-shadow: 4px 4px 3px rgba(0,0,0,0.8);}
+                    .shadow11{box-shadow: 4px 4px 6px rgba(0,0,0,0.8);}
+                    .shadow12{box-shadow: 4px 4px 9px rgba(0,0,0,0.8);}
+                    .shadow13{box-shadow: 4px 4px 12px rgba(0,0,0,0.8);}
+                    .shadow14{box-shadow: 4px 4px 15px rgba(0,0,0,0.8);}
+                    .shadow15{box-shadow: 4px 4px 18px rgba(0,0,0,0.8);}
+                    .shadow16{box-shadow: 4px 4px 21px rgba(0,0,0,0.8);}
+
+                </style>
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+					<h2 id="intro3" class="page-header">Sample02</h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <div class="sBox">
+                        <div class="box sha2">
+                            <div class="shadow09">shadow09</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow10">shadow10</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow11">shadow11</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow12">shadow12</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow13">shadow13</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow14">shadow14</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow15">shadow15</div>
+                        </div>
+                        <div class="box sha2">
+                            <div class="shadow16">shadow16</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.shadow09{box-shadow: 4px 4px 0 rgba(0,0,0,0.8);}
+.shadow10{box-shadow: 4px 4px 3px rgba(0,0,0,0.8);}
+.shadow11{box-shadow: 4px 4px 6px rgba(0,0,0,0.8);}
+.shadow12{box-shadow: 4px 4px 9px rgba(0,0,0,0.8);}
+.shadow13{box-shadow: 4px 4px 12px rgba(0,0,0,0.8);}
+.shadow14{box-shadow: 4px 4px 15px rgba(0,0,0,0.8);}
+.shadow15{box-shadow: 4px 4px 18px rgba(0,0,0,0.8);}
+.shadow16{box-shadow: 4px 4px 21px rgba(0,0,0,0.8);}
+</code></pre>  
+				</div>
+				<!-- //Intro3 -->
+                <style>
+                    .shadow17{box-shadow: 4px 4px 0  1px rgba(0,0,0,0.8);}
+                    .shadow18{box-shadow: 8px 8px 0  1px rgba(0,0,0,0.8);}
+                    .shadow19{box-shadow: 12px 12px 0  1px rgba(0,0,0,0.8);}
+                    .shadow20{box-shadow: 16px 16px 0  1px rgba(0,0,0,0.8);}
+
+                    .shadow21{box-shadow: -4px -4px 0  1px rgba(0,0,0,0.8);}
+                    .shadow22{box-shadow: -8px -8px 0  1px rgba(0,0,0,0.8);}
+                    .shadow23{box-shadow: -12px -12px 0  1px rgba(0,0,0,0.8);}
+                    .shadow24{box-shadow: -16px -16px 0  1px rgba(0,0,0,0.8);}
+                </style>
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Sample03</h2>
+                    <div class="sBox">
+                        <div class="box sha3">
+                            <div class="shadow17">shadow17</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow18">shadow18</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow19">shadow19</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow20">shadow20</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow21">shadow21</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow22">shadow22</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow23">shadow23</div>
+                        </div>
+                        <div class="box sha3">
+                            <div class="shadow24">shadow24</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.shadow17{box-shadow: 4px 4px 0  1px rgba(0,0,0,0.8);}
+.shadow18{box-shadow: 8px 8px 0  1px rgba(0,0,0,0.8);}
+.shadow19{box-shadow: 12px 12px 0  1px rgba(0,0,0,0.8);}
+.shadow20{box-shadow: 16px 16px 0  1px rgba(0,0,0,0.8);}
+
+.shadow21{box-shadow: -4px -4px 0  1px rgba(0,0,0,0.8);}
+.shadow22{box-shadow: -8px -8px 0  1px rgba(0,0,0,0.8);}
+.shadow23{box-shadow: -12px -12px 0  1px rgba(0,0,0,0.8);}
+.shadow24{box-shadow: -16px -16px 0  1px rgba(0,0,0,0.8);}
+</code></pre>  
+				</div>
+				<!-- //Intro4 -->
+                <style>
+                    .shadow25{box-shadow: 0px 0px 0px  1px rgba(0,0,0,0.8);}
+                    .shadow26{box-shadow: 0px 0px 0px  3px rgba(0,0,0,0.8);}
+                    .shadow27{box-shadow: 0px 0px 0px  5px rgba(0,0,0,0.8);}
+                    .shadow28{box-shadow: 0px 0px 0px  7px rgba(0,0,0,0.8);}
+                    .shadow29{box-shadow: 0px 0px 0px  9px rgba(0,0,0,0.8);}
+                    .shadow30{box-shadow: 0px 0px 0px  11px rgba(0,0,0,0.8);}
+                    .shadow31{box-shadow: 0px 0px 0px  13px rgba(0,0,0,0.8);}
+                    .shadow32{box-shadow: 0px 0px 0px  15px rgba(0,0,0,0.8);}
+                </style>
+
+                 <!-- Intro5 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Sample04</h2>
+                    
+                	<div class="sBox">
+                        <div class="box sha4">
+                            <div class="shadow25">shadow25</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow26">shadow26</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow27">shadow27</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow28">shadow28</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow29">shadow29</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow30">shadow30</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow31">shadow31</div>
+                        </div>
+                        <div class="box sha4">
+                            <div class="shadow32">shadow32</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.shadow25{box-shadow: 0px 0px 0px  1px rgba(0,0,0,0.8);}
+.shadow26{box-shadow: 0px 0px 0px  3px rgba(0,0,0,0.8);}
+.shadow27{box-shadow: 0px 0px 0px  5px rgba(0,0,0,0.8);}
+.shadow28{box-shadow: 0px 0px 0px  7px rgba(0,0,0,0.8);}
+.shadow29{box-shadow: 0px 0px 0px  9px rgba(0,0,0,0.8);}
+.shadow30{box-shadow: 0px 0px 0px  11px rgba(0,0,0,0.8);}
+.shadow31{box-shadow: 0px 0px 0px  13px rgba(0,0,0,0.8);}
+.shadow32{box-shadow: 0px 0px 0px  15px rgba(0,0,0,0.8);}
+</code></pre>  
+				</div>
+                <!-- //Intro5 -->
+            
+                <style>
+                    .shadow33{box-shadow: 0px 0px 5px  1px rgba(0,0,0,0.8) inset;}
+                    .shadow34{box-shadow: 0px 0px 6px  2px rgba(0,0,0,0.8) inset;}
+                    .shadow35{box-shadow: 0px 0px 7px  3px rgba(0,0,0,0.8) inset;}
+                    .shadow36{box-shadow: 0px 0px 8px  4px rgba(0,0,0,0.8) inset;}
+                    .shadow37{box-shadow: 0px 0px 9px  5px rgba(0,0,0,0.8) inset;}
+                    .shadow38{box-shadow: 0px 0px 10px  6px rgba(0,0,0,0.8) inset;}
+                    .shadow39{box-shadow: 0px 0px 11px  7px rgba(0,0,0,0.8) inset;}
+                    .shadow40{box-shadow: 0px 0px 12px  8px rgba(0,0,0,0.8) inset;}
+                </style>
+
+                 <!-- Intro6 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Sample05</h2>
+                    <div class="sBox">
+                        <div class="box sha5">
+                            <div class="shadow33">shadow33</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow34">shadow34</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow35">shadow35</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow36">shadow36</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow37">shadow37</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow38">shadow38</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow39">shadow39</div>
+                        </div>
+                        <div class="box sha5">
+                            <div class="shadow40">shadow40</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.shadow33{box-shadow: 0px 0px 5px  1px rgba(0,0,0,0.8) inset;}
+.shadow34{box-shadow: 0px 0px 6px  2px rgba(0,0,0,0.8) inset;}
+.shadow35{box-shadow: 0px 0px 7px  3px rgba(0,0,0,0.8) inset;}
+.shadow36{box-shadow: 0px 0px 8px  4px rgba(0,0,0,0.8) inset;}
+.shadow37{box-shadow: 0px 0px 9px  5px rgba(0,0,0,0.8) inset;}
+.shadow38{box-shadow: 0px 0px 10px  6px rgba(0,0,0,0.8) inset;}
+.shadow39{box-shadow: 0px 0px 11px  7px rgba(0,0,0,0.8) inset;}
+.shadow40{box-shadow: 0px 0px 12px  8px rgba(0,0,0,0.8) inset;}
+</code></pre>  
+				</div>
+                <!-- //Intro6 -->
+                <style>
+                    .shadow41{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6);
+                    }
+                    .shadow42{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55);
+                    }
+                    .shadow43{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55),
+                        9px 9px 0 0 rgba(88,11,171,0.5);
+                    }
+                    .shadow44{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55),
+                        9px 9px 0 0 rgba(88,11,171,0.5),
+                        12px 12px 0 0 rgba(88,11,171,0.45);
+                    }
+                    .shadow45{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55),
+                        9px 9px 0 0 rgba(88,11,171,0.5),
+                        12px 12px 0 0 rgba(88,11,171,0.45),
+                        15px 15px 0 0 rgba(88,11,171,0.40);
+                    }
+                    .shadow46{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55),
+                        9px 9px 0 0 rgba(88,11,171,0.5),
+                        12px 12px 0 0 rgba(88,11,171,0.45),
+                        15px 15px 0 0 rgba(88,11,171,0.40),
+                        18px 18px 0 0 rgba(88,11,171,0.35);
+                    }
+                    .shadow47{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55),
+                        9px 9px 0 0 rgba(88,11,171,0.5),
+                        12px 12px 0 0 rgba(88,11,171,0.45),
+                        15px 15px 0 0 rgba(88,11,171,0.40),
+                        18px 18px 0 0 rgba(88,11,171,0.35),
+                        21px 21px 0 0 rgba(88,11,171,0.30);
+                    }
+                    .shadow48{
+                        box-shadow: 
+                        3px 3px 0 0 rgba(88,11,171,0.6),
+                        6px 6px 0 0 rgba(88,11,171,0.55),
+                        9px 9px 0 0 rgba(88,11,171,0.5),
+                        12px 12px 0 0 rgba(88,11,171,0.45),
+                        15px 15px 0 0 rgba(88,11,171,0.40),
+                        18px 18px 0 0 rgba(88,11,171,0.35),
+                        21px 21px 0 0 rgba(88,11,171,0.30),
+                        24px 24px 0 0 rgba(88,11,171,0.25);
+                    }
+                </style>
+                 <!-- Intro7 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Sample06</h2>
+                    <div class="sBox">
+                        <div class="box sha6">
+                            <div class="shadow41">shadow41</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow42">shadow42</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow43">shadow43</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow44">shadow44</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow45">shadow45</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow46">shadow46</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow47">shadow47</div>
+                        </div>
+                        <div class="box sha6">
+                            <div class="shadow48">shadow48</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.shadow41{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6);
+}
+.shadow42{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55);
+}
+.shadow43{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55),
+    9px 9px 0 0 rgba(88,11,171,0.5);
+}
+.shadow44{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55),
+    9px 9px 0 0 rgba(88,11,171,0.5),
+    12px 12px 0 0 rgba(88,11,171,0.45);
+}
+.shadow45{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55),
+    9px 9px 0 0 rgba(88,11,171,0.5),
+    12px 12px 0 0 rgba(88,11,171,0.45),
+    15px 15px 0 0 rgba(88,11,171,0.40);
+}
+.shadow46{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55),
+    9px 9px 0 0 rgba(88,11,171,0.5),
+    12px 12px 0 0 rgba(88,11,171,0.45),
+    15px 15px 0 0 rgba(88,11,171,0.40),
+    18px 18px 0 0 rgba(88,11,171,0.35);
+}
+.shadow47{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55),
+    9px 9px 0 0 rgba(88,11,171,0.5),
+    12px 12px 0 0 rgba(88,11,171,0.45),
+    15px 15px 0 0 rgba(88,11,171,0.40),
+    18px 18px 0 0 rgba(88,11,171,0.35),
+    21px 21px 0 0 rgba(88,11,171,0.30);
+}
+.shadow48{
+    box-shadow: 
+    3px 3px 0 0 rgba(88,11,171,0.6),
+    6px 6px 0 0 rgba(88,11,171,0.55),
+    9px 9px 0 0 rgba(88,11,171,0.5),
+    12px 12px 0 0 rgba(88,11,171,0.45),
+    15px 15px 0 0 rgba(88,11,171,0.40),
+    18px 18px 0 0 rgba(88,11,171,0.35),
+    21px 21px 0 0 rgba(88,11,171,0.30),
+    24px 24px 0 0 rgba(88,11,171,0.25);
+}
+</code></pre>  
+				</div>
+                <!-- //Intro7 -->
+
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Sample07</h2>
+                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="sdw6545" data-slug-hash="mdJgRrd" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Button Animation">
+                        <span>See the Pen <a href="https://codepen.io/sdw6545/pen/mdJgRrd">
+                        Button Animation</a> by 김용태 (<a href="https://codepen.io/sdw6545">@sdw6545</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    
+                </div>
+                <!-- Intro8 -->
+
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">Sample08</h2>
+                    <p class="codepen" data-height="1000" data-theme-id="light" data-default-tab="result" data-user="sdw6545" data-slug-hash="poJXQgj" style="height: 1000px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Box Shadow Editor">
+                        <span>See the Pen <a href="https://codepen.io/sdw6545/pen/poJXQgj">
+                        Box Shadow Editor</a> by 김용태 (<a href="https://codepen.io/sdw6545">@sdw6545</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </div>
+                <!-- Intro9 -->
+
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">Sample09</h2>
+                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="wifeo" data-slug-hash="qzwkb" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css hover zoom scale">
+                        <span>See the Pen <a href="https://codepen.io/wifeo/pen/qzwkb">
+                        css hover zoom scale</a> by Wifeo (<a href="https://codepen.io/wifeo">@wifeo</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </div>
+                <!-- Intro10 -->
+                          
+                
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">box-shadow</a></li>
+                        <li><a href="#intro2">Sample01</a></li>                        
+                        <li><a href="#intro3">Sample02</a></li>
+                        <li><a href="#intro4">Sample03</a></li>
+                        <li><a href="#intro5">Sample04</a></li>
+                        <li><a href="#intro6">Sample05</a></li>
+                        <li><a href="#intro7">Sample06</a></li>
+                        <li><a href="#intro8">Sample08</a></li>
+                        <li><a href="#intro9">Sample09</a></li>
+                        <li><a href="#intro10">Sample10</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+</body>
+
+</html>

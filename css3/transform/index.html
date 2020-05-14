@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="김용태">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, 김용태">
+    <title>김용태 transform</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>transform Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://sdw6545.dothome.co.kr" target="_blank">sdw6545.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">Transform</h2>
+
+                    <h3 class="pt30">Transform</h3>
+                    <p>변환(Transform)은 요소의 좌표를 조작하여, 위치나 크기, 회전, 각도 등을 변경하는 속성입니다. 이동(translate), 확대(scale), 회전(rotate),
+                        기울기(skew), 행렬변환(matrix)가 있습니다.</p>
+                    <p class="bs-callout bs-callout-info">
+                        Transform : none | martix() | translate() | translateX() | translatyY() | scale() | scaleX() |
+                        scaleY() | rotate() | rotateX() | rotateY() | skew() | skewX() | skewY() | martix3d() |
+                        translate3d() | translateZ() | scale3d() | scaleZ() | rotate3d() | rotateZ() | perspective()
+                    </p>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>문법</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="5" class="va">translate</td>
+                                    <td>translate()</td>
+                                    <td>transform: translate(10px, 20px)</td>
+                                    <td>X좌표, Y좌표 이동을 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>translate3d()</td>
+                                    <td>transform: translate3d(10px, 20px, 30px)</td>
+                                    <td>X좌표, Y좌표, Z좌표 이동을 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>translateX()</td>
+                                    <td>transform: translateX(10px)</td>
+                                    <td>X좌표 이동을 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>translateY()</td>
+                                    <td>transform: translateY(10px)</td>
+                                    <td>Y좌표 이동을 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>translateZ()</td>
+                                    <td>transform: translateZ(10px)</td>
+                                    <td>Z좌표 이동을 나타냅니다.</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="5" class="va">scale</td>
+                                    <td>scale()</td>
+                                    <td>transform: scale(2, 2)</td>
+                                    <td>선택한 요소의 X축과 Y축 확대를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>scale3d()</td>
+                                    <td>transform: scale3d(2, 2, 2)</td>
+                                    <td>선택한 요소의 X축, Y축, Z축 확대를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>scaleX()</td>
+                                    <td>transform: scaleX(2)</td>
+                                    <td>선택한 요소의 X축 확대를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>scaleY()</td>
+                                    <td>transform: scaleY(2)</td>
+                                    <td>선택한 요소의 Y축 확대를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>scaleZ()</td>
+                                    <td>transform: scaleZ(2)</td>
+                                    <td>선택한 요소의 Z축 확대를 설정합니다.</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td rowspan="5" class="va">rotate</td>
+                                    <td>rotate()</td>
+                                    <td>transform: rotate(10deg, 20deg)</td>
+                                    <td>선택한 요소의 X축, Y축 회전을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>rotate3d()</td>
+                                    <td>transform: rotate3d(10deg, 20deg, 30deg)</td>
+                                    <td>선택한 요소의 X축, Y축, Z축 회전을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>rotateX()</td>
+                                    <td>transform: rotateX(10deg)</td>
+                                    <td>선택한 요소의 X축 회전을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>rotateY()</td>
+                                    <td>transform: rotateY(10deg)</td>
+                                    <td>선택한 요소의 Y축 회전을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>rotateZ()</td>
+                                    <td>transform: rotateZ(10deg)</td>
+                                    <td>선택한 요소의 Z축 회전을 설정합니다.</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="3" class="va">skew</td>
+                                    <td>skew()</td>
+                                    <td>transform: skew(10deg, 20deg)</td>
+                                    <td>선택한 요소의 X축, Y축 기울기를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>skewX()</td>
+                                    <td>transform: skewX(10deg)</td>
+                                    <td>선택한 요소의 X축 기울기를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>skewY()</td>
+                                    <td>transform: skewY(10deg)</td>
+                                    <td>선택한 요소의 Y축 기울기를 설정합니다.</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="5" class="va">etc</td>
+                                    <td>transform-origin</td>
+                                    <td>transform-origin: 20%, 30%</td>
+                                    <td>선택한 요소의 X축, Y축 기준점을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>transform-style</td>
+                                    <td>transform-style: preserve-3d</td>
+                                    <td>선택한 요소 스타일을 3D로 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>perspective</td>
+                                    <td>perspective: 500px</td>
+                                    <td>선택한 요소의 원근점 거리를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>perspective-origin</td>
+                                    <td>perspective-origin: 500px</td>
+                                    <td>선택한 요소의 원근점 뱡향을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>backface-visibility</td>
+                                    <td>backface-visibility: hidden;</td>
+                                    <td>선택한 요소의 3D 뒷면의 배경 유무를 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //Intro1 -->
+
+                <style>
+                    .sBox {
+                        background-color: #f4f8fa;
+                        padding: 15px;
+                        overflow: hidden;
+                    }
+
+                    .sBox .box {
+                        perspective: 500px;
+                        width: 130px;
+                        height: 130px;
+                        border: 1px solid #ccc;
+                        float: left;
+                        font-family: 'Abel';
+                        text-align: center;
+                        line-height: 130px;
+                        color: #fff;
+                        margin: 33px;
+                    }
+
+                    .sBox .box div {
+                        transition: all 0.3s;
+                    }
+
+                    .sBox .box div:hover {
+                        transform: none;
+                    }
+
+                    .sBox .box.tra1 >div {
+                        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    }
+                    .sBox .box.sca1>div{
+                        background-image: linear-gradient(135deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); 
+                    }
+                    .sBox .box.rot1>div{background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); 
+                    }
+                    .sBox .box.ske1>div{background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+                    }
+                    .sBox .box.ori1>div{background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+                    }
+                </style>
+
+
+                <style>
+                    .translate01 {transform: translate(10px, 10px); }
+                    .translate02 {transform: translate(20px, 20px); }
+                    .translate03 {transform: translate(30px, 30px); }
+                    .translate04 {transform: translate(40px, 40px); }
+                </style>
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">Sample01-translate</h2>
+                    <div class="sBox">
+                        <div class="box tra1">
+                            <div class="translate01">translate01</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate02">translate02</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate03">translate03</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate04">translate04</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.translate01 {transform: translate(10px, 10px); }
+.translate02 {transform: translate(20px, 20px); }
+.translate03 {transform: translate(30px, 30px); }
+.translate04 {transform: translate(40px, 40px); }
+
+</code></pre>
+
+                </div>
+                <!-- //Intro2 -->
+
+                <style>
+                    .translate05 {transform: translateX(10px); }
+                    .translate06 {transform: translateX(20px); }
+                    .translate07 {transform: translateX(30px); }
+                    .translate08 {transform: translateX(40px); }
+                </style>
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Sample02-translateX</h2>
+                    <div class="sBox">
+                        <div class="box tra1">
+                            <div class="translate05">translate05</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate06">translate06</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate07">translate07</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate08">translate08</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.translate05 {transform: translateX(10px); }
+.translate06 {transform: translateX(20px); }
+.translate07 {transform: translateX(30px); }
+.translate08 {transform: translateX(40px); }
+</code></pre>
+                </div>
+                <!-- //Intro3 -->
+                <style>
+                    .translate09 {transform: translateY(10px);  }
+                    .translate10 {transform: translateY(20px); }
+                    .translate11 {transform: translateY(30px); }
+                    .translate12 {transform: translateY(40px); }
+                </style>
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Sample03-translateY</h2>
+                    <div class="sBox">
+                        <div class="box tra1">
+                            <div class="translate09">translate09</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate10">translate10</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate11">translate11</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate12">translate12</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.translate09 {transform: translateY(10px); }
+.translate10 {transform: translateY(20px); }
+.translate11 {transform: translateY(30px); }
+.translate12 {transform: translateY(40px); }
+</code></pre>
+                </div>
+                <!-- //Intro4 -->
+
+                <style>
+                    .translate13 {transform:translateZ(10px); opacity: .6;}
+                    .translate14 {transform:translateZ(40px); opacity: .6;}
+                    .translate15 {transform:translateZ(80px); opacity: .6;}
+                    .translate16 {transform:translateZ(120px); opacity: .6;}
+                </style>
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Sample04-translateZ</h2>
+                    <div class="sBox">
+                        <div class="box tra1">
+                            <div class="translate13">translate13</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate14">translate14</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate15">translate015</div>
+                        </div>
+                        <div class="box tra1">
+                            <div class="translate16">translate16</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.translate13 {transform:translateZ(10px); opacity: .6;}
+.translate14 {transform:translateZ(40px); opacity: .6;}
+.translate15 {transform:translateZ(80px); opacity: .6;}
+.translate16 {transform:translateZ(120px); opacity: .6;}                       
+</code></pre>
+                </div>
+                <!-- //Intro5 -->
+                <style>
+                    .scale1 {transform: scale(1.1, 1.1); opacity: .6;  }
+                    .scale2 {transform: scale(1.2, 1.2); opacity: .6;  }
+                    .scale3 {transform: scale(1.3, 1.3); opacity: .6;  }
+                    .scale4 {transform: scale(1.4, 1.4); opacity: .6;  }
+                </style>
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Sample05-scale 확대</h2>
+                    <div class="sBox">
+                        <div class="box sca1">
+                            <div class="scale1">scale1</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale2">scale2</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale3">scale3</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale4">scale4</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.scale1 {transform: scale(1.1, 1.1); opacity: .6;  }
+.scale2 {transform: scale(1.2, 1.2); opacity: .6;  }
+.scale3 {transform: scale(1.3, 1.3); opacity: .6;  }
+.scale4 {transform: scale(1.4, 1.4); opacity: .6;  }
+</code></pre>
+                </div>
+                <!-- //Intro6 -->
+                <style>
+                    .scale5 {transform: scale(0.9, 0.9); opacity: .6; }
+                    .scale6 {transform: scale(0.8, 0.8); opacity: .6; }
+                    .scale7 {transform: scale(0.7, 0.7); opacity: .6; }
+                    .scale8 {transform: scale(0.6, 0.6); opacity: .6; }
+                </style>
+
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Sample06-scale 축소</h2>
+                    <div class="sBox">
+                        <div class="box sca1">
+                            <div class="scale5">scale5</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale6">scale6</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale7">scale7</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale8">scale8</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.scale5 {transform: scale(0.9, 0.9); opacity: .6; }
+.scale6 {transform: scale(0.8, 0.8); opacity: .6; }
+.scale7 {transform: scale(0.7, 0.7); opacity: .6; }
+.scale8 {transform: scale(0.6, 0.6); opacity: .6; }
+</code></pre>
+                </div>
+                <!-- //Intro7 -->
+
+                <style>
+                    .scale9  {transform: scaleX(1.1); opacity: .6;}
+                    .scale10 {transform: scaleX(1.2); opacity: .6;}
+                    .scale11 {transform: scaleX(1.3); opacity: .6;}
+                    .scale12 {transform: scaleX(1.4); opacity: .6;}
+                </style>
+
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Sample07-scaleX</h2>
+                    <div class="sBox">
+                        <div class="box sca1">
+                            <div class="scale9">scale9</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale10">scale10</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale11">scale11</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale12">scale12</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.scale9  {transform: scaleX(1.1); opacity: .6;}
+.scale10 {transform: scaleX(1.2); opacity: .6;}
+.scale11 {transform: scaleX(1.3); opacity: .6;}
+.scale12 {transform: scaleX(1.4); opacity: .6;}
+</code></pre>
+                </div>
+                <!-- //Intro8 -->
+
+                <style>
+                    .scale13 {transform: scaleY(1.1); opacity: .6;}
+                    .scale14 {transform: scaleY(1.2); opacity: .6;}
+                    .scale15 {transform: scaleY(1.3); opacity: .6;}
+                    .scale16 {transform: scaleY(1.4); opacity: .6;}
+                </style>
+
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">Sample08-scaleY</h2>
+                    <div class="sBox">
+                        <div class="box sca1">
+                            <div class="scale13">scale13</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale14">scale14</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale15">scale15</div>
+                        </div>
+                        <div class="box sca1">
+                            <div class="scale16">scale16</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.scale13  {transform: scaleY(1.1); opacity: .6;}
+.scale14 {transform: scaleY(1.2); opacity: .6;}
+.scale15 {transform: scaleY(1.3); opacity: .6;}
+.scale16 {transform: scaleY(1.4); opacity: .6;}
+</code></pre>
+                </div>
+                <!-- //Intro9 -->
+                <style>
+                    .rotate1 {transform: rotate(10deg);  }
+                    .rotate2 {transform: rotate(20deg);  }
+                    .rotate3 {transform: rotate(30deg);  }
+                    .rotate4 {transform: rotate(40deg);  }
+                </style>
+                
+
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">Sample09-rotate</h2>
+                    <div class="sBox">
+                        <div class="box rot1">
+                            <div class="rotate1">rotate1</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate2">rotate2</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate3">rotate3</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate4">rotate4</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.rotate1 {transform: rotate(10deg);  }
+.rotate2 {transform: rotate(20deg);  }
+.rotate3 {transform: rotate(30deg);  }
+.rotate4 {transform: rotate(40deg);  }
+</code></pre>
+                </div>
+                <!-- //Intro10 -->
+                <style>
+                    .rotate5 {transform: rotateY(10deg);  }
+                    .rotate6 {transform: rotateY(20deg);  }
+                    .rotate7 {transform: rotateY(30deg);  }
+                    .rotate8 {transform: rotateY(40deg);  }
+                </style>
+                
+
+                <!-- Intro11 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro11" class="page-header">Sample10-rotateY</h2>
+                    <div class="sBox">
+                        <div class="box rot1">
+                            <div class="rotate5">rotate5</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate6">rotate6</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate7">rotate7</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate8">rotate8</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.rotate5 {transform: rotateY(10deg);  }
+.rotate6 {transform: rotateY(20deg);  }
+.rotate7 {transform: rotateY(30deg);  }
+.rotate8 {transform: rotateY(40deg);  }
+</code></pre>
+                </div>
+                <!-- //Intro11 -->
+                <style>
+                    .rotate9 {transform: rotate3d(0,1,1,10deg); }
+                    .rotate10 {transform: rotate3d(0,1,1,20deg); }
+                    .rotate11 {transform: rotate3d(0,1,1,30deg); }
+                    .rotate12 {transform: rotate3d(0,1,1,40deg); }
+                </style>
+
+                 <!-- Intro12 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro12" class="page-header">Sample11-rotate3d</h2>
+                    <div class="sBox">
+                        <div class="box rot1">
+                            <div class="rotate9">rotate9</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate10">rotate10</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate11">rotate11</div>
+                        </div>
+                        <div class="box rot1">
+                            <div class="rotate12">rotate12</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.rotate9 {transform: rotate3d(0,1,1,10deg); }
+.rotate10 {transform: rotate3d(0,1,1,20deg); }
+.rotate11 {transform: rotate3d(0,1,1,30deg); }
+.rotate12 {transform: rotate3d(0,1,1,40deg); }
+</code></pre>
+                </div>
+                <!-- //Intro12 -->
+                <style>
+                    .skew1 {transform: skew(10deg,10deg); }
+                    .skew2 {transform: skew(20deg,20deg); }
+                    .skew3 {transform: skew(30deg,30deg); }
+                    .skew4 {transform: skew(40deg,40deg); }
+                </style>
+
+                <!-- Intro13 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro13" class="page-header">Sample12-skew</h2>
+                    <div class="sBox">
+                        <div class="box ske1">
+                            <div class="skew1">skew1</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew2">skew2</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew3">skew3</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew4">skew4</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.skew1 {transform: skew(10deg,10deg); }
+.skew2 {transform: skew(20deg,20deg); }
+.skew3 {transform: skew(30deg,30deg); }
+.skew4 {transform: skew(40deg,40deg); }
+</code></pre>
+                </div>
+                <!-- //Intro13 -->
+                <style>
+                    .skew5 {transform: skewX(10deg); }
+                    .skew6 {transform: skewX(20deg); }
+                    .skew7 {transform: skewX(40deg); }
+                    .skew8 {transform: skewX(50deg); }
+                </style>
+
+                <!-- Intro14 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro14" class="page-header">Sample13-skewX</h2>
+                    <div class="sBox">
+                        <div class="box ske1">
+                            <div class="skew5">skew5</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew6">skew6</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew7">skew7</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew8">skew8</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.skew5 {transform: skewX(10deg); }
+.skew6 {transform: skewX(20deg); }
+.skew7 {transform: skewX(40deg); }
+.skew8 {transform: skewX(50deg); }
+</code></pre>
+                </div>
+                <!-- //Intro14 -->
+                <style>
+                    .skew9  {transform: skewY(10deg); }
+                    .skew10 {transform: skewY(20deg); }
+                    .skew11 {transform: skewY(30deg); }
+                    .skew12 {transform: skewY(40deg); }
+
+                </style>
+
+                <!-- Intro15 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro15" class="page-header">Sample14-skewY</h2>
+                    <div class="sBox">
+                        <div class="box ske1">
+                            <div class="skew9">skew9</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew10">skew10</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew11">skew11</div>
+                        </div>
+                        <div class="box ske1">
+                            <div class="skew12">skew12</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.skew9  {transform: skewY(10deg); }
+.skew10 {transform: skewY(20deg); }
+.skew11 {transform: skewY(30deg); }
+.skew12 {transform: skewY(40deg); }
+</code></pre>
+                </div>
+                <!-- //Intro15 -->
+                <style>
+                    .origin1 {transform: rotate(10deg); transform-origin: 100% 0; }
+                    .origin2 {transform: rotate(20deg); transform-origin: 100% 0; }
+                    .origin3 {transform: rotate(30deg); transform-origin: 100% 0; }
+                    .origin4 {transform: rotate(40deg); transform-origin: 100% 0; }
+
+                    .origin5 {transform: rotate(10deg); transform-origin: 0 100%; }
+                    .origin6 {transform: rotate(20deg); transform-origin: 0 100%; }
+                    .origin7 {transform: rotate(30deg); transform-origin: 0 100%; }
+                    .origin8 {transform: rotate(40deg); transform-origin: 0 100%; }
+                </style>
+
+                <!-- Intro16 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro16" class="page-header">Sample15-transform-origin</h2>
+                    <div class="sBox" style="padding: 60px 15px;">
+                        <div class="box ori1">
+                            <div class="origin1">origin1</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin2">origin2</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin3">origin3</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin4">origin4</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin5">origin5</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin6">origin6</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin7">origin7</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin8">origin8</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.origin1 {transform: rotate(10deg); transform-origin: 100% 0; }
+.origin2 {transform: rotate(20deg); transform-origin: 100% 0; }
+.origin3 {transform: rotate(30deg); transform-origin: 100% 0; }
+.origin4 {transform: rotate(40deg); transform-origin: 100% 0; }
+
+.origin5 {transform: rotate(10deg); transform-origin: 0 100%; }
+.origin6 {transform: rotate(20deg); transform-origin: 0 100%; }
+.origin7 {transform: rotate(30deg); transform-origin: 0 100%; }
+.origin8 {transform: rotate(40deg); transform-origin: 0 100%; }
+</code></pre>
+                </div>
+                <!-- //Intro16 -->
+
+                <style>
+                    .origin9  {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 0; }
+                    .origin10 {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 30%; }
+                    .origin11 {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 60%; }
+                    .origin12 {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 100%; }
+                </style>
+
+                <!-- Intro17 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro17" class="page-header">Sample16-transform-origin</h2>
+                    <div class="sBox">
+                        <div class="box ori1">
+                            <div class="origin9">origin9</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin10">origin10</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin11">origin11</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin12">origin12</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.origin9  {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 0; }
+.origin10 {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 30%; }
+.origin11 {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 60%; }
+.origin12 {transform: rotate3d(1,0,0,60deg); transform-origin:  20% 100%; }
+</code></pre>
+                </div>
+                <!-- //Intro17 -->
+
+                <style>
+                    .origin13 {transform: rotate3d(0,1,0,10deg); transform-origin: right;}
+                    .origin14 {transform: rotate3d(0,1,0,20deg); transform-origin: right;}
+                    .origin15 {transform: rotate3d(0,1,0,30deg); transform-origin: right;}
+                    .origin16 {transform: rotate3d(0,1,0,40deg); transform-origin: right;}
+                    
+                    .origin17 {transform: rotate3d(0,1,0,-10deg); transform-origin: right;}
+                    .origin18 {transform: rotate3d(0,1,0,-20deg); transform-origin: right;}
+                    .origin19 {transform: rotate3d(0,1,0,-30deg); transform-origin: right;}
+                    .origin20 {transform: rotate3d(0,1,0,-40deg); transform-origin: right;}
+                </style>
+
+                <!-- Intro18 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro18" class="page-header">Sample17-transform-origin</h2>
+                    <div class="sBox">
+                        <div class="box ori1">
+                            <div class="origin13">origin13</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin14">origin14</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin15">origin15</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin16">origin16</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin17">origin17</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin18">origin18</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin19">origin19</div>
+                        </div>
+                        <div class="box ori1">
+                            <div class="origin20">origin20</div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-css"><code>.origin13 {transform: rotate3d(0,1,0,10deg); transform-origin: right;}
+.origin14 {transform: rotate3d(0,1,0,20deg); transform-origin: right;}
+.origin15 {transform: rotate3d(0,1,0,30deg); transform-origin: right;}
+.origin16 {transform: rotate3d(0,1,0,40deg); transform-origin: right;}
+
+.origin17 {transform: rotate3d(0,1,0,-10deg); transform-origin: right;}
+.origin18 {transform: rotate3d(0,1,0,-20deg); transform-origin: right;}
+.origin19 {transform: rotate3d(0,1,0,-30deg); transform-origin: right;}
+.origin20 {transform: rotate3d(0,1,0,-40deg); transform-origin: right;}
+</code></pre>
+                </div>
+                <!-- //Intro18 -->
+
+
+                
+
+                
+
+                 
+
+
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">Transform</a></li>
+                        <li><a href="#intro2">Sample01-translate</a></li>
+                        <li><a href="#intro3">Sample02-translateX</a></li>
+                        <li><a href="#intro4">Sample03-translateY</a></li>
+                        <li><a href="#intro5">Sample04-translateZ</a></li>
+                        <li><a href="#intro6">Sample05-scale 확대</a></li>
+                        <li><a href="#intro7">Sample06-scale 축소</a></li>
+                        <li><a href="#intro8">Sample07-scaleX</a></li>
+                        <li><a href="#intro9">Sample08-scaleY</a></li>
+                        <li><a href="#intro10">Sample09-rotate</a></li>
+                        <li><a href="#intro11">Sample10-rotateY</a></li>
+                        <li><a href="#intro12">Sample11-rotate3d</a></li>
+                        <li><a href="#intro13">Sample12-skew</a></li>
+                        <li><a href="#intro14">Sample13-skewX</a></li>
+                        <li><a href="#intro15">Sample14-skewY</a></li>
+                        <li><a href="#intro16">Sample15-transform-origin</a></li>
+                        <li><a href="#intro17">Sample16-transform-origin</a></li>
+                        <li><a href="#intro18">Sample17-transform-origin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+</body>
+
+</html>

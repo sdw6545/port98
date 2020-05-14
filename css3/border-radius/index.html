@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="김용태">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, 김용태">
+    <title>김용태  border-radius</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>border-radius Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://sdw6545.dothome.co.kr" target="_blank">sdw6545.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">border-radius</h2>
+
+                    <h3 class="pt30">문법</h3>
+                    <p class="bs-callout bs-callout-info">
+                        border-radius : border-top-left-radius | border-top-right-radius | border-bottom-right-radius | border-bottom-left-radius
+                    </p>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>border-top-left-radius</td>
+                                    <td>테두리 굴곡을 윗부분 왼쪽에 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>border-top-right-radius</td>
+                                    <td>테두리 굴곡을 윗부분 오른쪽에 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>border-bottom-right-radius</td>
+                                    <td>테두리 굴곡을 아랫부분 오른쪽에 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>border-bottom-left-radius</td>
+                                    <td>테두리 굴곡을 아랫부분 왼쪽에 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //Intro1 -->
+                
+                <style>
+                     .sBox {
+                        background-color: #f4f8fa; padding: 15px; 
+                        overflow: hidden;}
+                    .sBox .box {
+                        width: 150px; height: 150px; 
+                        float: left; font-family: 'Abel'; text-align: center; line-height: 150px; color: #fff;
+                        border: 0; background: none;
+                    }
+                    .sBox .box div {transition: all 0.3s;}
+                    .sBox .box div:hover {border-radius:0 ; }
+                    .sBox .box.rad1 > div {
+                        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+                    }
+                    .sBox .box.rad2 > div  {
+                        background-image: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%);
+                    }
+                    .sBox .box.rad3 > div  {
+                        background-image: linear-gradient(135deg, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+                    }
+                    .sBox .box.rad4 > div  {
+                        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                    }
+                    .sBox .box.rad5 > div  {
+                        background-image: linear-gradient(135deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+                    }
+                    .sBox .box.rad6 > div  {
+                        background-image: linear-gradient(135deg, #0250c5 0%, #d43f8d 100%);
+                    }
+                    .sBox .box.rad7 > div  {
+                        background-image: linear-gradient(135deg, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+                    }
+                    .sBox .box.rad8 > div {
+                        background-image: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+                    }
+                </style>
+
+                <style>
+                    .radius01 {border-radius: 0;}
+                    .radius02 {border-radius: 10px;}
+                    .radius03 {border-radius: 20px;}
+                    .radius04 {border-radius: 30px;}
+                    .radius05 {border-radius: 40px;}
+                    .radius06 {border-radius: 50px;}
+                    .radius07 {border-radius: 60px;}
+                    .radius08 {border-radius: 80px;}
+                </style>
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+					<h2 id="intro2" class="page-header">sample01</h2>
+					<div class="sBox">
+                        <div class="box rad1">
+                            <div class="radius01">radius01</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius02">radius02</div>
+                        </div>
+                        <div class="box rad3">
+                            <div class="radius03">radius03</div>
+                        </div>
+                        <div class="box rad4">
+                            <div class="radius04">radius04</div>
+                        </div>
+                        <div class="box rad5">
+                            <div class="radius05">radius05</div>
+                        </div>
+                        <div class="box rad6">
+                            <div class="radius06">radius06</div>
+                        </div>
+                        <div class="box rad7">
+                            <div class="radius07">radius07</div>
+                        </div>
+                        <div class="box rad8">
+                            <div class="radius08">radius08</div>
+                        </div>
+                    </div>
+                </div>
+<pre class="line-numbers language-css"><code>.radius01{border-radius: 0;}
+.radius02{border-radius: 10px;}
+.radius03{border-radius: 20px;}
+.radius04{border-radius: 30px;}
+.radius05{border-radius: 40px;}
+.radius06{border-radius: 50px;}
+.radius07{border-radius: 60px;}
+.radius08{border-radius: 80px;}
+</code></pre>
+                <!-- //Intro2 -->
+                <style>
+                    .radius09 {border-radius:0px 0px ;}
+                    .radius10 {border-radius:12px 0px;}
+                    .radius11 {border-radius:30px 0px;}
+                    .radius12 {border-radius:45px 0px;}
+                    .radius13 {border-radius:60px 0px;}
+                    .radius14 {border-radius:75px 0px;}
+                    .radius15 {border-radius:90px 0px;}
+                    .radius16 {
+                        border-radius:115px 0px ;
+                        animation-duration: 3s;
+                        animation-name: radius16;
+                        animation-iteration-count: 100; 
+                    }
+                    @keyframes radius16 {
+                        0% {border-radius: 0px 0px; }
+                        25% {border-radius: 115px 0px;}
+                        50% {border-radius: 0px 0px; }
+                        75% {border-radius: 0px 115px;}
+                        100% {border-radius: 0px 0px;}
+                    }
+                </style>
+                
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">sample02</h2>
+                    <div class="sBox">
+                        <div class="box rad1">
+                            <div class="radius09">radius01</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius10">radius02</div>
+                        </div>
+                        <div class="box rad3">
+                            <div class="radius11">radius03</div>
+                        </div>
+                        <div class="box rad4">
+                            <div class="radius12">radius04</div>
+                        </div>
+                        <div class="box rad5">
+                            <div class="radius13">radius05</div>
+                        </div>
+                        <div class="box rad6">
+                            <div class="radius14">radius06</div>
+                        </div>
+                        <div class="box rad7">
+                            <div class="radius15">radius07</div>
+                        </div>
+                        <div class="box rad8">
+                            <div class="radius16">radius08</div>
+                        </div>
+                    </div>
+                </div>
+<pre class="line-numbers language-css"><code>.radius09{border-radius:0px 0px;}
+.radius10{border-radius:12px 0px;}
+.radius11{border-radius:30px 0px;}
+.radius12{border-radius:45px 0px;}
+.radius13{border-radius:60px 0px;}
+.radius14{border-radius:75px 0px;}
+.radius15{border-radius:90px 0px;}
+.radius16{border-radius:115px 0px;}
+</code></pre>
+                <!-- //Intro3 -->
+                <style>
+                    .radius17 {border-radius: 10px/55px; }
+                    .radius18 {border-radius: 20px/55px;  }
+                    .radius19 {border-radius: 30px/55px;  }
+                    .radius20 {border-radius: 40px/55px;  }
+                    .radius21 {border-radius: 55px/10px;  }
+                    .radius22 {border-radius: 55px/20px;  }
+                    .radius23 {border-radius: 55px/30px;  }
+                    .radius24 {border-radius: 55px/40px;  }
+                </style>
+                
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">sample03</h2>
+                    <div class="sBox">
+                        <div class="box rad2">
+                            <div class="radius17">radius01</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius18">radius02</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius19">radius03</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius20">radius04</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius21">radius05</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius22">radius06</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius23">radius07</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius24">radius08</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers language-css"><code>.radius17{border-radius: 10px/55px;}
+.radius18{border-radius: 20px/55px;}
+.radius19{border-radius: 30px/55px;}
+.radius20{border-radius: 40px/55px;}
+.radius21{border-radius: 55px/10px;}
+.radius22{border-radius: 55px/20px;}
+.radius23{border-radius: 55px/30px;}
+.radius24{border-radius: 55px/40px;}
+                    </code></pre>
+					
+                    <p></p>
+				</div>
+                <!-- //Intro4 -->
+                <style>
+                    .radius25 {border-radius: 0px 20px 20px;  }
+                    .radius26 {border-radius: 0px 40px 40px;  }
+                    .radius27 {border-radius: 0px 60px 60px;  }
+                    .radius28 {border-radius: 0px 80px 80px;  }
+
+                    .radius29 {border-radius:  20px 20px 0px; }
+                    .radius30 {border-radius:  40px 40px 0px; }
+                    .radius31 {border-radius:  60px 60px 0px; }
+                    .radius32 {border-radius:  80px 80px 0px; }
+                </style>
+                
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">sample04</h2>
+                    <div class="sBox">
+                        <div class="box rad1">
+                            <div class="radius25">radius01</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius26">radius02</div>
+                        </div>
+                        <div class="box rad3">
+                            <div class="radius27">radius03</div>
+                        </div>
+                        <div class="box rad4">
+                            <div class="radius28">radius04</div>
+                        </div>
+                        <div class="box rad5">
+                            <div class="radius29">radius05</div>
+                        </div>
+                        <div class="box rad6">
+                            <div class="radius30">radius06</div>
+                        </div>
+                        <div class="box rad7">
+                            <div class="radius31">radius07</div>
+                        </div>
+                        <div class="box rad8">
+                            <div class="radius32">radius08</div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers language-css"><code>.radius25{border-radius: 0 20px 20px;}
+.radius26{border-radius: 0px 40px 40px;}
+.radius27{border-radius: 0px 60px 60px;}
+.radius28{border-radius: 0px 80px 80px;}
+
+.radius29{border-radius:  20px 20px 0px;}
+.radius30{border-radius:  40px 40px 0px;}
+.radius31{border-radius:  60px 60px 0px;}
+.radius32{border-radius:  80px 80px 0px;}
+                    </code></pre>
+					
+                    <p></p>
+				</div>
+                <!-- //Intro5 -->
+                <style>
+                    .radius33 {border-radius: 0px 0px 20px 20px ; }
+                    .radius34 {border-radius: 0px 0px 40px 40px ; }
+                    .radius35 {border-radius: 0px 0px 60px 60px ; }
+                    .radius36 {border-radius: 0px 0px 80px 80px ; }
+
+                    .radius37 {border-radius: 80px 80px 0px 0px ; }
+                    .radius38 {border-radius: 60px  60px 0px 0px ; }
+                    .radius39 {border-radius: 40px 40px 0px 0px ; }
+                    .radius40 {border-radius: 20px 20px 0px 0px ; }
+                </style>
+                
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">sample05</h2>
+                    <div class="sBox">
+                        <div class="box rad1">
+                            <div class="radius33">radius01</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius34">radius02</div>
+                        </div>
+                        <div class="box rad3">
+                            <div class="radius35">radius03</div>
+                        </div>
+                        <div class="box rad4">
+                            <div class="radius36">radius04</div>
+                        </div>
+                        <div class="box rad5">
+                            <div class="radius37">radius05</div>
+                        </div>
+                        <div class="box rad6">
+                            <div class="radius38">radius06</div>
+                        </div>
+                        <div class="box rad7">
+                            <div class="radius39">radius07</div>
+                        </div>
+                        <div class="box rad8">
+                            <div class="radius40">radius08</div>
+                        </div>
+                    </div>
+                    
+					<pre class="line-numbers language-css"><code>.radius33{border-radius: 0px 0px 20px 20px;}
+.radius34{border-radius: 0px 0px 40px 40px;}
+.radius35{border-radius: 0px 0px 60px 60px;}
+.radius36{border-radius: 0px 0px 80px 80px;}
+
+.radius37{border-radius: 80px 80px 0px 0px;}
+.radius38{border-radius: 60px 60px 0px 0px;}
+.radius39{border-radius: 40px 40px 0px 0px;}
+.radius40{border-radius: 20px 20px 0px 0px;}
+                    </code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro6 -->
+                <style>
+                    .radius41 {border-radius: 70% 80% 90% 70% / 70% 80% 90% 80%  ;}
+                    .radius42 {border-radius: 50% 80% 90% 70% / 50% 80% 90% 80%  ;}
+                    .radius43 {border-radius: 99% 80% 90% 70% / 99% 80% 90% 80%  ;}
+                    .radius44 {border-radius: 70% 60% 50% 70% / 70% 80% 60% 80%  ;}
+                    .radius45 {border-radius: 60% 80% 70% 70% / 70% 80% 50% 60%  ;}
+                    .radius46 {border-radius: 70% 80% 90% 70% / 70% 80% 90% 80%  ;}
+                    .radius47 {border-radius: 70% 80% 70% 70% / 60% 80% 80% 80%  ;}
+                    .radius48 {border-radius: 60% 80% 50% 50% / 70% 80% 60% 60%  ;}
+                </style>
+                
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">sample06</h2>
+                    <div class="sBox">
+                        <div class="box rad1">
+                            <div class="radius41">radius01</div>
+                        </div>
+                        <div class="box rad2">
+                            <div class="radius42">radius02</div>
+                        </div>
+                        <div class="box rad3">
+                            <div class="radius43">radius03</div>
+                        </div>
+                        <div class="box rad4">
+                            <div class="radius44">radius04</div>
+                        </div>
+                        <div class="box rad5">
+                            <div class="radius45">radius05</div>
+                        </div>
+                        <div class="box rad6">
+                            <div class="radius46">radius06</div>
+                        </div>
+                        <div class="box rad7">
+                            <div class="radius47">radius07</div>
+                        </div>
+                        <div class="box rad8">
+                            <div class="radius48">radius08</div>
+                        </div>
+                    </div>
+                    
+					<pre class="line-numbers language-css"><code>.radius41{border-radius: 70% 80% 90% 70% / 70% 80% 90% 80%;}
+.radius42{border-radius: 50% 80% 90% 70% / 50% 80% 90% 80%;}
+.radius43{border-radius: 99% 80% 90% 70% / 99% 80% 90% 80%;}
+.radius44{border-radius: 70% 60% 50% 70% / 70% 80% 60% 80%;}
+.radius45{border-radius: 60% 80% 70% 70% / 70% 80% 50% 60%;}
+.radius46{border-radius: 70% 80% 90% 70% / 70% 80% 90% 80%;}
+.radius47{border-radius: 70% 80% 70% 70% / 60% 80% 80% 80%;}
+.radius48{border-radius: 60% 80% 50% 50% / 70% 80% 60% 60%;}
+                    </code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro7 -->
+                
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">sample07</h2>
+                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="laviperchik" data-slug-hash="mAHwE" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="border-radius learning tool">
+                        <span>See the Pen <a href="https://codepen.io/laviperchik/pen/mAHwE">
+                        border-radius learning tool</a> by Lavi Perchik (<a href="https://codepen.io/laviperchik">@laviperchik</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    <p></p>
+				</div>
+                <!-- //Intro8 -->
+                
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">sample08</h2>
+                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="sdw6545" data-slug-hash="ExjqoVR" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Border-radius Mocphing">
+                        <span>See the Pen <a href="https://codepen.io/sdw6545/pen/ExjqoVR">
+                        Border-radius Mocphing</a> by 김용태 (<a href="https://codepen.io/sdw6545">@sdw6545</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    <p></p>
+				</div>
+                <!-- //Intro9 -->
+                
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">sample09</h2>
+                    <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="cobra_winfrey" data-slug-hash="jpRQbP" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Border-Radius Playground">
+                        <span>See the Pen <a href="https://codepen.io/cobra_winfrey/pen/jpRQbP">
+                        Border-Radius Playground</a> by Adam Kuhn (<a href="https://codepen.io/cobra_winfrey">@cobra_winfrey</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+                      <p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result" data-user="giaco" data-slug-hash="QZQQJX" style="height: 700px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Border radius">
+                        <span>See the Pen <a href="https://codepen.io/giaco/pen/QZQQJX">
+                        Border radius</a> by Pogany (<a href="https://codepen.io/giaco">@giaco</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    
+                    <p></p>
+				</div>
+                <!-- //Intro10 -->
+                
+                <!-- Intro11 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro11" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro11 -->
+                
+                <!-- Intro12 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro12" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro12 -->
+                
+                <!-- Intro13 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro13" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro13 -->
+                
+                <!-- Intro14 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro14" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro14 -->
+                
+                <!-- Intro15 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro15" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro15 -->
+                
+                <!-- Intro16 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro16" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro16 -->
+                
+                <!-- Intro17 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro17" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro17 -->
+                
+                <!-- Intro18 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro18" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro18 -->
+                
+                <!-- Intro19 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro19" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+                <!-- //Intro19 -->
+                
+                <!-- Intro20 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro20" class="page-header">sample01</h2>
+                    
+					<pre class="line-numbers language-css"><code></code></pre>
+                    <p></p>
+				</div>
+				<!-- //Intro20 -->
+
+                
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">border-radius</a></li>
+                        <li><a href="#intro2">sample01</a></li>                        
+                        <li><a href="#intro3">sample02</a></li>
+                        <li><a href="#intro4">sample03</a></li>
+                        <li><a href="#intro5">sample04</a></li>
+                        <li><a href="#intro6">sample05</a></li>
+                        <li><a href="#intro7">sample06</a></li>
+                        <li><a href="#intro8">sample07</a></li>
+                        <li><a href="#intro9">sample08</a></li>
+                        <li><a href="#intro10">sample09</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+</body>
+
+</html>

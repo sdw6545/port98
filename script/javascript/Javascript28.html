@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        //선언적 함수
+        function func1(){
+            document.write("1.함수가 실행되었습니다.<br><br>");
+        }
+        func1();
+
+        //익명 함수
+        const func2 = function(){
+            document.write("2.함수가 실행되었습니다.<br><br>");
+        }
+        func2();
+
+        //매개변수 함수
+        function func3(str){
+            document.write(str);
+        }
+        func3("3.함수가 실행되었습니다.<br><br>");
+
+
+        //리턴값(결과값)이 있는 함수
+        function func4(){
+            const str ="4.함수가 실행되었습니다.<br><br>";
+            return str;
+        }
+        const val = func4();
+        document.write(val);
+
+
+        //재귀함수: 함수 정의문 내에 함수를 호출하여 실행하는 함수
+        function func5(){
+            document.write("5.함수가 실행되었습니다.<br><br>");
+            //func5();
+        }
+        func5();
+
+
+        //재귀함수2: 함수를 여러번 실행하고 싶을 때
+        function func6(num){
+            if(num ==0 ){
+                document.write("6.함수가 실행되었습니다.<br><br>");
+            }else{
+                document.write("6.함수가 실행되었습니다.<br><br>");
+                func6(num - 1);
+            }
+        }
+        func6(9);
+
+
+        //콜백함수 : 함수를 변수에 저장하고 변수를 함수의 인자로 사용하여 매개변수 전달하는 함수
+        function callback(num){
+            //for문을 5번 실행
+            for(let i=1; i<=5; i++ ){
+                num(i);
+            }
+        }
+        const fnuc7 = function(i){
+            document.write("7.함수가 실행되었습니다.<br><br>");
+        }
+        callback(fnuc7);
+
+        //내부함수 : 함수 안에 함수를 선언하는 함수
+        function fnuc8out(){
+            function fnuc8out(){
+                document.write("8.함수가 실행되었습니다.<br><br>");
+            }
+            fnuc8out()
+        } 
+        fnuc8out()
+
+        //화살표 함수 - 선언적 함수
+        func9 = () =>{
+            document.write("9.함수가 실행되었습니다.<br><br>");
+        }
+        func9();
+
+        //화살표 함수 - 익명 함수
+        const func10 = () => {
+            document.write("10.함수가 실행되었습니다.<br><br>");
+        }
+        func10();
+
+        //화살표 함수 - 리턴문
+        func11 = () => {
+            const str ="11.함수가 실행되었습니다.<br><br>";
+            return str
+        }
+        const val11 = func11();
+        document.write(val11);
+
+        //화살표 함수 - 매개변수, 괄호
+        const func12= (str) =>{
+            return str;
+        }
+        const val12 = func12("12.함수가 실행되었습니다.<br><br>");
+        document.write(val12);
+
+        //화살표 함수 - 매개변수, 괄호 생략
+        const func13= str =>{
+            return str;
+        }
+        const val13 = func13("13.함수가 실행되었습니다.<br><br>");
+        document.write(val13);
+
+
+        //화살표 함수 - 리턴 생략
+        const func14= (str) =>str;
+        const val14 = func14("14.함수가 실행되었습니다.<br><br>");
+        document.write(val14);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

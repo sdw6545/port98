@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <style>
+        .choice a {
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            border: 1px solid #5f6368; 
+            padding: 7px 20px;
+            text-decoration: none;
+            color: #000;
+        }
+        .choice a:hover{text-decoration: underline; }
+        .on{background-color: #bbdefb; border: 1px dashed #303f9f;}
+    </style>
+</head>
+<body>
+
+    <div class="choice">
+        <a href="#" class="reset">Reset</a>
+        <a href="#" class="btn1">.children()</a>
+        <a href="#" class="btn2">.find()</a>
+        <a href="#" class="btn3">.next()</a>
+        <a href="#" class="btn4">.nextAll()</a>
+        <a href="#" class="btn5">.parent()</a>
+        <a href="#" class="btn6">.parents()</a>
+        <a href="#" class="btn7">.parentsUntil()</a>
+        <a href="#" class="btn8">.prev()</a>
+        <a href="#" class="btn9">.prevAll()</a>
+    </div>
+    <div class="choice">
+        <a href="#" class="sbtn1">.eq(-1)</a>
+        <a href="#" class="sbtn2">.filter()</a>
+        <a href="#" class="sbtn3">.first()</a>
+        <a href="#" class="sbtn4">.last()</a>
+        <a href="#" class="sbtn5">.has()</a>
+        <a href="#" class="sbtn6">.not()</a>
+        <a href="#" class="sbtn7">.slice()</a>
+    </div>
+
+    <div class="list">
+        <ul>
+            <li class="list1">첫번 째 리스트1 입니다.</li>
+            <li class="list2">첫번 째 리스트2 입니다.</li>
+            <li class="list3">첫번 째 리스트3 입니다.
+                <ul>
+                    <li>첫번 째 리스트3-1 입니다.</li>
+                    <li>첫번 째 리스트3-2 입니다.</li>
+                    <li>첫번 째 리스트3-3 입니다.
+                        <ul>
+                            <li>첫번 째 리스트1-3-1 입니다.</li>
+                            <li class="select">첫번 째 리스트1-3-2 입니다.</li>
+                            <li>첫번 째 리스트1-3-3 입니다.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="slist">
+            <li class="list1">두번 째 리스트1 입니다.</li>
+            <li class="list2">두번 째 리스트2 입니다.</li>
+            <li class="list3">두번 째 리스트3 입니다.</li>
+            <li class="list1">두번 째 리스트4 입니다.</li>
+            <li class="list2">두번 째 리스트5 입니다.</li>
+            <li class="list3">두번 째 리스트6 입니다.</li>
+        </ul>
+        
+    </div>
+    
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        //reset을 클릭하면 모든 태그에 on 클래스를 제거 
+        $(".reset").click(function(){
+            $("*").removeClass("on");
+        });
+        //children() 버튼을 클릭하면 on 클래스를 추가 
+        $(".btn1").click(function(){
+            $(".list li").children().addClass("on");   //그 밑에 자식ul 선택
+        });
+        //find(원하는대상) 버튼을 클릭하면 on 클래스를 추가 
+        $(".btn2").click(function(){
+            $(".list li").find("li").addClass("on");   //원하는대상 선택
+        });
+
+        $(".btn3").click(function(){
+            $(".list li li:first").next().addClass("on");  //선택한 요소를 다음 형제 요소를 선택합니다.
+        });
+
+        $(".btn4").click(function(){
+            $(".list li:first").nextAll().addClass("on");  //선택한 요소의 다음 모든 형제 요소를 선택합니다.
+        });
+
+        $(".btn5").click(function(){
+            $(".list2").parent().addClass("on");  //선택한 요소의 부모 요소를 선택합니다.
+        });
+
+        $(".btn6").click(function(){
+            $(".list2").parents().addClass("on");  //선택한 요소의 모든 부모 요소를 선택합니다.
+        });
+
+        $(".btn7").click(function(){
+            $(".list2").parentsUntil(".list").addClass("on");  //선택한 요소의 모든 부모 요소 중 조건에 맞을 때까지 찾아 선택합니다.
+        });
+
+        $(".btn8").click(function(){
+            $(".list3").prev().addClass("on");  //선택한 요소의 이전 요소를 선택합니다.
+        });
+
+        $(".btn9").click(function(){
+            $(".list3").prevAll().addClass("on");  //선택한 요소의 모든 이전 요소를 선택합니다.
+        });
+
+        $(".sbtn1").click(function(){
+            $(".list li").eq(-1).addClass("on");  //선택한 요소의 인덱스 번호에 해당한 요소를 선택  (-는 뒤에부터)
+        });
+
+        $(".sbtn2").click(function(){
+            //$(".list li").filter(":even").addClass("on");  //선택한 요소에서 선택하거나 함수를 사용할 수 있습니다. (":even" 짝수만선택)
+            $(".list li").filter(".select").addClass("on");  //원하는 요소 선택 
+        });
+
+        $(".sbtn3").click(function(){
+            $(".list li").first().addClass("on");  //선택한 요소에서 첫번째 자식을 선택합니다.
+            //$(".list li:first").addClass("on");  
+        });
+
+        $(".sbtn4").click(function(){
+            $(".list li").last().addClass("on");  //선택한 요소에서 마지막 번째 자식을 선택합니다.
+            //$(".list li:last").addClass("on");  
+        });
+
+        $(".sbtn5").click(function(){
+            //$(".list li").has("ul").addClass("on");  //선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.
+            $(".list li").has(".select").addClass("on");   //~가 있는지 없는지 판단
+        });
+
+        $(".sbtn6").click(function(){
+            $(".list li").not(".select").addClass("on");   //선택한 요소에서 조건에 맞지 않는 것을 선택합니다.
+        });
+
+        $(".sbtn7").click(function(){
+            //$(".slist li").slice(2).addClass("on");   //선택한 요소에서 조건의 범위로 재 선택합니다.
+            //$(".slist li").slice(2,5).addClass("on");   //~부터 ~까지 선택
+            // $(".slist li").slice(-2).addClass("on");   //-는 마지막 부터
+            $(".slist li").slice(-4,-1).addClass("on");   //-는 마지막 부터 -도 ~부터 ~까지 선택가능
+        });
+        
+    </script>
+</body>
+</html>
