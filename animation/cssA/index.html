@@ -283,7 +283,7 @@
                 </style>
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">Animation-timing-function <span class="btn"
+                    <h2 id="intro2" class="page-header">Animation-timing-function1 <span class="btn"
                             id="btn1">Click</span></h2>
                     <div class="sBox s1">
                         <div class="circle1">linear</div>
@@ -335,7 +335,7 @@
 
                 <!-- Intro3 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro3" class="page-header">Animation-timing-function <span class="btn"
+                    <h2 id="intro3" class="page-header">Animation-timing-function2 <span class="btn"
                             id="btn2">Click</span></h2>
                     <div class="sBox s2">
                         <div class="circle6">step-start</div>
@@ -343,26 +343,165 @@
                         <div class="circle8">steps(4,start)</div>
                         <div class="circle9">steps(4,end)</div>
                         <div class="circle10">steps(10,start)</div>
-                        <div class="circle10">steps(10,end)</div>
+                        <div class="circle11">steps(10,end)</div>
                     </div>
+ 
 
-                    <pre class="line-numbers language-CSS"><code>
+                    <pre class="line-numbers language-CSS"><code>.circle6.show {
+    animation: move 3s 1 step-start;
+}
 
+.circle7.show {
+    animation: move 3s 1 step-end;
+}
+
+.circle8.show {
+    animation: move 3s 1 steps(4, start);
+}
+
+.circle9.show {
+    animation: move 3s 1 steps(4, end);
+}
+
+.circle10.show {
+    animation: move 3s 1 steps(10, start);
+}
+
+.circle11.show {
+    animation: move 3s 1 steps(10, end);
+}
 </code> </pre>
+                    <p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result"
+                        data-user="sdw6545" data-slug-hash="NWGLPrB"
+                        style="height: 700px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+                        data-pen-title="Animation Steps">
+                        <span>See the Pen <a href="https://codepen.io/sdw6545/pen/NWGLPrB">
+                                Animation Steps</a> by 김용태 (<a href="https://codepen.io/sdw6545">@sdw6545</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
                 </div>
                 <!-- //Intro3 -->
+                <style>
+                    .circle12.show {
+                        animation: move 3s 1 cubic-bezier(0,0,0,0);
+                    }
 
+                    .circle13.show {
+                        animation: move 3s 1 cubic-bezier(1,0,0,1);
+                    }
+
+                    .circle14.show {
+                        animation: move 3s 1 cubic-bezier(0,.6,.2,.97);
+                    }
+
+                    .circle15.show {
+                        animation: move 3s 1 cubic-bezier(0,.6,.49,1.79);
+                    }
+
+                    .circle16.show {
+                        animation: move 3s 1 cubic-bezier(1,-0.85,.49,1.79);
+                    }
+                </style>
                 <!-- Intro4 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro4" class="page-header">Animation</h2>
-                    <p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result" data-user="sdw6545" data-slug-hash="NWGLPrB" style="height: 700px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Animation Steps">
-                        <span>See the Pen <a href="https://codepen.io/sdw6545/pen/NWGLPrB">
-                        Animation Steps</a> by 김용태 (<a href="https://codepen.io/sdw6545">@sdw6545</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                      </p>
-                      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    <h2 id="intro4" class="page-header">Animation--timing-function:cubic-bezier<span class="btn"
+                        id="btn3">Click</span></h2>
+                    <div class="sBox s3">
+                        <div class="circle12">cubic-bezier(0,0,0,0)</div>
+                        <div class="circle13">cubic-bezier(1,0,0,1)</div>
+                        <div class="circle14">cubic-bezier(0,.6,.2,.97)</div>
+                        <div class="circle15">cubic-bezier(0,.6,.49,1.79)</div>
+                        <div class="circle16">cubic-bezier(1,-0.85,.49,1.79)</div>
+                    </div>
+<pre class="line-numbers language-CSS"><code>.circle12.show {
+    animation: move 3s 1 cubic-bezier(0,0,0,0);
+}
+
+.circle13.show {
+    animation: move 3s 1 cubic-bezier(1,0,0,1);
+}
+
+.circle14.show {
+    animation: move 3s 1 cubic-bezier(0,.6,.2,.97);
+}
+
+.circle15.show {
+    animation: move 3s 1 cubic-bezier(0,.6,.49,1.79);
+}
+
+.circle16.show {
+    animation: move 3s 1 cubic-bezier(1,-0.85,.49,1.79);
+}
+</code></pre>
                 </div>
                 <!-- //Intro4 -->
+
+                <style>
+                    .circle17.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.1s;}
+                    .circle18.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.2s;}
+                    .circle19.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.3s;}
+                    .circle20.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.4s;}
+                </style>
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Animation-delay<span class="btn"
+                        id="btn4">Click</span></h2>
+                        <div class="sBox s4">
+                            <div class="circle17">cubic-bezier(0,.6,.2,.97) 0.1s;</div>
+                            <div class="circle18">cubic-bezier(0,.6,.2,.97) 0.2s;</div>
+                            <div class="circle19">cubic-bezier(0,.6,.2,.97) 0.3s;</div>
+                            <div class="circle20">cubic-bezier(0,.6,.2,.97) 0.4s;</div>
+                        </div>
+<pre class="line-numbers language-CSS"><code> .circle17.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.1s;}
+.circle18.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.2s;}
+.circle19.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.3s;}
+.circle20.show {animation: move 3s 10 cubic-bezier(0,.6,.2,.97) 0.4s;}
+</code></pre>
+                </div>
+                <!-- //Intro5 -->
+                <style>
+                    .sBox.s5 {height: 500px;}
+                    .circle21.normal {animation: move2 3s 10 cubic-bezier(0,.6,.2,.97) normal;}
+                    .circle21.reverse {animation: move2 3s 10 cubic-bezier(0,.6,.2,.97) reverse;}
+                    .circle21.altemate {animation: move2 3s 10 cubic-bezier(0,.6,.2,.97) altemate;}
+                    .circle21.altemate-reverse {animation: move2 3s 10 cubic-bezier(0,.6,.2,.97) altemate-reverse;}
+                    @keyframes move2 {
+                        0%{left: 0; top: 0;}
+                        25%{left:calc(100%-80px) ; top: 0;}
+                        50%{left:calc(100%-80px) ; top: calc(100%-80px);}
+                        75%{left:0; top: calc(100%-80px);}
+                        100%{left:0; top:0;}
+                    }
+                </style>
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Animation2
+                        <span class="btn"id="btn5-1">normal</span>
+                        <span class="btn"id="btn5-2">reverse</span>
+                        <span class="btn"id="btn5-3">altemate</span>
+                        <span class="btn"id="btn5-4">altemate-reverse</span>
+                    </h2>
+                    <div class="sBox s5">
+                        <div class="circle21">circle21</div>
+                    </div>
+<pre class="line-numbers language-CSS"><code>
+
+</code></pre>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Animation2<span class="btn"
+                        id="btn3">Click</span></h2>
+                        
+<pre class="line-numbers language-CSS"><code>
+
+</code></pre>
+                </div>
+                <!-- //Intro5 -->
 
 
 
@@ -381,7 +520,10 @@
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
                         <li><a href="#intro1">Animation</a></li>
-                        
+                        <li><a href="#intro2">Animation-timing-function1</a></li>
+                        <li><a href="#intro3">Animation-timing-function2</a></li>
+                        <li><a href="#intro4">Animation</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -420,6 +562,16 @@
         });
         $("#btn2").click(function () {
             $(".sBox.s2 >div").addClass("show")
+        });
+        $("#btn3").click(function () {
+            $(".sBox.s3 >div").addClass("show")
+        });
+        $("#btn4").click(function () {
+            $(".sBox.s4 >div").addClass("show")
+        });
+        $("#btn5-1").click(function () {
+            $("#btn5-1").css("color","red");
+            $(".circle21").text("alert");
         });
     </script>
 </body>

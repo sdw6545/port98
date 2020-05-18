@@ -1,0 +1,96 @@
+/* 레이아웃 */
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/*헤더*/
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.header h1 {
+  width: 140px;
+  margin: 18px 0 0 20px;
+}
+
+.header h1 svg {
+  fill: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.header h1 svg:hover {
+  fill: #000;
+}
+
+.header .nav li {
+  display: inline;
+}
+
+.header .nav li a {
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  padding: 26px 20px;
+  display: inline-block;
+}
+
+.header .nav li.live a {
+  padding: 4px 20px 6px 20px;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 20px;
+}
+
+.header .side-nav {
+  margin-right: 40px;
+
+}
+
+.header .side-nav li {
+  display: inline;
+}
+
+.header .side-nav li a {
+  width: 25px;
+  display: inline-block;
+  padding: 28px 10px 20px 20px;
+}
+
+#nav-bottom {
+  display: inline-block;
+}
+
+.nav-bottom {}
+
+.nav-bottom ul {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nav-bottom ul li {}
+
+#banner img{
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+#banner .banner h2 {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  font-size: 64px;
+  color: #fff;
+  font-weight: 500;
+}
