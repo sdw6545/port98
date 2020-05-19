@@ -41,6 +41,7 @@
     <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
 
     <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
@@ -106,7 +107,11 @@
                 </div>
                 <!-- //Intro0 -->
                 <style>
-                    .svg{width: 160px;height: 160px; background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);}
+                    .svg {
+                        width: 160px;
+                        height: 160px;
+                        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+                    }
                 </style>
 
                 <!-- Intro1 -->
@@ -157,36 +162,39 @@
                     <h4>샘플</h4>
                     <div class="svgBox">
                         <svg class="svg">
-                            <rect fill="#f48fb1" width="100" height="100" x="30" y="30"/>    <!-- px는 기본단위여서 생략 가능하다 -->
+                            <rect fill="#84fab0" width="100" height="100" x="30" y="30" /> <!-- px는 기본단위여서 생략 가능하다 -->
                         </svg>
                         <svg class="svg">
-                            <rect  fill="#f48fb1" width="100" height="100" x="30" y="30" stroke="#880e4f"  stroke-width="5"/>     <!-- stroke = border-->
+                            <rect fill="#84fab0" width="100" height="100" x="30" y="30" stroke="#8fd3f4"
+                                stroke-width="5" /> <!-- stroke = border-->
                         </svg>
                         <svg class="svg">
-                            <rect fill="#f48fb1" width="100" height="100" x="30" y="30" rx="20" ry="20"/>  <!-- rx,ry = border-radius -->
+                            <rect fill="#84fab0" width="100" height="100" x="30" y="30" rx="20" ry="20" />
+                            <!-- rx,ry = border-radius -->
                         </svg>
                         <svg class="svg">
-                            <rect  fill="#f48fb1" width="100" height="100" x="30" y="30" stroke="#880e4f"  stroke-width="5"  rx="20" ry="20"/>
+                            <rect fill="#84fab0" width="100" height="100" x="30" y="30" stroke="#8fd3f4"
+                                stroke-width="5" rx="20" ry="20" />
                         </svg>
-                        
+
                     </div>
 
-<pre class="line-numbers language-markup"><code>&lt;h4&gt;샘플&lt;/h4&gt;
+                    <pre class="line-numbers language-markup"><code>&lt;h4&gt;샘플&lt;/h4&gt;
 &lt;div class="svgBox"&gt;
-&lt;svg class="svg"&gt;
-    &lt;rect fill="#f48fb1" width="100" height="100" x="30" y="30" /&gt; &lt;!-- px는 기본단위여서 생략 가능하다 --&gt;
-&lt;/svg&gt;
-&lt;svg class="svg"&gt;
-    &lt;rect fill="#f48fb1" width="100" height="100" x="30" y="30" stroke="#880e4f" stroke-width="5" /&gt;
-    &lt;!-- stroke = border--&gt;
-&lt;/svg&gt;
-&lt;svg class="svg"&gt;
-    &lt;rect fill="#f48fb1" width="100" height="100" x="30" y="30" rx="20" ry="20" /&gt; &lt;!-- rx,ry = border-radius --&gt;
-&lt;/svg&gt;
-&lt;svg class="svg"&gt;
-    &lt;rect fill="#f48fb1" width="100" height="100" x="30" y="30" stroke="#880e4f" stroke-width="5" rx="20" ry="20" /&gt;
-&lt;/svg&gt;
-&lt;/div&gt;
+    &lt;svg class="svg"&gt;
+        &lt;rect fill="#84fab0" width="100" height="100" x="30" y="30" /&gt; &lt;!-- px는 기본단위여서 생략 가능하다 --&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;rect fill="#84fab0" width="100" height="100" x="30" y="30" stroke="#8fd3f4" stroke-width="5" /&gt;
+        &lt;!-- stroke = border--&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;rect fill="#84fab0" width="100" height="100" x="30" y="30" rx="20" ry="20" /&gt; &lt;!-- rx,ry = border-radius --&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;rect fill="#84fab0" width="100" height="100" x="30" y="30" stroke="#8fd3f4" stroke-width="5" rx="20" ry="20" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;                                                                                                
 </code></pre>
                 </div>
                 <!-- //Intro1 -->
@@ -196,14 +204,270 @@
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
                     <h2 id="intro2" class="page-header">circle</h2>
-                    
-
-<pre class="line-numbers language-markup"><code>&lt;h4&gt;샘플&lt;/h4&gt;
-
+                    <h4>샘플</h4>
+                    <div class="svgBox">
+                        <svg class="svg">
+                            <circle fill="#84fab0" r="60" cx="80" cy="80" />
+                        </svg>
+                        <svg class="svg">
+                            <circle fill="#84fab0" r="60" cx="80" cy="80" stroke="#8fd3f4" stroke-width="5" />
+                        </svg>
+                        <svg class="svg">
+                            <ellipse fill="#84fab0" rx="60" ry="40" cx="80" cy="80" />
+                        </svg>
+                        <svg class="svg">
+                            <ellipse fill="#84fab0" rx="60" ry="40" cx="80" cy="80" stroke="#8fd3f4" stroke-width="5" />
+                        </svg>
+                    </div>
+                    <pre class="line-numbers language-markup"><code>&lt;h4&gt;샘플&lt;/h4&gt;
+&lt;div class="svgBox"&gt;
+    &lt;svg class="svg"&gt;
+        &lt;circle fill="#84fab0" r="60" cx="80" cy="80"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;circle fill="#84fab0" r="60" cx="80" cy="80" stroke="#8fd3f4" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;ellipse fill="#84fab0" rx="60" ry="40" cx="80" cy="80"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;ellipse fill="#84fab0" rx="60" ry="40" cx="80" cy="80" stroke="#8fd3f4" stroke-width="5" /&gt;
+    &lt;/svg&gt;
 </code></pre>
                 </div>
                 <!-- //Intro2 -->
 
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">polygon</h2>
+                    <h4>샘플</h4> <!--  polygon은 좌표값이용  -->
+                    <div class="svgBox">
+                        <svg class="svg">
+                            <polygon fill="#84fab0" points="137,146,8,107 107,15 " />
+                        </svg>
+                        <svg class="svg">
+                            <polygon fill="#84fab0" points="104,145 24,126 17,43 94,12 147,75 " />
+                        </svg>
+                        <svg class="svg">
+                            <polygon fill="#84fab0" points="130,130 61,148 12,97 31,29 99,11 148,62" />
+                        </svg>
+                        <svg class="svg">
+                            <polygon fill="#84fab0" points="131,135 85,117 45,144 48,96 10,66 57,54 74,9 
+                            100,49 148,51 117,88 " />
+                        </svg>
+                    </div>
+                    <pre class="line-numbers language-markup"><code>&lt;h4&gt;샘플&lt;/h4&gt;    &lt;!--  polygon은 좌표값이용  --&gt;
+&lt;div class="svgBox"&gt;
+    &lt;svg class="svg"&gt;
+        &lt;polygon fill="#84fab0" points="137,146,8,107 107,15 "/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;polygon fill="#84fab0" points="104,145 24,126 17,43 94,12 147,75 "/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;polygon fill="#84fab0" points="130,130 61,148 12,97 31,29 99,11 148,62"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+        &lt;polygon fill="#84fab0" points="131,135 85,117 45,144 48,96 10,66 57,54 74,9 
+        100,49 148,51 117,88 "/&gt;
+    &lt;/svg&gt;
+</code></pre>
+                </div>
+                <!-- //Intro3 -->
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">line, polyline</h2>
+                    <h4>샘플</h4>
+                    <div class="svgBox">
+                        <!-- x1,y1는 시작값 x2,y2는 마지막 값 -->
+                        <svg class="svg">
+                            <line x1="0" y1="0" x2="160" y2="160" stroke="#84fab0" stroke-width="2" />
+                        </svg>
+                        <svg class="svg">
+                            <line x1="80" y1="80" x2="160" y2="160" stroke="#84fab0" stroke-width="2" />
+
+                        </svg>
+                        <svg class="svg">
+                            <polyline fill="none" stroke="#84fab0" stroke-width="2"
+                                points="54,23 23,105 125,71 92,25 85,139 67,11 " />
+                        </svg>
+                        <svg class="svg">
+                            <polyline fill="none" stroke="#84fab0" stroke-width="2"
+                                points="22,24 24,97 132,106 135,28 83,75 74,32 65,70 35,24 " />
+                        </svg>
+                    </div>
+                    <pre class="line-numbers language-markup"><code>
+</code></pre>
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">path</h2>
+                    <h4>샘플</h4>
+                    <div class="svgBox">
+                        <svg class="svg">
+                            <path fill="none" stroke="#84fab0" stroke-width="2"
+                                d="M23.04,124.783c0,0,12.455-98.375,109.206-92.78" />
+                        </svg>
+                        <svg class="svg">
+                            <path fill="none" stroke="#84fab0" stroke-width="2"
+                                d="M16.212,128.38C-4.298,87.808,11.965,38.291,52.537,17.781
+                            c32.458-16.408,72.071-3.397,88.479,29.06c13.126,25.966,2.718,57.657-23.249,70.783c-20.773,10.502-46.125,2.175-56.626-18.598
+                            c-8.401-16.619-1.739-36.9,14.878-45.301c13.294-6.721,29.521-1.392,36.241,11.903c5.377,10.636,1.113,23.616-9.522,28.993
+                            c-8.508,4.301-18.893,0.89-23.194-7.618c-3.441-6.807-0.712-15.115,6.094-18.556c5.445-2.752,12.092-0.57,14.844,4.875" />
+                        </svg>
+                        <svg class="svg">
+                            <path fill="none" stroke="#84fab0" stroke-width="2" d="M112.163,114.154c18.613,17.215-16.006,38.407-22.603,13.837
+		c6.597,24.57-33.986,23.683-26.496-0.579c-7.49,24.262-41.15,1.575-21.976-14.812C21.915,128.987,5.864,91.703,30.609,88.258
+		c-24.745,3.445-18.09-36.597,4.344-26.144c-22.435-10.453,4.812-40.542,17.79-19.645c-12.978-20.897,26.21-31.479,25.585-6.909
+		c0.625-24.57,39.312-12.285,25.259,8.021c14.053-20.306,39.958,10.946,16.913,20.404c23.045-9.458,27.94,30.838,3.196,26.309
+		C148.441,94.823,130.776,131.369,112.163,114.154z" />
+                        </svg>
+                        <svg class="svg">
+                            <path fill="none" stroke="#84fab0" stroke-width="2" d="M140.987,124.891c-37.381-27.863-48.011-19.301-28.022,22.572
+		c-19.988-41.873-33.379-39.232-35.304,6.965c1.925-46.197-11.159-50.082-34.495-10.242c23.336-39.84,13.555-49.359-25.785-25.098
+		c39.34-24.262,35.104-37.236-11.168-34.206c46.272-3.03,48.551-16.488,6.009-35.479c42.542,18.991,50.813,8.135,21.807-28.622
+		C63.036,57.538,75.405,51.769,66.64,5.572c8.766,46.196,22.399,46.836,35.944,1.688c-13.545,45.148-1.771,52.051,31.042,18.198
+		c-32.813,33.854-25.595,45.438,19.028,30.54c-44.623,14.897-43.614,28.509,2.657,35.885
+		C109.04,84.507,103.606,97.027,140.987,124.891z" />
+                        </svg>
+                        <svg class="svg">
+                            <path fill="none" stroke="#84fab0" stroke-width="2" d="M28.212,5.785C30.854,8.427,9.318,29.962,11.96,32.604
+		c2.643,2.643,24.178-18.893,26.821-16.25c2.642,2.642-18.893,24.177-16.251,26.819c2.643,2.643,24.178-18.892,26.821-16.249
+		c2.642,2.643-18.893,24.177-16.25,26.819c2.643,2.643,24.178-18.892,26.821-16.249c2.643,2.643-18.892,24.178-16.249,26.82
+		c2.644,2.644,24.178-18.892,26.822-16.248c2.643,2.643-18.892,24.178-16.25,26.821c2.644,2.644,24.179-18.891,26.822-16.248
+		c2.644,2.644-18.892,24.179-16.248,26.823c2.644,2.643,24.178-18.892,26.823-16.249c2.644,2.644-18.892,24.178-16.248,26.822
+		c2.643,2.644,24.179-18.891,26.821-16.247c2.642,2.641-18.894,24.176-16.252,26.817c2.644,2.643,24.178-18.892,26.821-16.249
+		c2.644,2.645-18.891,24.179-16.247,26.823c2.645,2.644,24.179-18.891,26.823-16.247c2.644,2.645-18.891,24.179-16.247,26.823
+		c2.646,2.645,24.18-18.891,26.824-16.245c2.644,2.643-18.891,24.178-16.247,26.821c2.646,2.646,24.181-18.889,26.826-16.242
+		c2.647,2.647-18.888,24.182-16.24,26.829s24.183-18.888,26.83-16.24" />
+                        </svg>
+                        <svg class="svg">
+                            <path fill="none" stroke="#84fab0" stroke-width="2" d="M56.133,63.438c101.709,80.314,74.264,104.582,8.118-7.178
+		c66.146,111.76,31.789,124.477,10.162-3.761c21.626,128.238-15.004,127.68,10.834,0.165
+		C59.409,180.179,25.452,166.431,95.29,56.729c-69.838,109.701-96.535,84.612,7.896,7.42
+		c-104.432,77.192-120.261,44.152,4.682,9.772c-124.943,34.379-127.769-2.145,0.836,10.803
+		C-19.901,71.777-9.342,36.697,105.581,95.102C-9.342,36.697,13.175,7.8,98.921,103.648C13.175,7.8,44.612-11.011,89.623,109.212
+		c-45.011-120.223-8.902-126.408-10.68,1.83c1.778-128.238,37.683-120.96-10.62-2.153c48.303-118.807,79.154-99.052-9.125-5.843
+		C147.478,9.837,169.11,39.403,52.8,94.301c116.311-54.898,125.799-19.516-2.807-10.465c128.605-9.051,124.673,27.376,1.164-10.774
+		C174.666,111.212,157.842,143.752,56.133,63.438z" />
+                        </svg>
+                    </div>
+                    <pre class="line-numbers language-markup">
+</code></pre>
+                </div>
+                <!-- //Intro5 -->
+                <style>
+                    .text-wrap{
+                        display: inline-block;
+                        background-color: #ffebee;
+                        width: 160px;height: 160px;
+                    }
+                    .text-clip{
+                        background-color: #ffebee;
+                        width: 160px;height: 160px;
+                        line-height: 170px;
+                        text-align: center;
+                        font-size: 70px;
+                        font-family:"Black Han Sans";
+                        -webkit-text-fill-color:transparent;
+                        -webkit-background-clip:text;
+                        background-image: url(../../assets/img/1.jpg) ;
+                    }
+                    .text-clip3{
+                        background-color: #ffebee;
+                        width: 160px;height: 160px;
+                        line-height: 170px;
+                        text-align: center;
+                        font-size: 70px;
+                        font-family:"Black Han Sans";
+                        -webkit-text-fill-color:transparent;
+                        -webkit-text-stroke:2px #ff5858;
+                        
+                    }
+                    .text-clip.t2{
+                        background-image: linear-gradient(60deg,#ff5858 0% , #f09819 100%);
+                    }
+                </style>
+                
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">clip-path</h2>
+                    <h4>샘플</h4>
+                    <div class="svgBox">
+                        <svg class="svg">
+                            <image xlink:href="../../assets/img/svg-french-fries.svg" width='160' height='160' />
+                        </svg>
+                        <svg class="svg">
+                            <image xlink:href="../../assets/img/svg-french-fries.svg" width='160' height='160'
+                                clip-path="circle(50px at center)" />
+                        </svg>
+                        <svg class="svg">
+                            <clipPath id="clio1">
+                                <polygon fill="none" points="121.653,135.696 79.894,114.783 38.993,137.331 
+	45.977,91.153 11.896,59.221 57.972,51.593 77.81,9.312 99.303,50.775 145.643,56.576 112.852,89.83 " />
+
+                            </clipPath>
+                            <image xlink:href="../../assets/img/svg-french-fries.svg" width='160' height='160'
+                                clip-path="url(#clio1)" />
+                        </svg>
+                        
+                        <svg class="svg">
+                            <clipPath id="clio2">
+                                <path fill="none"
+                                    d="M118.81,95.02c5.52,2.318,1.082,10.467-3.857,7.082
+                                c4.939,3.385-1.047,10.473-5.203,6.16c4.156,4.313-3.134,10.05-6.335,4.987c3.201,5.063-5.097,9.217-7.212,3.609
+                                c2.115,5.607-6.847,8.005-7.79,2.085c0.943,5.92-8.319,6.465-8.05,0.473c-0.269,5.992-9.45,4.662-7.98-1.156
+                                c-1.47,5.818-10.196,2.665-7.584-2.739c-2.611,5.404-10.524,0.563-6.878-4.209c-3.646,4.771-10.422-1.567-5.889-5.509
+                                c-4.533,3.941-9.895-3.631-4.659-6.582c-5.235,2.951-8.963-5.545-3.24-7.385c-5.723,1.84-7.663-7.232-1.687-7.885
+                                c-5.977,0.652-6.052-8.625-0.065-8.064c-5.986-0.562-4.192-9.664,1.56-7.912c-5.752-1.752-2.162-10.307,3.12-7.436
+                                c-5.282-2.871-0.043-10.528,4.553-6.655c-4.597-3.873,2.076-10.32,5.799-5.603c-3.724-4.717,4.11-9.688,6.809-4.321
+                                c-2.698-5.367,5.976-8.66,7.539-2.862c-1.563-5.798,7.596-7.276,7.961-1.285c-0.365-5.991,8.903-5.596,8.056,0.343
+                                c0.848-5.939,9.849-3.687,7.823,1.958c2.025-5.646,10.387-1.627,7.268,3.492c3.119-5.119,10.502,0.5,6.416,4.884
+                                c4.086-4.384,10.186,2.606,5.303,6.076c4.883-3.47,9.45,4.605,3.97,7.019c5.48-2.413,8.33,6.417,2.477,7.675
+                                c5.854-1.258,6.867,7.965,0.881,8.016c5.986-0.051,5.121,9.187-0.752,8.028C127.033,88.464,124.329,97.338,118.81,95.02z" />
+                            </clipPath>
+                            <image xlink:href="../../assets/img/svg-french-fries.svg" width='160' height='160'
+                                clip-path="url(#clio2)" />
+                        </svg>
+                        <br>
+                        <svg class="svg">
+                            <text x="5" y="105" font-size="70" font-family="Black Han Sans">SVG</text>
+                        </svg>
+                        <svg class="svg">
+                            <pattern id="pattern1" patternUnits="useSpaceOnUse" width="100%" height="100%">
+                                <image xlink:href="../../assets/img/svg-french-fries.svg" width='160' height='160' />
+                            </pattern>
+                            <text x="5" y="105" font-size="70" font-family="Black Han Sans"
+                                fill="url(#pattern1)">SVG</text>
+                        </svg>
+                        <br>
+                        <div class="text-wrap">
+                            <div class="text-clip">
+                                SVG
+                            </div>
+                        </div>
+                        <div class="text-wrap">
+                            <div class="text-clip t2">
+                                SVG
+                            </div>
+                        </div>
+                        <div class="text-wrap">
+                            <div class="text-clip3">
+                                SVG
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <pre class="line-numbers language-markup">
+</code></pre>
+                </div>
+                <!-- //Intro6 -->
 
 
 
@@ -221,10 +485,10 @@
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">Animation</a></li>
-                        <li><a href="#intro2">Animation-timing-function1</a></li>
-                        <li><a href="#intro3">Animation-timing-function2</a></li>
-                        <li><a href="#intro4">Animation</a></li>
+                        <li><a href="#intro0">Animation</a></li>
+                        <li><a href="#intro1">rect</a></li>
+                        <li><a href="#intro2">circle</a></li>
+                        <li><a href="#intro3">polygon</a></li>
 
                     </ul>
                 </div>
