@@ -922,7 +922,7 @@
 }
 
 .nav2-contents:hover .d-more i {
-  color: #96c120;
+  color: #000;
 }
 
 .nav2-contents li {
@@ -968,6 +968,10 @@
   position: absolute;
   top: 9px;
   left: 370px;
+}
+.nav2-contents li.gdgd{
+  position: absolute;
+  top: 9px;left: 320px;
 }
 
 .nav2-contents li:nth-child(6) {
@@ -1028,7 +1032,6 @@
 .nav2-contents li .d-more i {
   color: #fff;
   font-size: 20px;
-
 }
 
 /* banner */
@@ -1819,6 +1822,7 @@
 
 /* sub2 */
 
+
 #container {
   width: 1200px;
   margin: 0 auto;
@@ -1888,7 +1892,7 @@
   color: #333;font-size: 16px;
 }
 .fas{
-  color: #d83832 ; font-size: 18px;margin-right: 10px;
+  color: #d83832 ; font-size: 18px;
 }
 
 .content-item-desc{
