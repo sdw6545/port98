@@ -1,30 +1,20 @@
-/* 리셋 */
-*{margin: 0;padding: 0;}
-a{color: #000; text-decoration: none;}
-li{list-style: none;}
-img {width: 100%;}
+body{
+    height: 3600px;
+}
 
+#header{
+    
+}
 .header{
+    position: relative;
     display: flex;
-    justify-content:space-between
+    justify-content:left ;
+    width: 1200px;
+    margin: 0 auto;
 }
-.header h1{
-    font-size: 70px;
-}
-.search{
-    width: 1000px;height: 100px;
-}
-.live{
-    font-size: 50px;
-}
-#menu{
-    text-align: center;
-    margin-top: 100px;
-}
-#menu ul{
+.header .search-box{
     display: flex;
 }
-#menu ul li{
-    flex-grow: 1;
-
+.service-area{
+    position: absolute;right: 0;top: 0;
 }
