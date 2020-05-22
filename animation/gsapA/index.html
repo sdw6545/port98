@@ -212,6 +212,52 @@
                 </div>
                 <!-- //Intro5 -->
 
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Controlling</h2>
+                    <h4>animation
+                        <button class="btn btn6-1">play</button>
+                        <button class="btn btn6-2">pause</button>
+                        <button class="btn btn6-3">resume</button>
+                        <button class="btn btn6-4">reverse</button>
+                        <button class="btn btn6-5">seek(0.5)</button>
+                        <button class="btn btn6-6">timeScale(0.5)</button>
+                        <button class="btn btn6-7">timeScale(2)</button>
+                        <button class="btn btn6-8">kill</button>
+                        <button class="btn btn6-9">restart()</button>
+                    </h4>
+                    <div class="well">
+                        <div class="box6">
+                            <div class="circle circle1">box</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //Intro6 -->
+
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">CallBacks</h2>
+                    <ul>
+                        <li>onComplete: 애니메이션이 완료되었을 때</li>
+                        <li>onStart: 애니메이션이 시작할 때</li>
+                        <li>onUpdate: 애니메이션이 업데이트 될 때마다</li>
+                        <li>onRepeat: 애니메이션이 반복될 때</li>
+                        <li>onReverseComplete: 애니메이션이 리버스 되고 완료되었을 때</li>
+                    </ul>
+                    <h4>animation
+                        <button class="btn btn7-1">jquery</button>
+                        <button class="btn btn7-1">gasp</button>
+                    </h4>
+                    <div class="well">
+                        <div class="box7">
+                            <div class="circle circle1">box</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //Intro7 -->
+
 
 
 
@@ -416,7 +462,7 @@
             gsap.to(".box4 .circle4",{duration: 1, repeat:4, yoyo:true, left:"90%", rotation:"720deg",ease: "power4.out" })
             gsap.to(".box4 .circle5",{duration: 1, repeat:-1, yoyo:true, left:"90%", rotation:"720deg",ease: "power4.out" })
         });
-
+        //타임라인 3번만 움직이기
         $(".box5").css("height","400px")
         $(".btn5").click(function () {
             let tl = new TimelineMax();
@@ -426,7 +472,43 @@
               .to(".box5 .circle1", {duration:1, top:"0%", scale:"1", ease: "back.out(1.7)"})
               .repeat(2)
         });
-        //타임라인 3번만 움직이기
+        
+
+        //6
+        const tw = gsap.to(".box6 .circle1",{duration:10, left:"90%", borderRadius:"0%", rotation: "720deg"});
+        tw.pause();
+
+        $(".btn6").click(function () {
+            TweenMax.to(".box6 .circle1",{duration:10, left:"90%", borderRadius:"0%", rotation: "720deg"});
+
+        });
+        $(".btn6-1").click(function () {tw.play()});
+        $(".btn6-2").click(function () {tw.pause()});
+        $(".btn6-3").click(function () {tw.resume()});
+        $(".btn6-4").click(function () {tw.reverse()});
+        $(".btn6-5").click(function () {tw.seek(0.5)});
+        $(".btn6-6").click(function () {tw.timeScale(0.5)});
+        $(".btn6-7").click(function () {tw.timeScale(2)});
+        $(".btn6-8").click(function () {tw.kill()});
+        $(".btn6-9").click(function () {tw.restart()});
+
+
+
+        //7 
+        $(".btn7-1").click(function(){
+            $(".box7 .circle1").animate({left:"90%"},1000,function(){
+                $(".box7 .circle1").animate({left:"0%"},1000)
+            });
+        });
+
+        $(".btn7-2").click(function(){
+            gsap.to(".box7 .circle1",{duration:1,left:"90%",onComplete:com})
+        });
+
+        function com(){
+            gsap.to(".box7 .circle1",{duration:1,left:"0"})
+        }
+
     </script>
 
 </body>

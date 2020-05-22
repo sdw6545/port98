@@ -624,42 +624,45 @@
 
         //속성,애니메이션(2바퀴), --> 무한 움직이기 --> 10분 뒤에 사라지게 
         $(".btn9").click(function () {
+            
+            function loop() {
+                $(".circle9 > div")
+                    .animate({
+                        left: leftWidth,
+                        borderRadius: "0%",
+                        opacity: 0.5
+                    }, 1000)
+                    .animate({
+                        top: "80%",
+                        borderRadius: "50%",
+                        opacity: 1,
+                        width: "200px",
+                        height: "200px"
+                    }, 1000, )
+                    .animate({
+                        left: "00%",
+                        borderRadius: "0%",
+                        opacity: 0.2,
+                        width: "50px",
+                        height: "50px"
+                    }, 1000)
+                    .animate({
+                        top: 0,
+                        borderRadius: "50%",
+                        opacity: 1
+                    }, 1000, loop)
+                   
+
+            }
+            function out() {
+                $(".circle9 > div").hide();
+            }
+        
             loop();
+            setTimeout(out, 600000);
         });
-
-        function loop() {
-            $(".circle9 > div")
-                .animate({
-                    left: leftWidth,
-                    borderRadius: "0%",
-                    opacity: 0.5
-                }, 1000)
-                .animate({
-                    top: "80%",
-                    borderRadius: "50%",
-                    opacity: 1,
-                    width: "200px",
-                    height: "200px"
-                }, 1000, )
-                .animate({
-                    left: "00%",
-                    borderRadius: "0%",
-                    opacity: 0.2,
-                    width: "50px",
-                    height: "50px"
-                }, 1000)
-                .animate({
-                    top: 0,
-                    borderRadius: "50%",
-                    opacity: 1
-                }, 1000, loop)
-                setTimeout(out, 600000);
-
-        }
-
-        function out() {
-            $(".circle9 > div").hide();
-        }
+            
+        
     </script>
 </body>
 

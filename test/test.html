@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +9,37 @@
     <link rel="stylesheet" href="css/resrt.css">
     <link rel="stylesheet" href="css/all.css">
 </head>
+
 <body>
+    <!-- 헤더 -->
     <header id="header">
         <div class="header">
-            <h1>로고</h1>
-            <div class="search-box">
-                <input class="search" type="text" placeholder="검색" title="검색어 입력">
-                <a href="#" title="검색">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000" width="30px"
-                        height="30px">
-                        <path
-                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-                        <path d="M0 0h24v24H0z" fill="none" />
-                    </svg>
-                </a>
+            <h1><span>네이버</span></h1>
+            <div class="header-query"><input id="query" name="query" type="text" title="검색어 입력" maxlength="255"
+                    class="input_text" tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off"
+                    onclick="document.getElementById('fbm').value=1;" value=""></div>
+            <div class="header-menu">
+                <ul>
+                    <li><a href="#">네이버를 시작페이지로</a></li>
+                    <li><a href="#">쥬니어네이버</a></li>
+                    <li><a href="#">해피빈</a></li>
+                </ul>
             </div>
-            <ul class="service-area">
-                <li><a href="#">네이버 시작페이지로 설정<i class="fas fa-angle-right"></i></a></li>
-                <li><a href="#">주니어 네이버</a></li>
-                <li><a href="#">해피빈</a></li>
-            </ul>
         </div>
-        <nav id="menu">
+    </header>
+    <!-- //헤더 -->
+
+    <!-- 네비 -->
+    <nav id="nav">
+        <div class="nav">
             <ul>
-                <li><a href="#"><span><i class="fas fa-envelope-open-text"></i>메일</span></a></li>
-                <li><a href="#"><span>카페</span></a></li>
-                <li><a href="#"><span>블로그</span></a></li>
-                <li><a href="#"><span>지신iN</span></a></li>
-                <li><a href="#"><span>쇼핑</span></a></li>
-                <li><a href="#"><span>Pay</span></a></li>
-                <li><a href="#"><span><i class="fas fa-tv"></i>tv</span></a></li>
+                <li><a href="#"><span class="color">메일</span></a></li>
+                <li><a href="#"><span class="color">카페</span></a></li>
+                <li><a href="#"><span class="color">블로그</span></a></li>
+                <li><a href="#"><span class="color">지식iN</span></a></li>
+                <li><a href="#"><span class="color">쇼핑</span></a></li>
+                <li><a href="#"><span class="color">Pay</span></a></li>
+                <li><a href="#"><span class="color">Tv</span></a></li>
                 <li><a href="#">사전</a></li>
                 <li><a href="#">뉴스</a></li>
                 <li><a href="#">증권</a></li>
@@ -45,15 +47,272 @@
                 <li><a href="#">지도</a></li>
                 <li><a href="#">영화</a></li>
                 <li><a href="#">뮤직</a></li>
+                <li><a href="#">책</a></li>
                 <li><a href="#">웹툰</a></li>
+                <li class="mo"><a href="#">더보기</a></li>
+                <div id="rtk">
+                    <li><a href="#">급상승 검색어</a></li>
+                </div>
             </ul>
-            <div class="tab-menu"></div>
-            <i class="fas fa-angle-down"></i>
-        </nav>
-        
-    </header>
-    
-    <section id="section"></section>
-    
+
+        </div>
+    </nav>
+    <!-- //네비 -->
+    <!-- 컨텐츠 -->
+    <section id="container">
+        <div id="section-left">
+            <div class="left-container">
+                <div id="col-1">
+                    <a href="#"><img
+                            src="https://ssl.pstatic.net/tveta/libs/1278/1278048/82d36d6c8d30e17fddf7_20200522100801157.jpg"
+                            alt="광고"></a>
+                </div>
+                <!-- //col-1 -->
+                <div id="col-2">
+                    <ul class="link">
+                        <h2>연합뉴스</h2>
+                        <li>부천 돌잔치 뷔페서 9명 확진…이태원 클럽발 총 215명</li>
+                    </ul>
+                    <ul class="lin">
+                        <li><a href="#"><span>네이버뉴스</span></a></li>
+                        <li><a href="#">연예</a></li>
+                        <li><a href="#">스포츠</a></li>
+                        <li><a href="#">경제</a></li>
+                    </ul>
+                </div>
+                <!-- //col-2 -->
+
+                <div id="col-3">
+                    <ul class="ddw">
+                        <h2><a href="#">뉴스스탠드</a></h2>
+                        <li >구독한 언론사</li>
+                        <li class="aaa">전체언론사</li>
+                    </ul>
+                    <div>
+                        <ul>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/904.png"
+                                        alt="JTBC"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img
+                                        src="https://s.pstatic.net/static/newsstand/up/2020/0212/nsd171345162.png"
+                                        alt="파이낸셜뉴스"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/015.png"
+                                        alt="한국경제"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/011.png"
+                                        alt="서울경제"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/241.png"
+                                        alt="일간스포츠"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/031.png"
+                                        alt="아이뉴스24"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/368.png"
+                                        alt="데일리안"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/009.png"
+                                        alt="매일경제"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/277.png"
+                                        alt="아시아경제"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/215.png"
+                                        alt="한국경제TV"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/055.png"
+                                        alt="SBS"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/008.png"
+                                        alt="머니투데이"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/214.png"
+                                        alt="MBC"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img
+                                        src="https://s.pstatic.net/static/newsstand/up/2020/0402/nsd213041246.png"
+                                        alt="중앙데일리"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/056.png"
+                                        alt="KBS"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/926.png"
+                                        alt="중부일보"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/339.png"
+                                        alt="경기일보"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/338.png"
+                                        alt="경인일보"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/986.png"
+                                        alt="투데이신문"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/974.png"
+                                        alt="BBS NEWS"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/539.png"
+                                        alt="위키트리"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/361.png"
+                                        alt="채널예스"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img
+                                        src="https://s.pstatic.net/static/newsstand/up/2020/0303/nsd142429836.png"
+                                        alt="톱데일리"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><img src="https://s.pstatic.net/static/newsstand/2019/logo/363.png"
+                                        alt="과학동아"></a>
+                                <ul class="wdwd">
+                                    <li><a href="#">구독</a></li>
+                                    <li><a href="#">기사보기</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!-- //col-3 -->
+
+
+                <div id="col-4">
+                    <div class="col-4-box1">
+                        <h2>오늘 읽을만한 글 <span>주제별로 분류된 다양한 글 모음</span></h2>
+                        
+                        <ul>
+                            <li><span> 2,180</span> 개의 글</li>
+                            <li><a href="#">관심주제 설정</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-4-box2">
+                        <ul>
+                            <li><a href="#">엔터</a></li>
+                            <li><a href="#">스포츠</a></li>
+                            <li><a href="#">자동차</a></li>
+                            <li><a href="#">웹툰</a></li>
+                            <li><a href="#">경제M</a></li>
+                            <li><a href="#">푸드</a></li>
+                            <li><a href="#">게임</a></li>
+                            <li><a href="#">영화</a></li>
+                        </ul>
+                        <ul style="display: none;">
+                            <li><a href="#">JOB&</a></li>
+                            <li><a href="#">테크</a></li>
+                            <li><a href="#">여행+</a></li>
+                            <li><a href="#">과학</a></li>
+                            <li><a href="#">리빙</a></li>
+                            <li><a href="#">건강</a></li>
+                            <li><a href="#">비즈니스</a></li>
+                            <li><a href="#">연애 결혼</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//left-container  -->
+        <div id="section-right">
+            <div class="right-container"></div>
+        </div>
+        <!--//right-container  -->
+    </section>
+    <!-- //컨텐츠 -->
+
 </body>
+
 </html>
