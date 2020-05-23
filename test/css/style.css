@@ -1,56 +1,67 @@
-#header{
+#header {
     width: 1200px;
     margin: 0 auto;
     height: 160px;
     position: relative;
-  
+
 }
-.header{
+
+.header {
     display: flex;
 }
-.header h1 span{
+
+.header h1 span {
     display: flex;
     padding: 70px 20px 0 0;
 }
 
-.header-menu{
+.header-menu {
     display: inline;
 }
-.header-menu ul{
-    position: absolute;right: 0;top: 0;
+
+.header-menu ul {
+    position: absolute;
+    right: 0;
+    top: 0;
 
 }
-.header-menu ul li{
+
+.header-menu ul li {
     display: inline-block;
 }
 
-#query{
+#query {
     padding: 12px;
     margin-top: 50px;
     width: 444px;
 }
+
 /* 네비 */
 #nav {
     border-bottom: 1px solid #e4e8eb;
     border-top: 1px solid #e4e8eb;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12);
 }
-.nav ul{
+
+.nav ul {
     width: 1200px;
     display: flex;
     margin: 0 auto;
     line-height: 30px;
     padding: 11px 20px 11px 0;
-    justify-content:space-between
+    justify-content: space-between
 }
-.nav ul li{
+
+.nav ul li {
     margin-left: 18px;
     font-size: 15px;
     font-weight: 700;
 }
-.nav ul li span{
+
+.nav ul li span {
     color: #03c75a;
 }
+
 .nav ul li.mo {
     font-size: 13px;
     float: left;
@@ -62,7 +73,7 @@
 }
 
 /* 컨텐츠 레이아웃 */
-#container{
+#container {
     position: relative;
     width: 1200px;
     margin: 0 auto;
@@ -71,41 +82,48 @@
     overflow: hidden;
 }
 
-.left-container{
+.left-container {
     float: left;
     width: 750px;
 }
-.right-container{
+
+.right-container {
     float: right;
     width: 350px;
 }
+
 /* 왼쪽 컨텐츠 */
 
 /* col-1 */
-#col-1 img{
-    width: 750px; height: 135px;
+#col-1 img {
+    width: 750px;
+    height: 135px;
 }
 
 /* col-2 */
-#col-2{
+#col-2 {
     border: solid 1px #dae1e6;
     margin: 20px 0;
     padding: 10px;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     background-color: #f7f9fa
 }
-.link{
+
+.link {
     display: flex;
     padding-right: 100px;
 }
-.link h2{
+
+.link h2 {
     padding-right: 30px;
 }
-.lin{
+
+.lin {
     display: flex;
 }
-.lin li{
+
+.lin li {
     margin-left: 10px;
 }
 
@@ -113,20 +131,24 @@
 #col-3 .ddw {
     display: flex;
 }
+
 #col-3 .ddw h2 {
     font-size: 14px;
     font-weight: 700;
     float: left;
     margin: 10px 30px;
 }
-#col-3 .ddw li{
+
+#col-3 .ddw li {
     margin: 10px 10px;
 }
-#col-3 .ddw li.aaa{
+
+#col-3 .ddw li.aaa {
     font-weight: 700;
     color: #000;
 }
-#col-3 div li{
+
+#col-3 div li {
     width: 16.6666%;
     height: 65px;
     float: left;
@@ -134,21 +156,24 @@
 
 }
 
-#col-3 div li a{
+#col-3 div li a {
     position: relative;
     display: block;
     padding: 23px 5px 22px 25px;
 
 }
-#col-3 div li a img{
+
+#col-3 div li a img {
 
     vertical-align: top;
     height: 20px;
     width: 69px;
 }
 
-.wdwd{
-    position: absolute;left: 50%;top: 50%;
+.wdwd {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     display: none;
 }
 
@@ -157,36 +182,419 @@
 /* 오버효과 미완성 */
 
 /* col-4 */
-#col-4{
+/* menu  */
+#col-4 {
     margin-top: 300px;
 }
-.col-4-box1{
-overflow: hidden;
+
+.col-4-box1 {
+    overflow: hidden;
 }
 
-.col-4-box1 h2{
+.col-4-box1 h2 {
     float: left;
     font-weight: 700;
     font-size: 14px;
 }
-.col-4-box1 h2 span{
+
+.col-4-box1 h2 span {
     color: #808080;
     margin-right: 8px;
 }
+
 .col-4-box1 ul {
     float: right;
-    
+
 }
-.col-4-box1 ul li{
+
+.col-4-box1 ul li {
     float: left;
     color: #808080;
 }
-.col-4-box1 ul li span{
+
+.col-4-box1 ul li span {
     color: #000;
     font-weight: 700;
     font-size: 12px;
 }
-.col-4-box1 ul li a{
+
+.col-4-box1 ul li a {
 
     color: #808080;
+}
+
+.col-4-box2 {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.col-4-box2 ul {
+    float: left;
+}
+
+.col-4-box2 ul li {
+    float: left;
+    border: 1px solid #f7f9fa;
+    padding: 15px 30.7px;
+    
+    
+}
+.col-4-box2 ul li a{
+    font-size: 13px;
+    font-weight: 700;
+}
+/* //menu  */
+/* 엔터 컨텐츠1  */
+.col-4-box3 {
+    padding: 22px 0 21px;
+    display: flex;
+    justify-content: space-between
+}
+
+.col-4-box3-box1 {
+    width: 364px;
+    background: #faedf4;
+}
+
+.col-4-box3-box1 ul {
+    padding: 17px 16px 100px;
+}
+.col-4-box3-box1 ul li em{
+font-weight: 700;
+}
+.col-4-box3-box1 ul li strong{
+    font-size: 14px;
+    margin-top: 12px;
+}
+.col-4-box3-box1 ul li span{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #505050;
+}
+
+.col-4-box3-box2 div a{
+    width: 364px;
+    display: flex;
+}
+.col-4-box3-box2 div a div{
+    margin-right: 18px;
+    width: 100px;
+}
+.col-4-box3-box2 div a ul{
+    padding-right: 30px;
+}
+.col-4-box3-box2 div a li{
+ font-weight: 700;
+}
+.col-4-box3-box2 div a li em{
+    color: #e65da0;
+}
+.col-4-box3-box2 div a li strong{
+    font-size: 13px;
+}
+.col-4-box3-box2 div a li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+}
+.col-4-box3-box2-box1{
+  
+}
+.col-4-box3-box2-box2{
+    margin-top: 20px;
+  
+}
+.col-4-box3-box2-box3{
+    margin-top: 20px;
+}
+/* //엔터 컨텐츠1  */
+/* 엔터 컨텐츠2 */
+.col-4-box4-menu{
+    border: 1px solid #dae1e6;
+    background: #f7f9fa;
+}
+.col-4-box4-menu ul{
+ display: flex;
+ justify-content:flex-start ;
+ padding: 17px;
+
+}
+.col-4-box4-menu ul h2{
+    color:#e65da0;
+    margin-right: 16px;
+    font-size: 13px;font-weight: 700;
+    padding: 5px 0 4px;
+}
+.col-4-box4-menu ul li{
+    font-weight: 700;
+    padding: 5px 0 4px;
+    padding-left: 17px;
+    margin-right: 10px;
+}
+.col-4-box4-menu ul li:nth-child(2) {
+    border-left: 1px solid #e4e8eb;
+}
+
+/* //엔터 컨텐츠2 메뉴 */
+.col-4-box4-con1{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    grid-gap: 25px
+}
+.col-4-box4-con1-box1 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box1 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box1 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box2 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box2 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box2 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box3 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box3 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box3 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box4 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box4 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box4 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box5 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box5 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box5 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box6 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box6 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box6 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box7 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box7 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box7 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box8 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box8 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box8 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+.col-4-box4-con1-box9 ul li em{
+    display: inline-block;
+    color:#e65da0;
+    font-size: 13px;font-weight: 700;
+    margin: 5px 0;
+}
+.col-4-box4-con1-box9 ul li strong{
+    overflow: hidden; text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.col-4-box4-con1-box9 ul li span{
+    color: #505050;
+    font-size: 12px; font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30px;
+
+}
+
+/* 엔터컨텐츠2 의 플레이 버튼, 재생 시간 */
+.boxs{
+    position: relative;
+    margin-bottom: 20px;
+}
+.boxs .boxs2{
+    position: absolute;
+    left: 0;bottom: 0;
+    color:#fff;
+}
+.boxs .boxs3{
+    position: absolute;
+    right: 0;bottom: 0;
+    
+}
+/* //엔터컨텐츠2 의 플레이 버튼, 재생 시간 */
+/* //엔터 컨텐츠2 */
+/* 엔터 컨텐츠3 */
+.col-4-box5{
+
+}
+.col-4-box5-box1{
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+}
+.col-4-box5-box1-con1{
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+.col-4-box5-box1-con1 li{
+    width: 67px;
+}
+.col-4-box5-box1-con1 ul a{
+    display: flex;
+    justify-content:space-between;
+
+}
+.col-4-box5-box1-con1 ul a h4{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    width: 50px;
+    text-align: center;
+    padding-top: 7px;
+}
+.col-4-box5-box1-con1 ul a img{
+    width: 50px;
+}
+.col-4-box5-box1-con1 ul li ul{
+    padding: 6px 0 0 5px
+}
+.col-4-box5-box1-con1 ul li ul li{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+width: 160px;
+}
+.hhh{
+    font-size: 13px;
+    font-weight: 700;
+}
+.col-4-box5-box2{
+    float: right;
+width: 48%;
 }
