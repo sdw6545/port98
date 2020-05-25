@@ -293,21 +293,23 @@
         $(window).scroll(function(){
             const scrollTop = $(window).scrollTop() + $(window).height()/2;
             console.log(scrollTop)
-            $(".scrollTop").text(scrollTop);
-            $(".s1OT").text( parseInt($("#section1").offset().top));
-            $(".s2OT").text( parseInt($("#section2").offset().top));
-            $(".s3OT").text( parseInt($("#section3").offset().top));
-            $(".s4OT").text( parseInt($("#section4").offset().top));
-            $(".s5OT").text( parseInt($("#section5").offset().top));
-            $(".s6OT").text( parseInt($("#section6").offset().top));
-            $(".s7OT").text( parseInt($("#section7").offset().top));
-            $(".s8OT").text( parseInt($("#section8").offset().top));
-            $(".s9OT").text( parseInt($("#section9").offset().top));
+            // $(".scrollTop").text(scrollTop);
+            // $(".s1OT").text( parseInt($("#section1").offset().top));
+            // $(".s2OT").text( parseInt($("#section2").offset().top));
+            // $(".s3OT").text( parseInt($("#section3").offset().top));
+            // $(".s4OT").text( parseInt($("#section4").offset().top));
+            // $(".s5OT").text( parseInt($("#section5").offset().top));
+            // $(".s6OT").text( parseInt($("#section6").offset().top));
+            // $(".s7OT").text( parseInt($("#section7").offset().top));
+            // $(".s8OT").text( parseInt($("#section8").offset().top));
+            // $(".s9OT").text( parseInt($("#section9").offset().top));
 
 
-            // $("#info").each(function(){
-            //     $("#info > strong").text( parseInt($(this).offset().top));
-            // });
+             $("#info").each(function(){
+                $(".scrollTop").text(scrollTop);
+                $("#info > strong").text( parseInt($(this).offset().top));
+                
+            });
 
             // $(".content-item").each(function(){
             //     if(scrollTop > $(this).offset().top){
