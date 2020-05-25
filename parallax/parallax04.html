@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax04</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            --color-h1: #dc6e25;
+            --color-title: #fff;
+            --color-sub: #999;
+            --color-link: #000;
+            --color-bg: #111;
+            --font-family: 'lato', sans-serif;
+            --aspect-ratio: 36/17;
+            --image-width-max: 550px;
+
+            background-color: var(--color-bg);
+            font-family: var(--font-family);
+            color: var(--color-title);
+        }
+
+        #wrap h1 {
+            /*  em 부모값 기준 */
+            font-size: 7vw;
+            /*  vw 백분율한 위드값 */
+            color: var(--color-h1);
+            padding: 3vw;
+            /*  rem 루트만 바꾸면 다바뀜 */
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        #wrap h1 em {
+            display: block;
+            font-weight: 100;
+            padding-left: 17vw;
+        }
+
+        .contents {
+            margin: 35vh auto 40vh;
+        }
+
+        .content-item {
+            position: relative;
+            --image-width: calc(var(--image-width-max) * (var(--aspect-ratio)));
+            width: var(--image-width);
+            max-width: 90vw;
+            margin: 30vh 0 50vh;
+        }
+
+        .content-item-imgWrap {
+            position: relative;
+            --width: 100%;
+            width: var(--width);
+            padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
+            overflow: hidden;
+            background: #ccc;
+        }
+
+        .content-item-img {
+            position: absolute;
+            width: var(--width);
+            --overflow: 40px;
+            height: calc(100% + (2 * var(--overflow)));
+            top: calc(-1*var(--overflow));
+            background-size: cover;
+            background-position: 50% 0;
+        }
+
+        .content-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .content-item-num {
+            font-size: 20vw;
+            font-weight: 100;
+            position: absolute;
+            right: -5vw;
+            top: -25vh;
+            opacity: 0.04;
+        }
+
+        .content-item:nth-child(even) .content-item-num {
+            right: auto;
+            left: -8vw;
+        }
+
+        .content-item-title {
+            text-align: right;
+            font-weight: 300;
+            text-transform: capitalize;
+            color: var(--color-sub);
+            padding-bottom: 0.8vw;
+            font-size: 1.5rem;
+        }
+
+        .content-item:nth-child(even) .content-item-title {
+            text-align: left;
+        }
+
+        .content-item-desc {
+            font-size: 4vw;
+            line-height: 1.2;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-title);
+            text-align: right;
+            word-break: keep-all;
+            margin-top: -7vw;
+            margin-right: -3vw;
+            z-index: 100;
+            position: relative;
+        }
+
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+            margin-right: 0;
+            margin-left: -3vw;
+        }
+
+
+        #section1 .content-item-img {
+            background-image: url(img/so01.jpg);
+        }
+
+        #section2 .content-item-img {
+            background-image: url(img/so02.jpg);
+        }
+
+        #section3 .content-item-img {
+            background-image: url(img/so03.jpg);
+        }
+
+        #section4 .content-item-img {
+            background-image: url(img/so10.jpg);
+        }
+
+        #section5 .content-item-img {
+            background-image: url(img/so05.jpg);
+        }
+
+        #section6 .content-item-img {
+            background-image: url(img/so06.jpg);
+        }
+
+        #section7 .content-item-img {
+            background-image: url(img/so07.jpg);
+        }
+
+        #section8 .content-item-img {
+            background-image: url(img/so08.jpg);
+        }
+
+        #section9 .content-item-img {
+            background-image: url(img/so09.jpg);
+        }
+
+        /* info */
+        .info{
+            position: fixed;top: 20px;right: 20px;
+            background: rgba(255,255,255,0.4);
+            color: #000; padding: 10px;
+            font-size: 14px;font-weight: 300;
+            z-index: 10000;
+            font-style: normal;
+        }
+
+        .contents > section {
+            opacity: 0; transform: translateY(10vh);
+            transition: all 0.6s ease;
+        }
+        .contents > section.show{
+            opacity: 1; transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        <span>pageYOffset():<strong class="pageYOffset">0</strong>px</span><br>
+        <span>#section1 offset:<strong class="s1OT">0</strong>px</span><br>
+        <span>#section2 offset:<strong class="s2OT">0</strong>px</span><br>
+        <span>#section3 offset:<strong class="s3OT">0</strong>px</span><br>
+        <span>#section4 offset:<strong class="s4OT">0</strong>px</span><br>
+        <span>#section5 offset:<strong class="s5OT">0</strong>px</span><br>
+        <span>#section6 offset:<strong class="s6OT">0</strong>px</span><br>
+        <span>#section7 offset:<strong class="s7OT">0</strong>px</span><br>
+        <span>#section8 offset:<strong class="s8OT">0</strong>px</span><br>
+        <span>#section9 offset:<strong class="s9OT">0</strong>px</span><br>
+    </div>
+    <section id="wrap">
+        <h1>Parallax <em>Scrolling</em></h1>
+        <div class="contents">
+            <section id="section1" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">02</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section3" class="content-item">
+                <span class="content-item-num">03</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section4" class="content-item">
+                <span class="content-item-num">04</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section5" class="content-item">
+                <span class="content-item-num">05</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section6" class="content-item">
+                <span class="content-item-num">06</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section7" class="content-item">
+                <span class="content-item-num">07</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section8" class="content-item">
+                <span class="content-item-num">08</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section9" class="content-item">
+                <span class="content-item-num">09</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고 스스로 채찍질 한다.</p>
+            </section>
+        </div>
+    </section>
+    <script>
+        //$(window).scroll(function(){});  // addEventListener = scroll
+        //$(window).on("scroll",function(){});
+        //window.addEventListener("scroll",function(){}) ;
+        //window.addEventListener("scroll",() => {}); 
+
+        //const scrollTop = $(window).scrollTop()
+        //const pageYOffset = window.pageYOffset;
+        //let pageYOffset = window.pageYOffset   //요즘 방식 (익스플로는 var 을 써야함) //옛날 요즘방식을 둘다 써줘야 호환성 지킴
+        //let pageYOffset = document.documentElement.scrollTop    //옛날 방식
+
+        //$(".scrollTop").text(scrollTop)
+        //$(".scrollTop").html(<span>scrollTop</span>)  //html 은 태그 인식
+        //document.querySelector(".pageYOffset").textContent = pageYOffset;
+        //document.querySelector(".pageYOffset").innerTect = pageYOffset;
+        //document.querySelector(".pageYOffset").innerHTML = pageYOffset;
+
+        window.addEventListener("scroll", () => {
+            let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;             
+            console.log("1;"+screen.height/2)
+            console.log("2;"+document.documentElement.scrollTop)
+            console.log("3;"+window.pageYOffset)
+            document.querySelector(".pageYOffset").textContent = pageYOffset;
+
+            //$(".s1OT").text( parseInt($("#section1").offset().top));
+            document.querySelector(".s1OT").textContent = document.getElementById("section1").offsetTop;
+            document.querySelector(".s2OT").textContent = document.getElementById("section2").offsetTop;
+            document.querySelector(".s3OT").textContent = document.getElementById("section3").offsetTop;
+            document.querySelector(".s4OT").textContent = document.getElementById("section4").offsetTop;
+            document.querySelector(".s5OT").textContent = document.getElementById("section5").offsetTop;
+            document.querySelector(".s6OT").textContent = document.getElementById("section6").offsetTop;
+            document.querySelector(".s7OT").textContent = document.getElementById("section7").offsetTop;
+            document.querySelector(".s8OT").textContent = document.getElementById("section8").offsetTop;
+            document.querySelector(".s9OT").textContent = document.getElementById("section9").offsetTop;
+
+
+
+            // if(scrollTop > parseInt($("#section1").offset().top)){
+            //     $(".s1OT").css("color","red")
+            // }else{
+            //     $(".s1OT").css("color","#000")
+            // }
+
+            if( pageYOffset > document.getElementById("section1").offsetTop  ){
+                document.querySelector(".s1OT").style.color="red";
+            }else {
+                document.querySelector(".s1OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section2").offsetTop  ){
+                document.querySelector(".s2OT").style.color="red";
+            }else {
+                document.querySelector(".s2OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section3").offsetTop  ){
+                document.querySelector(".s3OT").style.color="red";
+            }else {
+                document.querySelector(".s3OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section4").offsetTop  ){
+                document.querySelector(".s4OT").style.color="red";
+            }else {
+                document.querySelector(".s4OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section5").offsetTop  ){
+                document.querySelector(".s5OT").style.color="red";
+            }else {
+                document.querySelector(".s5OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section6").offsetTop  ){
+                document.querySelector(".s6OT").style.color="red";
+            }else {
+                document.querySelector(".s6OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section7").offsetTop  ){
+                document.querySelector(".s7OT").style.color="red";
+            }else {
+                document.querySelector(".s7OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section8").offsetTop  ){
+                document.querySelector(".s8OT").style.color="red";
+            }else {
+                document.querySelector(".s8OT").style.color="black";
+            }
+
+            if( pageYOffset > document.getElementById("section9").offsetTop  ){
+                document.querySelector(".s9OT").style.color="red";
+            }else {
+                document.querySelector(".s9OT").style.color="black";
+            }
+
+            // if(scrollTop  > parseInt($("#section1").offset().top)){
+            //     $("#section1").addClass("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section1").offsetTop){
+            //     document.getElementById("section1").classList.add("show")
+            // } else{
+            //     document.getElementById("section1").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section2").offsetTop){
+            //     document.getElementById("section2").classList.add("show")
+            // } else{
+            //     document.getElementById("section2").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section3").offsetTop){
+            //     document.getElementById("section3").classList.add("show")
+            // } else{
+            //     document.getElementById("section3").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section4").offsetTop){
+            //     document.getElementById("section4").classList.add("show")
+            // } else{
+            //     document.getElementById("section4").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section5").offsetTop){
+            //     document.getElementById("section5").classList.add("show")
+            // } else{
+            //     document.getElementById("section5").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section6").offsetTop){
+            //     document.getElementById("section6").classList.add("show")
+            // } else{
+            //     document.getElementById("section6").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section7").offsetTop){
+            //     document.getElementById("section7").classList.add("show")
+            // } else{
+            //     document.getElementById("section7").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section8").offsetTop){
+            //     document.getElementById("section8").classList.add("show")
+            // } else{
+            //     document.getElementById("section8").classList.remove("show")
+            // }
+
+            // if(pageYOffset >document.getElementById("section9").offsetTop){
+            //     document.getElementById("section9").classList.add("show")
+            // } else{
+            //     document.getElementById("section9").classList.remove("show")
+            // }
+
+            //한번에
+            // $(".content-item").each(function(){
+            //     if(scrollTop > $(this).offset().top){
+            //         $(this).addClass("show");
+            //     }
+            // });
+
+
+            document.querySelectorAll(".content-item").forEach(elem => { 
+                console.log(elem.offsetTop);
+                if(pageYOffset > elem.offsetTop){
+                    elem.classList.add("show");
+                }else{
+                    elem.classList.remove("show");
+                }
+            });
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
