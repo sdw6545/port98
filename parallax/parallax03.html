@@ -178,21 +178,28 @@
         }
 
         /* info */
-        .info{
-            position: fixed;top: 20px;right: 20px;
-            background: rgba(255,255,255,0.4);
-            color: #000; padding: 10px;
-            font-size: 14px;font-weight: 300;
+        .info {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            color: #000;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 300;
             z-index: 10000;
             font-style: normal;
         }
 
-        .contents > section {
-            opacity: 0; transform: translateY(10vh);
+        .contents>section {
+            opacity: 0;
+            transform: translateY(10vh);
             transition: all 0.6s ease;
         }
-        .contents > section.show{
-            opacity: 1; transform: translateY(0);
+
+        .contents>section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -290,10 +297,12 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script>
-        $(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height()/2;
+        $(window).scroll(function () {
+            const scrollTop = $(window).scrollTop() + $(window).height() / 2;
             console.log(scrollTop)
-            // $(".scrollTop").text(scrollTop);
+            $(".scrollTop").text(scrollTop);
+
+
             // $(".s1OT").text( parseInt($("#section1").offset().top));
             // $(".s2OT").text( parseInt($("#section2").offset().top));
             // $(".s3OT").text( parseInt($("#section3").offset().top));
@@ -305,11 +314,8 @@
             // $(".s9OT").text( parseInt($("#section9").offset().top));
 
 
-             $("#info").each(function(){
-                $(".scrollTop").text(scrollTop);
-                $("#info > strong").text( parseInt($(this).offset().top));
-                
-            });
+
+
 
             // $(".content-item").each(function(){
             //     if(scrollTop > $(this).offset().top){
@@ -317,58 +323,69 @@
             //     }
             // });
 
-            if(scrollTop > parseInt($("#section1").offset().top)){
-                $(".s1OT").css("color","red")
-            }else{
-                $(".s1OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section1").offset().top)) {
+            //     $(".s1OT").css("color", "red")
+            // } else {
+            //     $(".s1OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section2").offset().top)){
-                $(".s2OT").css("color","red")
-            }else{
-                $(".s2OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section2").offset().top)) {
+            //     $(".s2OT").css("color", "red")
+            // } else {
+            //     $(".s2OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section3").offset().top)){
-                $(".s3OT").css("color","red")
-            }else{
-                $(".s3OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section3").offset().top)) {
+            //     $(".s3OT").css("color", "red")
+            // } else {
+            //     $(".s3OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section4").offset().top)){
-                $(".s4OT").css("color","red")
-            }else{
-                $(".s4OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section4").offset().top)) {
+            //     $(".s4OT").css("color", "red")
+            // } else {
+            //     $(".s4OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section5").offset().top)){
-                $(".s5OT").css("color","red")
-            }else{
-                $(".s5OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section5").offset().top)) {
+            //     $(".s5OT").css("color", "red")
+            // } else {
+            //     $(".s5OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section6").offset().top)){
-                $(".s6OT").css("color","red")
-            }else{
-                $(".s6OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section6").offset().top)) {
+            //     $(".s6OT").css("color", "red")
+            // } else {
+            //     $(".s6OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section7").offset().top)){
-                $(".s7OT").css("color","red")
-            }else{
-                $(".s7OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section7").offset().top)) {
+            //     $(".s7OT").css("color", "red")
+            // } else {
+            //     $(".s7OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section8").offset().top)){
-                $(".s8OT").css("color","red")
-            }else{
-                $(".s8OT").css("color","#000")
-            }
+            // if (scrollTop > parseInt($("#section8").offset().top)) {
+            //     $(".s8OT").css("color", "red")
+            // } else {
+            //     $(".s8OT").css("color", "#000")
+            // }
 
-            if(scrollTop > parseInt($("#section9").offset().top)){
-                $(".s9OT").css("color","red")
-            }else{
-                $(".s9OT").css("color","#000")
+            // if (scrollTop > parseInt($("#section9").offset().top)) {
+            //     $(".s9OT").css("color", "red")
+            // } else {
+            //     $(".s9OT").css("color", "#000")
+            // }
+
+            //한번에
+            for(let i = 1; i < 10; i++) {
+                $(".s" + i + "OT").text(parseInt($("#section" + i).offset().top));
+
+                if (scrollTop > parseInt($("#section" + i).offset().top)) {
+                    $(".s" + i + "OT").css("color", "red")
+                } else {
+                    $(".s" + i + "OT").css("color", "#000")
+                }
             }
 
 
@@ -402,13 +419,12 @@
             // }
 
             //한번에
-            $(".content-item").each(function(){
-                if(scrollTop > $(this).offset().top){
+            $(".content-item").each(function () {
+                if (scrollTop > $(this).offset().top) {
                     $(this).addClass("show");
                 }
             });
         });
-
     </script>
 </body>
 

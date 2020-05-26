@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide01 - 페이드 효과 이미지 슬라이드</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            background: url(img/so01.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Nanum Myeongjo', serif;
+            color: #fff;
+            height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(50, 37, 11, 0.86);
+            z-index: -1;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        /* slide */
+        .slide-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .slide-img {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            overflow: hidden;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-img .slides {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+
+        <h1>Image Slider01</h1>
+        <p>페이드 효과 이미지 슬라이드</p>
+    </div>
+    <div class="slide-wrap">
+        <div class="slide-img">
+            <div class="slides"><img src="img/so01.jpg" alt="이미지1"></div>
+            <div class="slides"><img src="img/so02.jpg" alt="이미지2"></div>
+            <div class="slides"><img src="img/so03.jpg" alt="이미지3"></div>
+            <div class="slides"><img src="img/so04.jpg" alt="이미지4"></div>
+            <div class="slides"><img src="img/so05.jpg" alt="이미지5"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        let slideWrap = $(".slide-wrap");
+        let slideImg = $(".slide-img");
+        let slides = $(".slides");
+
+        let currentIndex = 0; //현재 첫 번째 보이는 이미지
+        let slideCount = slides.length; //이미지 갯수
+
+        //첫번째 이미지 선택해서 사라지게    slides.eq(4).hide();
+        //두번째 이미지 선택해서 사라지게    slides.eq(3).hide();
+        //세번째 이미지 선택해서 사라지게    slides.eq(2).hide();
+        //네번째 이미지 선택해서 사라지게    slides.eq(1).hide();
+        //다섯번째 이미지 선택해서 사라지게  slides.eq(0).hide();
+
+        function showNext() {
+
+            let nextIndex = (currentIndex + 1) % slideCount;
+            slides.eq(currentIndex).fadeOut(500);
+            slides.eq(nextIndex).fadeIn(500);
+
+            currentIndex = nextIndex
+
+        }
+        setInterval(showNext, 3000)
+
+
+
+
+            // let 1 = (0 + 1) % 5;    // 1을 5로 나누지 못해 나머지값은 1이다. 
+            // slides.eq(0).fadeOut(500);
+            // slides.eq(1).fadeIn(500);
+
+            // 1 = 1
+
+            // let 2 = (1 + 1) % 5;    // 2을 5로 나누지 못해 나머지값은 2이다. 
+            // slides.eq(1).fadeOut(500);
+            // slides.eq(2).fadeIn(500);
+
+            // 2 = 2
+
+            // let 3 = (2 + 1) % 5;    // 3을 5로 나누지 못해 나머지값은 3이다. 
+            // slides.eq(2).fadeOut(500);
+            // slides.eq(3).fadeIn(500);
+
+            // 3 = 3
+
+            // let 4 = (3 + 1) % 5;    // 4을 5로 나누지 못해 나머지값은 4이다. 
+            // slides.eq(3).fadeOut(500);
+            // slides.eq(4).fadeIn(500);
+
+            // 4 = 4
+
+            // let 0 = (4 + 1) % 5;    // 5을 5로 나누어 0이된다 
+            // slides.eq(4).fadeOut(500);
+            // slides.eq(0).fadeIn(500);
+
+            // 0 = 0
+
+
+
+    </script>
+</body>
+
+</html>
