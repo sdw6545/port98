@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide06 - 좌,우로 움직이기</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{padding: 10px 20px;}
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            background: url(img/so01.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Noto Sans', sans-serif,'Nanum Gothic Coding', monospace;    
+            color: #fff;
+            height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(50, 37, 11, 0.86);
+            z-index: -1;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .info h1{
+            margin-bottom: 10px;
+        }
+
+        .info2{
+            position: absolute;
+            right: 0;top: 0;z-index: 1000;
+            padding: 20px;
+        }
+        .info2 li{
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .info2 li.active a{
+            border-bottom: 1px #fff  dashed;
+        }
+
+
+        /* slide */
+        .slider-wrap {
+            width: 1000px;height: 600px;
+            overflow: hidden;
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .slider-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-img .slides {
+            float: left; 
+        }
+
+        .slider-btn a{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            width: auto;
+            text-transform: capitalize;
+        }
+        .slider-btn a.prev{
+            left: 0;
+        }
+        .slider-btn a.next{
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+
+        <h1>Image Slider06</h1>
+        <p>좌,우로 움직이기</p>
+        <ul>
+            <li>버튼 만들기</li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li><a href="slider01.html">slide01</a></li>
+            <li><a href="slider02.html">slide02</a></li>
+            <li><a href="slider03.html">slide03</a></li>
+            <li><a href="slider04.html">slide04</a></li>
+            <li><a href="slider05.html">slide05</a></li>
+            <li class="active"><a href="slider06.html">slide06</a></li>
+            <li><a href="slider07.html">slide07</a></li>
+        </ul>
+    </div>
+    <div class="slider-btn">
+        <a href="#" class="prev">prev</a>
+        <a href="#" class="next">next</a>
+    </div>
+    <!-- slider -->
+    <div class="slider-wrap">
+        <div class="slider-img">
+            <div class="slides s1"><img src="img/so01.jpg" alt="이미지1"></div>
+            <div class="slides s2"><img src="img/so02.jpg" alt="이미지2"></div>
+            <div class="slides s3"><img src="img/so03.jpg" alt="이미지3"></div>
+            <div class="slides s4"><img src="img/so04.jpg" alt="이미지4"></div>
+            <div class="slides s5"><img src="img/so05.jpg" alt="이미지5"></div>
+        </div>
+    </div>
+
+    <!--script  -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+       const sliderWrap = $(".slider-wrap");
+        const sliderImg = $(".slider-img");
+        const slides = $(".slides");
+        const sliderBtn = $(".slider-btn")
+
+        let slidCount = slides.length;
+        let slideWidth = slides.width();
+        let slideHeight = slides.height();
+        let lideTotalWidth = slidCount * slideWidth
+
+        slides.css({width:slideWidth,height:slideHeight})
+        sliderImg.css({width:lideTotalWidth, height:slideHeight,marginLeft: - slideWidth})
+        $(".slides:last-child").prependTo(sliderImg)
+
+        function moveLeft(){
+            sliderImg.animate({left: + slideWidth},400,function(){
+                $(".slides:last-child").prependTo(sliderImg);
+                sliderImg.css("left","")
+            });  
+        }      
+        function moveRight(){
+            sliderImg.animate({left: - slideWidth},400,function(){
+                $(".slides:first-child").appendTo(sliderImg);
+                sliderImg.css("left","")
+            });
+        }
+
+        sliderBtn.find(".prev").click(function(){
+            moveLeft()
+        });
+        sliderBtn.find(".next").click(function(){
+            moveRight()
+        });
+
+    </script>
+</body>
+
+</html>

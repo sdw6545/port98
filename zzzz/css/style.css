@@ -231,6 +231,8 @@
 .link {
     display: flex;
     padding-right: 100px;
+    height: 20px;
+    overflow: hidden;
 }
 
 .link h2 {
@@ -274,14 +276,12 @@
 }
 
 #col-3 div li a {
-    position: relative;
     display: block;
     padding: 23px 5px 22px 25px;
 
 }
 
 #col-3 div li a img {
-
     vertical-align: top;
     height: 20px;
     width: 69px;
@@ -290,7 +290,8 @@
 .wdwd {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 0;
+    font-size: 5px;
     display: none;
 }
 
@@ -916,6 +917,8 @@
     padding: 13px 10px;
     border: solid 1px #dae1e6;
     background-color: #f7f9fa;
+    overflow: hidden;
+    height: 50px;
 }
 
 .right-col-2 ul {
@@ -923,7 +926,7 @@
     justify-content: space-between;
     padding-left: 20px;
     width: 280px;
-
+    margin-bottom: 10px;
 }
 
 .right-col-2 ul li {

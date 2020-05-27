@@ -7,6 +7,9 @@
     <title>parallax01</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -23,9 +26,44 @@
         }
 
         body {
+            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
+
             background-color: #111;
             color: #fff;
             font-family: 'Lato', sans-serif;
+        }
+
+        .title {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+            text-align: right;
+        }
+
+        .title h1 {
+            padding-bottom: 10px;
+        }
+
+        .title p {
+            font-size: 18px;
+        }
+
+        .title ul {
+            padding-top: 20px;
+        }
+
+        .title li {
+            padding-bottom: 5px;
+        }
+
+        .title li a {
+            padding-bottom: 5px;
+        }
+
+        .title li.active a {
+            border-bottom: 1px #fff dashed;
         }
 
         #wrap h1 {
@@ -51,21 +89,26 @@
             width: 1000px;
             margin: 200px 0 300px;
         }
-        .content-item:nth-child(even){
+
+        .content-item:nth-child(even) {
             margin-left: auto;
         }
+
         .content-item-num {
             font-size: 350px;
             font-weight: 100;
             position: absolute;
-            right: -100px;top: -200px;
+            right: -100px;
+            top: -200px;
             opacity: 0.04;
         }
-        .content-item:nth-child(even) .content-item-num{
-            right: auto;left: -100px;
+
+        .content-item:nth-child(even) .content-item-num {
+            right: auto;
+            left: -100px;
         }
 
-        .content-item-title{
+        .content-item-title {
             text-align: right;
             font-size: 24px;
             font-weight: 300;
@@ -73,25 +116,27 @@
             padding-bottom: 10px;
             text-transform: capitalize;
         }
-        .content-item:nth-child(even) .content-item-title{
-            text-align:left;
+
+        .content-item:nth-child(even) .content-item-title {
+            text-align: left;
         }
 
-        .content-item-imgWrap{
+        .content-item-imgWrap {
             position: relative;
             padding-bottom: 57%;
             overflow: hidden;
         }
 
-        .content-item-img{
+        .content-item-img {
             height: 550px;
-            position: absolute;top: 0;
+            position: absolute;
+            top: 0;
             width: 100%;
             background-size: cover;
             background-position: 50% 0;
         }
 
-        .content-item-desc{
+        .content-item-desc {
             font-size: 80px;
             line-height: 1.2;
             font-weight: 600;
@@ -101,24 +146,68 @@
             position: relative;
             z-index: 100;
         }
-        .content-item:nth-child(even) .content-item-desc{
-            text-align:left ;
+
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
         }
 
 
-        #section1 .content-item-img{background-image: url(img/so01.jpg);}
-        #section2 .content-item-img{background-image: url(img/so02.jpg);}
-        #section3 .content-item-img{background-image: url(img/so03.jpg);}
-        #section4 .content-item-img{background-image: url(img/so10.jpg);}
-        #section5 .content-item-img{background-image: url(img/so05.jpg);}
-        #section6 .content-item-img{background-image: url(img/so06.jpg);}
-        #section7 .content-item-img{background-image: url(img/so07.jpg);}
-        #section8 .content-item-img{background-image: url(img/so08.jpg);}
-        #section9 .content-item-img{background-image: url(img/so09.jpg);}
+        #section1 .content-item-img {
+            background-image: url(img/so01.jpg);
+        }
+
+        #section2 .content-item-img {
+            background-image: url(img/so02.jpg);
+        }
+
+        #section3 .content-item-img {
+            background-image: url(img/so03.jpg);
+        }
+
+        #section4 .content-item-img {
+            background-image: url(img/so10.jpg);
+        }
+
+        #section5 .content-item-img {
+            background-image: url(img/so05.jpg);
+        }
+
+        #section6 .content-item-img {
+            background-image: url(img/so06.jpg);
+        }
+
+        #section7 .content-item-img {
+            background-image: url(img/so07.jpg);
+        }
+
+        #section8 .content-item-img {
+            background-image: url(img/so08.jpg);
+        }
+
+        #section9 .content-item-img {
+            background-image: url(img/so09.jpg);
+        }
     </style>
 </head>
 
 <body>
+
+    <div class="title">
+        <h1>Parallax01</h1>
+        <p>패럴랙스 효과1</p>
+        <ul>
+            <li class="active"><a href="parallax01.html">parallax01</a></li>
+            <li><a href="parallax02.html">parallax02</a></li>
+            <li><a href="parallax03.html">parallax03</a></li>
+            <li><a href="parallax04.html">parallax04</a></li>
+            <li><a href="parallax05.html">parallax05</a></li>
+            <li><a href="parallax06.html">parallax06</a></li>
+            <li><a href="parallax07.html">parallax07</a></li>
+            <li><a href="parallax08.html">parallax08</a></li>
+        </ul>
+    </div>
+
+
     <section id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
         <div class="contents">

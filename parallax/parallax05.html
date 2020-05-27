@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>parallax03</title>
+    <title>parallax05</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
@@ -120,11 +121,12 @@
         .content-item-img {
             position: absolute;
             width: var(--width);
-            --overflow: 40px;
+            --overflow: 75px;
             height: calc(100% + (2 * var(--overflow)));
             top: calc(-1*var(--overflow));
             background-size: cover;
             background-position: 50% 0;
+            will-change: transform;
         }
 
         .content-item:nth-child(even) {
@@ -138,6 +140,7 @@
             right: -5vw;
             top: -25vh;
             opacity: 0.04;
+            will-change: transform;
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -168,8 +171,10 @@
             word-break: keep-all;
             margin-top: -7vw;
             margin-right: -3vw;
-            z-index: 100;
+            z-index: 20;
             position: relative;
+            transition: transform 0.3s ease;
+            will-change: transform;
         }
 
         .content-item:nth-child(even) .content-item-desc {
@@ -228,51 +233,31 @@
             z-index: 10000;
             font-style: normal;
         }
-
-        .contents>section {
-            opacity: 0;
-            transform: translateY(10vh);
-            transition: all 0.6s ease;
-        }
-
-        .contents>section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 
 <body>
 
+    <div class="info">
+        <div>scrollTop():<span class="scrollTop">0</span>px</div>
+    </div>
+
     <div class="title">
-        <h1>Parallax03</h1>
-        <p>패럴랙스 효과 (제이쿼리)</p>
+        <h1>Parallax05</h1>
+        <p>이질감 효과</p>
         <ul>
             <li><a href="parallax01.html">parallax01</a></li>
             <li><a href="parallax02.html">parallax02</a></li>
-            <li class="active"><a href="parallax03.html">parallax03</a></li>
+            <li><a href="parallax03.html">parallax03</a></li>
             <li><a href="parallax04.html">parallax04</a></li>
-            <li><a href="parallax05.html">parallax05</a></li>
+            <li class="active"><a href="parallax05.html">parallax05</a></li>
             <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
         </ul>
     </div>
 
-
-
-    <div class="info">
-        <span>scrollTop():<strong class="scrollTop">0</strong>px</span><br>
-        <span>#section1 offset:<strong class="s1OT">0</strong>px</span><br>
-        <span>#section2 offset:<strong class="s2OT">0</strong>px</span><br>
-        <span>#section3 offset:<strong class="s3OT">0</strong>px</span><br>
-        <span>#section4 offset:<strong class="s4OT">0</strong>px</span><br>
-        <span>#section5 offset:<strong class="s5OT">0</strong>px</span><br>
-        <span>#section6 offset:<strong class="s6OT">0</strong>px</span><br>
-        <span>#section7 offset:<strong class="s7OT">0</strong>px</span><br>
-        <span>#section8 offset:<strong class="s8OT">0</strong>px</span><br>
-        <span>#section9 offset:<strong class="s9OT">0</strong>px</span><br>
-    </div>
+    <!-- parallax -->
     <section id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
         <div class="contents">
@@ -350,136 +335,80 @@
             </section>
         </div>
     </section>
+
+
+
+
+    <!-- script -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script>
         $(window).scroll(function () {
-            const scrollTop = $(window).scrollTop() + $(window).height() / 2;
-            console.log(scrollTop)
-            $(".scrollTop").text(scrollTop);
+            let scrollTop = $(window).scrollTop();
+
+            $(".scrollTop").text(scrollTop)
+
+            $("#wrap h1").css({
+                transform: "translateX(-" + scrollTop + "px)"
+            })
 
 
-            // $(".s1OT").text( parseInt($("#section1").offset().top));
-            // $(".s2OT").text( parseInt($("#section2").offset().top));
-            // $(".s3OT").text( parseInt($("#section3").offset().top));
-            // $(".s4OT").text( parseInt($("#section4").offset().top));
-            // $(".s5OT").text( parseInt($("#section5").offset().top));
-            // $(".s6OT").text( parseInt($("#section6").offset().top));
-            // $(".s7OT").text( parseInt($("#section7").offset().top));
-            // $(".s8OT").text( parseInt($("#section8").offset().top));
-            // $(".s9OT").text( parseInt($("#section9").offset().top));
-
-
-
-
-
-            // $(".content-item").each(function(){
-            //     if(scrollTop > $(this).offset().top){
-            //         $(this).addClass("show");
-            //     }
-            // });
-
-            // if (scrollTop > parseInt($("#section1").offset().top)) {
-            //     $(".s1OT").css("color", "red")
-            // } else {
-            //     $(".s1OT").css("color", "#000")
+            // for(let i=1; i<=9; i++){
+            //     let offset = (scrollTop - $("#section"+i).offset().top)
+            //     $("#section"+i+" .content-item-desc").css({transform : "translateX("+offset+"px)"});
             // }
 
-            // if (scrollTop > parseInt($("#section2").offset().top)) {
-            //     $(".s2OT").css("color", "red")
-            // } else {
-            //     $(".s2OT").css("color", "#000")
-            // }
 
-            // if (scrollTop > parseInt($("#section3").offset().top)) {
-            //     $(".s3OT").css("color", "red")
-            // } else {
-            //     $(".s3OT").css("color", "#000")
-            // }
-
-            // if (scrollTop > parseInt($("#section4").offset().top)) {
-            //     $(".s4OT").css("color", "red")
-            // } else {
-            //     $(".s4OT").css("color", "#000")
-            // }
-
-            // if (scrollTop > parseInt($("#section5").offset().top)) {
-            //     $(".s5OT").css("color", "red")
-            // } else {
-            //     $(".s5OT").css("color", "#000")
-            // }
-
-            // if (scrollTop > parseInt($("#section6").offset().top)) {
-            //     $(".s6OT").css("color", "red")
-            // } else {
-            //     $(".s6OT").css("color", "#000")
-            // }
-
-            // if (scrollTop > parseInt($("#section7").offset().top)) {
-            //     $(".s7OT").css("color", "red")
-            // } else {
-            //     $(".s7OT").css("color", "#000")
-            // }
-
-            // if (scrollTop > parseInt($("#section8").offset().top)) {
-            //     $(".s8OT").css("color", "red")
-            // } else {
-            //     $(".s8OT").css("color", "#000")
-            // }
-
-            // if (scrollTop > parseInt($("#section9").offset().top)) {
-            //     $(".s9OT").css("color", "red")
-            // } else {
-            //     $(".s9OT").css("color", "#000")
-            // }
-
-            //한번에
-            for (let i = 1; i < 10; i++) {
-                $(".s" + i + "OT").text(parseInt($("#section" + i).offset().top));
-
-                if (scrollTop > parseInt($("#section" + i).offset().top)) {
-                    $(".s" + i + "OT").css("color", "red")
-                } else {
-                    $(".s" + i + "OT").css("color", "#000")
-                }
-            }
-
-
-            //노가다
-            // if(scrollTop  > parseInt($("#section1").offset().top)){
-            //     $("#section1").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section2").offset().top)){
-            //     $("#section2").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section3").offset().top)){
-            //     $("#section3").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section4").offset().top)){
-            //     $("#section4").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section5").offset().top)){
-            //     $("#section5").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section6").offset().top)){
-            //     $("#section6").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section7").offset().top)){
-            //     $("#section7").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section8").offset().top)){
-            //     $("#section8").addClass("show")
-            // }
-            // if(scrollTop > parseInt($("#section9").offset().top)){
-            //     $("#section9").addClass("show")
-            // }
-
-            //한번에
             $(".content-item").each(function () {
-                if (scrollTop > $(this).offset().top) {
-                    $(this).addClass("show");
-                }
+                let offset1 = (scrollTop - $(this).offset().top) * 0.1;
+                let offset2 = (scrollTop - $(this).offset().top) * 0.2;
+                let offset3 = (scrollTop - $(this).offset().top) * 0.3;
+                let offset4 = (scrollTop - $(this).offset().top) * 0.4;
+
+                $(this).find(".content-item-desc").css({transform: "translateY(" + offset1 + "px)"});
+                $(this).find(".content-item-num").css({transform: "translateY(" + offset4 + "px)"});
+                $(this).find(".content-item-img").css({transform: "translateY(" + offset2 + "px)"});
             });
+
+
+
+            // let offset1 = (scrollTop - $("#section1").offset().top)
+            // let offset2 = (scrollTop - $("#section2").offset().top)
+            // let offset3 = (scrollTop - $("#section3").offset().top)
+            // let offset4 = (scrollTop - $("#section4").offset().top)
+            // let offset5 = (scrollTop - $("#section5").offset().top)
+            // let offset6 = (scrollTop - $("#section6").offset().top)
+            // let offset7 = (scrollTop - $("#section7").offset().top)
+            // let offset8 = (scrollTop - $("#section8").offset().top)
+            // let offset9 = (scrollTop - $("#section9").offset().top)
+
+            // $("#section1 .content-item-desc").css({
+            //     transform: "translateX(" + offset1 + "px)"
+            // })
+            // $("#section2 .content-item-desc").css({
+            //     transform: "translateX(" + offset2 + "px)"
+            // })
+            // $("#section3 .content-item-desc").css({
+            //     transform: "translateX(" + offset3 + "px)"
+            // })
+            // $("#section4 .content-item-desc").css({
+            //     transform: "translateX(" + offset4 + "px)"
+            // })
+            // $("#section5 .content-item-desc").css({
+            //     transform: "translateX(" + offset5 + "px)"
+            // })
+            // $("#section6 .content-item-desc").css({
+            //     transform: "translateX(" + offset6 + "px)"
+            // })
+            // $("#section7 .content-item-desc").css({
+            //     transform: "translateX(" + offset7 + "px)"
+            // })
+            // $("#section8 .content-item-desc").css({
+            //     transform: "translateX(" + offset8 + "px)"
+            // })
+            // $("#section9 .content-item-desc").css({
+            //     transform: "translateX(" + offset9 + "px)"
+            // })
         });
     </script>
 </body>

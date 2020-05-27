@@ -8,15 +8,22 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
-            box-sizing: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            padding: 10px 20px;
         }
 
         a {
             text-decoration: none;
-            color: #666;
+            color: #fff;
         }
 
         img {
@@ -27,7 +34,7 @@
         body {
             background: url(img/so01.jpg) no-repeat center center;
             background-size: cover;
-            font-family: 'Nanum Myeongjo', serif;
+            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
             color: #fff;
             height: 100vh;
         }
@@ -51,6 +58,28 @@
             padding: 20px;
         }
 
+        .info h1 {
+            margin-bottom: 10px;
+        }
+
+        .info2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .info2 li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .info2 li.active a {
+            border-bottom: 1px #fff dashed;
+        }
+
+
         /* slide */
         .slide-wrap {
             display: flex;
@@ -68,7 +97,7 @@
         }
 
         .slide-img .slides {
-            position: relative;
+            position: absolute;
             left: 0;
             top: 0;
         }
@@ -81,6 +110,20 @@
         <h1>Image Slider01</h1>
         <p>페이드 효과 이미지 슬라이드</p>
     </div>
+
+    <div class="info2">
+        <ul>
+            <li class="active"><a href="slider01.html">slide01</a></li>
+            <li><a href="slider02.html">slide02</a></li>
+            <li><a href="slider03.html">slide03</a></li>
+            <li><a href="slider04.html">slide04</a></li>
+            <li><a href="slider05.html">slide05</a></li>
+            <li><a href="slider06.html">slide06</a></li>
+            <li><a href="slider07.html">slide07</a></li>
+        </ul>
+    </div>
+
+
     <div class="slide-wrap">
         <div class="slide-img">
             <div class="slides"><img src="img/so01.jpg" alt="이미지1"></div>
@@ -120,38 +163,35 @@
 
 
 
-            // let 1 = (0 + 1) % 5;    // 1을 5로 나누지 못해 나머지값은 1이다. 
-            // slides.eq(0).fadeOut(500);
-            // slides.eq(1).fadeIn(500);
+        // let 1 = (0 + 1) % 5;    // 1을 5로 나누지 못해 나머지값은 1이다. 
+        // slides.eq(0).fadeOut(500);
+        // slides.eq(1).fadeIn(500);
 
-            // 1 = 1
+        // 1 = 1
 
-            // let 2 = (1 + 1) % 5;    // 2을 5로 나누지 못해 나머지값은 2이다. 
-            // slides.eq(1).fadeOut(500);
-            // slides.eq(2).fadeIn(500);
+        // let 2 = (1 + 1) % 5;    // 2을 5로 나누지 못해 나머지값은 2이다. 
+        // slides.eq(1).fadeOut(500);
+        // slides.eq(2).fadeIn(500);
 
-            // 2 = 2
+        // 2 = 2
 
-            // let 3 = (2 + 1) % 5;    // 3을 5로 나누지 못해 나머지값은 3이다. 
-            // slides.eq(2).fadeOut(500);
-            // slides.eq(3).fadeIn(500);
+        // let 3 = (2 + 1) % 5;    // 3을 5로 나누지 못해 나머지값은 3이다. 
+        // slides.eq(2).fadeOut(500);
+        // slides.eq(3).fadeIn(500);
 
-            // 3 = 3
+        // 3 = 3
 
-            // let 4 = (3 + 1) % 5;    // 4을 5로 나누지 못해 나머지값은 4이다. 
-            // slides.eq(3).fadeOut(500);
-            // slides.eq(4).fadeIn(500);
+        // let 4 = (3 + 1) % 5;    // 4을 5로 나누지 못해 나머지값은 4이다. 
+        // slides.eq(3).fadeOut(500);
+        // slides.eq(4).fadeIn(500);
 
-            // 4 = 4
+        // 4 = 4
 
-            // let 0 = (4 + 1) % 5;    // 5을 5로 나누어 0이된다 
-            // slides.eq(4).fadeOut(500);
-            // slides.eq(0).fadeIn(500);
+        // let 0 = (4 + 1) % 5;    // 5을 5로 나누어 나머지값은 0이된다 
+        // slides.eq(4).fadeOut(500);
+        // slides.eq(0).fadeIn(500);
 
-            // 0 = 0
-
-
-
+        // 0 = 0
     </script>
 </body>
 
