@@ -135,6 +135,8 @@ border-bottom:#365fa0 1px solid ;
 
 /* 네비 */
 #nav {
+    overflow: hidden;
+    height: 50px;
     border-bottom: 1px solid #e4e8eb;
     border-top: 1px solid #e4e8eb;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12);
@@ -313,7 +315,6 @@ border-bottom:#365fa0 1px solid ;
     float: left;
     border: 1px solid #dae1e6;
     margin: -1px;
-    
 }
 
 #col-3 div li a {
@@ -337,6 +338,7 @@ border-bottom:#365fa0 1px solid ;
 /* col-4 */
 /* menu  */
 #col-4 {
+    height: 3000px;
     margin-top: 300px;
 }
 
@@ -1073,7 +1075,7 @@ border-bottom:#365fa0 1px solid ;
 
 
 
-.right-col-4-box2 div.pp{
+.right-col-4-box2 div.pp .wwewweww{
     display: grid;
     grid-template-columns: repeat(3, 4fr);
     grid-gap: 14px;

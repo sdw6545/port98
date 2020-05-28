@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>parallax06</title>
+    <title>parallax07</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
     <style>
@@ -139,7 +139,7 @@
             position: absolute;
             right: -5vw;
             top: -25vh;
-            opacity: 0.04;
+            opacity: 0.041;
             will-change: transform;
         }
 
@@ -243,7 +243,7 @@
     </div>
 
     <div class="title">
-        <h1>Parallax06</h1>
+        <h1>Parallax07</h1>
         <p>이질감 효과</p>
         <ul>
             <li><a href="parallax01.html">parallax01</a></li>
@@ -251,8 +251,8 @@
             <li><a href="parallax03.html">parallax03</a></li>
             <li><a href="parallax04.html">parallax04</a></li>
             <li><a href="parallax05.html">parallax05</a></li>
-            <li class="active"><a href="parallax06.html">parallax06</a></li>
-            <li><a href="parallax07.html">parallax07</a></li>
+            <li><a href="parallax06.html">parallax06</a></li>
+            <li  class="active"><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
         </ul>
     </div>
@@ -342,24 +342,41 @@
     <!-- script -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min.js"></script>
     <script>
+        //제이쿼리
+        let scrollTop = $(window).scrollTop();
 
-        window.addEventListener("scroll",function(){
-                let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;
-                document.querySelector(".pageYOffset").textContent = pageYOffset;
-                document.querySelectorAll(".content-item").forEach(elem => {
+        function scroll(){
+            let newScrollTop = $(window).scrollTop();
+            let different = newScrollTop - scrollTop;
 
-                    //console.log(elem.childNodes)
+            console.log("scrollTop :" + scrollTop)
+            console.log("newScrollTop :" + newScrollTop)
+            console.log("different :" + different)
 
 
-                    let target = elem.childNodes[7];            
-                    let offset = (pageYOffset - elem.offsetTop) * 0.2;
-                    target.style.transform = "translateY("+ offset +"px)"
-                });
-            });
+            $(".content-item-desc").css({"transform":"skewY("+different+"deg)"})
 
-       
+            scrollTop = newScrollTop
+            requestAnimationFrame(scroll)
+
+        }
+        scroll()
+
+
+       //일정한 시간 동안 반복적 함수를 실행
+       let unm = 0;
+       function render(){
+           $(".content-item-num").text(unm);
+           unm++;
+            //setInterval(render,1000);
+
+       }
+       render()
+
     </script>
+
 </body>
 
 </html>

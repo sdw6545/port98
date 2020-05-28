@@ -58,11 +58,57 @@ body {
 /* Header  */
 
 #header {
-	background: url(../img/sky1.jpg);
-	background-size: 100%;
-	background-position: 0 bottom;
+	background: rgb(180, 223, 236);
+	position: relative;
 	padding: 10px 0 10px 0px;
 }
+#header .cococo .co1{
+	position: absolute; top: 30%;
+	left: 10%;
+	animation: sdsd 1s 2s infinite ;
+}
+@keyframes sdsd{
+	0% {top: 200px;}
+	50% {top: 180px;}
+	100% {top: 200px;}
+}
+#header .cococo .co2{
+	position: absolute;top: 30%;
+	right: 10%;
+	animation: sdadas 1s 3s infinite ;
+}
+@keyframes sdadas{
+	0% {top: 60px;}
+	50% {top: 50px;}
+	100% {top: 60px;}
+
+}
+
+
+#header .cococo .co3{
+	position: absolute;left: 30%;
+	top: 20%;
+	animation: scvbcvbcv 10s infinite ;
+	z-index:10;
+}
+@keyframes scvbcvbcv{
+	0% {top: 100px;}
+	50% {top: 80px;}
+	100% {top: 100px;}
+}
+
+
+#header .cococo .co1 img{
+	width: 10vw;
+}
+#header .cococo .co2 img{
+	width: 15vw;
+}
+
+#header .cococo .co3 img{
+	width: 5vw;
+}
+
 
 #header.sub {
 	background: url(../img/header_bg.png) center 7px;
@@ -89,14 +135,24 @@ body {
 	display: block;
 	margin: 0 auto;
 	padding-right: 50px;
+	position: relative;
+	z-index: 100;
+	animation: asdasdas 3s infinite ;
+}
+@keyframes asdasdas{
+	0% {top: 50px;}
+	50% {top: 00px;}
+	100% {top: 50px;}
 }
 
 #header h1 {
-	color: #000;
-	margin-bottom: 0px;
+	color: #fff;
+ 	margin-bottom: 0px;
 	margin-top: 20px;
+	-webkit-text-stroke: 2px #000;
 	font-weight: 500;
 	font-family: 'Fredoka One', cursive;
+	z-index: 1000;position: relative;
 }
 
 #header h3 {
@@ -190,13 +246,13 @@ pre.pre-show {
 
 .header_icon li a {
 	position: relative;
-	background-color: #b5d7f1;
+	background-color: #0b6dee;
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
 	display: inline-block;
 	font-size: 28px;
-	color: #90dd3896;
+	color: #ffffff;
 	line-height: 60px;
 	transition: box-shadow 0.3s ease;
 }
@@ -208,7 +264,7 @@ pre.pre-show {
 	transform: translateX(-50%);
 	font-size: 12px;
 	line-height: 1.6;
-	background: #b5d7f1;
+	background: #0b6dee;
 	padding: 3px 9px;
 	border-radius: 6px 0;
 	opacity: 0;
@@ -221,7 +277,7 @@ pre.pre-show {
 	left: 50%;
 	bottom: -5px;
 	transform: translateX(-50%);
-	border-top: 5px solid #91caf5;
+	border-top: 5px solid #0b6dee;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 }

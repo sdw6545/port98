@@ -205,22 +205,39 @@
         });
         sliderDot.html(dotIndex)
 
-
-
+        sliderDot.find("a").eq(currentIndex).addClass("active")
 
 
         function gotoslider(index){
             console.log(index)
 
             sliderImg.animate({ left: -slideWidth * index + "px"},400)
-
             currentIndex = index
+            updateDot();
 
         }
 
         function updateDot(index){
-
+            sliderDot.find("a").removeClass().eq(currentIndex).addClass("active")
         }
+
+
+        //숙제
+        //버튼을 클릭
+        //acrive 있는지 확인
+        //acrive 없을때 닷 메뉴 순서 번호 추출
+        //gotoslider (index)
+
+        $(".slider-dot a").click(function(){
+            if(hasClass("active")){
+
+            }else{
+
+            }
+        });
+
+
+
 
         //버튼 클릭하기
         sliderBtn.on("click", "a", function (e) {

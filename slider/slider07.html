@@ -182,6 +182,8 @@
         //이미지 움직이기 
 
         function moveLeft(){
+            //이미지를 오른쪽으로 이동(박스의 크기)
+
             if(currentIndex == 0){
                 currentIndex = 5;
                 sliderImg.css("margin-left", -currentIndex * slideWidth+"px");
@@ -216,8 +218,6 @@
             // -->left: 0
             //-400
             console.log(currentIndex)
-            
-
         }
 
         //버튼 클릭하기
