@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide06 - 좌,우로 움직이기</title>
+    <title>Slide07 - 좌,우로 움직이기</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        ul{padding: 10px 20px;}
+
+        ul {
+            padding: 10px 20px;
+        }
+
         a {
             text-decoration: none;
             color: #fff;
@@ -28,7 +33,7 @@
         body {
             background: url(img/so01.jpg) no-repeat center center;
             background-size: cover;
-            font-family: 'Noto Sans', sans-serif,'Nanum Gothic Coding', monospace;    
+            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
             color: #fff;
             height: 100vh;
         }
@@ -51,58 +56,68 @@
             z-index: 1000;
             padding: 20px;
         }
-        .info h1{
+
+        .info h1 {
             margin-bottom: 10px;
         }
 
-        .info2{
+        .info2 {
             position: absolute;
-            right: 0;top: 0;z-index: 1000;
+            right: 0;
+            top: 0;
+            z-index: 1000;
             padding: 20px;
         }
-        .info2 li{
+
+        .info2 li {
             list-style: none;
             margin-bottom: 5px;
         }
 
-        .info2 li.active a{
-            border-bottom: 1px #fff  dashed;
+        .info2 li.active a {
+            border-bottom: 1px #fff dashed;
         }
 
 
         /* slide */
         .slider-wrap {
-            width: 1000px;height: 600px;
+            width: 1200px;
             overflow: hidden;
-            position: absolute;left: 50%;top: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 
         }
 
         .slider-img {
             position: relative;
             overflow: hidden;
+            width: 10000px;
         }
 
         .slider-img .slides {
-            float: left; 
+            float: left;
+            width: 400px;
+            padding: 20px;
         }
 
-        .slider-btn a{
+        .slider-btn a {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
             padding: 20px;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             width: auto;
             text-transform: capitalize;
         }
-        .slider-btn a.prev{
+
+        .slider-btn a.prev {
             left: 0;
         }
-        .slider-btn a.next{
+
+        .slider-btn a.next {
             right: 0;
         }
     </style>
@@ -111,9 +126,10 @@
 <body>
     <div class="info">
 
-        <h1>Image Slider06</h1>
+        <h1>Image Slider07</h1>
         <p>좌,우로 움직이기</p>
         <ul>
+            <li>3단 뷰 만들기</li>
             <li>버튼 만들기</li>
         </ul>
     </div>
@@ -125,8 +141,8 @@
             <li><a href="slider03.html">slide03</a></li>
             <li><a href="slider04.html">slide04</a></li>
             <li><a href="slider05.html">slide05</a></li>
-            <li class="active"><a href="slider06.html">slide06</a></li>
-            <li><a href="slider07.html">slide07</a></li>
+            <li><a href="slider06.html">slide06</a></li>
+            <li class="active"><a href="slider07.html">slide07</a></li>
             <li><a href="slider08.html">slide08</a></li>
         </ul>
     </div>
@@ -148,40 +164,71 @@
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script>
-       const sliderWrap = $(".slider-wrap");
+        const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");
         const slides = $(".slides");
         const sliderBtn = $(".slider-btn")
 
+        let slideWidth = slides.outerWidth();
         let slidCount = slides.length;
-        let slideWidth = slides.width();
-        let slideHeight = slides.height();
-        let lideTotalWidth = slidCount * slideWidth
+        let lideTotalWidth = slidCount * slideWidth;
 
-        slides.css({width:slideWidth,height:slideHeight})
-        sliderImg.css({width:lideTotalWidth, height:slideHeight,marginLeft: - slideWidth})
-        $(".slides:last-child").prependTo(sliderImg)
+
+        let currentIndex = 0; //현재 보이는 이미지
+        let slideCopy = slides.clone();
+        sliderImg.append(slideCopy) //슬라이더 이미지를 카피 후 추가
+
+
+        //이미지 움직이기 
 
         function moveLeft(){
-            sliderImg.animate({left: + slideWidth},400,function(){
-                $(".slides:last-child").prependTo(sliderImg);
-                sliderImg.css("left","")
-            });  
-        }      
-        function moveRight(){
-            sliderImg.animate({left: - slideWidth},400,function(){
-                $(".slides:first-child").appendTo(sliderImg);
-                sliderImg.css("left","")
-            });
+            if(currentIndex == 0){
+                currentIndex = 5;
+                sliderImg.css("margin-left", -currentIndex * slideWidth+"px");
+            }
+
+            currentIndex--;
+            sliderImg.animate({"margin-left": -slideWidth * currentIndex+"px"},400);
+            console.log(currentIndex)
         }
 
-        sliderBtn.find(".prev").click(function(){
-            moveLeft()
-        });
-        sliderBtn.find(".next").click(function(){
-            moveRight()
-        });
 
+
+
+
+
+        function moveRight() {
+            //이미지를 왼쪽으로 이동(박스의 크기)
+
+            if (currentIndex == slidCount) {
+                currentIndex = 0;
+                sliderImg.css("margin-left", -currentIndex * slideWidth + "px"); //left : 0
+
+            }
+            currentIndex++
+            sliderImg.animate({"margin-left": -slideWidth * currentIndex + "px" }, 400, )
+            //left
+            //-400
+            //-800
+            //-1200
+            //-1600
+            //-2000
+            // -->left: 0
+            //-400
+            console.log(currentIndex)
+            
+
+        }
+
+        //버튼 클릭하기
+        sliderBtn.on("click", "a", function () {
+            if ($(this).hasClass("prev")) {
+                moveLeft()
+            } else {
+                moveRight()
+            }
+
+        });
     </script>
 </body>
 

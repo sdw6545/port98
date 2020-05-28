@@ -190,13 +190,13 @@ pre.pre-show {
 
 .header_icon li a {
 	position: relative;
-	background-color: #77b5e6;
+	background-color: #b5d7f1;
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
 	display: inline-block;
 	font-size: 28px;
-	color: #fff;
+	color: #90dd3896;
 	line-height: 60px;
 	transition: box-shadow 0.3s ease;
 }
@@ -208,7 +208,7 @@ pre.pre-show {
 	transform: translateX(-50%);
 	font-size: 12px;
 	line-height: 1.6;
-	background: #77b5e6;
+	background: #b5d7f1;
 	padding: 3px 9px;
 	border-radius: 6px 0;
 	opacity: 0;
@@ -221,7 +221,7 @@ pre.pre-show {
 	left: 50%;
 	bottom: -5px;
 	transform: translateX(-50%);
-	border-top: 5px solid #77b5e6;
+	border-top: 5px solid #91caf5;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 }
@@ -233,7 +233,7 @@ pre.pre-show {
 
 .header_icon li a:hover {
 	box-shadow:
-		0 0 0 3px rgba(97, 148, 189, 0.9) inset,
+		0 0 0 3px rgba(97, 148, 189, 0.5) inset,
 		0 0 0 100px rgba(0, 0, 0, 0.1) inset;
 }
 
