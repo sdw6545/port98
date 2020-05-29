@@ -135,7 +135,6 @@ border-bottom:#365fa0 1px solid ;
 
 /* 네비 */
 #nav {
-    overflow: hidden;
     height: 50px;
     border-bottom: 1px solid #e4e8eb;
     border-top: 1px solid #e4e8eb;
@@ -166,23 +165,22 @@ border-bottom:#365fa0 1px solid ;
 }
 
 .nav ul li.mo {
-    font-size: 13px;
+    font-size: 19px;
+    font-weight: 700;
     float: left;
     min-width: 70px;
     margin-left: 17px;
     text-align: right;
-    color: #505050;
-    font-weight: 300;
 }
 
-.momomo.on {
+.momomo.adadadad {
     display: inline-block;
     border: 1px solid steelblue;
     border-right: none;
     border-left: none;
     font-family: 'Do Hyeon', sans-serif;
     position: absolute;
-    left: 0;
+    left: 0;top: 50px;
     z-index: 3;
     width: 100%;
     height: 300px;
@@ -314,7 +312,8 @@ border-bottom:#365fa0 1px solid ;
     height: 66px;
     float: left;
     border: 1px solid #dae1e6;
-    margin: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
 }
 
 #col-3 div li a {
@@ -332,18 +331,13 @@ border-bottom:#365fa0 1px solid ;
 
 
 
-
-/* 오버효과 미완성 */
-
 /* col-4 */
 /* menu  */
-#col-4 {
-    height: 3000px;
-    margin-top: 300px;
-}
+
 
 .col-4-box1 {
     overflow: hidden;
+    margin-top: 300px;
 }
 
 .col-4-box1 h2 {
@@ -390,9 +384,13 @@ border-bottom:#365fa0 1px solid ;
 .col-4-box2 ul li {
     float: left;
     border: 1px solid #dae1e6;
+    margin-left: -1px;
     padding: 15px 30.7px;
 
 
+}
+.col-4-box2 ul li.adadad{
+    background: rgb(240, 126, 126);
 }
 
 .col-4-box2 ul li a {
@@ -852,12 +850,12 @@ border-bottom:#365fa0 1px solid ;
     width: 160px;
 }
 .pl{
-    font-size: 25px;
-    padding: 2px;
+    font-size: 20px;
+    margin: 2px;
 }
 .cc{
-    font-size: 25px;
-    padding: 2px;
+    font-size: 20px;
+    margin: 2px;
 }
 .hhh {
     font-size: 13px;
@@ -901,7 +899,9 @@ border-bottom:#365fa0 1px solid ;
 
 /* //엔터 컨텐츠5 */
 
+
 /* 오른쪽 컨텐츠 */
+
 
 /* 로그인 */
 .right-col-1 {

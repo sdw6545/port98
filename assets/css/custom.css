@@ -10,7 +10,7 @@ body {
 #top-nav {
 	border-bottom: 1px solid #e1e6dd;
 	background: #FFF;
-	-webkit-transform: translateZ(0)
+	transform: translateZ(0)
 }
 
 #top-nav.navbar {
@@ -65,9 +65,9 @@ body {
 #header .cococo .co1{
 	position: absolute; top: 30%;
 	left: 10%;
-	animation: sdsd 1s 2s infinite ;
+	animation: ssss 1s  infinite ;
 }
-@keyframes sdsd{
+@keyframes ssss{
 	0% {top: 200px;}
 	50% {top: 180px;}
 	100% {top: 200px;}
@@ -75,9 +75,9 @@ body {
 #header .cococo .co2{
 	position: absolute;top: 30%;
 	right: 10%;
-	animation: sdadas 1s 3s infinite ;
+	animation: dddd 1s infinite ;
 }
-@keyframes sdadas{
+@keyframes dddd{
 	0% {top: 60px;}
 	50% {top: 50px;}
 	100% {top: 60px;}
@@ -88,10 +88,10 @@ body {
 #header .cococo .co3{
 	position: absolute;left: 30%;
 	top: 20%;
-	animation: scvbcvbcv 10s infinite ;
+	animation: aaaa 10s infinite ;
 	z-index:10;
 }
-@keyframes scvbcvbcv{
+@keyframes aaaa{
 	0% {top: 100px;}
 	50% {top: 80px;}
 	100% {top: 100px;}
