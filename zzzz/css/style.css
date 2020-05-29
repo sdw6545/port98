@@ -768,9 +768,10 @@ border-bottom:#365fa0 1px solid ;
 
 .boxs .boxs2 {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    color: #fff;
+    left: 10px;
+    bottom: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 25px;
 }
 
 .boxs .boxs3 {
@@ -850,7 +851,14 @@ border-bottom:#365fa0 1px solid ;
     white-space: nowrap;
     width: 160px;
 }
-
+.pl{
+    font-size: 25px;
+    padding: 2px;
+}
+.cc{
+    font-size: 25px;
+    padding: 2px;
+}
 .hhh {
     font-size: 13px;
     font-weight: 700;
