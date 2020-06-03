@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+        #nav {
+            position: fixed;left: 0;top: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 1000;
+            display: flex;
+            font-family: 'Roboto';
+            padding: 0 7vw;
+        }
+
+        #nav h1 {
+           flex: 1 1 0;
+            font-weight: 700; 
+            letter-spacing: 10px; 
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 2.3vw 1vw;
+        }
+
+        #nav .menu{
+            flex: 1 1 0;
+        }
+
+        #nav .menu li {
+            display: inline-block; 
+            margin: 2.3vw 1vw 2.3vw 0;
+        }
+
+        #nav .menu li.active a{font-weight: bold;}
+        
+        #nav .menu a {
+            font-size: 14px;
+            color: #000;
+        }
+
+        #nav .ham {
+            flex: 1 1 0;
+            position: relative;
+        }
+
+        #nav .ham .bar{
+            position: absolute;
+            right: 0;
+            top: 50%; transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            cursor: pointer; 
+        }
+        
+        #nav .ham .bar span {
+            width: 30px;
+            height: 3px;
+            background: #000;
+            position: relative;
+            display: block;
+            transition: all 0.5s ease;
+            margin-top: 25px;
+            margin-left: 10px;
+        }
+        #nav .ham .bar span::before{
+            content: '';
+            width: 50%;
+            height: 3px;
+            background: #000;
+            position: absolute;top: -10px;left: 0;
+            transform-origin: left;
+            transition: all 0.5s ease;
+
+        }
+        #nav .ham .bar span::after{
+            content: '';
+            width: 50%;
+            height: 3px;
+            background: #000;
+            position: absolute;bottom: -10px;right: 0;
+            transform-origin: right;
+            transition: all 0.5s ease;
+        }
+        #nav .ham .bar.on span{
+            transform: rotate(135deg);
+        }
+        #nav .ham .bar.on span::before{top: 0; transform: translateX(100%) rotate(-90deg);}
+        #nav .ham .bar.on span::after{bottom: 0; transform: translateX(-100%) rotate(-90deg);}
+
+        /* slide */
+        .slide-wrap {position: relative; height: 100vh; overflow: hidden;}
+        .slide-img {position: relative; width: 100%; height: 100%;}
+        .slide-img .slide {position: absolute;width: 100%;height: 100%; overflow: hidden;}
+        .slide-img .slide .stext {
+            position: absolute; left: 50%;top: 50%; 
+
+            transform:translate(-50%,-50%) scale(0.8);
+        }
+        .slide-img .slide .stext h2{
+            font-size: 11vw;
+            line-height: 8vw;
+            padding-top: 0.1vw;
+            color: #fff;
+            font-family: "Roboto" ;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            overflow: hidden;
+            display: flex;
+        }
+        .slide-img .slide .stext h2 span{
+            transform: translateY(101%);
+
+        }
+        .slide-img .slide .simg {position: absolute; left: 50%;top: 50%; transform: translate(-50%,-50%);}
+        .slide-img .slide .simg img {max-width: 500px;}
+
+        
+        .slide-img .slide .snum{
+            position: absolute; left: 7.5vw;top: 11vh;
+            font-size: 5vw;
+            color: #000;
+            font-family: "Playfair Display";
+            font-style: italic;
+        }
+        .slide-img .slide .snum span.currentIndex{
+            margin-right: 4.5vw;position: relative;
+        }
+        .slide-img .slide .snum span.currentIndex::before{
+            content: '';
+            width: 4vw;
+            height: 1px;
+            background: #000;
+            position: absolute;
+            right: -5.3vw;bottom: 2.5vw;
+        }
+
+
+        /* slide-dot */
+        .slide-dot {
+            position: absolute; left: 50%;transform: translateX(-50%);
+            bottom: 0;
+            width: 100%;
+            background: #fff;
+            text-align: center;
+        }
+        .slide-dot a{
+            color:#000;
+            display: inline-block;
+            width: 10px;height: 10px;
+            border-radius: 50%;
+            margin: 2.5vw 1.2vw 2.5vw 1vw;
+            border: 1px solid #ccc;
+            text-indent: -99999px;
+            transition: all 0.3s ease;   
+        }
+        .slide-dot a.active{
+            border: 3px; color: #333; text-indent: 0;
+            font-family: "Playfair Display";
+            font-style: italic;
+            vertical-align: 7px;
+            font-size: 18px;
+        }
+
+        /* slide-btn */
+        .slide-btn { }
+        .slide-btn a {position: absolute; top: 0; z-index: 2000;}
+        .slide-btn a.prev {left: 0; width: 5.2vw; height: 100vh; background: #fff; }
+        .slide-btn a.next {right: 0; width: 5.2vw; height: 100vh; background: #fff;}
+
+        .slide-btn a.prev::before {
+            content: '';
+            width: 10px; height: 2px; background: #000;
+            position: absolute; bottom: 3vw; left: 2.4vw;
+            border-radius: 10px;
+            transform: rotate(-45deg);
+            transform-origin: left;
+        }
+        .slide-btn a.prev::after {
+            content: '';
+            width: 10px; height: 2px; background: #000;
+            position: absolute; bottom: 3vw; left: 2.4vw;
+            border-radius: 10px;
+            transform: rotate(45deg);
+            transform-origin: left;
+        }
+
+        .slide-btn a.next::before{content: '';
+            width: 10px; height: 2px; background: #000;
+            position: absolute; bottom: 3vw; right: 2.4vw;
+            border-radius: 10px;
+            transform: rotate(-45deg);
+            transform-origin: right;}
+        .slide-btn a.next::after{content: '';
+            width: 10px; height: 2px; background: #000;
+            position: absolute; bottom: 3vw; right: 2.4vw;
+            border-radius: 10px;
+            transform: rotate(45deg);
+            transform-origin: right;}
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <ul class="menu">
+            <li class="active"><a href="#">Work</a> </li>
+            <li><a href="#">About</a> </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <h1>PORTFOLIO</h1>
+        <div class="ham">
+            <div class="bar">
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+
+
+
+
+    <section id="contents">
+        <div class="slide-wrap">
+            <div class="slide-img">
+                <div class="slide s1">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img1.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">01</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+                <div class="slide s2">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img2.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">02</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+                <div class="slide s3">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img3.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">03</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+                <div class="slide s4">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img4.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">04</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+                <div class="slide s5">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img1.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">05</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+                <div class="slide s6">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img2.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">06</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+                <div class="slide s7">
+                    <div class="stext">
+                        <h2>webstandard</h2>
+                    </div>
+                    <div class="simg">
+                        <img src="img/img3.png" alt="webstandard">
+                    </div>
+                    <div class="snum">
+                        <span class="currentIndex">07</span>
+                        <span class="slideCount">07</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="slide-dot">
+                <a href="#" class="active">01</a>
+                <a href="#">02</a>
+                <a href="#">03</a>
+                <a href="#">04</a>
+                <a href="#">05</a>
+                <a href="#">06</a>
+                <a href="#">07</a>
+            </div> -->
+        </div>
+    </section>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(".slide-wrap").append("<div class='slide-dot'></div>")
+        $(".slide-wrap").append("<div class='slide-btn'><a href='#' class='prev'></a><a href='#' class='next'></a></div>")
+
+        const slideWrap = $(".slide-wrap"),
+              slideImg = $(".slide-img"),
+              slide = $(".slide"),
+              slideDot = $(".slide-dot"),
+              slideBtn = $(".slide-btn")
+
+
+
+        let slideCount = slide.length,           //슬라이드 이미지 갯수
+            currentIndex = 0,                    //현재 보이는 이미지
+            dotIndex ="",                        //닷 버튼 HTML
+            duration = 1000,                     //이미지 슬라이드 이동 시간
+            easing ="easeOutExpo",                //이미지 움직임 효과
+            slideBg = ["#fcefe9","#e9effd","#fae3f5","#fbe368","#ccebea","#e9effd","#f4f2ec"]  //각 슬라이드
+
+
+
+
+
+        //0.1 각 이미지 absolute
+        //left:0  currentIndex
+        //left:100%   currentIndex(1) *100% =100%
+        //left:200%   currentIndex(2) *100% =200%
+        //left:300%   currentIndex(3) *100% =300%
+        //each()
+
+        //글씨 분활
+        slide.each(function () {
+            let txt = $(this).find(".stext >h2") .text();
+            
+            let split = txt.split("").join("</span><span aria-hidden='true'>")
+            split = "<span aria-hidden='true'>" + split + "</span>";
+            $(this).find(".stext >h2").html(split).attr("aria-label", txt)
+        });
+        // if ($(window).scrollTop() >= $("#section1").offset().top) { //화면에 섹션이 보이기 시작할 때
+        //         $("#section1 .content-item-desc span").each(function (i) {
+        //             console.log(i);
+
+        //             setInterval(function () {
+        //                 $("#section1 .content-item-desc span").eq(i).addClass("show")
+        //             }, 100 * i)
+
+        //         })
+        //     }
+       
+
+
+
+        slide.each(function(i , e){
+            // $(this).css({left:+index+"00%"})
+            $(this).css({left: 100* i +"%",background: slideBg[i]})  //각 슬라이드 위치 설정
+            //이미지 갯수만큼 닷 버튼 만들기
+            dotIndex += "<a href='#'></a>";
+            
+        });
+        slideDot.html(dotIndex)
+
+
+
+        //이미지 움직이기
+        function gotoSlide(num){
+            slideImg.animate({ left: -100 * num + "%" }, duration,easing);
+
+            currentIndex = num;
+            updateDot()
+        }
+
+
+        function updateDot(){
+            slideDot.find("a").removeClass().eq(currentIndex).addClass("active")
+            slide.removeClass("active").eq(currentIndex).addClass("active")
+        }
+
+
+
+
+
+
+        //버튼 클릭하기
+        slideBtn.on("click","a",function(){
+            let nextIndex = (currentIndex + 1) %  slideCount;
+            let prevIndex = (currentIndex - 1) % slideCount;
+
+            if( currentIndex == 0 )prevIndex = slideCount-1;
+
+
+
+
+            if($(this).hasClass("prev")){
+                //왼쪽 버튼
+                gotoSlide(prevIndex);
+            }else{
+                //오른쪽 버튼
+                gotoSlide(nextIndex);
+            }
+        });
+
+
+        //햄버거 메뉴
+        $("#nav .ham .bar").click(function(){
+            $(this).toggleClass("on");
+        });
+
+        slideDot.on("click","a",function(){
+            gotoSlide($(this).index());
+        }); 
+
+    </script>
+</body>
+
+</html>
