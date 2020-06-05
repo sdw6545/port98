@@ -140,7 +140,7 @@
 
         //3초에 한 번씩 실행
         setInterval(function(){
-            sliderImg.animate({left:"-1000px"},400,function(){
+            sliderImg.animate({left:"-1000px"},1000,function(){
                 $(".slides:first-child").appendTo(sliderImg);
                 sliderImg.css("left","")
             })

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect01</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            padding: 10px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            background: url(../slider/img/so01.jpg) no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            transform: all 0.2s;
+            cursor: none;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(45, 71, 100, 0.8);            
+            z-index: -1;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .info h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .info2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .info2 li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .info2 li a{
+            color: #fff;
+        }
+
+        .info2 li.active a {
+            border-bottom: 1px #fff dashed;
+        }
+
+
+        .info3{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .info3 li { list-style: none;}
+
+
+        .contents{
+            margin-right: 10px;
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+            width: 100%;height: 100%;
+            flex-direction: column;
+        }
+        .contents p {
+            max-width: 80vw;
+            font-size: 3vw;
+            text-align: justify;
+            font-weight: 500;
+            color: #eee;
+            font-weight: 700;
+        }
+        .contents p a {text-decoration: none; color: orange;}
+        .cursor {
+            position: absolute; left: -100px;top: -100px;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background-color: rgba(255,255,255,0.1);
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        <h1>Mouse Effect01</h1>
+        <p>마우스 따라다니기</p>
+        <ul>
+            <li>clientX,clientY</li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li class="active"><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+        <li>clientX: <span class="clientX">0</span></li>    
+        <li>clientY:<span class="clientY">0</span></li>    
+        <li>offsetX:<span class="offsetX">0</span></li>    
+        <li>offsetY:<span class="offsetY">0</span></li>    
+        <li>pageX:<span class="pageX">0</span></li>  
+        <li>pageY:<span class="pageY">0</span></li>  
+        <li>screenX:<span class="screenX">0</span></li>    
+        <li>screenY:<span class="screenY">0</span></li>    
+    </div>
+
+<!-- 
+    clientX :브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+    clientY :브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+    offsetX :이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+    offsetY :이벤트 대상 객체에서의 상대적 마우스 Y좌표 위치를 반환합니다.
+    pageX:브라우저 페이지에서의 x좌표 위치를 반환합니다.
+
+    pageY:브라우저 페이지에서의 Y좌표 위치를 반환합니다.
+    screenX:전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+    screenY:전체 모니터 스크린에서의 Y좌표 위치를 반환합니다.
+ -->
+    <!-- contents -->
+    <div class="cursor"></div>
+    <div class="contents">
+        <p>To climb steep hills requires <a>slow</a> pace at first. </p><p>험준한 산을 오르기 위해선 먼저 <a>천천히</a> 걸어야 한다.</p>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- script -->
+    <script src="../parallax/js/jquery.min_1.12.4.js"></script>
+    <script src="../parallax/js/jquery-ui.min.js"></script>
+    <script>
+        $(window).mousemove(function(event){
+            $(".clientX").text(event.clientX);
+            $(".clientY").text(event.clientY);
+            $(".offsetX").text(event.offsetX);
+            $(".offsetY").text(event.offsetY);
+            $(".pageX ").text(event.pageX);
+            $(".pageY ").text(event.pageY);
+            $(".screenX ").text(event.screenX);
+            $(".screenY ").text(event.screenY);
+
+            $(".cursor").css({left :event.clientX-25+"px" ,top:event.clientY-25+"px" })
+        });
+        $(".contents > p > a").hover(function(){
+            $(".cursor").css({"border":"3px solid orange","backgroundColor":"orange"})
+            },function(){
+            $(".cursor").css({"border":"3px solid #fff","backgroundColor":"rgba(255,255,255,0.1)"})
+        })
+
+        // window.addEventListener("mousemove",function(event){
+        //     document.querySelector(".clientX").innerHTML=event.clientX
+        //     document.querySelector(".clientY").innerHTML=event.clientY
+        //     document.querySelector(".offsetX").innerHTML=event.offsetX
+        //     document.querySelector(".offsetY").innerHTML=event.offsetY
+        //     document.querySelector(".pageX").innerHTML=event.pageX
+        //     document.querySelector(".pageY").innerHTML=event.pageY
+        //     document.querySelector(".screenX").innerHTML=event.screenX
+        //     document.querySelector(".screenY").innerHTML=event.screenY
+        // })
+    </script>
+</body>
+
+</html>

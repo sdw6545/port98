@@ -574,19 +574,19 @@
         // }
 
         //한번에each
-        $(".content-item-desc").each(function () {
-            let txt = $(this).text();
-            let split = txt.split("").join("</span><span aria-hidden='true'>")
-            split = "<span aria-hidden='true'>" + split + "</span>";
-            $(this).html(split).attr("aria-label", txt)
-        });
+        // $(".content-item-desc").each(function () {
+        //     let txt = $(this).text();
+        //     let split = txt.split("").join("</span><span aria-hidden='true'>")
+        //     split = "<span aria-hidden='true'>" + split + "</span>";
+        //     $(this).html(split).attr("aria-label", txt)
+        // });
 
         //자바스크립트 한번에
         // document.querySelectorAll(".content-item-desc").forEach(box => {
-        //     let txt = box.
+        //     let txt = box.textContent
         //     let split = txt.split("").join("</span><span aria-hidden='true'>")
         //         split = "<span aria-hidden='true'>"+split+"</span>";
-
+        //     box.
         // })
 
 
