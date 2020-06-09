@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect04</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            padding: 10px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+            cursor: none;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            background: url(../slider/img/so13.jpg) no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            transform: all 0.2s;
+            /* cursor: none; */
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(24, 37, 51, 0.8);            
+            z-index: -1;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+        }
+
+        .info h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .info2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .info2 li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .info2 li a{
+            color: #fff;
+        }
+
+        .info2 li.active a {
+            border-bottom: 1px #fff dashed;
+        }
+
+
+        .info3{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .info3 li { list-style: none;}
+
+
+        .contents{
+            margin-right: 10px;
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+            width: 100%;height: 100%;
+            flex-direction: column;
+        }
+        .contents p {
+            max-width: 80vw;
+            font-size: 3vw;
+            text-align: justify;
+            font-weight: 500;
+            color: #eee;
+            font-weight: 700;
+        }
+        .contents p a {text-decoration: none; color: rgb(132, 171, 255);}
+
+
+        .cursor{
+            position: absolute;
+            left:0; top:0;
+            width:10px; height:10px;
+            border-radius: 50%;
+            z-index:1000;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            background: #fff;
+            transition:transform 0.8s ease-in-out;
+           
+        }
+        .cursor strong{
+            background : rgba(255,255,255,0.9);
+            color:#000;
+            position: absolute;
+            left:50%;
+            padding: 3px;
+        }
+        .cursor strong:first-child{ top:-65px;}
+        .cursor strong:last-child{ top:-40px;}
+        .move-image{
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50%,-50%) perspective(600px) rotateX(-10deg) rotateY(-10deg) scale(0.8);
+            transform-style:preserve-3d ;
+            will-change:transform ;
+        }
+        .move-image .mimg{
+            position: relative;
+        }
+        
+        .move-image .mimg::before{
+            content: '';
+            position: absolute; z-index: -1;
+            opacity: 0.5;
+            left: 5%;bottom: -20px;
+            width: 90%;height: 30px;
+            background: url(../slider/img/so13.jpg) no-repeat;
+            background-size: 100% 40px;
+            filter: blur(25px);
+        }
+        .move-image .mimg img{
+            border-radius: 10px;
+        }
+        .move-image .mtext{
+            font-size: 1vw;
+            position: absolute;left: 50%;bottom: 50%;
+            transform:translate3d(-50%, 68%, 150px);
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            padding: 2vw;
+            border-radius: 10px;
+
+        }
+
+        
+        .container > .btn {
+            margin: 60px;
+            font-size: 20px;
+            border-radius: 40px;
+        }
+        
+
+        .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+ 
+
+
+
+
+        
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="info">
+        <h1>Mouse Effect04</h1>
+        <ul>
+            <li>clientX,clientY</li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li class="active"><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+      
+        <li>pageX:<span class="pageX">0</span></li>  
+        <li>pageY:<span class="pageY">0</span></li>  
+        <li>mouseX:<span class="mouseX">0</span></li>  
+        <li>mouseY:<span class="mouseY">0</span></li>  
+        <li>angleX:<span class="angleX">0</span></li>  
+        <li>angleY:<span class="angleY">0</span></li>  
+        <li>fmouseX:<span class="fmouseX">0</span></li>  
+        <li>fmouseY:<span class="fmouseY">0</span></li>  
+      
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> let x=0,
+    y=0,
+    mouseX=0,
+    mouseY=0,
+    angleX=0,
+    angleY=0,
+    fmouseX=0,
+    fmouseY=0;
+$(window).mousemove(function(e){
+    x = e.pageX  //마우스 X축 좌표값
+    y = e.pageY  //마우스 Y축 좌표값
+    // let mouseX = $(window).width()/2 -x   //마우스의 X축 좌표값을 가운데로 설정
+    // let mouseY = $(window).height()/2 -y  //마우스의 Y축 좌표값을 가운데로 설정
+
+
+
+
+    // 마우스의 x축 y축 최소값 -100 최대값 100으로설정 
+    mouseX = Math.max(-100,Math.min(100,$(window).width()/2 -x ))
+    mouseY = Math.max(-100,Math.min(100,$(window).height()/2 -y ))
+
+    angleX = (12*mouseX)/100
+    angleY = (12*mouseY)/100
+
+    fmouseX += (angleX-fmouseX) *1/10
+    fmouseY += (angleY-fmouseY) *1/10
+
+
+    animation();
+
+
+
+
+
+    //mouseX의 값을 최고값 20,최저값-20 제한
+
+    // let max = Math.max(100,200);
+    // let min = Math.min(100,200);
+
+    // let xx = 100; let yy=-200;
+    // let zz = Math.min(xx,yy);
+
+    // let arr = [100,200,300];
+    // let max = Math.max(...arr)
+
+
+    // 주어진 숫자보다 크거나 같은 숫자중 가장 작은 숫자
+    // let ceil = Math.ceil(0.95) //1
+    // let ceil = Math.ceil(4) //4
+    // let ceil = Math.ceil(6.00005) //7
+    // let ceil = Math.ceil(-0.95) //-0
+    // let ceil = Math.ceil(-4) //-4
+
+
+    // 주어진 수 이하의 가장 큰 정수
+    // let floor  = Math.floor(39.35)//39
+    // let floor  = Math.floor(39.85)//39
+    // let floor  = Math.floor(4)//4
+    
+
+    // 입력값을 반올림한 값의 가장 가까운 정수를 출력
+    // let reund = Math.round(20.49)//20
+    // let reund = Math.round(20.50)//21
+    // let reund = Math.round(20)//20
+
+
+
+    // 랜덤 0~1사이 값
+    // let random = Math.floor(Math.random() *10);
+
+    // console.log(random);
+
+    //커서
+    gsap.to(".cursor",{left: x ,top:  y})
+
+
+    //출력용
+    $(".pageX").text(x)
+    $(".pageY").text(y)
+    $(".mouseX").text(mouseX)
+    $(".mouseY").text(mouseY)
+    $(".angleX").text(angleX)
+    $(".angleY").text(angleY)
+    $(".fmouseX").text(fmouseX)
+    $(".fmouseY").text(fmouseY)
+})
+
+function animation(){
+    $(".move-image").css({"transform": "translate(-50%,-50%) perspective(600px) rotateX("+fmouseY+"deg) rotateY("+fmouseX+"deg)"});
+    requestAnimationFrame(animation)
+}
+</code></pre>
+                
+                
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+<!-- 
+    clientX :브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+    clientY :브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+    offsetX :이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+    offsetY :이벤트 대상 객체에서의 상대적 마우스 Y좌표 위치를 반환합니다.
+    pageX:브라우저 페이지에서의 x좌표 위치를 반환합니다.
+    pageY:브라우저 페이지에서의 Y좌표 위치를 반환합니다.
+    screenX:전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+    screenY:전체 모니터 스크린에서의 Y좌표 위치를 반환합니다.
+ -->
+    <!-- contents -->
+    <div class="cursor">
+        <strong>mouseX:<span class="mouseX">0</span></strong>  
+        <strong>mouseY:<span class="mouseY">0</span></strong>  
+    </div>
+    <div class="contents">
+        <div class="move-image">
+            <div class="mimg"><img src="../slider/img/so13.jpg" alt=""> </div>
+            <div class="mtext">승리하면 조금 배울 수 있고 실패하면 모든것을 배울 수 있다.</div>
+        </div>
+    </div>
+
+
+    <!-- modal -->
+   
+
+
+
+
+
+
+
+
+    <!-- script -->
+    <script src="../parallax/js/jquery.min_1.12.4.js"></script>
+    <script src="../parallax/js/jquery-ui.min.js"></script>
+    <script src="../parallax/js/gsap.min.js"></script>
+    <script src="js/ss.js"></script>
+    <script>
+
+        let x=0,
+            y=0,
+            mouseX=0,
+            mouseY=0,
+            angleX=0,
+            angleY=0,
+            fmouseX=0,
+            fmouseY=0;
+        $(window).mousemove(function(e){
+            x = e.pageX  //마우스 X축 좌표값
+            y = e.pageY  //마우스 Y축 좌표값
+            // let mouseX = $(window).width()/2 -x   //마우스의 X축 좌표값을 가운데로 설정
+            // let mouseY = $(window).height()/2 -y  //마우스의 Y축 좌표값을 가운데로 설정
+
+
+
+
+            // 마우스의 x축 y축 최소값 -100 최대값 100으로설정 
+            mouseX = Math.max(-100,Math.min(100,$(window).width()/2 -x ))
+            mouseY = Math.max(-100,Math.min(100,$(window).height()/2 -y ))
+
+            angleX = (12*mouseX)/100
+            angleY = (12*mouseY)/100
+
+            fmouseX += (angleX-fmouseX) *1/10
+            fmouseY += (angleY-fmouseY) *1/10
+
+
+            animation();
+
+
+
+
+
+            //mouseX의 값을 최고값 20,최저값-20 제한
+
+            // let max = Math.max(100,200);
+            // let min = Math.min(100,200);
+
+            // let xx = 100; let yy=-200;
+            // let zz = Math.min(xx,yy);
+
+            // let arr = [100,200,300];
+            // let max = Math.max(...arr)
+
+
+            // 주어진 숫자보다 크거나 같은 숫자중 가장 작은 숫자
+            // let ceil = Math.ceil(0.95) //1
+            // let ceil = Math.ceil(4) //4
+            // let ceil = Math.ceil(6.00005) //7
+            // let ceil = Math.ceil(-0.95) //-0
+            // let ceil = Math.ceil(-4) //-4
+
+
+            // 주어진 수 이하의 가장 큰 정수
+            // let floor  = Math.floor(39.35)//39
+            // let floor  = Math.floor(39.85)//39
+            // let floor  = Math.floor(4)//4
+            
+
+            // 입력값을 반올림한 값의 가장 가까운 정수를 출력
+            // let reund = Math.round(20.49)//20
+            // let reund = Math.round(20.50)//21
+            // let reund = Math.round(20)//20
+    
+    
+    
+            // 랜덤 0~1사이 값
+            // let random = Math.floor(Math.random() *10);
+
+            // console.log(random);
+
+            //커서
+            gsap.to(".cursor",{left: x ,top:  y})
+
+
+            //출력용
+            $(".pageX").text(x)
+            $(".pageY").text(y)
+            $(".mouseX").text(mouseX)
+            $(".mouseY").text(mouseY)
+            $(".angleX").text(angleX)
+            $(".angleY").text(angleY)
+            $(".fmouseX").text(fmouseX)
+            $(".fmouseY").text(fmouseY)
+        })
+
+        function animation(){
+            $(".move-image").css({"transform": "translate(-50%,-50%) perspective(600px) rotateX("+fmouseY+"deg) rotateY("+fmouseX+"deg)"});
+            requestAnimationFrame(animation)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,9 +1,9 @@
-// $(".infor4 a").click(function(){
-//     $(".infor4 .modal").addClass("show");
-// });
-// $(".infor4 .close").click(function(){
-//     $(".infor4 .modal").removeClass("show");
-// });
+$(".infor4 a").click(function(){
+    $(".infor4 .modal").addClass("show");
+});
+$(".infor4 .close").click(function(){
+    $(".infor4 .modal").removeClass("show");
+});
 
 
 

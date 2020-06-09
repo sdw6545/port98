@@ -31,7 +31,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  }
  
  .code-editor:before {
-     content: 'Code Editor';
+     content: 'script';
      font-family: 'Consolas';
      color: #222;
      padding-top: 6px; 

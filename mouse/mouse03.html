@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Effect02</title>
+    <title>Mouse Effect03</title>
     <style>
 
         * {
@@ -20,6 +20,7 @@
         a {
             text-decoration: none;
             color: #666;
+            cursor: none;
         }
 
         img {
@@ -28,7 +29,7 @@
         }
 
         body {
-            background: url(../slider/img/so01.jpg) no-repeat center center;
+            background: url(../slider/img/so11.jpg) no-repeat center center;
             background-size: cover;
             color: #fff;
             height: 100vh;
@@ -44,7 +45,7 @@
             top: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(45, 71, 100, 0.8);            
+            background: rgba(24, 37, 51, 0.8);            
             z-index: -1;
         }
 
@@ -109,6 +110,8 @@
             font-weight: 700;
         }
         .contents p a {text-decoration: none; color: rgb(132, 171, 255);}
+
+
         .cursor {
             position: absolute;
             width: 10px;height: 10px;
@@ -118,25 +121,28 @@
             user-select: none;
             pointer-events: none;
             transform: scale(1);
-            transition:transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+            transition:transform 0.3s ease-in-out;
+            /* mix-blend-mode: normal; */
+            /* mix-blend-mode: multiply; */
+            /* mix-blend-mode: screen; */
+            /* mix-blend-mode: overlay; */
+            /* mix-blend-mode: darken; */
+            /* mix-blend-mode: lighten; */
+            /* mix-blend-mode: color-dodge; */
+            /* mix-blend-mode: color-burn; */
+            /* mix-blend-mode: hard-light; */
+            /* mix-blend-mode: soft-light; */
+            mix-blend-mode: difference;
+            /* mix-blend-mode: exclusion; */
+            /* mix-blend-mode: hue; */
+            /* mix-blend-mode: saturation; */
+            /* mix-blend-mode: color; */
+            /* mix-blend-mode: luminosity; */ 
         }
         .cursor.active{
-            opacity: 0.5;
-            transform: scale(0);
+            transform: scale(8);
         }
-        .cursor-follower{
-            position: absolute;
-            width: 30px;height: 30px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            user-select: none;
-            pointer-events: none;
-            transition:transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
-        }
-        .cursor-follower.active{
-            opacity: 0.7;
-            transform: scale(4);
-        }
+        
         .container > .btn {
             margin: 60px;
             font-size: 20px;
@@ -178,7 +184,7 @@
 
 <body>
     <div class="info">
-        <h1>Mouse Effect02</h1>
+        <h1>Mouse Effect03</h1>
         <p>마우스 따라다니기</p>
         <ul>
             <li>clientX,clientY</li>
@@ -188,8 +194,8 @@
     <div class="info2">
         <ul>
             <li><a href="mouse01.html">Mouse01</a></li>
-            <li class="active"><a href="mouse02.html">Mouse02</a></li>
-            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li class="active"><a href="mouse03.html">Mouse03</a></li>
             <li><a href="mouse04.html">Mouse04</a></li>
             <li><a href="mouse05.html">Mouse05</a></li>
         </ul>
@@ -210,44 +216,19 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">const cursor = $(".cursor")
-    const follower = $(".cursor-follower")
+<pre class="line-numbers"><code class="language-js">$(window).mousemove(function(e){
+    gsap.to(".cursor",{duration: .5,left: e.pageX -5 ,top: e.pageY -5})
+});
 
-    $(document).mousemove(function(e){
-        gsap.to(cursor,0.3,{left:e.pageX -5,top:e.pageY -5})
-        gsap.to(follower,0.8,{left:e.pageX -15,top:e.pageY -15})
+document.querySelectorAll("a").forEach(elem => {
+    elem.addEventListener("mouseenter", () => {
+        document.querySelector(".cursor").classList.add("active");
     });
-    // $(".contents a").hover(function(){
-    //     cursor.addClass("active")
-    //     follower.addClass("active")
-    // },function(){
-    //     cursor.removeClass("active")
-    //     follower.removeClass("active")
-    // });
-    //출력용
-    $(document).mousemove(function(e){  //마우스가 움직였을 때 이벤트 함수
-        $(".pageX").text(e.pageX)  //이벤트 pageX 값을 화면에 출력
-        $(".pageY").text(e.pageY)  //이벤트 pageY 값을 화면에 출력
+    elem.addEventListener("mouseleave", () => {
+        document.querySelector(".cursor").classList.remove("active");
     });
+});
 
-
-  
-    document.querySelectorAll("a").forEach(elem => {
-        elem.addEventListener("mouseenter", () => {
-            document.querySelector(".cursor").classList.add("active");
-            document.querySelector(".cursor-follower").classList.add("active");
-        });
-        elem.addEventListener("mouseleave", () => {
-            document.querySelector(".cursor").classList.remove("active");
-            document.querySelector(".cursor-follower").classList.remove("active");
-        });
-    });
-
-    window.addEventListener("mousemove", function(event){
-
-    document.querySelector(".pageX").innerHTML(e.pageX)
-    document.querySelector(".pageY").innerHTML(e.pageY)
-    })
 
 
 </code></pre>
@@ -271,9 +252,9 @@
  -->
     <!-- contents -->
     <div class="cursor"></div>
-    <div class="cursor-follower"></div>
     <div class="contents">
-        <p><a>너자신</a>을 누구에겐가 </p><p> <a>필요한 존재</a> 로 만들어라</p>
+        <p>당신은 <a href="#">딱 한번만</a> 산다 하지만 똑바로 산다면</p><p><a href="#" style="color: orange">한번</a> 이면 충분하다</p> <br>
+        <p> <a href="#" style="color: red">잘 살아라</a> 그게<a href="#" style="color: yellow">최고의</a> 복수이다</p>
     </div>
 
 
@@ -293,61 +274,18 @@
     <script src="../parallax/js/gsap.min.js"></script>
     <script src="js/ss.js"></script>
     <script>
-        const cursor = $(".cursor")
-        const follower = $(".cursor-follower")
+        $(window).mousemove(function(e){
+            gsap.to(".cursor",{duration: .5,left: e.pageX -5 ,top: e.pageY -5})
+        });
 
-        // $(document).mousemove(function(e){
-        //     gsap.to(cursor,0.3,{left:e.pageX -5,top:e.pageY -5})
-        //     gsap.to(follower,0.8,{left:e.pageX -15,top:e.pageY -15})
-        // });
-        // $(".contents a").hover(function(){
-        //     cursor.addClass("active")
-        //     follower.addClass("active")
-        // },function(){
-        //     cursor.removeClass("active")
-        //     follower.removeClass("active")
-        // });
-        //출력용
-        // $(document).mousemove(function(e){  //마우스가 움직였을 때 이벤트 함수
-        //     $(".pageX").text(e.pageX)  //이벤트 pageX 값을 화면에 출력
-        //     $(".pageY").text(e.pageY)  //이벤트 pageY 값을 화면에 출력
-        // });
-
-        document.addEventListener("mousemove", (e)=>{
-            gsap.to(cursor,0.3,{left:e.pageX -5,top:e.pageY -5})
-            gsap.to(follower,0.8,{left:e.pageX -15,top:e.pageY -15})
-        })
-      
         document.querySelectorAll("a").forEach(elem => {
             elem.addEventListener("mouseenter", () => {
                 document.querySelector(".cursor").classList.add("active");
-                document.querySelector(".cursor-follower").classList.add("active");
             });
             elem.addEventListener("mouseleave", () => {
                 document.querySelector(".cursor").classList.remove("active");
-                document.querySelector(".cursor-follower").classList.remove("active");
             });
         });
-
-        window.addEventListener("mousemove", function(event){
-
-        document.querySelector(".pageX").innerHTML=event.pageX
-        document.querySelector(".pageY").innerHTML=event.pageY
-        })
-
-        // $(".infor4 a").click(function(){
-        //     $(".infor4 .modal").addClass("show");
-        //     });
-        //     $(".infor4 .close").click(function(){
-        //         $(".infor4 .modal").removeClass("show");
-        // });
-        // document.querySelector(".infor4 a").addEventListener("click",() =>{
-        //     document.querySelector(".infor4 .modal").classList.add("show")
-        // })
-        // document.querySelector(".infor4 .close").addEventListener("click",() =>{
-
-        //     document.querySelector(".infor4 .modal").classList.remove("show")
-        // })
 
     </script>
 </body>
