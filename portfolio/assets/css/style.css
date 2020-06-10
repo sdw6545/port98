@@ -8,6 +8,7 @@
 
 /* 레이아웃 */
 body {
+    overflow-x: hidden;
     font-family: 'S-CoreDream-2ExtraLight';
     background: #000;
 
@@ -143,4 +144,54 @@ body {
     position: absolute;
     left: 20vw;
     top: 160vw;
+}
+#section3{
+    position: relative;
+    background: #333333;
+}
+.section3-bg{
+    height: 5%;
+  width:100%;
+  position:absolute;
+  top:0.1vw;
+  left:0;
+  z-index: -1;
+}
+.section3-bg .bgbgbg{
+    background: url(../img/svg111.svg) repeat-x; 
+  position: absolute;
+  z-index: -1;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+}
+.section3-bg .bgbgbg:nth-of-type(2){
+    top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+@keyframes wave {
+    0% {
+     margin-left: 0;
+    }
+    100% {
+     margin-left: -1600px;
+    }
+}
+  
+@keyframes swell {
+    0%, 100% {
+     transform: translate3d(0,-25px,0);
+    }
+    50% {
+        transform: translate3d(0,5px,0);
+    }
+}
+
+.section3 p{
+    width: 100%;
+    height: 50vw;
 }
