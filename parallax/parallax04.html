@@ -240,6 +240,8 @@
             transform: translateY(0);
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -256,6 +258,10 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
+
+
         </ul>
     </div>
 
@@ -348,6 +354,239 @@
             </section>
         </div>
     </section>
+
+
+
+
+     <!-- 소스보기 -->
+     <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">//$(window).scroll(function(){});  // addEventListener = scroll
+//$(window).on("scroll",function(){});
+//window.addEventListener("scroll",function(){}) ;
+//window.addEventListener("scroll",() => {}); 
+
+//const scrollTop = $(window).scrollTop()
+//const pageYOffset = window.pageYOffset;
+//let pageYOffset = window.pageYOffset   //요즘 방식 (익스플로는 var 을 써야함) //옛날 요즘방식을 둘다 써줘야 호환성 지킴
+//let pageYOffset = document.documentElement.scrollTop    //옛날 방식
+
+//$(".scrollTop").text(scrollTop)
+//$(".scrollTop").html(&lt;span&gt;scrollTop&lt;/span&gt;)  //html 은 태그 인식
+//document.querySelector(".pageYOffset").textContent = pageYOffset;
+//document.querySelector(".pageYOffset").innerTect = pageYOffset;
+//document.querySelector(".pageYOffset").innerHTML = pageYOffset;
+
+window.addEventListener("scroll", () => {
+    let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height / 2;
+    console.log("1;" + screen.height / 2)
+    console.log("2;" + document.documentElement.scrollTop)
+    console.log("3;" + window.pageYOffset)
+    document.querySelector(".pageYOffset").textContent = pageYOffset;
+
+
+    //jq
+    //$(".s1OT").text( parseInt($("#section1").offset().top));
+
+    //js
+    // document.querySelector(".s1OT").textContent = document.getElementById("section1").offsetTop;
+    // document.querySelector(".s2OT").textContent = document.getElementById("section2").offsetTop;
+    // document.querySelector(".s3OT").textContent = document.getElementById("section3").offsetTop;
+    // document.querySelector(".s4OT").textContent = document.getElementById("section4").offsetTop;
+    // document.querySelector(".s5OT").textContent = document.getElementById("section5").offsetTop;
+    // document.querySelector(".s6OT").textContent = document.getElementById("section6").offsetTop;
+    // document.querySelector(".s7OT").textContent = document.getElementById("section7").offsetTop;
+    // document.querySelector(".s8OT").textContent = document.getElementById("section8").offsetTop;
+    // document.querySelector(".s9OT").textContent = document.getElementById("section9").offsetTop;
+
+
+
+
+    // jq
+    // if(scrollTop > parseInt($("#section1").offset().top)){
+    //     $(".s1OT").css("color","red")
+    // }else{
+    //     $(".s1OT").css("color","#000")
+    // }
+
+
+    // js
+    // if( pageYOffset > document.getElementById("section1").offsetTop  ){
+    //     document.querySelector(".s1OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s1OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section2").offsetTop  ){
+    //     document.querySelector(".s2OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s2OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section3").offsetTop  ){
+    //     document.querySelector(".s3OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s3OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section4").offsetTop  ){
+    //     document.querySelector(".s4OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s4OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section5").offsetTop  ){
+    //     document.querySelector(".s5OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s5OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section6").offsetTop  ){
+    //     document.querySelector(".s6OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s6OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section7").offsetTop  ){
+    //     document.querySelector(".s7OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s7OT").style.color="black";
+    // }
+
+    // if( pageYOffset > document.getElementById("section8").offsetTop  ){
+    //     document.querySelector(".s8OT").style.color="red";
+    // }else {
+    //     document.querySelector(".s8OT").style.color="black";
+    // }
+
+        // if( pageYOffset > document.getElementById("section9").offsetTop  ){
+        //     document.querySelector(".s9OT").style.color="red";
+        // }else {
+        //     document.querySelector(".s9OT").style.color="black";
+        // }
+
+
+
+        for (let i = 1; i &gt; 10; i++) {
+            document.querySelector(".s" + i + "OT").textContent = document.getElementById("section" + i)
+                .offsetTop;
+
+            if (pageYOffset > document.getElementById("section" + i).offsetTop) {
+                document.querySelector(".s" + i + "OT").style.color = "red";
+            } else {
+                document.querySelector(".s" + i + "OT").style.color = "black"
+            }
+        }
+
+
+
+
+
+
+        //jq                
+        // if(scrollTop  > parseInt($("#section1").offset().top)){
+        //     $("#section1").addClass("show")
+        // }
+
+
+        //js
+        // if(pageYOffset >document.getElementById("section1").offsetTop){
+        //     document.getElementById("section1").classList.add("show")
+        // } else{
+        //     document.getElementById("section1").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section2").offsetTop){
+        //     document.getElementById("section2").classList.add("show")
+        // } else{
+        //     document.getElementById("section2").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section3").offsetTop){
+        //     document.getElementById("section3").classList.add("show")
+        // } else{
+        //     document.getElementById("section3").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section4").offsetTop){
+        //     document.getElementById("section4").classList.add("show")
+        // } else{
+        //     document.getElementById("section4").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section5").offsetTop){
+        //     document.getElementById("section5").classList.add("show")
+        // } else{
+        //     document.getElementById("section5").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section6").offsetTop){
+        //     document.getElementById("section6").classList.add("show")
+        // } else{
+        //     document.getElementById("section6").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section7").offsetTop){
+        //     document.getElementById("section7").classList.add("show")
+        // } else{
+        //     document.getElementById("section7").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section8").offsetTop){
+        //     document.getElementById("section8").classList.add("show")
+        // } else{
+        //     document.getElementById("section8").classList.remove("show")
+        // }
+
+        // if(pageYOffset >document.getElementById("section9").offsetTop){
+        //     document.getElementById("section9").classList.add("show")
+        // } else{
+        //     document.getElementById("section9").classList.remove("show")
+        // }
+
+        //한번에
+        // $(".content-item").each(function(){
+        //     if(scrollTop > $(this).offset().top){
+        //         $(this).addClass("show");
+        //     }
+        // });
+
+
+        document.querySelectorAll(".content-item").forEach(elem => {
+            console.log(elem.offsetTop);
+            if (pageYOffset > elem.offsetTop) {
+                elem.classList.add("show");
+            } else {
+                elem.classList.remove("show");
+            }
+        });
+
+
+
+    })
+    
+
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         //$(window).scroll(function(){});  // addEventListener = scroll
         //$(window).on("scroll",function(){});

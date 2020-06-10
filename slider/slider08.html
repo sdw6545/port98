@@ -131,6 +131,8 @@
         }
 
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -158,6 +160,102 @@
             <li><a href="slider10.html">slide10</a></li>
         </ul>
     </div>
+
+
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slides = $(".slides");
+const sliderBtn = $(".slider-btn");
+const sliderDot = $(".slider-dot")
+
+let slidCount = slides.length;
+let slideWidth = slides.width();
+let slideHeight = slides.height();
+let lideTotalWidth = slidCount * slideWidth
+
+let currentIndex = 0;
+let dotIndex = "";
+
+
+
+
+function gotoslider(index){
+    console.log(index)
+
+    sliderImg.animate({ left: -slideWidth * index + "px"},400)
+    currentIndex = index
+    updateDot();
+
+}
+
+function updateDot(index){
+    sliderDot.find("a").removeClass().eq(currentIndex).addClass("active")
+}
+
+
+//숙제
+//버튼을 클릭
+//acrive 있는지 확인
+//acrive 없을때 닷 메뉴 순서 번호 추출
+//gotoslider (index)
+//이미지 갯수만큼 닷 메뉴 표현
+slides.each(function(index){
+    dotIndex += "&lt;a href='#'&gt;&lt;/a&gt;";
+    console.log(dotIndex)
+});
+sliderDot.html(dotIndex)
+
+sliderDot.find("a").eq(currentIndex).addClass("active")
+
+
+
+
+
+
+//버튼 클릭하기
+sliderBtn.on("click", "a", function (e) {
+    e.preventDefault();
+
+    let nextIndex = (currentIndex +1) % slidCount;
+    let prevIndex = (currentIndex -1) % slidCount;
+    if(currentIndex == 0) prevIndex = slidCount - 1;
+    
+
+    if ($(this).hasClass("prev")) {
+
+        gotoslider(prevIndex);
+
+    } else {
+
+        gotoslider(nextIndex);
+    }
+});
+    //오른쪽 버튼을 클릭하면 currentIndex 1++ //01234, 01234, 01234,
+    //왼쪽 버튼을 클릭하면 currentIndex 1--
+
+    //currentIndex = 1 --> 첫번째 이미지
+    //currentIndex = 2 --> 두번째 이미지
+    //currentIndex = 3 --> 세번째 이미지
+    //currentIndex = 4 --> 네번째 이미지
+    //currentIndex = 5 --> 다섯번째 이미지
+
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+
+
     <div class="slider-btn">
         <a href="#" class="prev">prev</a>
         <a href="#" class="next">next</a>
@@ -184,6 +282,8 @@
 
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
        const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");

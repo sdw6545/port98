@@ -106,6 +106,8 @@
             right: 0;
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -133,6 +135,58 @@
 
         </ul>
     </div>
+
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slides = $(".slides");
+const sliderBtn = $(".slider-btn")
+
+let slidCount = slides.length;
+let slideWidth = slides.width();
+let slideHeight = slides.height();
+let lideTotalWidth = slidCount * slideWidth
+
+slides.css({width:slideWidth,height:slideHeight})
+sliderImg.css({width:lideTotalWidth, height:slideHeight,marginLeft: - slideWidth})
+$(".slides:last-child").prependTo(sliderImg)
+
+function moveLeft(){
+    sliderImg.animate({left: + slideWidth},400,function(){
+        $(".slides:last-child").prependTo(sliderImg);
+        sliderImg.css("left","")
+    });  
+}      
+function moveRight(){
+    sliderImg.animate({left: - slideWidth},400,function(){
+        $(".slides:first-child").appendTo(sliderImg);
+        sliderImg.css("left","")
+    });
+}
+
+sliderBtn.find(".prev").click(function(){
+    moveLeft()
+});
+sliderBtn.find(".next").click(function(){
+    moveRight()
+});
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+
+
+
     <div class="slider-btn">
         <a href="#" class="prev">prev</a>
         <a href="#" class="next">next</a>
@@ -150,6 +204,8 @@
 
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
        const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");

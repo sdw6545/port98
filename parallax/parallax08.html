@@ -451,6 +451,8 @@
   }
 }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -471,6 +473,9 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li class="active"><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
+
         </ul>
     </div>
 
@@ -554,140 +559,213 @@
     </section>
 
 
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> 
+    let txt = $("#section1 .content-item-desc").text();
+    let split = txt.split("").join("&lt;/span&gt;&lt;span aira-hidden ='true'&gt;");
+        split = "&lt;span aira-hidden ='true'&gt;" + split + "&lt;/span&gt;";
+        
+    
+        //한번에
+        // for(i=1; i&lt;10; i++){
+        //     $("#section"+i+" .content-item-desc").html(split).attr("aria-label", txt);
+        // }
+        $(".content-item-desc").each(function(){
+            let txt = $(this).text();
+            let split = txt.split("").join("&lt;/span&gt;&lt;span aria-hidden='true'&gt;")
+                split = "&lt;span aria-hidden='true'&gt;" + split + "&lt;/span&gt;";
+            $(this).html(split).attr("aria-label",txt);
+        });
+    
+        //자바로 한번에
+    
+    
+        //Parallax Effect
+        $(window).scroll(function(){
+            // if( $(window).scrollTop() &gt; $("#section1").offset().top){
+            //     $("#section1 .content-item-desc").addClass("show");
+            // }else {
+            //     $("#section1 .content-item-desc").removeClass("show");
+            // }
+    
+    
+            // $(".content-item").each(function(){
+            //     if( $(window).scrollTop() &gt; $(this).offset().top){
+            //     $(this).find(".content-item-desc").addClass("show");
+            // }else {
+            //     $(this).find(".content-item-desc").removeClass("show");
+            // }
+            // });
+    
+            if( $(window).scrollTop() &gt; $("#section1").offset().top){       //화면에 섹션이 보이기 시작할 때
+                $("#section1 .content-item-desc span").each(function(index){
+                    // console.log(index)
+                    setInterval(function(){
+                        $("#section1 .content-item-desc span").eq(index).addClass("show");
+                    },100 * index);
+                });
+            }
+            if( $(window).scrollTop() &gt; $("#section2").offset().top){       //화면에 섹션이 보이기 시작할 때
+                $("#section2 .content-item-desc span").each(function(index){
+                    // console.log(index)
+                    setInterval(function(){
+                        $("#section2 .content-item-desc span").eq(index).addClass("show");
+                    },10 * index);
+                });
+            }
+            if( $(window).scrollTop() &gt; $("#section3").offset().top){       //화면에 섹션이 보이기 시작할 때
+                $("#section3 .content-item-desc span").each(function(index){
+                    // console.log(index)
+                    setInterval(function(){
+                        $("#section3 .content-item-desc span").eq(index).addClass("show");
+                    },10 * index);
+                });
+            }
+            if( $(window).scrollTop() &gt; $("#section4").offset().top){       //화면에 섹션이 보이기 시작할 때
+                $("#section4 .content-item-desc span").each(function(index){
+                    // console.log(index)
+                    setInterval(function(){
+                        $("#section4 .content-item-desc span").eq(index).addClass("show");
+                    },50 * index);
+                });
+            }
+            if( $(window).scrollTop() &gt; $("#section5").offset().top){       //화면에 섹션이 보이기 시작할 때
+                $("#section5 .content-item-desc span").each(function(index){
+                    // console.log(index)
+                    setInterval(function(){
+                        $("#section5 .content-item-desc span").eq(index).addClass("show");
+                    },10 * index);
+                });
+            }
+            if( $(window).scrollTop() &gt; $("#section6").offset().top){       //화면에 섹션이 보이기 시작할 때
+                $("#section6 .content-item-desc span").each(function(index){
+                    // console.log(index)
+                    setInterval(function(){
+                        $("#section6 .content-item-desc span").eq(index).addClass("show");
+                    },10 * index);
+                });
+            }
+        });
+
+
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+
+
 
 
     <!-- script -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
-        let txt = $(".content-item-desc").text()
-        //    let split = txt.split("").join("</span><span aria-hidden='true'>")
-        //        split = "<span aria-hidden='true'>"+split+"</span>"
-        //content-itme-desc 에 aria-label 속성을추가(attr)
-        //속성에 텍스트(txt)를 입력
+        let txt = $("#section1 .content-item-desc").text();
+let split = txt.split("").join("</span><span aira-hidden ='true'>");
+    split = "<span aira-hidden ='true'>" + split + "</span>";
+    
+
+    //한번에
+    // for(i=1; i<10; i++){
+    //     $("#section"+i+" .content-item-desc").html(split).attr("aria-label", txt);
+    // }
+    $(".content-item-desc").each(function(){
+        let txt = $(this).text();
+        let split = txt.split("").join("</span><span aria-hidden='true'>")
+            split = "<span aria-hidden='true'>" + split + "</span>";
+        $(this).html(split).attr("aria-label",txt);
+    });
+
+    //자바로 한번에
 
 
-        //한번에 for
-        // for(i=1; i<10; i++){
-        //     $("#section"+i+" .content-item-desc").html(split).attr("aria-label",txt)
+    //Parallax Effect
+    $(window).scroll(function(){
+        // if( $(window).scrollTop() > $("#section1").offset().top){
+        //     $("#section1 .content-item-desc").addClass("show");
+        // }else {
+        //     $("#section1 .content-item-desc").removeClass("show");
         // }
 
-        //한번에each
-        // $(".content-item-desc").each(function () {
-        //     let txt = $(this).text();
-        //     let split = txt.split("").join("</span><span aria-hidden='true'>")
-        //     split = "<span aria-hidden='true'>" + split + "</span>";
-        //     $(this).html(split).attr("aria-label", txt)
+
+        // $(".content-item").each(function(){
+        //     if( $(window).scrollTop() > $(this).offset().top){
+        //     $(this).find(".content-item-desc").addClass("show");
+        // }else {
+        //     $(this).find(".content-item-desc").removeClass("show");
+        // }
         // });
 
-        //자바스크립트 한번에
-        // document.querySelectorAll(".content-item-desc").forEach(box => {
-        //     let txt = box.textContent
-        //     let split = txt.split("").join("</span><span aria-hidden='true'>")
-        //         split = "<span aria-hidden='true'>"+split+"</span>";
-        //     box.
-        // })
-
-
-
-
-        //패럴랙스 이펙트
-        $(window).scroll(function () {
-            // for(i=1; i<10; i++){
-            //     if($(window).scrollTop() > $("#section"+i).offset().top){
-            //         $("#section"+i+" .content-item-desc").addClass("show")
-            //     }else{
-            //         $("#section"+i+" .content-item-desc").removeClass("show")
-            //     }
-            // }
-
-
-
-            // $(".content-item").each(function(){
-            //     if($(window).scrollTop() > $(this).offset().top){
-            //         $(this).find(".content-item-desc").addClass("show")
-            //     }else{
-            //         $(this).find(".content-item-desc").removeClass("show")
-            //     }
-            // });
-
-            if ($(window).scrollTop() >= $("#section1").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section1 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section1 .content-item-desc span").eq(i).addClass("show")
-                    }, 100 * i)
-
-                })
-            }
-
-            if ($(window).scrollTop() >= $("#section2").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section2 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section2 .content-item-desc span").eq(i).addClass("show")
-                    }, 10 * i)
-
-                })
-            }
-            if ($(window).scrollTop() >= $("#section3").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section3 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section3 .content-item-desc span").eq(i).addClass("show")
-                    }, 100 * i)
-
-                })
-            }
-            if ($(window).scrollTop() >= $("#section4").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section4 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section4 .content-item-desc span").eq(i).addClass("show")
-                    }, 100 * i)
-
-                })
-            }
-
-            if ($(window).scrollTop() >= $("#section5").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section5 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section5 .content-item-desc span").eq(i).addClass("show")
-                    }, 50 * i)
-
-                })
-            }
-
-            if ($(window).scrollTop() >= $("#section6").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section6 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section6 .content-item-desc span").eq(i).addClass("show")
-                    }, 100 * i)
-
-                })
-            }
-
-            if ($(window).scrollTop() >= $("#section7").offset().top) { //화면에 섹션이 보이기 시작할 때
-                $("#section7 .content-item-desc span").each(function (i) {
-                    console.log(i);
-
-                    setInterval(function () {
-                        $("#section7 .content-item-desc span").eq(i).addClass("show")
-                    }, 100 * i)
-
-                })
-            }
-
-        });
+        if( $(window).scrollTop() > $("#section1").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section1 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section1 .content-item-desc span").eq(index).addClass("show");
+                },100 * index);
+            });
+        }
+        if( $(window).scrollTop() > $("#section2").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section2 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section2 .content-item-desc span").eq(index).addClass("show");
+                },10 * index);
+            });
+        }
+        if( $(window).scrollTop() > $("#section3").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section3 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section3 .content-item-desc span").eq(index).addClass("show");
+                },10 * index);
+            });
+        }
+        if( $(window).scrollTop() > $("#section4").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section4 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section4 .content-item-desc span").eq(index).addClass("show");
+                },50 * index);
+            });
+        }
+        if( $(window).scrollTop() > $("#section5").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section5 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section5 .content-item-desc span").eq(index).addClass("show");
+                },10 * index);
+            });
+        }
+        if( $(window).scrollTop() > $("#section6").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section6 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section6 .content-item-desc span").eq(index).addClass("show");
+                },10 * index);
+            });
+        }
+        if( $(window).scrollTop() > $("#section7").offset().top){       //화면에 섹션이 보이기 시작할 때
+            $("#section7 .content-item-desc span").each(function(index){
+                // console.log(index)
+                setInterval(function(){
+                    $("#section7 .content-item-desc span").eq(index).addClass("show");
+                },10 * index);
+            });
+        }
+    });
     </script>
 
 </body>

@@ -137,6 +137,8 @@
 
 
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -177,6 +179,103 @@
         <a href="#" class="dot">5</a> 
     </div> -->
 
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">//버튼, 닷 태그 추가하기
+$(".slider-wrap").append("&lt;div class='slider-btn'&gt;&lt;a href='#' class='prev'&gt;prev&lt;/a&gt;&lt;a href='#' class='next'&gt;next&lt;/a&gt;&lt;/div&gt;")
+$(".slider-wrap").append("&lt;div class='slider-dot'&gt;&lt;/div&gt;")
+
+
+
+const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const sliders = $(".slides");
+const sliderBtn = $(".slider-btn");
+const sliderDot = $(".slider-dot")
+
+let sliderCount = sliders.length;
+let sliderWidth =sliders.width(); //1000
+let currentIndex = 0;
+let dotIndex = "";
+let timer = "";
+
+//닷 버튼 만들기
+sliders.each(function(index,element){
+    let slideName = $(this).find("img").attr("alt");
+    let slideImg = $(this).find("img").attr("src");
+    console.log(slideImg)
+    // console.log(i)
+    // console.log(e)
+    // dotIndex += "&lt;a href='#' class='dot'&gt;"+(index+1)+"&lt;/a&gt;";
+    dotIndex += "&lt;a href='#' style='background-image:url("+slideImg+")'&gt;"+slideName+"&lt;/a&gt;";
+});
+sliderDot.html(dotIndex);
+sliderDot.find("a").eq(0).addClass("active")
+
+
+
+
+//이미지 움직이기
+function gotoSlide(index){
+    sliderImg.animate({left:-sliderWidth * index},400,"easeOutQuart");
+    currentIndex = index;
+    //1 = -1000   //-1 = 1000
+    //2 = -2000   //-2 = 2000
+    //3 = -3000   //-3 = 3000
+    updateDot();
+}
+
+function updateDot(){
+    sliderDot.find("a").removeClass().eq(currentIndex).addClass("active")
+}
+//자동
+function startTimer(){
+    timer = setInterval(function(){
+        let nextIndex = (currentIndex + 1) % sliderCount
+        gotoSlide(nextIndex)
+    },3000)
+}
+//정지
+function stopTimer(){
+    clearInterval(timer)
+}
+
+
+// sliderWrap.hover(function(){startTimer()},function(){stopTimer()});
+sliderWrap.on({mouseenter:stopTimer,mouseleave:startTimer})
+
+//버튼 클릭하기
+sliderBtn.on("click","a",function(){ 
+
+    let nextIndex = (currentIndex + 1) % sliderCount //1, 2, 3, 4, 0, 1, 2, 3, 4,  0
+    let prevIndex = (currentIndex - 1) % sliderCount
+    if(currentIndex ==0){prevIndex = sliderCount-1;}
+
+
+    if($(this).hasClass("prev")){
+        gotoSlide(prevIndex)
+    }else{
+        gotoSlide(nextIndex)
+    }
+
+});
+//닷 버튼 클릭하기
+sliderDot.on("click","a",function(){
+    gotoSlide($(this).index());
+});     
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
     <!-- slider -->
     <div class="slider-wrap">
         <div class="slider-img">
@@ -191,6 +290,8 @@
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         //버튼, 닷 태그 추가하기
         $(".slider-wrap").append("<div class='slider-btn'><a href='#' class='prev'>prev</a><a href='#' class='next'>next</a></div>")

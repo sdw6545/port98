@@ -121,6 +121,8 @@
             right: 0;
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -149,6 +151,93 @@
 
         </ul>
     </div>
+
+
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slides = $(".slides");
+const sliderBtn = $(".slider-btn")
+
+let slideWidth = slides.outerWidth();
+let slidCount = slides.length;
+let lideTotalWidth = slidCount * slideWidth;
+
+
+let currentIndex = 0; //현재 보이는 이미지
+let slideCopy = slides.clone();
+sliderImg.append(slideCopy) //슬라이더 이미지를 카피 후 추가
+
+
+//이미지 움직이기 
+
+function moveLeft(){
+    //이미지를 오른쪽으로 이동(박스의 크기)
+
+    if(currentIndex == 0){
+        currentIndex = 5;
+        sliderImg.css("margin-left", -currentIndex * slideWidth+"px");
+    }
+
+    currentIndex--;
+    sliderImg.animate({"margin-left": -slideWidth * currentIndex+"px"},400);
+    console.log(currentIndex)
+}
+
+
+
+
+
+
+function moveRight() {
+    //이미지를 왼쪽으로 이동(박스의 크기)
+
+    if (currentIndex == slidCount) {
+        currentIndex = 0;
+        sliderImg.css("margin-left", -currentIndex * slideWidth + "px"); //left : 0
+
+    }
+    currentIndex++
+    sliderImg.animate({"margin-left": -slideWidth * currentIndex + "px" }, 400, )
+    //left
+    //-400
+    //-800
+    //-1200
+    //-1600
+    //-2000
+    // -->left: 0
+    //-400
+    console.log(currentIndex)
+}
+
+//버튼 클릭하기
+sliderBtn.on("click", "a", function () {
+    if ($(this).hasClass("prev")) {
+        moveLeft()
+    } else {
+        moveRight()
+    }
+
+});
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+
+
+
+
+
     <div class="slider-btn">
         <a href="#" class="prev">prev</a>
         <a href="#" class="next">next</a>
@@ -166,6 +255,8 @@
 
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");

@@ -240,6 +240,8 @@
             transform: translateY(0);
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -256,6 +258,10 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
+
+
         </ul>
     </div>
 
@@ -350,8 +356,161 @@
             </section>
         </div>
     </section>
+
+ <!-- 소스보기 -->
+ <div class="infor4">
+    <a href="#" class="view">소스보기</a>
+    <!-- modal -->
+    <div class="modal">
+        <div class="code-editor">
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> $(window).scroll(function () {
+    const scrollTop = $(window).scrollTop() + $(window).height() / 2;
+    console.log(scrollTop)
+    $(".scrollTop").text(scrollTop);
+
+
+    // $(".s1OT").text( parseInt($("#section1").offset().top));
+    // $(".s2OT").text( parseInt($("#section2").offset().top));
+    // $(".s3OT").text( parseInt($("#section3").offset().top));
+    // $(".s4OT").text( parseInt($("#section4").offset().top));
+    // $(".s5OT").text( parseInt($("#section5").offset().top));
+    // $(".s6OT").text( parseInt($("#section6").offset().top));
+    // $(".s7OT").text( parseInt($("#section7").offset().top));
+    // $(".s8OT").text( parseInt($("#section8").offset().top));
+    // $(".s9OT").text( parseInt($("#section9").offset().top));
+
+
+
+
+
+    // $(".content-item").each(function(){
+    //     if(scrollTop > $(this).offset().top){
+    //         $(this).addClass("show");
+    //     }
+    // });
+
+    // if (scrollTop > parseInt($("#section1").offset().top)) {
+    //     $(".s1OT").css("color", "red")
+    // } else {
+    //     $(".s1OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section2").offset().top)) {
+    //     $(".s2OT").css("color", "red")
+    // } else {
+    //     $(".s2OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section3").offset().top)) {
+    //     $(".s3OT").css("color", "red")
+    // } else {
+    //     $(".s3OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section4").offset().top)) {
+    //     $(".s4OT").css("color", "red")
+    // } else {
+    //     $(".s4OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section5").offset().top)) {
+    //     $(".s5OT").css("color", "red")
+    // } else {
+    //     $(".s5OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section6").offset().top)) {
+    //     $(".s6OT").css("color", "red")
+    // } else {
+    //     $(".s6OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section7").offset().top)) {
+    //     $(".s7OT").css("color", "red")
+    // } else {
+    //     $(".s7OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section8").offset().top)) {
+    //     $(".s8OT").css("color", "red")
+    // } else {
+    //     $(".s8OT").css("color", "#000")
+    // }
+
+    // if (scrollTop > parseInt($("#section9").offset().top)) {
+    //     $(".s9OT").css("color", "red")
+    // } else {
+    //     $(".s9OT").css("color", "#000")
+    // }
+
+    //한번에
+    for (let i = 1; i < 10; i++) {
+        $(".s" + i + "OT").text(parseInt($("#section" + i).offset().top));
+
+        if (scrollTop > parseInt($("#section" + i).offset().top)) {
+            $(".s" + i + "OT").css("color", "red")
+        } else {
+            $(".s" + i + "OT").css("color", "#000")
+        }
+    }
+
+
+    //노가다
+    // if(scrollTop  > parseInt($("#section1").offset().top)){
+    //     $("#section1").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section2").offset().top)){
+    //     $("#section2").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section3").offset().top)){
+    //     $("#section3").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section4").offset().top)){
+    //     $("#section4").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section5").offset().top)){
+    //     $("#section5").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section6").offset().top)){
+    //     $("#section6").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section7").offset().top)){
+    //     $("#section7").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section8").offset().top)){
+    //     $("#section8").addClass("show")
+    // }
+    // if(scrollTop > parseInt($("#section9").offset().top)){
+    //     $("#section9").addClass("show")
+    // }
+
+    //한번에
+    $(".content-item").each(function () {
+        if (scrollTop > $(this).offset().top) {
+            $(this).addClass("show");
+        }
+    });
+});
+
+
+</code></pre>
+        </div>
+        <a class="close">Close</a>
+    </div>
+</div>
+
+
+
+
+
+
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         $(window).scroll(function () {
             const scrollTop = $(window).scrollTop() + $(window).height() / 2;

@@ -1,0 +1,68 @@
+@font-face { font-family: 'S-CoreDream-2ExtraLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+
+/* 레이아웃 */
+body {
+    font-family: 'S-CoreDream-2ExtraLight';
+    background: #000;
+ 
+}
+
+#section1{
+    font-family: 'Montserrat';
+    width: 95vw;;
+    margin: 2.5vw;
+    background: #B1B1B0;
+}
+#section1 .section1-text{
+    text-transform: uppercase;
+    text-align: center;
+}
+#section1 .section1-text span{
+    font-size: 2vw;
+    display: block;
+    padding-top: 3vw;
+}
+#section1 .section1-text h1{
+    font-size: 10vw;
+    line-height: .8;
+    font-weight: 800;
+    padding: 7vw 0;
+}
+#section1 .section1-img{    
+    width: 50vw;
+    margin: -15vw auto 5vw auto;
+    border: 3vw solid #454546  ;
+    position: relative;
+    z-index: 1;
+}
+#section1 .section1-img img{
+    opacity: 0.5;
+}
+#section1 .section1-img p{
+    background: #454546;
+    padding: 3vw;
+    font-size: 1.5vw;
+    text-align: justify;
+    color: #d0d0d0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

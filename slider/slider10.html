@@ -462,134 +462,116 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="../parallax/js/gsap.min.js"></script>
     <script>
-        $(".slide-wrap").append("<div class='slide-dot'></div>")
+       //닷 버튼 생성
+       $(".slide-wrap").append("<div class='slide-dot'></div>")
         $(".slide-wrap").append("<div class='slide-btn'><a href='#' class='prev'></a><a href='#' class='next'></a></div>")
 
         const slideWrap = $(".slide-wrap"),
-              slideImg = $(".slide-img"),
-              slide = $(".slide"),
-              slideDot = $(".slide-dot"),
-              slideBtn = $(".slide-btn"),
-              cursor = $(".cursor"),
-              follower = $(".cursor-follower")
+                slideImg = $(".slide-img"),
+                slide = $(".slide"),
+                slideDot = $(".slide-dot"),
+                slideBtn = $(".slide-btn")
 
+        let slideCount = slide.length,    //슬라이드 이미지 갯수
+            currentIndex = 0,               //현재 보이는 이미지 순서
+            dotIndex = "",                   //닷 버튼 HTML
+            duration = 1000,                //이미지 슬라이드 이동시간
+            easing = "easeOutExpo",      //이미지 움직임 효과
+            slideBg = ["#fcefe9","#e9effd","#fae3f5","#fbe368","#ccebea","#e9effd","#f4f2ec"];  //각 슬라이드 배경색
 
-        let slideCount = slide.length,           //슬라이드 이미지 갯수
-            currentIndex = 0,                    //현재 보이는 이미지
-            dotIndex ="",                        //닷 버튼 HTML
-            duration = 1000,                     //이미지 슬라이드 이동 시간
-            easing ="easeOutExpo",                //이미지 움직임 효과
-            slideBg = ["#fcefe9","#e9effd","#fae3f5","#fbe368","#ccebea","#e9effd","#f4f2ec"],  //각 슬라이드
-            slideW = slide.width()
-
-
-
-        
-
-
-
-
-        //0.1 각 이미지 absolute
-        //left:0  currentIndex
-        //left:100%   currentIndex(1) *100% =100%
-        //left:200%   currentIndex(2) *100% =200%
-        //left:300%   currentIndex(3) *100% =300%
-        //each()
-
-        //글씨 분활
-        slide.each(function () {
-            let txt = $(this).find(".stext >h2") .text();
+            //글자 분할
+            slide.each(function(){
+                let txt = $(this).find(".stext > h2").text();
+                console.log(txt)
+                let split = txt.split("").join("</span><span aria-hidden='true'>");
+                    split = "<span aria-hidden='true'>" + split + "</span>";
+                $(this).find(".stext > h2").html(split).attr("aria-lable", txt);
+            })
             
-            let split = txt.split("").join("</span><span aria-hidden='true'>")
-            split = "<span aria-hidden='true'>" + split + "</span>";
-            $(this).find(".stext >h2").html(split).attr("aria-label", txt)
+        //01. 각 이미지 absolute
+        // 첫번째 이미지는 left: 0 , 두번째 left 100%, 세번째 200% 
+        // 첫번째 이미지는 left: currentIndex , 두번째 left: currentIndex(1) * 100%, 세번째 left: currentIndex(2) * 200% 
+        //이미지 슬라이드
+        slide.each(function(index, element){
+            //console.log(element)
+            //각 슬라이드 이미지    //배경색 넣기위치 설정
+            $(this).css({left : 100 * index + "%", background : slideBg[index]})      
+            dotIndex += "<a href='#'>0"+(index+1)+"</a>"         //이미지 갯수만큼 닷 버튼 갯수 설정
+                
         });
-        // if ($(window).scrollTop() >= $("#section1").offset().top) { //화면에 섹션이 보이기 시작할 때
-        //         $("#section1 .content-item-desc span").each(function (i) {
-        //             console.log(i);
-
-        //             setInterval(function () {
-        //                 $("#section1 .content-item-desc span").eq(i).addClass("show")
-        //             }, 100 * i)
-
-        //         })
-        //     }
-       
-
-
-
-        slide.each(function(i , e){
-            // $(this).css({left:+index+"00%"})
-            $(this).css({left: 100* i +"%",background: slideBg[i]})  //각 슬라이드 위치 설정
-
-            //이미지 갯수만큼 닷 버튼 만들기
-            dotIndex += "<a href='#'>"+(i+1)+"</a>";
-
-            $(".cursor-follower").css({background: slideBg[i]})
-        });
-        slideDot.html(dotIndex)
-
-
-
-
+        slideDot.html(dotIndex);                  //닷 버튼 출력
+     
+        
         //이미지 움직이기
         function gotoSlide(num){
-            slideImg.animate({ left: -100 * num + "%" }, duration,easing);
-
+            slideImg.animate({left : -100 * num +"%"}, duration, easing)   //duration과 easing을 변수로 사용
             currentIndex = num;
-            updateDot()
-        }
-        
+            updateDot();
+        };
 
+        //닷버튼에 액티브추가
         function updateDot(){
-            slideDot.find("a").removeClass().eq(currentIndex).addClass("active")
-            slide.removeClass("active").eq(currentIndex).addClass("active")
-        }
-
-
-
-
-
+            slideDot.find("a").removeClass().eq(currentIndex).addClass("active");
+            slide.removeClass("active").eq(currentIndex).addClass("active");
+        };
 
         //버튼 클릭하기
-        slideBtn.on("click","a",function(){
-            let nextIndex = (currentIndex + 1) %  slideCount;
-            let prevIndex = (currentIndex - 1) % slideCount;
+        slideBtn.on("click", "a", function(){
+            let nextIndex = (currentIndex +1) % slideCount;
+            let prevIndex = (currentIndex -1) % slideCount;
+            //console.log(prevIndex) 
 
-            if( currentIndex == 0 )prevIndex = slideCount-1;
-
-
-
-
-            if($(this).hasClass("prev")){
-                //왼쪽 버튼
-                gotoSlide(prevIndex);
-            }else{
-                //오른쪽 버튼
-                gotoSlide(nextIndex);
+            if(currentIndex == 0) prevIndex = slideCount -1
+          
+            if($(this).hasClass("prev")) {
+                gotoSlide(prevIndex)
+            } else {
+                gotoSlide(nextIndex)
             }
         });
 
+        //닷버튼 클릭하기
+        slideDot.on("click", "a", function(){
+            gotoSlide($(this).index());
+        });
 
         //햄버거 메뉴
         $("#nav .ham .bar").click(function(){
-            $(this).toggleClass("on");
+            $(this).toggleClass("on")
         });
-        //닷 버튼 클릭하기
-        slideDot.on("click","a",function(){
-            gotoSlide($(this).index());
-        }); 
+        gotoSlide(currentIndex);
 
+        //자동플레이
+        function startTimer() {
+            timer = setInterval(function(){
+                let nextIndex = (currentIndex +1) % 5;
+                gotoSlide(nextIndex);
+            },5000);
+        };
+        startTimer();
 
+        const cursor = $(".cursor");
+        const follower = $(".cursor-follower");
 
-        gotoSlide(currentIndex)
+        //출력용
+        $(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+            $(".pageX").text(e.pageX);  //이벤트 pageX 값을 화면에 출력
+            $(".pageY").text(e.pageY); //이벤트 pageY 값을 화면에 출력
+        });
 
-
-
-        // 마우스
+        //커서 이동
         $(document).mousemove(function(e){
-            gsap.to(cursor,0.3,{left:e.pageX -5,top:e.pageY -5})
-            gsap.to(follower,0.8,{left:e.pageX -15,top:e.pageY -15})
+            gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+            gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+        });
+
+        //마우스 오버효과
+        $("a").hover(function(){
+            cursor.addClass("active");
+            follower.addClass("active");
+        },function() {
+            cursor.removeClass("active");
+            follower.removeClass("active");
         });
     </script>
 </body>

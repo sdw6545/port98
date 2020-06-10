@@ -92,6 +92,8 @@
             float: left; width: 1000px;
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -120,6 +122,48 @@
         </ul>
     </div>
 
+     <!-- 소스보기 -->
+     <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slides = $(".slides");
+
+let currentIndex = 0;    //현재 보이는 이미지
+
+
+
+//3초에 한 번씩 함수를 실행
+//left :-1000px
+//left :-2000px
+//left :-3000px
+//left :-4000px
+//left : 0px
+setInterval(function(){
+    //만약에 4이상이 되면 0으로
+    // if(currentIndex &lt; 4){
+    //     currentIndex++
+    // }else{
+    //     currentIndex = 0;
+    // }
+    //삼항 연산자
+
+currentIndex&lt; 4 ? currentIndex ++ : currentIndex = 0;
+    sliderImg.animate({left :currentIndex*(-1000)+"px"}
+    ,400)
+},3000)
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
     <!-- slider -->
     <div class="slider-wrap">
         <div class="slider-img">
@@ -133,6 +177,8 @@
 
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");

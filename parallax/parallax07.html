@@ -233,6 +233,8 @@
             font-style: normal;
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -253,6 +255,10 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li  class="active"><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
+
+
         </ul>
     </div>
 
@@ -336,12 +342,90 @@
     </section>
 
 
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> //제이쿼리
+// let scrollTop = $(window).scrollTop();
+
+// function scroll(){
+//     let newScrollTop = $(window).scrollTop();
+//     let different = newScrollTop - scrollTop;
+
+//     console.log("scrollTop :" + scrollTop)
+//     console.log("newScrollTop :" + newScrollTop)
+//     console.log("different :" + different)
+
+
+//     $(".content-item-desc").css({"transform":"skewY("+different+"deg)"})
+
+//     scrollTop = newScrollTop
+//     requestAnimationFrame(scroll)
+
+// }
+// scroll()
+
+
+
+
+//javascript
+let pageYOffset = window.pageYOffset;
+
+const scroll = () => {
+    const newPageYOffset = window.pageYOffset;
+    const different = newPageYOffset - pageYOffset;
+
+    console.log("pageYOffset :" + pageYOffset)
+    console.log("newPageYOffset :" + newPageYOffset)
+    console.log("different :" + different)
+
+    // // $(".content-item-imgWrap").css({"transform":"skewY("+different+"deg)"})
+    // let target =document.querySelectorAll(".content-item-imgWrap")
+    // target.forEach(box =>{box.style.transform = "rotate("+different*0.03+"deg)"})
+
+    //gsap
+    // gsap.to(".content-item-img",{duration:0.3,ease:Power1.ease,rotation:different})
+    gsap.to(".content-item-img",{duration:0.3,ease:Power1.ease,skewY:different})
+    gsap.to(".content-item-desc",{duration:0.3,ease:Power1.ease,skewY:-different})
+
+
+    pageYOffset = newPageYOffset
+    requestAnimationFrame(scroll);
+}
+scroll()
+
+//일정한 시간 동안 반복적 함수를 실행
+let unm = 0;
+function render(){
+    $(".content-item-num").text(unm);
+    unm++;
+    //setInterval(render,1000);
+
+}
+render()
+    
+
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+
 
 
     <!-- script -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         //제이쿼리
         // let scrollTop = $(window).scrollTop();

@@ -92,6 +92,8 @@
            width: 1000px;
         }
     </style>
+        <link rel="stylesheet" href="../mouse/css/style.css">
+
 </head>
 
 <body>
@@ -121,6 +123,32 @@
         </ul>
     </div>
 
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">const sliderWrap = $(".slider-wrap");
+    const sliderImg = $(".slider-img");
+    const slides = $(".slides");
+
+    //3초에 한 번씩 실행
+    setInterval(function(){
+        sliderImg.animate({top:"-600px"},400,function(){
+            $(".slides:first-child").appendTo(sliderImg);
+            sliderImg.css("top","")
+        })
+    },3000);
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
     <!-- slider -->
     <div class="slider-wrap">
         <div class="slider-img">
@@ -134,6 +162,8 @@
 
     <!--script  -->
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
     <script>
         const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");
