@@ -2,7 +2,6 @@
 *{box-sizing: border-box;}
 body, div, ul, li, ol, dl, dt, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {margin: 0; padding: 0;}
 a {color: #222; text-decoration: none;}
-a:hover {color: #390;}
 body, input, textarea, select, button, table {
     font-family: 'Montserrat', AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
     color: #222; font-size: 13px; line-height: 1.5;

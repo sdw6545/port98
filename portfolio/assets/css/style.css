@@ -1,68 +1,146 @@
-@font-face { font-family: 'S-CoreDream-2ExtraLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /* 레이아웃 */
 body {
     font-family: 'S-CoreDream-2ExtraLight';
     background: #000;
- 
+
 }
 
-#section1{
+#section1 {
     font-family: 'Montserrat';
-    width: 95vw;;
+    width: 95vw;
+    ;
     margin: 2.5vw;
     background: #B1B1B0;
+    padding-bottom: 10vw;
 }
-#section1 .section1-text{
+
+#section1 .section1-text {
     text-transform: uppercase;
     text-align: center;
 }
-#section1 .section1-text span{
+
+#section1 .section1-text span {
     font-size: 2vw;
     display: block;
     padding-top: 3vw;
 }
-#section1 .section1-text h1{
+
+#section1 .section1-text h1 {
     font-size: 10vw;
     line-height: .8;
     font-weight: 800;
     padding: 7vw 0;
 }
-#section1 .section1-img{    
+
+#section1 .section1-img {
     width: 50vw;
     margin: -15vw auto 5vw auto;
-    border: 3vw solid #454546  ;
+    border: 3vw solid #454546;
     position: relative;
     z-index: 1;
+
 }
-#section1 .section1-img img{
+
+#section1 .section1-img img {
     opacity: 0.5;
 }
-#section1 .section1-img p{
+
+#section1 .section1-img .section1-img-text {
+    background: #454546;
+    text-align: center;
+}
+
+#section1 .section1-img .section1-img-text p {
     background: #454546;
     padding: 3vw;
     font-size: 1.5vw;
     text-align: justify;
     color: #d0d0d0;
-    
+
+}
+
+#section1 .section1-img .section1-img-text strong {
+    color: #d0d0d0;
+
+}
+
+.down {
+    position: fixed;
+    bottom: 3vw;
+    left: 7vw;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.down i {
+    font-size: 1.5vw;
+}
+
+#section2 {
+    position: relative;
+}
+
+.section2-text {
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 9vw;
+    font-weight: 500;
+    line-height: 9vw;
+
+}
+
+.site {
+    width: 20vw;
+    border: 2vw #000 solid;
+    text-align: center;
+
 }
 
 
+.site a img {
+    opacity: 0.5;
+}
 
+.site a span {
+    width: 100%;padding: 2vw 0;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 2.3vw;
+    background: #000;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 위치 잡기 */
+.site1{
+    position: absolute;
+    left: 10vw;
+    top: 30vw;
+}
+.site2{
+    position: absolute;
+    left: 60vw;
+    top: 50vw;
+}
+.site3{
+    position: absolute;
+    left: 20vw;
+    top: 100vw;
+}
+.site4{
+    position: absolute;
+    left: 60vw;
+    top: 130vw;
+}
+.site5{
+    position: absolute;
+    left: 20vw;
+    top: 160vw;
+}
