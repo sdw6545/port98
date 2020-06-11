@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect05</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            padding: 10px 20px;
+        }
+        li{
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        body {
+            background: url(../slider/img/so12.jpg) no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            transform: all 0.2s;
+            /* cursor: none; */
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(82, 61, 82, 0.8);            
+            z-index: -1;
+        }
+
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+        }
+
+        .info h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .info2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .info2 li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .info2 li a{
+            color: #fff;
+        }
+
+        .info2 li.active a {
+            border-bottom: 1px #fff dashed;
+        }
+
+
+        .info3{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .info3 li { list-style: none;}
+
+
+        .contents{
+            margin-right: 10px;
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+            width: 100%;height: 100%;
+            flex-direction: column;
+        }
+
+
+
+        .cursor{
+            position: absolute;
+            left:0; top:0;
+            width:20px; height:20px;
+            border-radius: 50%;
+            z-index:1000;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            background: #fff;
+            transition:transform 0.8s ease-in-out;
+           
+        }
+        .cursor strong{
+            background : rgba(255,255,255,0.9);
+            color:#000;
+            position: absolute;
+            left:50%;
+            padding: 3px;
+            display: none;
+        }
+        .cursor strong:first-child{ top:-65px;}
+        .cursor strong:last-child{ top:-40px;}
+        
+        
+        
+        /* move-image */
+        .move-image{
+            --x:0;
+            --y:0;
+            --d:50;
+            cursor: none;
+            position: relative;
+        }
+        .move-image:hover .mimg {
+            transform: scale(1.025);
+        }
+        .move-image .mimg{
+            width: 45vw;
+            height: 27vw;background: #ccc;
+            position: relative;
+            overflow: hidden;
+            transition: transform 500ms cubic-bezier(0.25,0.46,0.45,0.84);
+
+        }
+        .move-image .mimg .img{
+            --d:20;
+            position: absolute;
+            left: -5%;top: -5%;
+            width: 110%;height: 110%;
+            object-fit: cover;  
+            transition: transform 500ms cubic-bezier(0.25,0.46,0.45,0.84);   
+            transform:  translate(calc(var(--x)/var(--d) *1px),calc(var(--y)/var(--d)*1px) );                 
+        }
+        .move-image .mtext{
+            position: absolute;
+            top: 50%;left: 50%;
+            transform: translate(-50%,-50%);
+            background:rgba(0,0,0,0.5);
+            border-radius: 10px;
+            padding: 1.5vw;
+            font-size: 1.5vw;
+        }
+        
+       
+        
+
+
+
+        
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="info">
+        <h1>Mouse Effect05</h1>
+        <ul>
+            <li>clientX,clientY</li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li class="active"><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
+            <li><a href="mouse09.html">Mouse09</a></li>
+            <li><a href="mouse10.html">Mouse10</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+      
+        <li>pageX:<span class="pageX">0</span></li>  
+        <li>pageY:<span class="pageY">0</span></li>  
+        <!-- <li>mouseX:<span class="mouseX">0</span></li>  
+        <li>mouseY:<span class="mouseY">0</span></li>  
+        <li>angleX:<span class="angleX">0</span></li>  
+        <li>angleY:<span class="angleY">0</span></li>  
+        <li>fmouseX:<span class="fmouseX">0</span></li>  
+        <li>fmouseY:<span class="fmouseY">0</span></li>   -->
+      
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <a href="#" class="sdsdsd">좌표보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> $(".move-image").mousemove(function(e){
+    gsap.to(".cursor",{duration:0.2, left:e.pageX -10  ,top:  e.pageY -10})
+
+    //좌표값 중앙을 0으로 초기화
+    //x = 컨튼츠 박스의 width()/2 + 왼쪽 여백값
+    //y = 컨튼츠 박스의 height()/2 + 위쪽 여백값
+
+    
+    // let x = $(".move-image").width()/2
+    // let y = $(".move-image").position().left;
+    let x = e.clientX - ($(".move-image").width()/2+ $(".move-image").position().left)
+    let y = e.clientY - ($(".move-image").height()/2+ $(".move-image").position().top)
+
+    $(".img").attr({"style":"transform: translate("+ x/20 +"px,"+ y/20 +"px)"})
+
+
+
+     $(".pageXX").text(Math.floor(x)+"px")
+     $(".pageYY").text( Math.floor(y)+"px")
+});
+
+// const moveImg = document.querySelector(".move-image")
+
+// moveImg.addEventListener("mousemove",function(e){
+//     gsap.to(".cursor",{duration:0.2, left:e.pageX -10  ,top:  e.pageY -10})
+
+//     const rect = this.getBoundingClientRect();
+//     console.log(rect);
+//     this.style.setProperty("--x",e.clientX-((rect.width/2)+rect.left))
+//     this.style.setProperty("--y",e.clientY-((rect.height/2)+rect.top))
+
+  
+// })
+// moveImg.addEventListener("mouseleave",function(){
+//     this.style.setProperty("--x",0)
+//     this.style.setProperty("--y",0)
+// })
+
+
+
+
+
+
+
+
+
+$(".sdsdsd").click(function(){
+    $(".cursor strong").slideToggle()
+})
+
+$(window).mousemove(function(e){
+    $(".pageX").text(e.pageX)
+    $(".pageY").text(e.pageY)
+    // $(".mouseX").text(e.mouseX)
+    // $(".mouseY").text(e.mouseY)
+    // $(".angleX").text(e.angleX)
+    // $(".angleY").text(e.angleY)
+    // $(".fmouseX").text(e.fmouseX)
+    // $(".fmouseY").text(e.fmouseY)
+});
+    
+</code></pre>
+                
+                
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+<!-- 
+    clientX :브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+    clientY :브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+    offsetX :이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+    offsetY :이벤트 대상 객체에서의 상대적 마우스 Y좌표 위치를 반환합니다.
+    pageX:브라우저 페이지에서의 x좌표 위치를 반환합니다.
+    pageY:브라우저 페이지에서의 Y좌표 위치를 반환합니다.
+    screenX:전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+    screenY:전체 모니터 스크린에서의 Y좌표 위치를 반환합니다.
+ -->
+    <!-- contents -->
+    <div class="contents">
+        <div class="cursor">
+            <strong>X:<span class="pageXX">0</span></strong>  
+            <strong>Y:<span class="pageYY">0</span></strong>  
+        </div>
+        <div class="move-image">
+            
+            <div class="mimg">
+                <img  class="img" src="../slider/img/so13.jpg" alt="이미지"> 
+            </div>
+            <div class="mtext">승리하면 조금 배울 수 있고 실패하면 모든것을 배울 수 있다.</div>
+        </div>
+    </div>
+
+
+    <!-- modal -->
+   
+
+
+
+
+
+
+
+
+    <!-- script -->
+    <script src="../parallax/js/jquery.min_1.12.4.js"></script>
+    <script src="../parallax/js/jquery-ui.min.js"></script>
+    <script src="../parallax/js/gsap.min.js"></script>
+    <script src="js/ss.js"></script>
+    <script>
+        $(".move-image").mousemove(function(e){
+            gsap.to(".cursor",{duration:0.2, left:e.pageX -10  ,top:  e.pageY -10})
+
+            //좌표값 중앙을 0으로 초기화
+            //x = 컨튼츠 박스의 width()/2 + 왼쪽 여백값
+            //y = 컨튼츠 박스의 height()/2 + 위쪽 여백값
+
+            
+            // let x = $(".move-image").width()/2
+            // let y = $(".move-image").position().left;
+            let x = e.clientX - ($(".move-image").width()/2+ $(".move-image").position().left)
+            let y = e.clientY - ($(".move-image").height()/2+ $(".move-image").position().top)
+      
+            $(".img").attr({"style":"transform: translate("+ x/20 +"px,"+ y/20 +"px)"})
+
+
+
+             $(".pageXX").text(Math.floor(x)+"px")
+             $(".pageYY").text( Math.floor(y)+"px")
+        });
+        
+        // const moveImg = document.querySelector(".move-image")
+
+        // moveImg.addEventListener("mousemove",function(e){
+        //     gsap.to(".cursor",{duration:0.2, left:e.pageX -10  ,top:  e.pageY -10})
+
+        //     const rect = this.getBoundingClientRect();
+        //     console.log(rect);
+        //     this.style.setProperty("--x",e.clientX-((rect.width/2)+rect.left))
+        //     this.style.setProperty("--y",e.clientY-((rect.height/2)+rect.top))
+
+          
+        // })
+        // moveImg.addEventListener("mouseleave",function(){
+        //     this.style.setProperty("--x",0)
+        //     this.style.setProperty("--y",0)
+        // })
+
+
+
+
+
+
+
+
+
+        $(".sdsdsd").click(function(){
+            $(".cursor strong").slideToggle()
+        })
+
+        $(window).mousemove(function(e){
+            $(".pageX").text(e.pageX)
+            $(".pageY").text(e.pageY)
+            // $(".mouseX").text(e.mouseX)
+            // $(".mouseY").text(e.mouseY)
+            // $(".angleX").text(e.angleX)
+            // $(".angleY").text(e.angleY)
+            // $(".fmouseX").text(e.fmouseX)
+            // $(".fmouseY").text(e.fmouseY)
+        });
+    </script>
+</body>
+
+</html>
