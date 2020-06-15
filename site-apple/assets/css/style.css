@@ -1,0 +1,135 @@
+/* container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* row */
+.row {
+    position: relative;
+    margin: 0 20px;
+}
+
+
+
+/* layout */
+#header .container {
+    border-bottom: 1px solid #EBEBEB;
+    height: 80px;
+}
+
+
+/* header */
+#header .container .row {
+    font-family: "SF Pro Display";
+}
+
+.header-data {
+    font-size: 12px;
+    line-height: 30px;
+    color: #BBBBBB;
+}
+
+.header-title {
+    position: relative;
+    font-size: 32px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.header-id {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 40px;
+    font-weight: 300;
+    color: #EBEBEB;
+    border-radius: 50%;
+    background: linear-gradient(225deg, #999999 19.44%, rgba(255, 255, 255, 0) 75%), #C4C4C4;
+
+
+}
+
+
+/* banner */
+#mainBanner .container {
+    border-bottom: 1px solid #EBEBEB;
+}
+
+
+.banner .banner-title {
+    font-family: "SF Pro Display";
+    margin-bottom: 10px;
+}
+
+.banner .banner-title .bt-stit {
+    font-size: 12px;
+    line-height: 30px;
+    color: #DA5E7C;
+}
+
+.banner .banner-title .bt-tit {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.banner .banner-title .bt-desc {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 30px;
+    color: #818181;
+}
+
+.banner img {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+/* "Music */
+.Music {
+    font-family: "SF Pro Display";
+    overflow: hidden;
+}
+
+.Music-tit {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 0;
+}
+
+.Music-list {
+    width: 1000px;
+    position: relative;
+display: flex;
+}
+.list{
+    padding-right: 20px;
+}
+.list img {
+    width: 450px;
+}
+
+.Music-list-text-tt {
+    font-family: "SF Pro Display";
+    font-weight: 500;
+    margin: 10px 0;
+    font-size: 40px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.Music-list-text-desc {
+    font-family: "SF Pro Display";
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 30px;
+    color: #B3B2B2;
+}

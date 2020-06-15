@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Effect03</title>
+    <title>Mouse Effect07</title>
     <style>
         @font-face { font-family: 'Recipekorea'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff'); font-weight: normal; font-style: normal; }
 
@@ -17,11 +17,12 @@
         ul {
             padding: 10px 20px;
         }
-
+        li{
+            list-style: none;
+        }
         a {
             text-decoration: none;
             color: #666;
-            cursor: none;
         }
 
         img {
@@ -30,12 +31,12 @@
         }
 
         body {
-            background: url(../slider/img/so11.jpg) no-repeat center center;
+            background: url(../slider/img/so12.jpg) no-repeat center center;
             background-size: cover;
             color: #fff;
             height: 100vh;
             transform: all 0.2s;
-            cursor: none;
+            /* cursor: none; */
             overflow: hidden;
         }
 
@@ -46,7 +47,7 @@
             top: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(24, 37, 51, 0.8);            
+            background: rgba(82, 61, 82, 0.9);            
             z-index: -1;
         }
 
@@ -91,6 +92,7 @@
             z-index: 1000;
             padding: 20px;
         }
+
         .info3 li { list-style: none;}
 
 
@@ -102,80 +104,34 @@
             width: 100%;height: 100%;
             flex-direction: column;
         }
+
         .contents p {
-            font-family: 'Recipekorea'; 
             max-width: 80vw;
-            font-size: 3vw;
-            text-align: justify;
-            font-weight: 500;
+            font-size: 8vw;
+            text-align: center;
             color: #eee;
             font-weight: 700;
+            font-family: 'Recipekorea';
         }
-        .contents p a {text-decoration: none; color: rgb(132, 171, 255);}
+
+        .mtext p em {text-decoration: none; color: rgb(132, 171, 255);}
 
 
-        .cursor {
+        .cursor{
             position: absolute;
-            width: 10px;height: 10px;
-            background: #fff;
+            left:0; top:0;
+            width:200px; height:200px;
             border-radius: 50%;
-            z-index: 1000;
+            z-index:-1;
             user-select: none;
             pointer-events: none;
-            transform: scale(1);
-            transition:transform 0.3s ease-in-out;
-            /* mix-blend-mode: normal; */
-            /* mix-blend-mode: multiply; */
-            /* mix-blend-mode: screen; */
-            /* mix-blend-mode: overlay; */
-            /* mix-blend-mode: darken; */
-            /* mix-blend-mode: lighten; */
-            /* mix-blend-mode: color-dodge; */
-            /* mix-blend-mode: color-burn; */
-            /* mix-blend-mode: hard-light; */
-            /* mix-blend-mode: soft-light; */
-            mix-blend-mode: difference;
-            /* mix-blend-mode: exclusion; */
-            /* mix-blend-mode: hue; */
-            /* mix-blend-mode: saturation; */
-            /* mix-blend-mode: color; */
-            /* mix-blend-mode: luminosity; */ 
+            background: #fff;
+            
         }
-        .cursor.active{
-            transform: scale(8);
-        }
+
         
-        .container > .btn {
-            margin: 60px;
-            font-size: 20px;
-            border-radius: 40px;
-        }
         
-
-        .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
-        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
-        .infor4 .modal {
-            background: rgba(0,0,0,0.8);
-            width: 100%;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            top: 100%;
-            left: 0;
-            text-align: left;
-            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
-        }
-        .infor4 .modal.show {
-            top: 0;
-        }
-        .infor4 .modal .close {
-            position: absolute; right: 10px; top: 20px;
-        }
-
- 
-
-
+    
 
 
         
@@ -186,8 +142,7 @@
 
 <body>
     <div class="info">
-        <h1>Mouse Effect03</h1>
-        <p>마우스 따라다니기</p>
+        <h1>Mouse Effect07</h1>
         <ul>
             <li>clientX,clientY</li>
         </ul>
@@ -197,23 +152,18 @@
         <ul>
             <li><a href="mouse01.html">Mouse01</a></li>
             <li><a href="mouse02.html">Mouse02</a></li>
-            <li class="active"><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
             <li><a href="mouse04.html">Mouse04</a></li>
             <li><a href="mouse05.html">Mouse05</a></li>
             <li><a href="mouse06.html">Mouse06</a></li>
-            <li><a href="mouse07.html">Mouse07</a></li>
+            <li class="active"><a href="mouse07.html">Mouse07</a></li>
             <li><a href="mouse08.html">Mouse08</a></li>
             <li><a href="mouse09.html">Mouse09</a></li>
             <li><a href="mouse10.html">Mouse10</a></li>
         </ul>
     </div>
 
-    <div class="info3">
-      
-        <li>pageX:<span class="pageX">0</span></li>  
-        <li>pageY:<span class="pageY">0</span></li>  
-      
-    </div>
+   
 
     <div class="infor4">
         <a href="#" class="view">소스보기</a>
@@ -223,21 +173,26 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">$(window).mousemove(function(e){
-    gsap.to(".cursor",{duration: .5,left: e.pageX -5 ,top: e.pageY -5})
-});
+<pre class="line-numbers"><code class="language-js">//원의 크기를 구해서 반지름 값을 변수화
+const cursor = document.querySelector(".cursor")
+let style = document.querySelector(".cursor").style
+document.addEventListener("mousemove",(e) =>{
+    // let cursorW = cursor.clientWidth/2
+    // let cursorH = cursor.clientHeight/2
+    // console.log(cursorW);
+    // console.log(cursorH);
 
-document.querySelectorAll("a").forEach(elem => {
-    elem.addEventListener("mouseenter", () => {
-        document.querySelector(".cursor").classList.add("active");
-    });
-    elem.addEventListener("mouseleave", () => {
-        document.querySelector(".cursor").classList.remove("active");
-    });
-});
+    let rect = cursor.getBoundingClientRect()
 
 
 
+    gsap.to(".cursor",{left: e.pageX -rect.width/2,top: e.pageY-rect.height/2})
+})
+
+
+
+style.background ="url(../slider/img/so12.jpg) no-repeat center center fixed"
+style.backgroundSize= "cover"
 </code></pre>
                 
                 
@@ -252,7 +207,6 @@ document.querySelectorAll("a").forEach(elem => {
     offsetX :이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
     offsetY :이벤트 대상 객체에서의 상대적 마우스 Y좌표 위치를 반환합니다.
     pageX:브라우저 페이지에서의 x좌표 위치를 반환합니다.
-
     pageY:브라우저 페이지에서의 Y좌표 위치를 반환합니다.
     screenX:전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
     screenY:전체 모니터 스크린에서의 Y좌표 위치를 반환합니다.
@@ -260,8 +214,15 @@ document.querySelectorAll("a").forEach(elem => {
     <!-- contents -->
     <div class="cursor"></div>
     <div class="contents">
-        <p>당신은 <a href="#">딱 한번만</a> 산다 하지만 똑바로 산다면</p><p><a href="#" style="color: orange">한번</a> 이면 충분하다</p> <br>
-        <p> <a href="#" style="color: red">잘 살아라</a> 그게<a href="#" style="color: yellow">최고의</a> 복수이다</p>
+        <div class="move-image">
+            
+            <!-- <div class="mimg">
+                <img  class="img" src="../slider/img/so13.jpg" alt="이미지"> 
+            </div> -->
+            <div class="mtext">
+                <p>시간은 금이다</p> 
+               </div>
+        </div>
     </div>
 
 
@@ -281,19 +242,28 @@ document.querySelectorAll("a").forEach(elem => {
     <script src="../parallax/js/gsap.min.js"></script>
     <script src="js/ss.js"></script>
     <script>
-        $(window).mousemove(function(e){
-            gsap.to(".cursor",{duration: .5,left: e.pageX -5 ,top: e.pageY -5})
-        });
+        //원의 크기를 구해서 반지름 값을 변수화
+        const cursor = document.querySelector(".cursor")
+        let style = document.querySelector(".cursor").style
+        document.addEventListener("mousemove",(e) =>{
+        // let cursorW = cursor.clientWidth/2
+        // let cursorH = cursor.clientHeight/2
+        // console.log(cursorW);
+        // console.log(cursorH);
+        
+        let rect = cursor.getBoundingClientRect()
 
-        document.querySelectorAll("a").forEach(elem => {
-            elem.addEventListener("mouseenter", () => {
-                document.querySelector(".cursor").classList.add("active");
-            });
-            elem.addEventListener("mouseleave", () => {
-                document.querySelector(".cursor").classList.remove("active");
-            });
-        });
 
+
+        gsap.to(".cursor",{left: e.pageX -rect.width/2,top: e.pageY-rect.height/2})
+       })
+
+
+       
+       style.background ="url(../slider/img/so12.jpg) no-repeat center center fixed"
+       style.backgroundSize= "cover"
+
+       
     </script>
 </body>
 
