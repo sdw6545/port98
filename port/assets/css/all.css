@@ -360,7 +360,8 @@ readers do not read off random characters that represent icons */
   content: "\f0aa"; }
 
 .fa-arrow-down:before {
-  content: "\f063"; }
+  content: "\f063";
+ }
 
 .fa-arrow-left:before {
   content: "\f060"; }

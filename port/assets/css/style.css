@@ -4,6 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 
 /* 레이아웃 */
@@ -11,151 +12,212 @@ body {
     overflow-x: hidden;
     font-family: 'S-CoreDream-2ExtraLight';
     background: #000;
-
+    
 }
+.pageYOffset{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1vw;
+    z-index: 100;
+}
+
 /* section1 */
-#section1 {
-    font-family: 'Montserrat';
-    width: 95vw;
-    ;
-    margin: 2.5vw;
-    background: #B1B1B0;
-    padding-bottom: 10vw;
+#section1{
+    transform: translate(0%, 0%)
 }
-
-#section1 .section1-text {
-    text-transform: uppercase;
+.sec1 {
+    position: relative;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 200;
+    padding: 3vw;
+    background: #B1B1B0; margin: 3vw; font-family: "Montserrat";
 }
-
-#section1 .section1-text span {
+.sec1 span {
     font-size: 2vw;
     display: block;
     padding-top: 3vw;
 }
-
-#section1 .section1-text h1 {
-    text-align: inherit;
+.sec1 h1 {
     font-size: 10vw;
     line-height: .8;
     font-weight: 800;
     padding: 7vw 0; 
 }
-
-
-#section1 .section1-img {
-    width: 50vw;
-    margin: -15vw auto 5vw auto;
-    border: 3vw solid #39393A;
+.sec1 h1 p{
+    opacity: 0;
+}
+.sec1 .img {
+    border: 3.5vw solid #2D2D2D;
+    margin: 20vw 20vw -20vw 20vw;
+    margin-top: -10vw;
+    color: #B1B1B0;
+    font-size: 2vw;
     position: relative;
-    z-index: 1;
-
+    z-index: 1000;
 }
-
-#section1 .section1-img img {
-    opacity: 0.5;
-}
-
-#section1 .section1-img .section1-img-text {
-    padding-top: 4vw;
-    background: #39393A;
-    text-align: center;
+.sec1 .img p {
     font-family: 'S-CoreDream-2ExtraLight';
-}
-
-#section1 .section1-img .section1-img-text p {
-    background: #39393A;
-    padding: 4vw;
+    background: #2D2D2D;
+    padding: 3vw;
+    padding-bottom: 0vw;
     font-size: 1.5vw;
     text-align: justify;
-    color: #d0d0d0;
+}
+.info{
+    
+    background: #2D2D2D;    
+    padding: 5vw 0 3vw ;
+
+    border-bottom: 1px #FFFFFF solid;
+}
+.info-img{
+    background-image: url(../img/icon1.png);
+    background-size: cover;
+    margin: 0 auto;
+    width: 12vw;height: 12vw;
 }
 
-#section1 .section1-img .section1-img-text strong {
-    color: #d0d0d0;
-    background: #39393A;
-    margin-bottom: 1vw;
-
+.info-text{
+    text-align: center;
 }
-
-.down {
-    position: fixed;
-    bottom: 3vw;
-    left: 7vw;
-    font-size: 1vw;
+.info-text span{
+    font-family: "Montserrat";
     font-weight: 500;
 }
+.info2{
+    background: #2D2D2D;
+}
+.info2 ul {
+    display: flex;
+    justify-content:space-between ;
+}
+.info2 ul li a{
+    display: inline-block;
+    margin: 1vw 0;
+    font-size: 2vw;
+    color: #ffffff;
+    font-weight: 200;
+    text-transform: none;
+}
+.transform{
 
-.down i {
-    font-size: 1.5vw;
+}
+.transform .ddr{
+    background: #EFE74B;
+
+    padding-top: 1vw;
+
+
+}
+.transform .ddr ul{
+    display: flex; 
+    align-items: center;
+}
+.transform .ddr ul li{
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 4vw;
+text-transform: uppercase;
+margin-left: 2.5vw;
+}
+
+
+.work{
+    
+
+}
+.work-l{
+    font-family: "Montserrat";
+    position: absolute;
+    bottom: 0; left: 8vw;
+    font-size: 2vw;
+    font-weight: 400;
+}
+.work-r{
+    font-family: "Montserrat";
+    position: absolute;
+    bottom:0; right: 8vw;
+    font-size: 2vw;
+    font-weight: 400;
 }
 
 
 
-/* #section2 */
-#section2 {
+/* section2 */
+
+#section2{
     position: relative;
 }
+#section2 p{
 
-.section2-text {
-    font-family: 'Montserrat';
-    text-align: center;
-    font-size: 10vw;
-    font-weight: 500;
-    line-height: 9vw;
-    font-weight: 700;
-
-}
-
-.site {
-    width: 20vw;
-    border: 2vw #000 solid;
-    text-align: center;
-    border-bottom: none;
-
+font-family: "Montserrat";
+font-weight: 800;
+line-height: 10vw;
+text-align: center;
+font-size: 10vw;
+color: #4E4E4F;
+opacity: 0.5;
 }
 
 
-.site a img {
-    opacity: 0.5;
+.site{
+    background: #fff;
+    border: 1vw solid #fff;
+    width: 35vw;
+    font-family: 'S-CoreDream-6Bold';
 }
-
-.site a span {
-    width: 100%;padding: 2vw 0;
+.site h2{
+    font-weight: bolder;
+    font-size: 3vw;
+    margin-top: 2vw;
+    margin-left: 2vw;
+}
+.site span{
+    font-size: 1.5vw; margin: 2vw 0 2vw 1.5vw;
+    display: inline-block;font-family: 'S-CoreDream-2ExtraLight';
+    font-weight: 200;
+}
+.site strong{
     display: inline-block;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 2.3vw;
-    background: #000;
+    margin: 2vw;
+    width: 29vw;
+    height: 20vw;
+    overflow: hidden;
 }
-
-/* 위치 잡기 */
 .site1{
     position: absolute;
-    left: 10vw;
-    top: 30vw;
+    left: 12vw; top: 10vw;
+    transform: translate(0%, 0%)
 }
 .site2{
     position: absolute;
-    left: 60vw;
-    top: 50vw;
+    right: 8vw;
+    top: 60vw;
+    transform: translate(0%, 0%)
 }
 .site3{
     position: absolute;
-    left: 20vw;
-    top: 100vw;
+    left: 8vw; top: 120vw;
+    transform: translate(0%, 0%)
 }
 .site4{
     position: absolute;
-    left: 60vw;
-    top: 130vw;
+    right: 18vw; top: 180vw;
+    transform: translate(0%, 0%)
 }
-.site5{
-    position: absolute;
-    left: 20vw;
-    top: 160vw;
+#section3{
+    margin: 22vw 0;
+    
 }
-
-
-
+#section3 h2{
+    font-family: "Montserrat";
+    font-weight: 800;
+    line-height: 10vw;
+    text-align: center;
+    font-size: 10vw;
+    color: #4E4E4F;
+    opacity: 0.5;
+}
 

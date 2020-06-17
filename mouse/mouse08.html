@@ -149,7 +149,9 @@
         .textWrap .line .right .spanWrap span {
             font-size: 5vw;
         }
-
+        .spanWrap span{
+            display: inline-block;
+        }
 
 
 
@@ -223,24 +225,36 @@
                 <div class="line">
                     <div class="left">
                         <div class="spanWrap">
-                            <span class="spanSlow">I never dreamed about success,</span>
+                            <span class="spanSlow">I never dreamed</span>
                         </div>
                     </div>
                     <div class="right">
                         <div class="spanWrap">
-                            <span class="spanSlow">I never dreamed about success,</span>
+                            <span class="spanSlow">I never dreamed </span>
                         </div>
                     </div>
                 </div>
                 <div class="line">
                     <div class="left">
                         <div class="spanWrap">
-                            <span class="spanFast">I worked for it.</span>
+                            <span class="spanFast">about success,</span>
                         </div>
                     </div>
                     <div class="right">
                         <div class="spanWrap">
-                            <span class="spanFast">I worked for it.</span>
+                            <span class="spanFast">about success,</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="left">
+                        <div class="spanWrap">
+                            <span class="spanSlow">I worked for it.</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="spanWrap">
+                            <span class="spanSlow">I worked for it.</span>
                         </div>
                     </div>
                 </div>
@@ -265,20 +279,56 @@
     <script src="../parallax/js/gsap.min.js"></script>
     <script src="js/ss.js"></script>
     <script>
-        const spanSlow = document.querySelectorAll(".spanSlow");
-        const spanFast = document.querySelectorAll(".spanFast");
+        // const spanSlow = document.querySelectorAll(".spanSlow");
+        // const spanFast = document.querySelectorAll(".spanFast");
+
+        // window.addEventListener("mousemove",mouseMove);
+            
 
 
-        window.addEventListener("mousemove",mouseMove);
+
+            //x = 컨튼츠 박스의 width()/2 + 왼쪽 여백값
+            //y = 컨튼츠 박스의 height()/2 + 위쪽 여백값
+        // function mouseMove(e){
+        //     let postion =(e.pageX/(window.innerWidth/2))*100
+        //     console.log(postion);
+            
 
 
+
+        //     spanSlow.forEach((span) =>{
+        //         span.style.transform = `translate(${postion}px)`;
+        //     });
+        //     spanFast.forEach((span) =>{
+        //         span.style.transform = `translate(${-postion}px)`;
+        //     });
+            
+
+            
+        // }
+
+
+        const spanSlow = $(".spanSlow")
+        const spanFast = $(".spanFast")
+
+        $(window).on("mousemove",mouseMove )
 
         function mouseMove(e){
-            let speedSlow = e.pageX
-            spanSlow.forEach((span) =>{
-                span.style.transform = `translate(${speedSlow}px)`;
-            })
+            let postion = (e.pageX- ($(window).width()/2))*0.1;
+            spanSlow.css({"transform":"translate("+postion+"px)"})
+
+
+            spanFast.css({"transform":"translate("+-postion+"px)"})
+      
+
         }
+
+
+
+        
+
+
+
 
     </script>
 </body>

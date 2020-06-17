@@ -161,12 +161,11 @@
 
 
         .slide-img .slide .simg {
-            position: absolute; left: 50%;top: 50%; transform: translate(-50%,-50%);
+            position: absolute; left: 35%;top: 30%;
 
             }
         .slide-img .slide .simg img {   
             max-width: 500px;
-            transform: translateY(-50%);
             opacity: 0;
             transition: all 2s ease;
         }
@@ -313,7 +312,6 @@
         .cursor-follower{
             position: absolute;
             width: 30px;height: 30px;
-            background: rgba(255,255,255,0.3);
             border: 1px solid rgba(0,0,0,0.4);
             border-radius: 50%;
             user-select: none;
@@ -497,7 +495,9 @@
             //각 슬라이드 이미지    //배경색 넣기위치 설정
             $(this).css({left : 100 * index + "%", background : slideBg[index]})      
             dotIndex += "<a href='#'>0"+(index+1)+"</a>"         //이미지 갯수만큼 닷 버튼 갯수 설정
-                
+            
+            
+            
         });
         slideDot.html(dotIndex);                  //닷 버튼 출력
      
@@ -506,6 +506,7 @@
         function gotoSlide(num){
             slideImg.animate({left : -100 * num +"%"}, duration, easing)   //duration과 easing을 변수로 사용
             currentIndex = num;
+            $(".cursor-follower").css({background : slideBg[num]})
             updateDot();
         };
 
@@ -573,6 +574,21 @@
             cursor.removeClass("active");
             follower.removeClass("active");
         });
+
+        const sImg = $(".simg")
+
+        $(window).on("mousemove",mouseMove )
+
+        function mouseMove(e){
+            let postion = (e.pageX- ($(".slide").width()/2))*0.1;
+
+
+            sImg.css({"transform":"translate("+postion+"px)"})
+      
+
+        }
+        
+
     </script>
 </body>
 

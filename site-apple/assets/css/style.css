@@ -106,12 +106,13 @@
 }
 
 .Music-list {
-    width: 1000px;
+    width: 3000px;
     position: relative;
-display: flex;
+
 }
 .list{
     padding-right: 20px;
+    float: left;
 }
 .list img {
     width: 450px;
