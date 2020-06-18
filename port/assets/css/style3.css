@@ -13,14 +13,16 @@ body {
     font-family: 'S-CoreDream-2ExtraLight';
     background: #000;
 }
-
+#section1 {width: 100vw; height:4700px;}
+#section2 {width: 100vw;height: 5000px;}
+#section3 {width: 100vw;}
 
 .pageYOffset{
     position: fixed;
     left: 0;
     top: 0;
-    background: rgba(39, 37, 37, 0.4);
-    padding: 1vw;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1vh;
     z-index: 100;
 }
 
@@ -33,21 +35,23 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-weight: 200;
-    padding: 2vw;
-    background: #B1B1B0; margin: 3vw; font-family: "Montserrat";
+    padding: 2vh;
+    background: #B1B1B0; margin: 3vh; font-family: "Montserrat";
 }
 .sec1 span {
-    font-size: 2vw;
+    font-size: 3vh;
     display: block;
-    padding: 3vw 0;
+    padding-top: 3vh;
 }
 .sec1 h1 {
-    font-size: 10vw;
+    font-size: 13vh;
     line-height: .8;
     font-weight: 800;
     padding: 1vh 0; 
 }
+.sec1 h1 p{
 
+}
 .sec1 .img {
     border: 3.5vh solid #2D2D2D;
     margin: 0 auto;

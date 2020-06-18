@@ -6,21 +6,25 @@
 }
 @font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
-
 /* 레이아웃 */
 body {
     overflow-x: hidden;
     font-family: 'S-CoreDream-2ExtraLight';
     background: #000;
 }
-
+#section1{
+    height: 6000px;
+}
+#section2{
+    height: 4800px;
+}
 
 .pageYOffset{
     position: fixed;
     left: 0;
     top: 0;
-    background: rgba(39, 37, 37, 0.4);
-    padding: 1vw;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
     z-index: 100;
 }
 
@@ -29,52 +33,60 @@ body {
     transform: translate(0%, 0%)
 }
 .sec1 {
+    width: 1850px;
+    margin: 30px auto;
     position: relative;
     text-align: center;
     text-transform: uppercase;
     font-weight: 200;
-    padding: 2vw;
-    background: #B1B1B0; margin: 3vw; font-family: "Montserrat";
+    padding: 20px;
+    background: #B1B1B0;  font-family: "Montserrat";
+    height: 4500px;
 }
 .sec1 span {
-    font-size: 2vw;
+    font-size: 40px;
     display: block;
-    padding: 3vw 0;
+    padding: 100px 0;
+    font-weight: 400;
+    color: #5B5B5A;
 }
 .sec1 h1 {
-    font-size: 10vw;
-    line-height: .8;
+    font-size: 210px;
+    line-height: 200px;
     font-weight: 800;
-    padding: 1vh 0; 
 }
 
 .sec1 .img {
-    border: 3.5vh solid #2D2D2D;
     margin: 0 auto;
-    width: 100vh;
+    width: 900px;
+    height: 2780px;
     color: #B1B1B0;
-    font-size: 2vh;
+    font-size: 20px;
     position: relative;
     z-index: 1000;
 }
+.sec1 .img img{
+    border: 35px solid #2D2D2D;
+
+}
+
 .sec1 .img p {
     font-family: 'S-CoreDream-2ExtraLight';
     background: #2D2D2D;
-    font-size: 2vh;
+    font-size: 26px;
     text-align: justify;
+    padding: 40px 100px;
 }
 .info{
     
     background: #2D2D2D;    
-    padding: 5vh 0 3vh ;
 
-    border-bottom: 1px #FFFFFF solid;
 }
 .info-img{
     background-image: url(../img/icon1.png);
     background-size: cover;
     margin: 0 auto;
-    width: 10vw;height: 20vh;
+    width: 200px;height: 200px;
 }
 
 .info-text{
@@ -85,26 +97,32 @@ body {
     font-weight: 500;
 }
 .info2{
+    
+
     background: #2D2D2D;
+    padding: 30px;
 }
 .info2 ul {
+    border-top: 1px #FFFFFF solid;
+    padding: 10px 0 30px;
     display: flex;
     justify-content:space-between ;
 }
 .info2 ul li a{
     display: inline-block;
-    margin: 1vh 0;
-    font-size: 3vh;
+    margin: 10px 0;
+    font-size: 30px;
     color: #ffffff;
     font-weight: 200;
     text-transform: none;
 }
+
 .transform{
 
 }
 .transform .ddr{
     background: #EFE74B;
-    padding-top: 1vh;
+    padding-top: 10px;
     transform-origin: right;
     transform:translateX(30%) rotate(0deg);
     
@@ -117,9 +135,9 @@ body {
 }
 .transform .ddr ul li{
     font-family: 'S-CoreDream-6Bold';
-    font-size: 5vh;
+    font-size: 80px;
 text-transform: uppercase;
-margin-left: 2.5vh;
+margin-left:50px;
 }
 
 
@@ -130,15 +148,15 @@ margin-left: 2.5vh;
 .work-l{
     font-family: "Montserrat";
     position: absolute;
-    bottom: 1vh; left: 8vh;
-    font-size: 3vh;
+    bottom: 10px; left: 80px;
+    font-size: 30px;
     font-weight: 400;
 }
 .work-r{
     font-family: "Montserrat";
     position: absolute;
-    bottom:1vh; right: 8vh;
-    font-size: 3vh;
+    bottom:10px; right: 80px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -153,9 +171,9 @@ margin-left: 2.5vh;
 
 font-family: "Montserrat";
 font-weight: 800;
-line-height: 10vw;
+line-height: 200px;
 text-align: center;
-font-size: 10vw;
+font-size: 210px;
 color: #4E4E4F;
 opacity: 0.5;
 }
@@ -163,60 +181,46 @@ opacity: 0.5;
 
 .site{
     background: #fff;
-    border: 1vw solid #fff;
-    width: 35vw;
+    border: 1px solid #fff;
+    width:650px;
     font-family: 'S-CoreDream-6Bold';
 }
 .site h2{
     font-weight: bolder;
-    font-size: 3vw;
-    margin-top: 2vw;
-    margin-left: 2vw;
+    font-size: 60px;
+    margin-top: 25px;
+    margin-left: 25px;
 }
 .site span{
-    font-size: 1.5vw; margin: 2vw 0 2vw 1.5vw;
+    font-size: 25px; margin:25px;
     display: inline-block;font-family: 'S-CoreDream-2ExtraLight';
     font-weight: 200;
 }
 .site strong{
     display: inline-block;
-    margin: 2vw;
-    width: 29vw;
-    height: 20vw;
+    margin: 25px;
+    width: 600px;
+    height: 400px;
     overflow: hidden;
 }
 .site1{
     position: absolute;
-    left: 12vw; top: 10vw;
+    left: 170px; top: 300px;
     transform: translate(0%, 0%)
 }
 .site2{
     position: absolute;
-    right: 8vw;
-    top: 60vw;
+    right: 100px;
+    top: 1200px;
     transform: translate(0%, 0%)
 }
 .site3{
     position: absolute;
-    left: 8vw; top: 120vw;
+    left: 150px; top: 2200px;
     transform: translate(0%, 0%)
 }
 .site4{
     position: absolute;
-    right: 18vw; top: 180vw;
+    right: 500px; top: 4000px;
     transform: translate(0%, 0%)
 }
-#section3{
-
-    
-}
-#section3 h2{
-    font-family: "Montserrat";
-    font-weight: 800;
-    line-height: 10vw;
-    text-align: center;
-    font-size: 10vw;
-    color: #4E4E4F;
-    opacity: 0.5;
-}
-
