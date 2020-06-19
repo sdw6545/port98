@@ -29,6 +29,8 @@
             height: 100vh;
             background: #1a1a1a;
             overflow: hidden;
+            background-image: url(img/zcab.png);
+            background-size: cover;
         }
 
 
@@ -401,7 +403,197 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-                <pre class="line-numbers"><code class="language-js">
+                <pre class="line-numbers"><code class="language-js">const $board = $('main'),
+    $card = $('.card'),
+    $btnSound = $('.btn-sound'),
+    $themeSongEl = $('#theme-song')[0],
+    $turns = $('.turns span'),
+    $attempts = $('.attempts span'),
+    $wins = $('.wins span'),
+    $success = $('.success'),
+    $btnContinue = $('.btn-continue'),
+    $successMsg = $('.success-message'),
+    selectedClass = 'is-selected',       //카드를 선택했을 때
+    dataMatch = 'data-matched',
+    dataType = 'data-type',
+    playSoundClass = 'is-playing',
+    visibleClass = 'is-visible',
+    lastTrunClass = 'last-turn',
+    timeoutLength = 900;
+
+
+let sound = [
+    'music/Zzzz.mp3',
+    'music/zzssss.mp3',
+    'music/sdsdsd.mp3'
+],
+    soundMatch = new Audio(sound[0]),
+    soundNoMatch = new Audio(sound[1]),
+    soundSuccess = new Audio(sound[2]),
+    trunsCount = 2,     //기회 횟수 2
+    attemptsCount = 0,  //시도 횟수
+    winCount = 0,       //우승 횟수
+    card1, card2, msg;
+
+//카드 셔플
+shuffleCards();
+
+//음악 아이콘을 클릭했을 때 음악이 나오고 또 클릭했을 때 정지
+$btnSound.on('click', function () {
+    $(this).toggleClass(playSoundClass);
+    if ($(this).hasClass(playSoundClass)) {
+        $themeSongEl.play();
+    } else {
+        $themeSongEl.pause();
+    }
+});
+
+//카드를 클릭하면 클릭한 카드한테 is-selected를 추가
+$card.click(function () {
+    if ($(this).attr(dataMatch) == 'false') {
+        $(this).addClass(selectedClass);
+    }
+
+    let selectedCards = $('.' + selectedClass);     //선택된 카드를 클래스로 변경 //.is-selected
+
+    //만약에 카드가 똑같다면
+    if (selectedCards.length == 2) {
+        card1 = selectedCards.eq(0).attr(dataType);
+        card2 = selectedCards.eq(1).attr(dataType);
+
+        //만약에 카드1과 카드2가 같다면
+        if (card1 == card2) {
+            if ($btnSound.hasClass(playSoundClass)) {
+                soundMatch.play()
+            }
+            selectedCards.attr(dataMatch, true).removeClass(selectedClass);
+        } else {
+            //카드가 맞지 않으면 원래 상태로 되돌림
+            if ($btnSound.hasClass(playSoundClass)) {
+                soundNoMatch.play()
+            }
+
+            setTimeout(function () {
+                selectedCards.removeClass(selectedClass);
+                trunsCount--;       //카운트 줄이고
+                $turns.html(trunsCount);
+            }, timeoutLength);
+
+            //카운드 기회가 없을 때(주의)
+            if (trunsCount === 1) {
+                setTimeout(function () {
+                    $turns.addClass(lastTrunClass);
+                }, timeoutLength)
+            }
+
+            //카운드 기회가 없을 때(시도+1) , 카운트->2 
+            if (trunsCount <= 0) {
+                setTimeout(function () {
+                    trunsCount = 2;     //기회를 2번 복구
+                    $turns.removeClass(lastTrunClass).html(trunsCount); //주의 표시 삭제, 카운트 표시
+                    $card.attr(dataMatch, false);  //모든 카드 초기화
+                    attemptsCount += 1;
+                    $attempts.html(attemptsCount);
+                }, timeoutLength)
+            }
+        }
+    }
+
+    //완성했을 때 
+    //dataMatch가 true이면서 갯수가 전체 카드 갯수랑 같을 때
+    if ($('[' + dataMatch + '= "true"]').length == $card.length) {
+        setTimeout(() => {
+            $success.addClass(visibleClass);
+            soundSuccess.play()
+            winCount += 1;
+            $wins.html(winCount);
+        }, timeoutLength);
+
+        //시도 횟수에 따른 메세지
+        switch (true) {
+            case (attemptsCount <= 2):
+                msg = "최고입니다. 최고의 아이큐";
+                break;
+            case (attemptsCount > 2 && attemptsCount <= 5):
+                msg = "잘했네요~~~~";
+                break;
+            case (attemptsCount > 5 && attemptsCount <= 8):
+                msg = "쫌만 더 잘해봐~~~ 바보야~~~";
+                break;
+            case (attemptsCount > 8):
+                msg = "진짜 못하네~~~~ 다시 도전해봐~~~";
+                break;
+        }
+        $successMsg.text(msg);
+
+        //카드 초기화
+        setTimeout(() => {
+            $card.attr(dataMatch, false);
+        }, 1200);
+
+    }
+});
+
+//다시 게임 할 때 
+$btnContinue.on('click', function () {
+    $success.removeClass(visibleClass);
+    shuffleCards();             //카드 셔플, 점수 초기화 
+    trunsCount = 2;
+    $turns.removeClass(lastTrunClass).html(trunsCount);
+    attemptsCount = 0;
+    $attempts.html(attemptsCount);
+});
+
+
+//카드 셔플
+function shuffleCards() {
+    let cards = $board.children();
+    while (cards.length) {
+        $board.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0])
+    }
+    $card.each(function (index) {
+        setTimeout(() => {
+            $(this).addClass(selectedClass);
+        }, timeoutLength + 100 * index);
+    });
+
+    setTimeout(() => {
+        $card.removeClass(selectedClass);
+    }, 5000);
+
+}
+
+
+
+
+
+
+
+//splice 예제
+// var number = [1,2,3,4,5,6,7]
+//   var removed = number.splice(2,0,'10')
+
+//   alert (number)
+// var removed = number.splice(2,0,'10','11')
+// alert(number)
+
+// var removed = number.splice(3,1)
+// alert(number)    //1,2,3,5,6,7
+
+// var removed = number.splice(2,1,'20')
+// alert(number)
+
+// var removed = number.splice(0,2,'20','30','40')
+// alert(number)    //20,30,40,3,4,5,6,7
+
+// var removed = number.splice(number.length-3,2)
+// alert(number)    //1,2,3,4,7
+
+// var removed = number.splice(-2,1)
+// alert(number)    //1,2,3,4,5,7
+
+//var removed = number.splice(2)
+// alert(number)    //1,2
 </code></pre>
 
 

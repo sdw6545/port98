@@ -22,11 +22,13 @@ body {
     background: rgba(39, 37, 37, 0.4);
     padding: 1vw;
     z-index: 100;
+    color: #fff;
 }
 
 /* section1 */
 #section1{
     transform: translate(0%, 0%)
+ 
 }
 .sec1 {
     position: relative;
@@ -35,57 +37,94 @@ body {
     font-weight: 200;
     padding: 2vw;
     background: #B1B1B0; margin: 3vw; font-family: "Montserrat";
+
 }
-.sec1 span {
+.sec1 .op {
     font-size: 2vw;
     display: block;
     padding: 3vw 0;
+    animation:  op 3s 0.5s infinite alternate;
 }
+
+@keyframes op{
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    40% {opacity: 0;}
+    60% {opacity: 1;}
+    80% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
 .sec1 h1 {
     font-size: 10vw;
     line-height: .8;
     font-weight: 800;
-    padding: 1vh 0; 
+    padding: 1vw 0; 
+    
+}
+.sec1 h1 p{
+}
+.sec1 .img {
+    margin: 0 auto;
+    width: 50vw;
+    color: #B1B1B0;
+    position: relative;
+    z-index: 100;
+    transform: translate(0%,0%);
+}
+.sec1 .img img{
+    border: 3vw solid #2D2D2D;
+
 }
 
-.sec1 .img {
-    border: 3.5vh solid #2D2D2D;
-    margin: 0 auto;
-    width: 100vh;
-    color: #B1B1B0;
-    font-size: 2vh;
-    position: relative;
-    z-index: 1000;
-}
-.sec1 .img p {
+.t{
+    margin-top: -1vw;
+    margin-bottom: -1vw;
+    padding-top: 2vw;
+    padding-bottom: 5vw;
     font-family: 'S-CoreDream-2ExtraLight';
     background: #2D2D2D;
-    font-size: 2vh;
-    text-align: justify;
+    
 }
+.sec1 .img p {
+    padding: 3vw 7vw;
+    font-size: 1.5vw;
+    text-align: justify;
+
+}
+
 .info{
     
     background: #2D2D2D;    
-    padding: 5vh 0 3vh ;
+    padding: 7vw 0 3vw ;
 
-    border-bottom: 1px #FFFFFF solid;
 }
 .info-img{
     background-image: url(../img/icon1.png);
     background-size: cover;
     margin: 0 auto;
-    width: 10vw;height: 20vh;
+    width: 10vw;height: 10vw;
+    transform: translate(0%, -30%);
 }
 
 .info-text{
     text-align: center;
+
 }
 .info-text span{
     font-family: "Montserrat";
-    font-weight: 500;
+    font-weight: 300;
+    font-size: 2vw;
 }
 .info2{
+    margin-top: -1vw;
     background: #2D2D2D;
+    padding: 4vw 3vw;
+}
+.info2-box{
+    border-top: #fff solid 1px ;
+    padding-top: 1vw;
 }
 .info2 ul {
     display: flex;
@@ -93,8 +132,8 @@ body {
 }
 .info2 ul li a{
     display: inline-block;
-    margin: 1vh 0;
-    font-size: 3vh;
+    margin: 1vw 0;
+    font-size: 2vw;
     color: #ffffff;
     font-weight: 200;
     text-transform: none;
@@ -102,44 +141,47 @@ body {
 .transform{
 
 }
-.transform .ddr{
+.transform .ll{
     background: #EFE74B;
-    padding-top: 1vh;
+    padding-top: 1vw;
     transform-origin: right;
-    transform:translateX(30%) rotate(0deg);
-    
+    transform:translate(30%,-200%) rotate(90deg);
+    z-index: 1000; position: relative;
+
 
 }
-.transform .ddr ul{
+.transform .ll ul{
     display: flex; 
     align-items: center;
     
 }
-.transform .ddr ul li{
+.transform .ll ul li{
     font-family: 'S-CoreDream-6Bold';
-    font-size: 5vh;
-text-transform: uppercase;
-margin-left: 2.5vh;
+    font-size: 4vw;
+    text-transform: uppercase;
+    margin-left: 2.5vw;
 }
 
 
 .work{
-    
+    text-transform: none;
+
 
 }
 .work-l{
     font-family: "Montserrat";
     position: absolute;
-    bottom: 1vh; left: 8vh;
-    font-size: 3vh;
+    bottom: 1vw; left: 8vw;
+    font-size: 2vw;
     font-weight: 400;
 }
 .work-r{
     font-family: "Montserrat";
     position: absolute;
-    bottom:1vh; right: 8vh;
-    font-size: 3vh;
+    bottom:1vw; right: 8vw;
+    font-size: 2vw;
     font-weight: 400;
+    
 }
 
 
@@ -149,8 +191,8 @@ margin-left: 2.5vh;
 #section2{
     position: relative;
 }
-#section2 p{
-
+.sec2 p{
+z-index: -1; position: relative;
 font-family: "Montserrat";
 font-weight: 800;
 line-height: 10vw;
@@ -174,13 +216,14 @@ opacity: 0.5;
     margin-left: 2vw;
 }
 .site span{
-    font-size: 1.5vw; margin: 2vw 0 2vw 1.5vw;
+    width: 29vw;
+    font-size: 1.5vw; margin: 0.5vw 0 0 2vw;
     display: inline-block;font-family: 'S-CoreDream-2ExtraLight';
     font-weight: 200;
 }
 .site strong{
     display: inline-block;
-    margin: 2vw;
+    margin:2vw;
     width: 29vw;
     height: 20vw;
     overflow: hidden;
@@ -193,7 +236,7 @@ opacity: 0.5;
 .site2{
     position: absolute;
     right: 8vw;
-    top: 60vw;
+    top: 70vw;
     transform: translate(0%, 0%)
 }
 .site3{
@@ -203,9 +246,10 @@ opacity: 0.5;
 }
 .site4{
     position: absolute;
-    right: 18vw; top: 180vw;
+    right: 18vw; top: 200vw;
     transform: translate(0%, 0%)
 }
+
 #section3{
 
     

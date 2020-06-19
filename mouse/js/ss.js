@@ -1,11 +1,11 @@
-$(".infor4 a.view").click(function(){
+$(".infor4 .view").click(function(){
     $(".infor4 .modal").show()
     $(".infor4 .modal").addClass("show");
 });
-$(".infor4 a.close").click(function(){
+$(".infor4 .close").click(function(){
     $(".infor4 .modal").removeClass("show");
 });
-$(".infor4 a.sdsdsd").click(function(){
+$(".infor4 .sdsdsd").click(function(){
     $(".infor4 .modal").hide()
 });
 

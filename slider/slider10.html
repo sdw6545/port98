@@ -30,16 +30,19 @@
         li {
             list-style: none;
         }
-
+        body{
+            overflow: hidden;
+        }
 
         #nav {
             position: fixed;left: 0;top: 0;
             width: 100%;
             background: #fff;
-            z-index: 1000;
+            z-index: 10000;
             display: flex;
             font-family: 'Roboto';
             padding: 0 7vw;
+            height: 6vw;
         }
 
         #nav h1 {
@@ -71,6 +74,7 @@
         #nav .ham {
             flex: 1 1 0;
             position: relative;
+            
         }
 
         #nav .ham .bar{
@@ -80,6 +84,8 @@
             width: 50px;
             height: 50px;
             cursor: pointer; 
+
+           
         }
         
         #nav .ham .bar span {
@@ -91,6 +97,7 @@
             transition: all 0.5s ease;
             margin-top: 25px;
             margin-left: 10px;
+            
         }
         #nav .ham .bar span::before{
             content: '';
@@ -192,7 +199,7 @@
             width: 100%;height: 100%;
             background: rgba(255,255,255,1);
             position: absolute;left: 0;top: 1vw;
-            z-index: 1000;
+            z-index: 100;
             transform: scaleX(0);
         }
 
@@ -259,7 +266,7 @@
 
         /* slide-btn */
         .slide-btn { }
-        .slide-btn a {position: absolute; top: 0; z-index: 2000;}
+        .slide-btn a {position: absolute; top: 0; z-index: 100;}
         .slide-btn a.prev {left: 0; width: 5.2vw; height: 100vh; background: #fff; }
         .slide-btn a.next {right: 0; width: 5.2vw; height: 100vh; background: #fff;}
 
@@ -291,7 +298,9 @@
             position: absolute; bottom: 3vw; right: 2.4vw;
             border-radius: 10px;
             transform: rotate(45deg);
-            transform-origin: right;}
+            transform-origin: right;
+           
+        }
 
 
             .cursor {
@@ -323,7 +332,38 @@
             opacity: 0.7;
             transform: scale(4);
         }
+
+        .info2{
+            background: rgba(255,255,255,0.4);
+            width: 20%;height: 100%;
+            text-align: center;
+            position: absolute; right: 5%; top: 0%;
+            z-index: 1000;
+            
+        }
+        .info2 ul{
+            padding-top: 6vw;
+        }
+        .info2 li.active a{
+            border-bottom: 1px #000  dashed;
+        }
+        .info2 li{
+            font-size: 2vw;
+            padding: 0.4vw 0;
+        }
+        
+        .info2 li a{
+
+            font-family: 'Roboto';
+            color: #000;
+            font-weight: 800;
+
+        }
+        
+
     </style>
+        <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -341,11 +381,177 @@
         <h1>PORTFOLIO</h1>
         <div class="ham">
             <div class="bar">
-                <span></span>
+                <span>
+                    
+                </span>
             </div>
         </div>
     </nav>
     <!-- //nav -->
+    <div class="info2">
+        <ul>
+            <li><a href="slider01.html">slide01</a></li>
+            <li><a href="slider02.html">slide02</a></li>
+            <li><a href="slider03.html">slide03</a></li>
+            <li><a href="slider04.html">slide04</a></li>
+            <li><a href="slider05.html">slide05</a></li>
+            <li><a href="slider06.html">slide06</a></li>
+            <li><a href="slider07.html">slide07</a></li>
+            <li><a href="slider08.html">slide08</a></li>
+            <li><a href="slider09.html">slide09</a></li>
+            <li class="active"><a href="slider10.html">slide10</a></li>
+            <li>
+                <div class="infor4">
+                    <a href="#" class="view">소스보기</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 소스보기 -->
+    <div class="infor4">
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> //닷 버튼 생성
+$(".slide-wrap").append("<div class='slide-dot'></div>")
+    $(".slide-wrap").append("<div class='slide-btn'><a href='#' class='prev'></a><a href='#' class='next'></a></div>")
+
+    const slideWrap = $(".slide-wrap"),
+            slideImg = $(".slide-img"),
+            slide = $(".slide"),
+            slideDot = $(".slide-dot"),
+            slideBtn = $(".slide-btn")
+
+    let slideCount = slide.length,    //슬라이드 이미지 갯수
+        currentIndex = 0,               //현재 보이는 이미지 순서
+        dotIndex = "",                   //닷 버튼 HTML
+        duration = 1000,                //이미지 슬라이드 이동시간
+        easing = "easeOutExpo",      //이미지 움직임 효과
+        slideBg = ["#fcefe9","#e9effd","#fae3f5","#fbe368","#ccebea","#e9effd","#f4f2ec"];  //각 슬라이드 배경색
+
+        //글자 분할
+        slide.each(function(){
+            let txt = $(this).find(".stext > h2").text();
+            console.log(txt)
+            let split = txt.split("").join("</span><span aria-hidden='true'>");
+                split = "<span aria-hidden='true'>" + split + "</span>";
+            $(this).find(".stext > h2").html(split).attr("aria-lable", txt);
+        })
+        
+    //01. 각 이미지 absolute
+    // 첫번째 이미지는 left: 0 , 두번째 left 100%, 세번째 200% 
+    // 첫번째 이미지는 left: currentIndex , 두번째 left: currentIndex(1) * 100%, 세번째 left: currentIndex(2) * 200% 
+    //이미지 슬라이드
+    slide.each(function(index, element){
+        //console.log(element)
+        //각 슬라이드 이미지    //배경색 넣기위치 설정
+        $(this).css({left : 100 * index + "%", background : slideBg[index]})      
+        dotIndex += "<a href='#'>0"+(index+1)+"</a>"         //이미지 갯수만큼 닷 버튼 갯수 설정
+        
+        
+        
+    });
+    slideDot.html(dotIndex);                  //닷 버튼 출력
+
+    
+    //이미지 움직이기
+    function gotoSlide(num){
+        slideImg.animate({left : -100 * num +"%"}, duration, easing)   //duration과 easing을 변수로 사용
+        currentIndex = num;
+        $(".cursor-follower").css({background : slideBg[num]})
+        updateDot();
+    };
+
+    //닷버튼에 액티브추가
+    function updateDot(){
+        slideDot.find("a").removeClass().eq(currentIndex).addClass("active");
+        slide.removeClass("active").eq(currentIndex).addClass("active");
+    };
+
+    //버튼 클릭하기
+    slideBtn.on("click", "a", function(){
+        let nextIndex = (currentIndex +1) % slideCount;
+        let prevIndex = (currentIndex -1) % slideCount;
+        //console.log(prevIndex) 
+
+        if(currentIndex == 0) prevIndex = slideCount -1
+    
+        if($(this).hasClass("prev")) {
+            gotoSlide(prevIndex)
+        } else {
+            gotoSlide(nextIndex)
+        }
+    });
+
+    //닷버튼 클릭하기
+    slideDot.on("click", "a", function(){
+        gotoSlide($(this).index());
+    });
+
+    //햄버거 메뉴
+    $("#nav .ham .bar").click(function(){
+        $(this).toggleClass("on")
+        $(".info2").toggleClass("on").slideToggle()
+    });
+    gotoSlide(currentIndex);
+
+    //자동플레이
+    function startTimer() {
+        timer = setInterval(function(){
+            let nextIndex = (currentIndex +1) % 5;
+            gotoSlide(nextIndex);
+        },5000);
+    };
+    startTimer();
+
+    const cursor = $(".cursor");
+    const follower = $(".cursor-follower");
+
+    //출력용
+    $(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+        $(".pageX").text(e.pageX);  //이벤트 pageX 값을 화면에 출력
+        $(".pageY").text(e.pageY); //이벤트 pageY 값을 화면에 출력
+    });
+
+    //커서 이동
+    $(document).mousemove(function(e){
+        gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+        gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+    });
+
+    //마우스 오버효과
+    $("a").hover(function(){
+        cursor.addClass("active");
+        follower.addClass("active");
+    },function() {
+        cursor.removeClass("active");
+        follower.removeClass("active");
+    });
+
+    const sImg = $(".simg")
+
+    $(window).on("mousemove",mouseMove )
+
+    function mouseMove(e){
+        let postion = (e.pageX- ($(".slide").width()/2))*0.1;
+
+
+        sImg.css({"transform":"translate("+postion+"px)"})
+
+
+    }
+    
+
+
+</code></pre>
+            </div>
+            <a href="#"class="close">Close</a>
+        </div>
+    </div>
 
 
 
@@ -454,11 +660,15 @@
 
 
 
+
     </section>
 
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="../parallax/js/gsap.min.js"></script>
+    <script src="../mouse/js/ss.js"></script>
+
+
     <script>
        //닷 버튼 생성
        $(".slide-wrap").append("<div class='slide-dot'></div>")
@@ -535,10 +745,11 @@
         slideDot.on("click", "a", function(){
             gotoSlide($(this).index());
         });
-
+        $(".info2").hide()
         //햄버거 메뉴
         $("#nav .ham .bar").click(function(){
             $(this).toggleClass("on")
+            $(".info2").slideToggle()
         });
         gotoSlide(currentIndex);
 

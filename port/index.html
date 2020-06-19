@@ -8,7 +8,7 @@
     <!-- css -->
     <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style4.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- webfont -->
     <link
@@ -20,11 +20,9 @@
     <div class="pageYOffset">0</div>
 
     <section id="contents">
-        <section id="section1"
-
-        >
+        <section id="section1">
             <div class="sec1">
-                <span >Open to select my project</span>
+                <span class="op" >Open to select my project</span>
                 <h1>
                    <p>KIM YONG TAE</p>
                    <p>PUBLISHER</p>
@@ -33,6 +31,9 @@
                 </h1>
                 <div class="img">
                     <img src="assets/img/KakaoTalk_20200526_194806783.jpg" alt="사진">
+                    <div class="t">
+
+                    
                     <p>안녕하세요. 신입 퍼블리셔 김용태입니다. 새로운 직업을 찾는 과정에서 국비 지원 교육을 알게 되었고, 학원을 알아보던 도중 처음으로 코딩을 접하게 되었습니다. 점차 관심이
                         생겨 학원을 등록하여 배우게 되었습니다. </p>
                     <p>배워보지도 못한 영역이라 처음엔 개념이 안 잡혀있어서 어려웠지만, 매일매일 학원이 끝나도 남아서 복습을 하여 수업에 따라갈 수 있게 되었습니다. 그렇게 배우다 보니 코딩의
@@ -48,7 +49,7 @@
                         매일 매일 공부하고 있습니다.
                         하루, 일주일, 한 달
                         다른 저를 보여 드리겠습니다.</p>
-
+                    </div>
                     <div class="info">
                         <div class="info-img">
 
@@ -59,15 +60,18 @@
                     </div>
 
                     <div class="info2">
-                        <ul>
-                            <li><a href="#">GitHub</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Code Pen</a></li>
-                        </ul>
+                        <div class="info2-box">
+                            <ul>
+                                <li><a href="#">GitHub</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Code Pen</a></li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="transform">
-                    <div class="ddr">
+                    <div class="ll" >
                         <ul>
                             <li>#웹표준</li>
                             <li>#웹접근성</li>
@@ -148,6 +152,7 @@
                     <span>웹 표준 사이트는 웹 표준을 배우고 웹 접근성을 지키며 만들어낸 사이트입니다.</span>
                     <strong><img src="assets/img/3104274.jpg" alt="이미지"></strong>  
                 </div>
+
             </div>
         </section>
         <!-- //section2 -->
@@ -165,7 +170,7 @@
     <script src="assets/js/skrollr.min.js"></script>
     <script>
 
-var s = skrollr.init({
+        var s = skrollr.init({
             edgeStrategy:'set',
             easing:"ease"
         });
