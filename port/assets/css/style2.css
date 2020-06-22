@@ -1,4 +1,5 @@
 @font-face { font-family: 'S-CoreDream-2ExtraLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 /* layout */
 body {background: #000; height: 10000px;}
@@ -9,8 +10,17 @@ body {background: #000; height: 10000px;}
 #section4 {}
 #section5 {}
 
+/* scroll */
+.scroll {
+    position: fixed; left: 20px; top: 20px; 
+    color: #fff;
+}
+
 /* sec1 */
 .sec1 {
+    position: fixed; 
+    left: 0; top: 0; 
+    box-sizing: border-box;
     text-align: center;
     text-transform: uppercase;
     font-weight: 200;
@@ -27,6 +37,15 @@ body {background: #000; height: 10000px;}
     line-height: .8;
     font-weight: 800;
     padding: 7vw 0; 
+}
+.sec1 h1 strong {display: block;}
+.sec1 h1 strong span {
+    font-size: 10vw;
+    line-height: .5;
+    font-weight: 800;
+    display: inline-block;
+    min-width: 2.5vw;
+    letter-spacing: -.6vw;
 }
 .sec1 .img {
     border: 3.5vw solid rgba(20,20,22,0.69);
@@ -45,6 +64,56 @@ body {background: #000; height: 10000px;}
     font-size: 1.5vw;
     text-align: justify;
 }
+
+/* sec1 Animation */
+
+.sec1 {opacity: 0; margin-top: 100vw; transition: all 0.6s ease;}
+.sec1 span {opacity: 0; transition: all 0.6s 0.4s ease;}
+.sec1 h1 {opacity: 0; transition: all 0.6s 0.8s ease;}
+
+.sec1.show {opacity: 1; margin-top: 3vw;}
+.sec1.show span {opacity: 1;}
+.sec1.show h1 {opacity: 1;}
+
+
+
+
+/* sec2 */
+.sec2 {
+    padding: 5vw;
+}
+
+.sec2 .text-bg {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10vw;
+    line-height: .9;
+    font-weight: 900;
+    padding: 7vw 0; 
+    font-family: "Montserrat";
+}
+
+.sec2 .site {
+    width: 30vw;
+    background: #fff;
+    padding: 3vw;
+}
+.sec2 .site h2 {
+    color: #000;
+    font-size: 2.3vw;
+    font-family: 'S-CoreDream-6Bold';
+}
+.sec2 .site p {
+    font-size: 1vw;
+    font-family: 'S-CoreDream-2ExtraLight';
+    padding: 1vw 0;
+}
+
+
+
+
+
+
 
 
 
