@@ -40,18 +40,34 @@ body {
     font-family: 'S-CoreDream-2ExtraLight';
     background: #000;
 }
-#section3 .sec3{
+
+#section3 .sec3 {
     width: 120%;
     opacity: 0;
     overflow: hidden;
-    background: url(../img/zcab.png) ;
+    background: url(../img/zcab.png);
     background-size: cover;
 }
-#section3 .col1{float: left;}
-#section3 .col2{float: left;}
-#section3 .col3{float: left;}
-#section3 .col4{float: left;}
-#section3 .col5{float: left;}
+
+#section3 .col1 {
+    float: left;
+}
+
+#section3 .col2 {
+    float: left;
+}
+
+#section3 .col3 {
+    float: left;
+}
+
+#section3 .col4 {
+    float: left;
+}
+
+#section3 .col5 {
+    float: left;
+}
 
 
 .pageYOffset {
@@ -66,8 +82,9 @@ body {
 
 /* section1 */
 #section1 {
-    position: fixed; 
-    left: 0; top: 0; 
+    position: fixed;
+    left: 0;
+    top: 0;
     z-index: 100;
 }
 
@@ -75,7 +92,6 @@ body {
 
 
 .sec1 {
-
     z-index: 100;
     width: 92.5vw;
     box-sizing: border-box;
@@ -83,7 +99,9 @@ body {
     text-transform: uppercase;
     font-weight: 200;
     padding: 3vw;
-    background: #B1B1B0; margin: 3vw ; font-family: "Montserrat";
+    background: #B1B1B0;
+    margin: 3vw;
+    font-family: "Montserrat";
 
 }
 
@@ -137,7 +155,6 @@ body {
     position: relative;
     z-index: 100;
     transform: translate(0%, 0%);
-
 }
 
 .sec1 .img .img1 {
@@ -158,7 +175,7 @@ body {
     font-size: 1.3vw;
     text-align: justify;
     line-height: 120%;
-    font-weight: 200;   
+    font-weight: 200;
 }
 
 .info {
@@ -206,7 +223,7 @@ body {
     justify-content: space-between;
 }
 
-.info2  ul li  a {
+.info2 ul li a {
     font-family: "Montserrat";
     display: inline-block;
     margin: 1vw 0;
@@ -230,7 +247,8 @@ body {
     transform: translate(80%, 0%) rotate(90deg);
     z-index: 1000;
     position: absolute;
-    left: 10vw; bottom: 0;
+    left: 10vw;
+    bottom: 0;
     padding-bottom: 3vw;
     text-align: left;
 }
@@ -255,7 +273,25 @@ body {
 
 
 
+.dee{
+    position: relative;left: -10vw; top: -10vw;
+}
+.dee img{
+    width: 20vw; 
+    position: absolute;top: 50%; left: 50%;
+    transform: translate(-50%,-50%) ;
+    animation: ro 5s infinite normal;
+}
 
+
+
+.dee span{
+    position: absolute;left: 50%;top: 50%; 
+    transform: translate(-50%,-50%);
+    font-family: 'S-CoreDream-4Regular';
+    font-size: 1.5vw;
+    color: #fff;
+}
 
 .work {
     text-transform: none;
@@ -299,11 +335,13 @@ body {
 
 #section2 {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
 
 }
+
 .sec2 {
-    
+
     padding: 5vw 0;
 }
 
@@ -313,12 +351,13 @@ body {
     font-size: 9.6vw;
     line-height: .9;
     font-weight: 900;
-    padding: 7vw 2vw; 
+    padding: 7vw 2vw;
     font-family: "Montserrat";
     position: relative;
     z-index: -1;
 }
-.sec2 .text-bg p{
+
+.sec2 .text-bg p {
     opacity: 0;
 }
 
@@ -389,13 +428,15 @@ body {
 
 
 /* col1 */
-.sec3{
+.sec3 {
     position: fixed;
-    top: 0;left: 0;
+    top: 0;
+    left: 0;
     width: 100vw;
-    
+
 }
-#section3 .sec3 .col1{
+
+#section3 .sec3 .col1 {
     width: 100%;
     float: left;
     background-size: cover;
@@ -405,6 +446,7 @@ body {
     align-items: center;
     transform: translate(0%, 0%)
 }
+
 #section3 .sec3 .col1 h2 {
     opacity: 0;
     font-family: "Montserrat";
@@ -412,244 +454,342 @@ body {
     font-weight: 800;
     line-height: 10vw;
     font-size: 9.6vw;
-    transform: translate(0%,-10%);
-    color: rgb(78,78,79) ;
+    transform: translate(0%, -10%);
+    color: rgb(78, 78, 79);
 }
 
 
 /* col2 */
-#section3 .sec3 .col2{
+#section3 .sec3 .col2 {
     width: 100%;
     transform: translate(100%, -100%);
     position: relative;
 }
 
-#section3 .sec3 .col2 .box1{
+#section3 .sec3 .col2 .box1 {
     width: 90%;
-    position: absolute;left: 50%; top: 0%;
-    transform: translate(-45%,-90%);
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-45%, -90%);
 
     z-index: 100;
 }
-#section3 .sec3 .col2 .box2{
-    width: 95%;opacity: 0.4;
-    position: absolute;left: 50%; top: 0;
-    transform: translate(-50%,-150%);
+
+#section3 .sec3 .col2 .box2 {
+    width: 95%;
+    opacity: 0.4;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -150%);
     z-index: -3;
 }
-#section3 .sec3 .col2 .box3{
+
+#section3 .sec3 .col2 .box3 {
     width: 85%;
-    position: absolute;left: 50%; top: 0;
-    transform: translate(-55%,-110%);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-55%, -110%);
 }
-#section3 .sec3 .col2 .box4{
+
+#section3 .sec3 .col2 .box4 {
     width: 55%;
-    position: absolute;left: 50%; top: 0;
-    transform: translate(-55%,-150%);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-55%, -150%);
     z-index: -1;
 }
-#section3 .sec3 .col2 .box5{
-    position: absolute;left: 50%; top: 0;
-    transform: translate(-50%,-160%);
+
+#section3 .sec3 .col2 .box5 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -160%);
 }
-#section3 .sec3 .col2 .box6{
-    position: absolute;left: 50%; top: 0;
-    transform: translate(-120%,-480%);
+
+#section3 .sec3 .col2 .box6 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-120%, -480%);
     font-family: "Montserrat";
     display: inline-block;
     z-index: 10;
 }
-#section3 .sec3 .col2 .box6 h2{
+
+#section3 .sec3 .col2 .box6 h2 {
     color: #1B8567;
     font-size: 4vw;
     font-weight: 400;
     display: inline-block;
 
 }
-#section3 .sec3 .col2 .box6 h2 p{
+
+#section3 .sec3 .col2 .box6 h2 p {
     color: #1B8567;
-font-weight: 800;
-font-size: 4vw;
-line-height: 1vw;
+    font-weight: 800;
+    font-size: 4vw;
+    line-height: 1vw;
 }
-#section3 .sec3 .col2 .box7{
-    position: absolute;left: 50%; top: 0;
-    transform: translate(-50%,-158.5%);
+
+#section3 .sec3 .col2 .box7 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -158.5%);
     z-index: -1;
 }
 
 /* col3 */
-#section3 .sec3 .col3{
+#section3 .sec3 .col3 {
     width: 100%;
     transform: translate(150%, 0%);
     position: relative;
 }
-#section3 .sec3 .col3 .box1{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col3 .box1 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -100%);
 }
-#section3 .sec3 .col3 .box2{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col3 .box2 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -100%);
 }
-#section3 .sec3 .col3 .box3{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col3 .box3 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -105%);
 }
-#section3 .sec3 .col3 .box4{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col3 .box4 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -100%);
 }
-#section3 .sec3 .col3 .box5{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col3 .box5 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -160%);
     z-index: 10;
 }
-#section3 .sec3 .col3 .box6{
-    position: absolute;left: 0; top: 0;
-    transform: translate(-120%,-480%);
+
+#section3 .sec3 .col3 .box6 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-120%, -480%);
     font-family: "Montserrat";
     display: inline-block;
     z-index: 100;
 }
-#section3 .sec3 .col3 .box6 h2{
+
+#section3 .sec3 .col3 .box6 h2 {
     color: #C85452;
     font-size: 4vw;
     font-weight: 400;
     display: inline-block;
 
 }
-#section3 .sec3 .col3 .box6 h2 p{
+
+#section3 .sec3 .col3 .box6 h2 p {
     color: #C85452;
-font-weight: 800;
-font-size: 4vw;
-line-height: 1vw;
+    font-weight: 800;
+    font-size: 4vw;
+    line-height: 1vw;
 }
-#section3 .sec3 .col3 .box7{
-    position: absolute;left: 0; top: 0;
-    transform: translate(-50%,-158.5%);
+
+#section3 .sec3 .col3 .box7 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -158.5%);
     z-index: -1;
 }
 
 
 /* col4 */
-#section3 .sec3 .col4{
+#section3 .sec3 .col4 {
     width: 100%;
     transform: translate(150%, 0%);
     position: relative;
 }
-#section3 .sec3 .col4 .box1{
+
+#section3 .sec3 .col4 .box1 {
     width: 55%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -100%);
     z-index: -10;
 }
-#section3 .sec3 .col4 .box2{
+
+#section3 .sec3 .col4 .box2 {
     width: 70%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -110%);
 }
-#section3 .sec3 .col4 .box3{
+
+#section3 .sec3 .col4 .box3 {
     width: 20%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-150%, -300%);
 }
-#section3 .sec3 .col4 .box4{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col4 .box4 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-30%, -135%);
 }
-#section3 .sec3 .col4 .box5{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col4 .box5 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -160%);
     z-index: 10;
 }
-#section3 .sec3 .col4 .box6{
-    position: absolute;left: 0; top: 0;
-    transform: translate(-120%,-480%);
+
+#section3 .sec3 .col4 .box6 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-120%, -480%);
     font-family: "Montserrat";
     display: inline-block;
     z-index: 100;
 }
-#section3 .sec3 .col4 .box6 h2{
+
+#section3 .sec3 .col4 .box6 h2 {
     color: #519B87;
     font-size: 4vw;
     font-weight: 400;
     display: inline-block;
 
 }
-#section3 .sec3 .col4 .box6 h2 p{
+
+#section3 .sec3 .col4 .box6 h2 p {
     color: #519B87;
-font-weight: 800;
-font-size: 4vw;
-line-height: 1vw;
+    font-weight: 800;
+    font-size: 4vw;
+    line-height: 1vw;
 }
-#section3 .sec3 .col4 .box7{
-    position: absolute;left: 0; top: 0;
-    transform: translate(-50%,-158.5%);
+
+#section3 .sec3 .col4 .box7 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -158.5%);
     z-index: -1;
 }
 
 
 /* col5 */
-#section3 .sec3 .col5{
+#section3 .sec3 .col5 {
     width: 100%;
     transform: translate(150%, 0%);
     position: relative;
 }
-#section3 .sec3 .col5 .box1{
+
+#section3 .sec3 .col5 .box1 {
     width: 70%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -100%);
 }
-#section3 .sec3 .col5 .box2{
+
+#section3 .sec3 .col5 .box2 {
     width: 100%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -100%);
     z-index: -10;
 }
-#section3 .sec3 .col5 .box3{
+
+#section3 .sec3 .col5 .box3 {
     width: 40%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(0%, -80%);
 }
-#section3 .sec3 .col5 .box4{
+
+#section3 .sec3 .col5 .box4 {
     width: 40%;
-    position: absolute; left: 0;top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-120%, -80%);
 }
-#section3 .sec3 .col5 .box5{
-    position: absolute; left: 0;top: 0;
+
+#section3 .sec3 .col5 .box5 {
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: translate(-50%, -160%);
 }
-#section3 .sec3 .col5 .box6{
-    position: absolute;left: 0; top: 0;
-    transform: translate(-120%,-480%);
+
+#section3 .sec3 .col5 .box6 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-120%, -480%);
     font-family: "Montserrat";
     display: inline-block;
 }
-#section3 .sec3 .col5 .box6 h2{
+
+#section3 .sec3 .col5 .box6 h2 {
     color: #FFE600;
     font-size: 4vw;
     font-weight: 400;
     display: inline-block;
 
 }
-#section3 .sec3 .col5 .box6 h2 p{
+
+
+#section3 .sec3 .col5 .box6 h2 p {
     color: #FFE600;
     font-weight: 800;
     font-size: 4vw;
     line-height: 1vw;
 }
-#section3 .sec3 .col5 .box7{
-    position: absolute;left: 0; top: 0;
-    transform: translate(-50%,-158.5%);
+
+#section3 .sec3 .col5 .box7 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -158.5%);
     z-index: -10;
 }
 
 /* section4 */
-#section4 .sec4 h2{
-    position: fixed; left: 50%; top: 50%;z-index: 100;
-    transform: translate(-50%,-50%);
-    color: #fff;font-size: 10vw;    font-family: "Montserrat";
+#section4 .sec4 h2 {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 10vw;
+    font-family: "Montserrat";
     font-weight: 800;
 }

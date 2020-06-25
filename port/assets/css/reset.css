@@ -1,5 +1,5 @@
 /* reset  */
-*{box-sizing: border-box;}
+*{box-sizing: border-box;margin: 0;padding: 0; }
 body, div, ul, li, ol, dl, dt, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {margin: 0; padding: 0;}
 a {color: #222; text-decoration: none;}
 a:hover {color: #390;}

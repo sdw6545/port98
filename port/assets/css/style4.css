@@ -4,223 +4,378 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 
-/* 레이아웃 */
-body {
-    overflow-x: hidden;
-    font-family: 'S-CoreDream-2ExtraLight';
-    background: #000;
-}
-#section1{
-    height: 6000px;
-}
-#section2{
-    height: 4800px;
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.pageYOffset{
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* layout */
+body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}  
+#contents { }
+#section1 {}
+#section2 {position: fixed;z-index: -1; top: -0px;}
+#section3 {position: fixed;}
+#section4 {}
+#section5 {}
+
+/* scroll */
+.pageYOffset {
     position: fixed;
     left: 0;
     top: 0;
-    background: rgba(255, 255, 255, 0.4);
-    padding: 10px;
+    background: rgba(39, 37, 37, 0.4);
+    padding: 1vw;
     z-index: 100;
+    color: #fff;
 }
 
 /* section1 */
-#section1{
-    transform: translate(0%, 0%)
-}
 .sec1 {
-    width: 1850px;
-    margin: 30px auto;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-family: "Montserrat";
     text-align: center;
     text-transform: uppercase;
-    font-weight: 200;
-    padding: 20px;
-    background: #B1B1B0;  font-family: "Montserrat";
-    height: 4500px;
-}
-.sec1 span {
-    font-size: 40px;
-    display: block;
-    padding: 100px 0;
-    font-weight: 400;
-    color: #5B5B5A;
-}
-.sec1 h1 {
-    font-size: 210px;
-    line-height: 200px;
-    font-weight: 800;
+    padding: 3vw;margin: 3vw;
+    background: #B1B1B0;  
 }
 
-.sec1 .img {
-    margin: 0 auto;
-    width: 900px;
-    height: 2780px;
-    color: #B1B1B0;
-    font-size: 20px;
+.sec1 span {
+    font-size: 2vw;
+    display: block;
+    padding-top: 3vw;
+    font-weight: 400;
+}
+
+
+.sec1 h1{
+    font-size: 11vw;
+    line-height: 1;
+    letter-spacing: -0.5vw;
+    font-weight: 800;
+    padding: 6vw 0;
+    color: #2D2D2D;
+}
+
+.sec1 .img{
+    border: 3.5vw solid #4E4E4F;
+    margin:-12vw 20vw 5vw 20vw;
+    color: #D0D0D0;
+    font-size: 2vw;
     position: relative;
     z-index: 1000;
 }
-.sec1 .img img{
-    border: 35px solid #2D2D2D;
 
-}
-
-.sec1 .img p {
+.sec1 .img p{
     font-family: 'S-CoreDream-2ExtraLight';
-    background: #2D2D2D;
-    font-size: 26px;
+    background: #4E4E4F;
+    padding: 3vw;
+    padding-bottom: 0vw;
+    font-size: 1.5vw;
     text-align: justify;
-    padding: 40px 100px;
+    letter-spacing: -2px;
+    line-height: 1.5;
 }
-.info{
-    
-    background: #2D2D2D;    
 
+.sec1 .img .info1{
+    background: #4E4E4F;
 }
-.info-img{
-    background-image: url(../img/icon1.png);
-    background-size: cover;
+
+.sec1 .img .info1 .info-img{
+    width: 10vw;
     margin: 0 auto;
-    width: 200px;height: 200px;
+    padding-top: 4vw ;
+
+}
+.sec1 .img .info1 .info-text{
+    padding-bottom: 2vw;
+    border-bottom: solid 1px #fff;
+}
+.sec1 .img .info1 .info-link{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1vw;
+    text-transform:none;
+}
+.sec1 .img .info1 .info-link li a{
+    color: #fff;
+}
+.sec1 .img .info1 .info-link li a img{
+    width: 2vw;margin-top: 0.7vw;
 }
 
-.info-text{
-    text-align: center;
+
+.sec1 .work{
+    display: flex;
+    justify-content: space-between;
+    text-transform:none;
+    font-size: 2vw;
+    font-weight: 400;
 }
-.info-text span{
-    font-family: "Montserrat";
-    font-weight: 500;
+.sec1 .work img{
+    width: 0.7vw; margin-top: 0.7vw;
 }
 .info2{
-    
-
-    background: #2D2D2D;
-    padding: 30px;
-}
-.info2 ul {
-    border-top: 1px #FFFFFF solid;
-    padding: 10px 0 30px;
-    display: flex;
-    justify-content:space-between ;
-}
-.info2 ul li a{
-    display: inline-block;
-    margin: 10px 0;
-    font-size: 30px;
-    color: #ffffff;
-    font-weight: 200;
-    text-transform: none;
-}
-
-.transform{
-
-}
-.transform .ddr{
-    background: #EFE74B;
-    padding-top: 10px;
+    position: absolute; right: 0; bottom: -20%;
+    transform: translate(20%,0%) rotate(25deg);
     transform-origin: right;
-    transform:translateX(30%) rotate(0deg);
-    
+    font-family: 'S-CoreDream-4Regular';
+    width: 60vw;
+    padding: 2vw 10vw 2vw 2vw;
+    background: #EFE74B;
+    z-index: 10000;
+    opacity: 0;
+}
+.info2 p {
+    display: inline-block;
+    font-size: 1.7vw;
+    color: #000;
+}
+.info2  span a{
+    display: inline-block;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+    padding: 0.5vw 2vw 0.5vw 2vw;
+    background: #000;
+    color: #fff;
+}
+.info3 {
+    position: absolute;left: 20%; bottom: -10%;
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}
+.info3 .info-box{
+    position: relative;
+    transform: rotate(-30deg);
+}
+.info3 .info-box img{
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+width: 30vw;
+}
+.info3 .info-box span a{
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    width: 30vw;
+    font-family: 'S-CoreDream-4Regular';
+    font-size: 2.5vw;
+    color: #fff;
+    text-align: center;
+}
 
-}
-.transform .ddr ul{
-    display: flex; 
-    align-items: center;
-    
-}
-.transform .ddr ul li{
-    font-family: 'S-CoreDream-6Bold';
-    font-size: 80px;
-text-transform: uppercase;
-margin-left:50px;
-}
 
 
-.work{
-    
-
-}
-.work-l{
-    font-family: "Montserrat";
-    position: absolute;
-    bottom: 10px; left: 80px;
-    font-size: 30px;
-    font-weight: 400;
-}
-.work-r{
-    font-family: "Montserrat";
-    position: absolute;
-    bottom:10px; right: 80px;
-    font-size: 30px;
-    font-weight: 400;
-}
 
 
 
 /* section2 */
+.sec2{
+    width: 100vw;
 
-#section2{
-    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11vw;
+    line-height: .9;
+    font-weight: 700;
+    font-family: "Montserrat";
+    z-index: -1;
+    margin-top: 3vw;
+    opacity: 0;
 }
-#section2 p{
 
-font-family: "Montserrat";
-font-weight: 800;
-line-height: 200px;
-text-align: center;
-font-size: 210px;
-color: #4E4E4F;
-opacity: 0.5;
-}
-
-
-.site{
+.sec2 .site a{
+    display: inline-block;
+    width: 33vw;
     background: #fff;
-    border: 1px solid #fff;
-    width:650px;
+    padding: 3vw;
+    text-align: left ;
+    color: #000;
+}
+.sec2 .site a h2 {
+    color: #000;
+    font-size: 3.1vw;
     font-family: 'S-CoreDream-6Bold';
 }
-.site h2{
-    font-weight: bolder;
-    font-size: 60px;
-    margin-top: 25px;
-    margin-left: 25px;
+.sec2 .site a p {
+    font-size: 1.2vw;
+    font-family: 'S-CoreDream-2ExtraLight';
+    padding: 1.5vw 0 3vw;
+    line-height: 1.3;
+
 }
-.site span{
-    font-size: 25px; margin:25px;
-    display: inline-block;font-family: 'S-CoreDream-2ExtraLight';
-    font-weight: 200;
+
+.sec2 .s1{
+    position: absolute;left: 12vw; top: 60vw;
+    transform: translate(0,0); z-index: 1000000;
 }
-.site strong{
-    display: inline-block;
-    margin: 25px;
-    width: 600px;
-    height: 400px;
-    overflow: hidden;
+
+
+.sec2 .s2{
+    position: absolute;right: 10vw; top: 93vw;
+    transform: translate(0,0);
 }
-.site1{
-    position: absolute;
-    left: 170px; top: 300px;
-    transform: translate(0%, 0%)
+
+.sec2 .s3{
+    position: absolute;left: 15vw; top: 150vw;
+    transform: translate(0,0);
 }
-.site2{
-    position: absolute;
-    right: 100px;
-    top: 1200px;
-    transform: translate(0%, 0%)
+
+.sec2 .s4{
+    position: absolute;right: 15vw; top: 210vw;
+    transform: translate(0,0);
 }
-.site3{
-    position: absolute;
-    left: 150px; top: 2200px;
-    transform: translate(0%, 0%)
+
+.sec2 .s5{
+    position: absolute;left: 30vw; top: 210vw;
+    transform: translate(0,0);
 }
-.site4{
-    position: absolute;
-    right: 500px; top: 4000px;
-    transform: translate(0%, 0%)
+
+
+
+
+
+
+
+
+
+/* section3 */
+.sec3{
+    font-family: "Montserrat";
+    position: relative;
+    z-index: 10000;
+    background: url(../img/zcab.png);
+    background-size: cover;
+    width: 100vw; height: 100vh;
+}
+.sec3 h2{
+    position: absolute;left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+}    
+
+
+/* col1 */
+.sec3 .col1{
+    position: relative;left: 110%;
+    width: 100%; height: 100vh;  
+}
+.sec3 .col1 .col1-box{ 
+    position: absolute; left: 50%; top: 50%; }
+.sec3 .col1 .col1-box.st1{transform: translate(-50%,-45%);width: 110vw; z-index: 100; }
+.sec3 .col1 .col1-box.st2{transform: translate(-50%,-80%); width: 90vw; z-index: 10; opacity: 0.5; }
+.sec3 .col1 .col1-box.st3{transform: translate(-50%,-50%); width: 90vw;z-index: -1;}
+.sec3 .col1 .col1-box.st4{transform: translate(-50%,-50%); width: 50vw; z-index: -100;}
+.sec3 .col1 .col1-box.st5{transform: translate(-50%,-50%); width: 30vw;}
+.sec3 .col1 .col1-box.st6{
+    transform: translate(-120%,-50%); 
+    font-size: 4vw;
+    line-height: 4vw;
+    color: #1B8567;
+}
+.sec3 .col1 .col1-box.st6 p{
+    font-weight: 800;
+}
+
+
+
+
+/* col2 */
+.sec3 .col2{
+    position: relative;left: 110%; top: -100%;
+    width: 100%; height: 100vh;  
+}
+.sec3 .col2 .col2-box{ 
+    position: absolute; left: 50%; top: 50%; }
+.sec3 .col2 .col2-box.st1{transform: translate(-60%,-50%);width: 110vw; z-index: 10; }
+.sec3 .col2 .col2-box.st2{transform: translate(-50%,-50%); width: 90vw; z-index: 100; }
+.sec3 .col2 .col2-box.st3{transform: translate(-50%,-49%); width: 130vw;z-index: -1;}
+.sec3 .col2 .col2-box.st4{transform: translate(-60%,-50%) rotate(-90deg); width: 190vw; z-index: -100;}
+.sec3 .col2 .col2-box.st5{transform: translate(-50%,-50%); width: 30vw;}
+.sec3 .col2 .col2-box.st6{
+    transform: translate(-120%,-50%); 
+    font-size: 4vw;
+    line-height: 4vw;
+    color: #C85452;
+}
+.sec3 .col2 .col2-box.st6 p{
+    font-weight: 800;
+}
+
+
+
+
+
+/* col3 */
+.sec3 .col3{
+    position: relative;left: 110%; top: -200%;
+    width: 100%; height: 100vh;  
+}
+.sec3 .col3 .col3-box{ 
+    position: absolute; left: 50%; top: 50%; }
+.sec3 .col3 .col3-box.st1{transform: translate(-50%,-50%);width: 100vw; z-index: -100; }
+.sec3 .col3 .col3-box.st2{transform: translate(-50%,-50%); width: 80vw; z-index: 100; }
+.sec3 .col3 .col3-box.st3{transform: translate(-150%,-100%); width: 30vw;z-index: -1;}
+.sec3 .col3 .col3-box.st4{transform: translate(-40%,-80%) ; width: 70vw; z-index: 10;}
+.sec3 .col3 .col3-box.st5{transform: translate(-50%,-50%); width: 30vw;}
+.sec3 .col3 .col3-box.st6{
+    transform: translate(-120%,-50%); 
+    font-size: 4vw;
+    line-height: 4vw;
+    color: #519B87;
+}
+.sec3 .col3 .col3-box.st6 p{
+    font-weight: 800;
+}
+
+
+/* col3 */
+.sec3 .col4{
+    position: relative;left: 0%; top: -300%;
+    width: 100%; height: 100vh;  
+}
+.sec3 .col4 .col4-box{ 
+    position: absolute; left: 50%; top: 50%; }
+.sec3 .col4 .col4-box.st1{transform: translate(-40%,-40%);width: 80vw; z-index: 10; }
+.sec3 .col4 .col4-box.st2{transform: translate(-50%,-50%); width: 100vw; z-index: -1; }
+.sec3 .col4 .col4-box.st3{transform: translate(60%,40%); width: 30vw; z-index: 100;}
+.sec3 .col4 .col4-box.st4{transform: translate(-150%,-10%) ; width: 30vw; z-index: 100;}
+.sec3 .col4 .col4-box.st5{transform: translate(-50%,-50%); width: 30vw;}
+.sec3 .col4 .col4-box.st6{
+    transform: translate(-120%,-50%); 
+    font-size: 4vw;
+    line-height: 4vw;
+    color: #FFE600;
+}
+.sec3 .col4 .col4-box.st6 p{
+    font-weight: 800;
 }

@@ -1,0 +1,189 @@
+body{
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+
+
+
+/* 레이아웃 */
+#header{
+}
+
+
+/* header */
+.header{
+    display: flex;
+    }
+.header .ham{
+    position: relative;margin: 2vw;
+    padding-left: 2vw;
+}
+.header .ham span{
+    position: absolute;
+    width: 2vw; height: 0.3vw; background: #000;
+}
+.header .ham span::before {
+    content: '';
+    position: absolute; left: 0;  bottom: 0.5vw;
+    width: 2vw; height: 0.3vw; background: #000;
+}
+.header .ham span::after{
+    content: '';
+    position: absolute; left: 0;  top: 0.5vw;
+    width: 2vw; height: 0.3vw; background: #000;
+}
+
+
+
+.header h1{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    margin: 1.5vw ;
+    padding-left: 8vw;
+    padding-bottom: 2vw;
+    font-size: 2vw; line-height: 1vw;
+    text-align: center;
+    letter-spacing: -0.24px;
+    color: #000;
+}
+
+/* nav */
+#nav .tab ul{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-bottom:  3px solid #ECECEC ;
+}
+#nav .tab ul li.active{
+
+    padding-bottom: 1.9vw;
+    border-bottom:3px solid #000000 ;
+}
+#nav .tab ul li a{
+    padding:0 1.4vw 0 1.4vw;
+    font-size: 1.5vw;
+    line-height: 1vw;
+    font-weight: 500;
+}
+
+
+/* section01 */
+#section01 {font-family: 'BareunDotumPro1';}
+#section01 h2 {margin: 1rem 0 1rem 1rem; font-size: 1.3rem;}
+.swiper-wrapper {margin: 0 1.1rem; width: 1000px;} 
+.swiper-wrapper .swiper-slide {float: left; margin-right: 0.3rem;}
+.swiper-wrapper .swiper-slide img {width: 100%;}
+.swiper-wrapper .swiper-slide p {line-height: 1.8; margin-top: 0.5rem;}
+.swiper-wrapper .swiper-slide span {color: #7A7A7A;}
+
+
+
+
+/* sec2 */
+.sec2{
+    overflow: hidden;
+
+    font-family: 'Noto Sans KR';
+    margin: 3vw 0 3vw 3vw;
+}
+.sec2 h2{
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+}
+.sec2 .imgList{
+    overflow: hidden;
+    width: 200vw;
+}
+.sec2 .slider{
+    float: left;
+    margin-right: 1vw;
+    margin-top: 2vw;
+}
+.sec2 .slider .list-img img{
+    width: 22vw;
+}
+.sec2 .list-text-tt{
+    font-weight: 600;
+    font-size: 1.4vw;
+    line-height: 2vw;
+    margin: 10px 0;
+}
+.sec2 .list-text-desc{
+    font-weight: 500;
+font-size: 1.4vw;
+line-height: 2vw;
+letter-spacing: 0.76px;
+color: #959595;
+}
+
+
+
+
+/* sec3 */
+.sec3 {
+    margin-top: 10vw;
+}
+.sec3 .col1{
+    margin: 2vw;
+    position: relative;
+}
+.sec3 .col1 img{
+    
+}
+.sec3 .col1 span{
+    position: absolute; left: 2vw; bottom: 8.5vw;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 2vw;  
+}
+
+.sec3 .col1 h2{
+    position: absolute;left: 2vw; bottom: 2vw;
+    font-weight: 600;
+    font-size: 2.8vw;    
+    line-height: 3vw;
+    color: #fff;
+}
+
+.sec3 .col2{
+    margin: 2vw;
+    position: relative;
+}
+.sec3 .col2 img{
+    
+}
+.sec3 .col2 span{
+    position: absolute; left: 2vw; bottom: 8.5vw;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 2vw;  
+}
+
+.sec3 .col2 h2{
+    position: absolute;left: 2vw; bottom: 2vw;
+    font-weight: 600;
+    font-size: 2.8vw;    
+    line-height: 3vw;
+    color: #fff;
+}
+
+
+
+
+
+/* 미디어 쿼리 */
+@media (max-width: 960px){
+
+}
+@media (max-width: 768px){
+}
+@media (max-width: 600px){
+
+}
+@media (max-width: 320px){
+}
