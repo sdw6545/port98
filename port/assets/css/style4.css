@@ -37,7 +37,8 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 #contents {height: 100vh; }
 #section2 {position: fixed;z-index: -1; top: -0px;}
 #section3 {position: fixed; z-index: -10; z-index: -100; transform: translateX(0%); }
-#section4 {position: fixed; z-index: -1000;}
+#section4 {position: fixed; z-index: -10000000;}
+#section5 {position: fixed; z-index: 100;}
 
 /* scroll */
 .pageYOffset {
@@ -490,10 +491,30 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     background-size: cover;
     z-index: -10000;
 }
-#section5 .sec5 h2{
+#section5 .sec5{
 
+}
+#section5 .sec5 h2{
+    margin-top: 10vw;
+    text-align: center;
     color: #fff; 
     font-family: 'S-CoreDream-6Bold';
     font-size: 5vw;
 }
+#section5 .sec5 p{
+    position: relative;
+    z-index: 100;
+    margin-top: 3vw;
+text-align: center;    
+}
+#section5 .sec5 p a{
+    color: #000;
+    background: #fff;
+    padding: 1vw;
+    font-size: 2vw;
+    border-radius: 20px;
 
+}
+#section5 .sec5 tbody tr {
+    color: #fff;
+}
