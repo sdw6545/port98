@@ -227,7 +227,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 }
 .sec2 .s2 figure{
-    background-image: url(../img/responsive.jpg);
+    background: url(../img/responsive.jpg) center center;
     background-size: cover;
 }
 /* 반응형 사이트 */
@@ -265,7 +265,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 }
 .sec2 .s5 figure{
-    background-image: url(../img/3104274.jpg);
+    background-image: url(../img/nongshim.jpg);
     background-size: cover;
 }
 
@@ -560,6 +560,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     height: 13vw;
     white-space: normal;
     color: #fff;
+    line-height: 1.3;
 }
 
 
