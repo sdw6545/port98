@@ -101,6 +101,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     letter-spacing: -2px;
     line-height: 1.5;
     margin: -1px;
+
 }
 
 .sec1 .img .info1{
@@ -138,17 +139,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 }
 
 
-.sec1 .work{
-    display: flex;
-    justify-content: space-between;
-    text-transform:none;
-    font-size: 2vw;
-    font-weight: 400;
-}
 
-.sec1 .work img{
-    width: 0.7vw; margin-top: 0.7vw;
-}
 
 
 
@@ -174,11 +165,10 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     display: inline-block;
     width: 31vw;
     background: #fff;
-    padding: 2vw;
+    padding: 3vw;
     text-align: left ;
     color: #000;
     position: relative;
-    border: #fff 1vw solid;
 }
 
 
@@ -196,8 +186,26 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     color: #000;
 }
 
-
-
+.sec2 .site figure{
+    width: 25vw;
+    height: 17vw;
+    overflow: hidden;
+}
+.sec2 .site figure span{
+    display: none;
+}
+.sec2 .site:hover figure span{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    font-size: 2.5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sec2 .site figure span a{
+    color: #fff;
+}
 
 
 
@@ -206,7 +214,11 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     transform: translate(0,0); 
     opacity: 0;
 }
-
+.sec2 .s1 figure{
+    background-image: url(../img/PSD-1.jpg) ;
+    background-size: cover;
+}
+/* 웹 표준 사이트 */
 
 .sec2 .s2{
     position: absolute;right: 10vw; top: 93vw;
@@ -214,6 +226,12 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     opacity: 0;
 
 }
+.sec2 .s2 figure{
+    background-image: url(../img/responsive.jpg);
+    background-size: cover;
+}
+/* 반응형 사이트 */
+
 
 .sec2 .s3{
     position: absolute;left: 15vw; top: 150vw;
@@ -221,6 +239,12 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     opacity: 0;
 
 }
+.sec2 .s3 figure{
+    background-image: url(../img/3948944.jpg);
+    background-size: cover;
+}
+/* 모바일 사이트 */
+
 
 .sec2 .s4{
     position: absolute;right: 15vw; top: 210vw;
@@ -228,6 +252,11 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     opacity: 0;
 
 }
+.sec2 .s4 figure{
+    background-image: url(../img/navr.jpg);
+    background-size: cover;
+}
+/* 네이버 사이트 */
 
 .sec2 .s5{
     position: absolute;left: 30vw; top: 210vw;
@@ -235,10 +264,13 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     opacity: 0;
 
 }
+.sec2 .s5 figure{
+    background-image: url(../img/3104274.jpg);
+    background-size: cover;
+}
 
 
-
-
+/* 농심 사이트 */
 
 
 
@@ -280,28 +312,41 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     position: absolute; left: 50%; top: 50%; 
 }
 
-.sec3 .col1 .col1-box.st1{transform: translate3d(25%,-45%,10vw); width: 100vw; opacity: 0.8;}
-.sec3 .col1 .col1-box.st2{transform: translate3d(-35%,-80%,8vw); width: 90vw; opacity: 0.5; }
-.sec3 .col1 .col1-box.st3{transform: translate3d(-50%,-47%,-1vw); width: 80vw;}
+.sec3 .col1 .col1-box.st1{transform: translate3d(25%,-45%,10vw); width: 100vw; opacity: 0.8; z-index: 1;}
+.sec3 .col1 .col1-box.st2{transform: translate3d(-35%,-80%,8vw); width: 90vw; opacity: 0.5; z-index: 1;}
+.sec3 .col1 .col1-box.st3{transform: translate3d(-50%,-47%,-1vw); width: 80vw; z-index: 1;}
 .sec3 .col1 .col1-box.st4{transform: translate3d(-80%,-45%,-5vw); width: 45vw;z-index: -10;}
-.sec3 .col1 .col1-box.st5{transform: translate(-50%,-50%); width: 30vw;}
+.sec3 .col1 .col1-box.st5{transform: translate(-50%,-50%); width: 30vw; z-index: 1;}
 .sec3 .col1 .col1-box.st6{
     transform: translate(-120%,-50%); 
     font-size: 4vw;
     line-height: 4vw;
     color: #1B8567;
+    z-index: 1;
 }
 
 .sec3 .col1 .col1-box.st6 p{
     font-weight: 800;
+    z-index: 1;
 }
 
 .sec3 .col1 .col1-box.st7{
     transform: translate(-50%,-50%);
     z-index: -1; opacity: 0.7;
 }
-
-
+.sec3 .col1 .col1-box.st8{
+    font-family: 'S-CoreDream-5Medium';
+    transform: translate3d(-320%,170%,50vw);
+    z-index: 100;
+}
+.sec3 .col1 .col1-box.st8 a{
+    font-size: 2vw;
+    color: #fff;
+    z-index: 100;
+    padding: 0.7vw;
+    background: #1B8567;
+    border-radius: 20px;
+}
 
 
 /* col2 */
@@ -334,6 +379,20 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 .sec3 .col2 .col2-box.st7{
     transform: translate(-50%,-50%);
     z-index: -1;
+}
+
+.sec3 .col2 .col2-box.st8{
+    font-family: 'S-CoreDream-5Medium';
+    transform: translate3d(-320%,170%,50vw);
+    z-index: 100;
+}
+.sec3 .col2 .col2-box.st8 a{
+    font-size: 2vw;
+    color: #fff;
+    z-index: 100;
+    padding: 0.7vw;
+    background: #C85452;
+    border-radius: 20px;
 }
 
 
@@ -371,7 +430,19 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     transform: translate(-50%,-50%);
     z-index: -1;
 }
-
+.sec3 .col3 .col3-box.st8{
+    font-family: 'S-CoreDream-5Medium';
+    transform: translate3d(-320%,170%,50vw);
+    z-index: 100;
+}
+.sec3 .col3 .col3-box.st8 a{
+    font-size: 2vw;
+    color: #fff;
+    z-index: 100;
+    padding: 0.7vw;
+    background: #519B87;
+    border-radius: 20px;
+}
 
 
 /* col4 */
@@ -410,6 +481,25 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     z-index: -1;
 }
 
+.sec3 .col4 .col4-box.st8{
+    font-family: 'S-CoreDream-5Medium';
+    transform: translate3d(-320%,170%,50vw);
+    z-index: 100;
+}
+.sec3 .col4 .col4-box.st8 a{
+    font-size: 2vw;
+    color: #000;
+    z-index: 100;
+    padding: 0.7vw;
+    background: #FFE600;
+    border-radius: 20px;
+}
+
+
+
+
+
+
 
 /* section4 */
 #section4 .sec4{
@@ -427,13 +517,13 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     font-family: "Montserrat";
     font-weight: 800;
     line-height: 1;
-    color: rgb(45,45,45);
+    color: rgb(34,34,34);
     transform: translateX(0%);
     white-space: nowrap;
 }
 
 #section4 .sec4 p span{
-    color: rgb(45,45,45);
+    color: rgb(34,34,34);
 
 }
 
@@ -496,8 +586,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     left: 0%;top: 0;
     transform: translate(100%,0);
     width: 100vw;height: 100vh;
-    background-image: url(../img/zcab.png);
-    background-size: cover;
+    background: #000;
     z-index: -10000;
 }
 
