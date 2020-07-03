@@ -584,6 +584,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     color: rgb(34,34,34);
     transform: translateX(0%);
     white-space: nowrap;
+    opacity: 1;
 }
 
 #section4 .sec4 p span{
@@ -643,7 +644,6 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     left: 0%;top: 0;
     transform: translate(100%,0);
     width: 100vw;height: 100vh;
-    background: #000;
     z-index: -10000;
 }
 
