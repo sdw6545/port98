@@ -140,6 +140,8 @@ body { background: #000; position: relative; z-index: -10; overflow-x: hidden;}
     position: relative;
     font-size: 38px;
 }
+
+
 .sec1 .img .info1 .info-link li a .arr{
     width: 26px; fill: #888888; 
 }
@@ -148,6 +150,8 @@ body { background: #000; position: relative; z-index: -10; overflow-x: hidden;}
     fill: #fff;
     transition: fill 0.5s;
 }
+
+
 
 
 /* info-link 가상요소 */
@@ -180,16 +184,48 @@ body { background: #000; position: relative; z-index: -10; overflow-x: hidden;}
 
 
 
+
+
 /* 미디어 쿼리 */
 @media (max-width: 1220px){
     .sec1 span {font-size: 20px;}
-    .sec1 h1 {font-size: 130px;}
+    .sec1 h1 {font-size: 120px;}
     .sec1 .img {border: 40px solid #4E4E4F;}
     .sec1 .img p {font-size: 20px; }
     .sec1 .img .info1 .info-link li a {font-size: 30px; }
 }
-@media (max-width: 1024px){}
-@media (max-width: 960px){}
-@media (max-width: 768px){}
-@media (max-width: 600px){}
-@media (max-width: 320px){}
+@media (max-width: 1024px){
+    .sec1 h1 {font-size: 110px;}
+    .sec1 .img {border: 30px solid #4E4E4F;}
+    .sec1 .img p {font-size: 18px; }
+    .sec1 .img .info1 .info-link li a {font-size: 24px; }
+    .sec1 .img .info1 .info-link li a .arr{width: 18px;}
+}
+@media (max-width: 960px){
+    .sec1 h1 {font-size: 90px;}
+    .sec1 .img p {font-size: 16px; }
+}
+@media (max-width: 768px){
+    .sec1 span {font-size: 15px;}
+    .sec1 h1 {font-size: 75px;}
+    .sec1 .img {border: 20px solid #4E4E4F;}
+    .sec1 .img p {font-size: 14px; }
+    .sec1 .img .info1 .info-link li a {font-size: 20px; }
+    .sec1 .img .info1 .info-link li a .arr{width: 14px;}
+}
+@media (max-width: 600px){
+    .sec1 span {font-size: 12px;}
+    .sec1 h1 {font-size: 50px; letter-spacing: -1.8px;}
+    .sec1 .img {border: 15px solid #4E4E4F;}
+    .sec1 .img p {font-size: 11px;letter-spacing: -1px; }
+    .sec1 .img .info1 .info-link li a {font-size: 14px; }
+    .sec1 .img .info1 .info-link li a .arr{width: 10px;}
+}
+@media (max-width: 320px){
+    .sec1 span {font-size: 8px;}
+    .sec1 h1 {font-size: 35px;}
+    .sec1 .img {border: 10px solid #4E4E4F;}
+    .sec1 .img p {font-size: 1px; letter-spacing: 0px; }
+    .sec1 .img .info1 .info-link li a {font-size: 1px; }
+    .sec1 .img .info1 .info-link li a .arr{width: 5px;}
+}

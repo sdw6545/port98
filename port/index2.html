@@ -10,26 +10,28 @@
     
     <!-- webfont -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="scroll">0</div>
     
     <section id="contents">
         <section id="section1">
-            <div class="sec1" 
-                data-0 = "top:0px"
-                data-2000 = "top:-4000px"
-                >
-                <span>Open to select my project</span>
-                <h1>
-                    <strong class="splice">kim yong tae</strong>
-                    <strong class="splice">publisher</strong>
-                    <strong class="splice">seoul korean</strong>
-                    <strong class="splice">kim young tae</strong>
-                    <strong class="splice">publisher</strong>
-                    <strong class="splice">seoul korean</strong>
+            <div class="sec1"
+                data-0 = "top: 0px"
+                data-2000 = "top: -5000px"> 
+                <span class="splice mt">Open to select my project</span>
+                <h1 class="h1txt">
+                    <strong class="splice mt1">kim yong tae</strong>
+                    <strong class="splice mt2">publisher</strong>
+                    <strong class="splice mt3">seoul korean</strong>
+                    <strong class="splice mt4">kim young tae</strong>
+                    <strong class="splice mt5">publisher</strong>
+                    <strong class="splice mt6">seoul korean</strong>
                 </h1>
-                <div class="img">
+                <div class="img"
+                    data-0 = "transform: translateY(0px)"
+                    data-2000 = "transform: translateY(-2000px)">
                     <img src="assets/img/me.jpg" alt="me">
                     <p>웹에 관심이 많았던 저는 웹디자인을 배우는 과정에서 처음으로 코딩을 접하게 되었습니다. 배워보지도 못한 영역이라 처음엔 개념이 안 잡혀있어서 어려웠지만, 매일매일 메모장에 그날의 수업을 웹 수업 1일 차, 2일 차 이렇게 적어가며 네이버 클라우드에 저장해 집에서도 복습했습니다. 그렇게 배우다 보니 코딩의 매력에 빠져 퍼블리셔라는 직업을 알게 되었습니다.</p>
                     <p>div를 가운데 정렬하는 방법이 다양한 것처럼, 수학도 풀이과정은 다양하지만, 답은 정확한것처럼 수학을 좋아하는 저는 코딩도 똑같다 생각이 들어 코딩이 좋아졌습니다. 디자인보다 코딩이 더 좋아진 퍼블리셔가 되기 위해 저는 웹 반응형, 제이쿼리를 추가로 수강하며 강사님이 추천해주신 책도 사서 공부하기 시작했습니다.</p>
@@ -46,12 +48,12 @@
         <section id="section2">
             <div class="sec2">
                 <div class="text-bg" aria-hidden="true">
-                    <strong>KIM YOUNG TAE</strong>
-                    <strong>PUBLUSER</strong>
-                    <strong>webstandard</strong>
-                    <strong>responisve</strong>
-                    <strong>parallax</strong>
-                    <strong>javascript</strong>
+                    <strong class="splice tt1">KIM YOUNG TAE</strong>
+                    <strong class="splice tt2">PUBLUSER</strong>
+                    <strong class="splice tt3">Portfolio</strong>
+                    <strong class="splice tt4">SITE gogo</strong>
+                    <strong class="splice tt5">parallax</strong>
+                    <strong class="splice tt6">javascript</strong>
                     <strong>jquery</strong>
                     <strong>css scss less</strong>
                     <strong>KIM YOUNG TAE</strong>
@@ -104,9 +106,22 @@
             easing: 'linear'
         });
         
-       setTimeout(function(){
-           $(".sec1").addClass("show");
-       },2000)
+        
+        $(window).on('resize', function () {
+            if ($(window).width() <= 767) {
+                skrollr.init().destroy(); 
+            } else {
+                skrollr.init();
+            }
+        });
+        
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            skrollr.init().destroy(); 
+            alert("dd");
+        }
+
+   
         
         //글시 쪼깨기
         $(".splice").each(function () {
@@ -122,6 +137,17 @@
 
             $(".scroll").text(scrollTop);
         });
+        
+        
+        setTimeout(function(){
+            gsap.to(".sec1 .mt span", {top:0, duration: 1, stagger: 0.1, ease: Back.easeOut.config(1.7) });
+            gsap.to(".sec1 .h1txt .mt1 span", {top:0, duration: 0.7, delay:1, stagger: 0.1, ease: Back.easeOut.config(1.7) });
+            gsap.to(".sec1 .h1txt .mt2 span", {top:0, duration: 0.7, delay:2, stagger: 0.1, ease: Back.easeOut.config(1.7) });
+            gsap.to(".sec1 .h1txt .mt3 span", {top:0, duration: 0.7, delay:3, stagger: 0.1, ease: Back.easeOut.config(1.7) });
+            gsap.to(".sec1 .h1txt .mt4 span", {top:0, duration: 0.7, delay:3, stagger: 0.1, ease: Back.easeOut.config(1.7) });
+            gsap.to(".sec1 .h1txt .mt5 span", {top:0, duration: 0.7, delay:3, stagger: 0.1, ease: Back.easeOut.config(1.7) });
+            
+        },2000);
     </script>
 </body>
 </html>
@@ -130,3 +156,15 @@
 
 
 <!-- https://jeongsteph.design/ -->
+
+
+
+
+
+
+
+
+
+
+
+

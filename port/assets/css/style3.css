@@ -56,28 +56,46 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 /* section1 */
 .sec1 {
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     text-transform: uppercase;
     padding: 3vw;margin: 3vw;
     background: #B1B1B0;  
 }
 
-.sec1 span {
-    font-size: 2vw;
-    display: block;
-    padding-top: 3vw;
-    font-weight: 400;
+.sec1 .mt {
+    line-height: 1.8vw; 
+    font-size: 2.2vw;
+    margin-top: 3vw;
+    padding-top: 1vw;
+    display: inline-block;
+    overflow: hidden;
 }
 
-
+.sec1 .mt span {
+    position: relative;
+    top: 100px;
+}
 .sec1 h1{
     font-size: 11vw;
     line-height: 1;
-    letter-spacing: -0.5vw;
     font-weight: 800;
-    padding: 6vw 0;
+    padding: 8vw 0;
     color: #2D2D2D;
+    overflow: hidden;
+}
+.sec1 h1 p {
+    display: block;
+    line-height: 8vw;
+    font-weight: 800;
+    display: inline-block;
+    min-width: 2.5vw;
+    font-size: 10vw;
+    overflow: hidden;
+}
+.sec1 .h1txt span {
+    position: relative;
+    top: 200px;
 }
 
 .sec1 .img{
@@ -103,6 +121,8 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 }
 
+
+/* info1 */
 .sec1 .img .info1{
     background: #4E4E4F;
     margin: -1px;
@@ -119,14 +139,14 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 .sec1 .img .info1 .info-text{
     padding-bottom: 2vw;
-    border-bottom: solid 1px #fff
 }
 
 .sec1 .img .info1 .info-link{
     display: flex;
     justify-content: space-between;
-    padding-top: 1vw;
+    padding-top: 2vw;
     text-transform:none;
+    border-top: 1px solid #fff;
 }
 
 .sec1 .img .info1 .info-link li a{
@@ -134,13 +154,23 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     position: relative;
 }
 
+.sec1 .img .info1 .info-link li a .arr{
+    width: 1.3vw; fill: #888888; 
+    transition: fill 0.5s;
+}
 
+.sec1 .img .info1 .info-link li a:hover .arr{
+    fill: #fff;
+    transition: fill 0.5s;
+}
+
+/* info1오버효과 */
 .sec1 .img .info1 .info-link li a::before{
     position: absolute; left: 0; bottom: -0.5vw;
     content: '';
     height: 0.2vw; background: #fff;
     width: 0%;
-    
+    transition:width 0.7s
 }
 .sec1 .img .info1 .info-link li a:hover::before{
     width: 100%;
@@ -151,34 +181,16 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     content: '';
     height: 0.2vw; background: #fff;
     width: 0%;
+    transition:width 0.7s
 }
 .sec1 .img .info1 .info-link li a:hover::after{
     width: 100%;
     transition:width 0.7s
 }
-.sec1 .img .info1 .info-link li a .arrow{
-    position: absolute; left: 100%; top: 55%;
-}
-.sec1 .img .info1 .info-link li a .arrow span{
-    width: 1.1vw; height: 0.2vw; background: #fff;
-    padding: 0; 
-    position: relative;
-    transform: rotate(45deg);
-    transform-origin: right;
-    opacity: 1;
-    transition:opacity 0.5s ;
-}
-.sec1 .img .info1 .info-link li a .arrow span::before{
-    content: '';
-    position: absolute; left: -10%; top: -15%;
-    width: 1.1vw; height: 0.2vw; background: #fff;
-    padding: 0; transform: rotate(-90deg);
-    transform-origin: right;
 
-}
-.sec1 .img .info1 .info-link li a:hover .arrow span{
-    opacity: 0;
-}
+
+
+
 
 
 
@@ -191,7 +203,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     font-size: 11vw;
     line-height: .9;
     font-weight: 700;
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     z-index: -1;
     margin-top: 3vw;
     opacity: 0;
@@ -231,34 +243,48 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     position: relative;
 }
 .sec2 .site:hover .site-img{
-    background: #000;
+    
 }
-.button{
-    display: flex;
-    position: absolute;
-    height: 150px;
-    width: 150px;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(255, 255, 255, 1);
-    border-radius: 50%;
-    cursor: pointer;
-    user-select: none;
+.sec2 .site .site-img .button{
+    width: 0; height: 0;
+    transition: all 0.5s;
+
 }
-.button .circle{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, .5);
-}
-.button .text{
-    font-size: 16px;
+.sec2 .site:hover .site-img .button {
+    width: 100%; height: 100%; background: rgba(39, 37, 37, 0.8);
+    transition: all 0.5s;
 }
 
+.sec2 .site .site-img .button .text a{display: none;}
+.sec2 .site:hover .site-img .button .text a{
+    position: absolute;left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    font-size: 1.8vw;
+    border-radius: 50%;
+    background: #5a99d4;
+    width: 7vw;
+    height: 7vw;
+    line-height: 7vw;
+    text-align: center;
+    color:#fff;
+    box-shadow: 0 0 0 0 rgb(90, 153, 212,0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+      transform:translate(-50%, -50%) scale(.9);
+    }
+    70% {
+      transform:translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 0 2vw rgb(90, 153, 212,0.4);
+    }
+    100% {
+      transform:translate(-50%, -50%) scale(.9);
+      box-shadow: 0 0 0 0 rgb(90, 153, 212,0.4);
+    }
+  }
 
 /* 웹 표준 사이트 */
 .sec2 .s1{
@@ -341,7 +367,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 /* section3 */
 .sec3{
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     position: relative;
     z-index: 10000;
     background: url(../img/zcab.png);
@@ -404,19 +430,20 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 }
 .sec3 .col1 .col1-box.st8 a{
     font-size: 2vw;
-    color: #1B8567;
+    color: #fff;
     z-index: 100;
-    padding: 0.5vw;
+    padding: 0.3vw 0.5vw ;
     border: 0.2vw solid #1B8567;
+    background: #1B8567;
     transition: background 1s;
     text-transform: uppercase;
-    font-family: "Montserrat";
-    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
 
 }
 .sec3 .col1 .col1-box.st8 a:hover{
-    background: #1B8567;
-    color: #000;
+    background: #000;
+    color: #1B8567;
 }
 
 
@@ -465,7 +492,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     border: 0.2vw solid #C85452;
     transition: background 1s;
     text-transform: uppercase;
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 
 }
@@ -523,7 +550,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     border: 0.2vw solid #519B87;
     transition: background 1s;
     text-transform: uppercase;
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 
 }
@@ -583,7 +610,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     border: 0.2vw solid #FFE600;
     transition: background  1s;
     text-transform: uppercase;
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 
 }
@@ -610,7 +637,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     width: 100%;
     color: #fff;
     font-size: 10vw;
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     line-height: 1;
     color: rgb(34,34,34);
@@ -651,7 +678,7 @@ opacity: 1;
 #section4 .sec4 .sec4-col1 .list-link a {
     color: #fff;
     font-size: 2.6vw;
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     position: relative;
     display: inline-block;

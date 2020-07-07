@@ -1,0 +1,361 @@
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* layout */
+body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}  
+.hidden {height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
+#contents {height: 100vh; }
+#section1 {position: fixed;left: 0; top: 0; z-index: 1000;}
+#section2 {position: fixed;z-index: -1; top: -0px;}
+#section3 {position: fixed;z-index: -10; }
+#section4 {position: fixed; z-index: -10000000;}
+#section5 {position: fixed; z-index: 100;}
+
+/* scroll */
+.pageYOffset {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(39, 37, 37, 0.4);
+    padding: 1vw;
+    z-index: 100;
+    color: #fff;
+}
+
+/* section1 */
+.sec1 {
+    font-family: "Montserrat";
+    text-align: center;
+    text-transform: uppercase;
+    padding: 3vw;margin: 3vw;
+    background: #B1B1B0;  
+}
+
+.sec1 span {
+    font-size: 2vw;
+    display: block;
+    padding-top: 3vw;
+    font-weight: 400;
+}
+
+
+.sec1 h1{
+    font-size: 11vw;
+    line-height: 1;
+    letter-spacing: -0.5vw;
+    font-weight: 800;
+    padding: 6vw 0;
+    color: #2D2D2D;
+}
+
+.sec1 .img{
+    border: 3.5vw solid #4E4E4F;
+    margin:0vw 20vw -20vw 20vw;
+    color: #D0D0D0;
+    font-size: 2vw;
+    position: relative;
+    z-index: 1000;
+    transform: translate(0%,-5%);
+}
+
+.sec1 .img p{
+    font-family: 'S-CoreDream-2ExtraLight';
+    background: #4E4E4F;
+    padding: 3vw;
+    padding-bottom: 0vw;
+    font-size: 1.5vw;
+    text-align: justify;
+    letter-spacing: -2px;
+    line-height: 1.5;
+    margin: -1px;
+
+}
+
+.sec1 .img .info1{
+    background: #4E4E4F;
+    margin: -1px;
+
+}
+
+.sec1 .img .info1 .info-img{
+    width: 10vw;
+    margin: 0 auto;
+    padding-top: 4vw ;
+    
+
+}
+
+.sec1 .img .info1 .info-text{
+    padding-bottom: 2vw;
+    border-bottom: solid 1px #fff
+}
+
+.sec1 .img .info1 .info-link{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1vw;
+    text-transform:none;
+}
+
+.sec1 .img .info1 .info-link li a{
+    color: #fff;
+    position: relative;
+}
+
+
+.sec1 .img .info1 .info-link li a::before{
+    position: absolute; left: 0; bottom: -0.5vw;
+    content: '';
+    height: 0.2vw; background: #fff;
+    width: 0%;
+    
+}
+.sec1 .img .info1 .info-link li a:hover::before{
+    width: 100%;
+    transition:width 0.7s
+}
+.sec1 .img .info1 .info-link li a::after{
+    position: absolute; right: 0; top: -0.2vw;
+    content: '';
+    height: 0.2vw; background: #fff;
+    width: 0%;
+}
+.sec1 .img .info1 .info-link li a:hover::after{
+    width: 100%;
+    transition:width 0.7s
+}
+.sec1 .img .info1 .info-link li a .arr{
+    width: 1.5vw; fill: #888888; 
+}
+
+.sec1 .img .info1 .info-link li a:hover .arr{
+    fill: #fff;
+    transition: fill 0.5s;
+}
+
+
+
+.sec1 .img .info1 .info-link li a .arrow span::before{
+    content: '';
+    position: absolute; left: -10%; top: -15%;
+    width: 1.1vw; height: 0.2vw; background: #fff;
+    padding: 0; transform: rotate(-90deg);
+    transform-origin: right;
+
+}
+.sec1 .img .info1 .info-link li a:hover .arrow span{
+    opacity: 0;
+}
+
+
+
+
+/* section2 */
+.sec2{
+    width: 100vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11vw;
+    line-height: .9;
+    font-weight: 700;
+    font-family: "Montserrat";
+    z-index: -1;
+    margin-top: 3vw;
+    opacity: 0;
+}
+
+
+
+.sec2 .site {
+    display: inline-block;
+    width: 31vw;
+    background: #fff;
+    padding: 3vw;
+    text-align: left ;
+    color: #000;
+    position: relative;
+}
+
+
+
+.sec2 .site h2 {
+    font-size: 2.6vw;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.sec2 .site p {
+    font-size: 1.2vw;
+    font-family: 'S-CoreDream-2ExtraLight';
+    padding: 1.5vw 0 3vw;
+    line-height: 1.3;
+    color: #000;
+}
+
+.sec2 .site .site-img{
+    width: 25vw;
+    height: 17vw;
+    overflow: hidden;
+    position: relative;
+}
+.sec2 .site:hover .site-img{
+    background: #000;
+}
+.button{
+    display: flex;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+.button .circle{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .5);
+}
+.button .text{
+    font-size: 16px;
+}
+
+
+/* 웹 표준 사이트 */
+.sec2 .s1{
+    position: absolute;left: 12vw; top: 60vw;
+    transform: translate(0,0); 
+    opacity: 0;
+}
+.sec2 .s1 .site-img{
+    background-image: url(../img/PSD-1.jpg) ;
+    background-size: cover;
+}
+
+
+
+/* 반응형 사이트 */
+.sec2 .s2{
+    position: absolute;right: 10vw; top: 93vw;
+    transform: translate(0,0);
+    opacity: 0;
+
+}
+.sec2 .s2 .site-img{
+    background: url(../img/responsive.jpg) center center;
+    background-size: cover;
+}
+
+
+
+/* 모바일 사이트 */
+.sec2 .s3{
+    position: absolute;left: 15vw; top: 150vw;
+    transform: translate(0,0);   
+    opacity: 0;
+
+}
+.sec2 .s3 .site-img{
+    background-image: url(../img/3948944.jpg);
+    background-size: cover;
+}
+
+
+
+/* 네이버 사이트 */
+.sec2 .s4{
+    position: absolute;right: 15vw; top: 210vw;
+    transform: translate(0,0);
+    opacity: 0;
+
+}
+.sec2 .s4 .site-img{
+    background-image: url(../img/navr.jpg);
+    background-size: cover;
+}
+
+
+
+/* 농심 사이트 */
+.sec2 .s5{
+    position: absolute;left: 30vw; top: 210vw;
+    transform: translate(0,0);
+    opacity: 0;
+
+}
+.sec2 .s5 .site-img{
+    background-image: url(../img/nongshim.jpg);
+    background-size: cover;
+}
+
+
+
+
+
+/* sec3 */
+.sec3{
+    width: 100vw; height: 100vh;
+     background-image: url(../img/zcab.png); background-size: cover; 
+     font-family: "Montserrat";
+}
+.sec3 h2{ 
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; 
+    font-size: 10vw; 
+    font-weight: 800;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+
+/* col1 */
+.sec3 .col1 {
+    position: relative;left: 0%;
+    width: 100vw; height: 100vh; 
+}
+.sec3 .col1 .col-img {position: absolute; left: 50%; top: 50%;}
+.sec3 .col1 .img1 {transform: translate(-50%,-50%); width: 100vw; opacity: 0.8; z-index: 1;}
+.sec3 .col1 .img2 {transform: translate(-50%,-50%);}
+.sec3 .col1 .img3 {transform: translate(-50%,-50%);}
+.sec3 .col1 .img4 {transform: translate(-50%,-50%);}
+.sec3 .col1 .img5 {transform: translate(-50%,-50%);}
+

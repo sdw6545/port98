@@ -1,5 +1,9 @@
-@font-face { font-family: 'S-CoreDream-2ExtraLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { 
+    font-family: 'S-CoreDream-2ExtraLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); font-weight: normal; font-style: normal; 
+}
+@font-face { 
+    font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; 
+}
 
 /* layout */
 body {background: #000; height: 10000px;}
@@ -16,21 +20,32 @@ body {background: #000; height: 10000px;}
     color: #fff;
 }
 
+/* splice */
+.splice span {display: inline-block; min-width: 1.2vw; }
+
 /* sec1 */
 .sec1 {
-    position: fixed; 
-    left: 0; top: 0; 
+    position: fixed;  z-index: 1000;
+    left: 0; top: 100%; 
     box-sizing: border-box;
     text-align: center;
     text-transform: uppercase;
     font-weight: 200;
     padding: 3vw;
-    background: #B1B1B0; margin: 3vw; font-family: "Montserrat";
+    background: #B1B1B0; margin: 3vw; 
+    font-family: 'Poppins', sans-serif;
 }
-.sec1 span {
-    font-size: 2vw;
-    display: block;
-    padding-top: 3vw;
+.sec1 .mt {
+    line-height: 1.8vw; 
+    font-size: 2.2vw;
+    margin-top: 3vw;
+    padding-top: 1vw;
+    display: inline-block;
+    overflow: hidden;
+}
+.sec1 .mt span {
+    position: relative;
+    top: 100px;
 }
 .sec1 h1 {
     font-size: 10vw;
@@ -38,15 +53,22 @@ body {background: #000; height: 10000px;}
     font-weight: 800;
     padding: 7vw 0; 
 }
-.sec1 h1 strong {display: block;}
-.sec1 h1 strong span {
-    font-size: 10vw;
-    line-height: .5;
+.sec1 h1 strong {
+    display: block;
+    line-height: 7.5vw;
     font-weight: 800;
     display: inline-block;
     min-width: 2.5vw;
-    letter-spacing: -.6vw;
+    margin-bottom: 1vw;
+    font-size: 10vw;
+    padding-top: 1vw;
+    overflow: hidden;
 }
+.sec1 .h1txt span {
+    position: relative;
+    top: 200px;
+}
+
 .sec1 .img {
     border: 3.5vw solid rgba(20,20,22,0.69);
     margin: 20vw;
@@ -65,24 +87,11 @@ body {background: #000; height: 10000px;}
     text-align: justify;
 }
 
-/* sec1 Animation */
-
-.sec1 {opacity: 0; margin-top: 100vw; transition: all 0.6s ease;}
-.sec1 span {opacity: 0; transition: all 0.6s 0.4s ease;}
-.sec1 h1 {opacity: 0; transition: all 0.6s 0.8s ease;}
-
-.sec1.show {opacity: 1; margin-top: 3vw;}
-.sec1.show span {opacity: 1;}
-.sec1.show h1 {opacity: 1;}
-
-
-
 
 /* sec2 */
 .sec2 {
     padding: 5vw;
 }
-
 .sec2 .text-bg {
     text-align: center;
     text-transform: uppercase;
@@ -90,9 +99,14 @@ body {background: #000; height: 10000px;}
     line-height: .9;
     font-weight: 900;
     padding: 7vw 0; 
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
 }
-
+.sec2 .text-bg strong {
+    display: block;
+}
+.sec2 .text-bg strong span {
+    opacity: 0;
+}
 .sec2 .site {
     width: 30vw;
     background: #fff;
