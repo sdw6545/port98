@@ -1,4 +1,33 @@
 
+        //모달창
+        for (let i = 1; i <= 5; i++) {
+            $(".ss" + i).click(function (e) {
+                e.preventDefault()
+                $(".modal" + i).slideDown()
+                scrollDisable()
+            })
+
+        }
+        //모달 나올경우 스크롤 스탑
+        function scrollDisable() {
+            $('html, body').addClass('hidden');
+        }
+
+
+
+        $(".click").click(function (e) {
+            e.preventDefault();
+            $(".modal").slideUp()
+            scrollAble()
+        })
+
+        //모달 사라질경우 스크롤 플레이
+        function scrollAble() {
+            $('html, body').removeClass('hidden');
+        }
+        setTimeout(function () {
+            $(".sec1").addClass("show");
+        }, 2000)
 
 
 

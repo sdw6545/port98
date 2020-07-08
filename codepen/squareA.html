@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Animation</title>
+    <style>
+        body {
+  overflow-y:hidden;
+  height: 100vh;
+ background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+.box {
+  width: 49px; height: 49px;
+  position:absolute;
+  left: 0;right: 0;top: 0;bottom: 0;
+  margin: auto;
+}
+.box::before {
+  content:'';
+  width: 49px; height: 5px; 
+  background: #000;
+  opacity:0.1;
+  position:absolute; top: 58px;left: 0;
+  border-radius: 50%;
+  animation: shadow 0.58s linear infinite
+}
+@keyframes shadow{
+  0% {transform: scale(1,1)}
+  50% {transform: scale(1.2,1)}
+  100% {transform: scale(1,1)}
+}
+
+.box::after {
+  content:'';
+  width: 49px;height: 49px;
+  background: rgb(217, 255, 1);
+  position: absolute; left: 0; top: 0;
+  border-radius: 3px;
+  animation: load 0.58s linear infinite;
+}
+@keyframes load{
+  17% {border-bottom-right-radius: 3px }
+  25% {transform: translatey(9px) rotate(22.5deg)}
+  50% {transform: translatey(18px) scale(1,0.9) rotate(45deg);border-bottom-right-radius: 39px;}
+  75% {transform: translatey(9px) rotate(67.5deg); }
+  100% {transform: translatey(0) rotate(90deg); }
+}
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="box"></div>
+      </div>
+</body>
+</html>

@@ -44,13 +44,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .modal {
     position: fixed; left: 0; top: 0;
     width: 100vw; height: 100vh; 
-    background: rgba(45, 45, 45, 0.5);
+    background: rgba(45, 45, 45, 0.7);
     z-index: 50000;
     display: none;
 
 }
 .modal .click{
-   position: relative; left: 90%; top: 2vw;
+   position: relative; left: 97%; top: 1.5vw;
    width: 2.5vw; height: 0.2vw; background: #fff;
    transform: rotate(45deg);
 }
@@ -61,6 +61,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    transform: rotate(-90deg);
 
 }
+
+.code{
+   display: flex;
+   width: 72vw; margin: 3vw auto 0;
+}
+
+
 .site-text{
    position: relative;
     padding-top: 2vw;
@@ -92,9 +99,15 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    padding: 1vw;
    border-radius: 20px 0;
    border: 0.2vw solid #fff;
+   transition:all 0.5s ;
 }
 
+.site-text a:hover{
+   color: #000;
+   background: #fff;
+   transition:all 0.5s ;
 
+}
 
 
 
@@ -107,18 +120,19 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
       position: absolute;
       z-index: 1;
       transition: all .5s ease-in-out;
+      width: 35vw;
   }
   
   .code-editor {
      box-sizing: border-box;
      height: 35vw;
-     width: 70vw;
+     width: 35vw;
      text-align: left;
      border-radius: 0 0 5px 5px;
      overflow-x: hidden ;
      transition: all .5s ease-in-out;
      background: #2d2d2d;
-     margin: 3vw auto 0;
+     margin: 1vw 1vw 0;
   }
   
 
@@ -129,7 +143,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
     background: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-transform: none;
-    font-size: 1vw;
+    font-size: 0.7vw;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -145,13 +159,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
- 
  }
  
  /* Code blocks */
  pre[class*="language-"] {
      padding: 0 1em 1em 1em;
     overflow: auto;
+    
  }
  
  :not(pre) > code[class*="language-"],
