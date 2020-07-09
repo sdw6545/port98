@@ -5,294 +5,441 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
- @font-face {
-    font-family: 'S-CoreDream-2ExtraLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+/* modal */
+#modal {
+   transform: scale(0);
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1000;
 }
 
-@font-face {
-    font-family: 'S-CoreDream-3Light';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'S-CoreDream-4Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'S-CoreDream-5Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'S-CoreDream-6Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-.modal {
-    position: fixed; left: 0; top: 0;
-    width: 100vw; height: 100vh; 
-    background: rgba(45, 45, 45, 0.7);
-    z-index: 50000;
-    display: none;
-
-}
-.modal .click{
-   position: relative; left: 97%; top: 1.5vw;
-   width: 2.5vw; height: 0.2vw; background: #fff;
+/* 모달 닫는 박스 */
+#modal .click {
+   position: relative;
+   left: 97%;
+   top: 2vw;
+   width: 2.5vw;
+   height: 0.2vw;
+   background: #fff;
    transform: rotate(45deg);
 }
-.modal .click::before{
-   position: absolute; left: 0;  top: 0;
+
+#modal .click::before {
+   position: absolute;
+   left: 0;
+   top: 0;
    content: '';
-   width: 2.5vw; height: 0.2vw; background: #fff;
+   width: 2.5vw;
+   height: 0.2vw;
+   background: #fff;
    transform: rotate(-90deg);
 
 }
 
-.code{
+/* 모달 배경*/
+#modal .modal-bg {
+   background-color: rgba(0, 0, 0, 0.7);
    display: flex;
-   width: 72vw; margin: 3vw auto 0;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
 }
 
 
-.site-text{
+
+#modal .modal-bg .modal-cont {
    position: relative;
-    padding-top: 2vw;
-    width: 70vw;
-    margin: 0 auto;
-    text-align: left;
-    color: #fff;
+   display: inline-block;
+   width: 60vw;
+   height: 40vw;
+   display: flex;
+   border-radius: 10px;
+   overflow: hidden;
 }
 
-.site-text h2{
-    font-size: 2vw;
-    font-family: 'S-CoreDream-6Bold';
-    color: #fff;
+/* 코드영역 */
+#modal .modal-bg .modal-cont .code-con {
+   width: 60vw;
+   height: 40vw;
+   border-radius: 5px;
+
 }
 
-.site-text p{
-    width: 30vw;
-    font-size: 1vw;
-    font-family: 'S-CoreDream-2ExtraLight';
-    margin: 1vw 0;
-    line-height: 1.5;
-    text-align: justify;
+/* 메뉴 전체 박스 */
+.tab-menu {
+   display: flex;
+   background: #01111D;
+   height: 4vw;
+   position: relative;
 }
 
-.site-text a{
-   position: absolute; right: 0;
-   bottom: 0; font-size: 1vw;
+/* 컬러 */
+.tab-menu .menu-color {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 7vw;
+   padding: 0 1vw;
+}
+
+.tab-menu .menu-color span {
+   width: 1vw;
+   height: 1vw;
+
+   border-radius: 50%;
+}
+
+.tab-menu .menu-color span:nth-child(1) {
+   background: #FF4A4A;
+}
+
+.tab-menu .menu-color span:nth-child(2) {
+   background: #FFB83D;
+}
+
+.tab-menu .menu-color span:nth-child(3) {
+   background: #00C543;
+}
+
+/* 메뉴 */
+.tab-menu a {
+   font-size: 1vw;
+   color: #8E9093;
+   padding: 0 3vw;
+   line-height: 4vw;
+   border: solid #181A1F 3px;
+   border-top: none;
+   border-bottom: none;
+   font-weight: 600;
+
+}
+
+.tab-menu a:nth-child(3) {
+   border: none;
+}
+
+.tab-menu a:hover {
+   background: #062743;
+   color:#fff;
+}
+
+.tab-menu a.active {
+   background: #062743;
    color: #fff;
-   padding: 1vw;
-   border-radius: 20px 0;
-   border: 0.2vw solid #fff;
-   transition:all 0.5s ;
-}
-
-.site-text a:hover{
-   color: #000;
-   background: #fff;
-   transition:all 0.5s ;
-
 }
 
 
+/* 테마 */
+.tab-menu .theme {
+   position: absolute;
+   right: 0;
+   top: 0;
+   padding: 0 2vw;
+   font-size: 1vw;
+   line-height: 4vw;
+   color: #8E9093;
+   font-weight: 600;
+}
+.tab-menu .theme.on{
+   color: #fff;
+   background: #062743;
+}
+.tab-menu .theme:hover {
+   background: #062743;
+   color: #fff;
+}
+
+.tab-menu .theme .fas {
+   line-height: 4vw;
+   margin-left: 1vw;
+}
+
+.tab-menu .modal-color {
+   display: none;
+   position: absolute; right: 1vw;top: 3vw;
+   z-index: 1000;
+   background-color: #092E4B;
+   font-size: 1vw;
+   line-height: 4vw;
+   border-radius: 20px;
+   overflow: hidden;
+   padding: 1vw 0;
+}
+
+.tab-menu .modal-color a {
+   color: #8E9093;
+   display: block;
+   border: none;
+   padding: 0 3vw; 
+}
+.tab-menu .modal-color a:hover{
+   border: 3px solid #008FFF;
+   margin: -3px;
+}
+.tab-menu .modal-color a.on{
+   color: #fff;
+   position: relative;
+}
+.tab-menu .modal-color a.on::before{
+   content: '';
+   position: absolute; left: 0; top: 50%;
+   width: 2vw; height: 0.2vw; background: #fff; margin-top: -0.1vw;
+}
 
 
-  .code-editor:before,
-  .code-editor:after,
-  .code-editor span.after:after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
-      z-index: 1;
-      transition: all .5s ease-in-out;
-      width: 35vw;
-  }
-  
-  .code-editor {
-     box-sizing: border-box;
-     height: 35vw;
-     width: 35vw;
-     text-align: left;
-     border-radius: 0 0 5px 5px;
-     overflow-x: hidden ;
-     transition: all .5s ease-in-out;
-     background: #2d2d2d;
-     margin: 1vw 1vw 0;
-  }
-  
+#modal.one {
+   transform: scaley(0.005) scalex(0);
+   animation: unfoldIn 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
 
- 
- code[class*="language-"],
- pre[class*="language-"] {
-    color: #ccc;
-    background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    text-transform: none;
-    font-size: 0.7vw;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
- 
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
- 
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
- }
- 
- /* Code blocks */
- pre[class*="language-"] {
-     padding: 0 1em 1em 1em;
-    overflow: auto;
-    
- }
- 
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
-    background: #2d2d2d;
- }
- 
- /* Inline code */
- :not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
-    white-space: normal;
- }
- 
- .token.comment,
- .token.block-comment,
- .token.prolog,
- .token.doctype,
- .token.cdata {
-    color: #999;
- }
- 
- .token.punctuation {
-    color: #ccc;
- }
- 
- .token.tag,
- .token.attr-name,
- .token.namespace,
- .token.deleted {
-    color: #e2777a;
- }
- 
- .token.function-name {
-    color: #6196cc;
- }
- 
- .token.boolean,
- .token.number,
- .token.function {
-    color: #f08d49;
- }
- 
- .token.property,
- .token.class-name,
- .token.constant,
- .token.symbol {
-    color: #f8c555;
- }
- 
- .token.selector,
- .token.important,
- .token.atrule,
- .token.keyword,
- .token.builtin {
-    color: #cc99cd;
- }
- 
- .token.string,
- .token.char,
- .token.attr-value,
- .token.regex,
- .token.variable {
-    color: #7ec699;
- }
- 
- .token.operator,
- .token.entity,
- .token.url {
-    color: #67cdcc;
- }
- 
- .token.important,
- .token.bold {
-    font-weight: bold;
- }
- .token.italic {
-    font-style: italic;
- }
- 
- .token.entity {
-    cursor: help;
- }
- 
- .token.inserted {
-    color: green;
- }
- 
- pre[class*="language-"].line-numbers {
-    position: relative;
-    padding-left: 3.8em;
-    counter-reset: linenumber;
- }
- 
- pre[class*="language-"].line-numbers > code {
-    position: relative;
-    white-space: inherit;
- }
- 
- .line-numbers .line-numbers-rows {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    font-size: 100%;
-    left: -3.8em;
-    width: 3em; /* works for line-numbers below 1000 lines */
-    letter-spacing: -1px;
-    border-right: 1px solid #999;
- 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
- 
- }
- 
- .line-numbers-rows > span {
-     display: block;
-     counter-increment: linenumber;
- }
- 
- .line-numbers-rows > span:before {
-     content: counter(linenumber);
-     color: #999;
-     display: block;
-     padding-right: 0.8em;
-     text-align: right;
- }
- 
- 
+#modal.one.out {
+   transform: scale(1);
+   animation: unfoldOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+@keyframes unfoldIn {
+   0% {
+      transform: scaley(0.005) scalex(0);
+   }
+
+   50% {
+      transform: scaley(0.005) scalex(1);
+   }
+
+   100% {
+      transform: scaley(1) scalex(1);
+   }
+}
+
+@keyframes unfoldOut {
+   0% {
+      transform: scaley(1) scalex(1)
+   }
+
+   50% {
+      transform: scaley(0.005) scalex(1);
+   }
+
+   100% {
+      transform: scaley(0.005) scalex(0);
+   }
+}
+
+#modal.one .modal-bg .modal-cont {
+   transform: scale(0);
+   animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+#modal.one.out .modal-bg .modal-cont {
+   transform: scale(0);
+   animation: zoomOut 0.5s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+@keyframes zoomIn {
+   0% {
+      transform: scale(0);
+   }
+
+   100% {
+      transform: scale(1);
+   }
+}
+
+@keyframes zoomOut {
+   0% {
+      transform: scale(1);
+   }
+
+   100% {
+      transform: scale(0);
+   }
+}
+
+
+
+.code-editor:before,
+.code-editor:after,
+.code-editor span.after:after {
+   box-sizing: border-box;
+   content: '';
+   position: absolute;
+   z-index: 1;
+   transition: all .5s ease-in-out;
+   width: 35vw;
+}
+
+.code-editor {
+   box-sizing: border-box;
+   height: 35vw;
+   width: 65vw;
+   text-align: left;
+   border-radius: 0 0 5px 5px;
+   overflow-x: hidden;
+   transition: all .5s ease-in-out;
+   background: #011627;
+}
+
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+   color: #ccc;
+   background: none;
+   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+   text-transform: none;
+   font-size: 0.7vw;
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   line-height: 1.5;
+   height: 37vw;
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
+   tab-size: 4;
+
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+   padding: 0 1em 1em 1em;
+   overflow: auto;
+
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+   background: #011627;
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+   padding: .1em;
+   border-radius: .3em;
+   white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+   color: #999;
+}
+
+.token.punctuation {
+   color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+   color: #e2777a;
+}
+
+.token.function-name {
+   color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+   color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+   color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+   color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+   color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+   color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+   font-weight: bold;
+}
+
+.token.italic {
+   font-style: italic;
+}
+
+.token.entity {
+   cursor: help;
+}
+
+.token.inserted {
+   color: green;
+}
+
+pre[class*="language-"].line-numbers {
+   position: relative;
+   padding-left: 3.8em;
+   counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers>code {
+   position: relative;
+   white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+   position: absolute;
+   pointer-events: none;
+   top: 0;
+   font-size: 100%;
+   left: -3.8em;
+   width: 3em;
+   /* works for line-numbers below 1000 lines */
+   letter-spacing: -1px;
+   border-right: 1px solid #999;
+
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+
+}
+
+.line-numbers-rows>span {
+   display: block;
+   counter-increment: linenumber;
+}
+
+.line-numbers-rows>span:before {
+   content: counter(linenumber);
+   color: #999;
+   display: block;
+   padding-right: 0.8em;
+   text-align: right;
+}
