@@ -392,31 +392,16 @@ width: 100%; height: 0.2vw; background: #888888;
 .btn {
     display: inline-block;
     font-size: 1vw;
-    padding: 0 1.5vw; 
+    padding: 0 2vw; 
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 200;
     letter-spacing: 1px;
     position: relative;
     transition: all 0.5s ease;
     text-transform: uppercase;
+    line-height: 3vw;
 }
-.btn::before,
-.btn::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid ;
-    transition: .2s;
-}
-.btn::before{transform: translate(-0.6vw,0.6vw);}
-.btn::after{transform: translate(0.6vw,-0.6vw);}
-.btn:hover::before,
-.btn:hover::after{
-    transform: translateX(0) translateY(0);
-}   
+ 
 
 /* col1 */
 .sec3 .col1{
@@ -443,7 +428,10 @@ width: 100%; height: 0.2vw; background: #888888;
 }
 
 .sec3 .col1 .col1-box.st6 .btn1{
-    color:#1B8567;
+    color:#fff;
+    border: solid #1B8567 0.1vw;
+    background: #1B8567;
+    line-height: 3vw;
 }
 
 
@@ -486,7 +474,10 @@ width: 100%; height: 0.2vw; background: #888888;
     font-weight: 800;
 }
 .sec3 .col2 .col2-box.st6 .btn2{
-    color:#C85452;
+    color:#fff;
+    border: solid #C85452 0.1vw;
+    background: #C85452;
+    line-height: 3vw;
 }
 
 .sec3 .col2 .col2-box.st7{
@@ -527,7 +518,10 @@ width: 100%; height: 0.2vw; background: #888888;
 }
 
 .sec3 .col3 .col3-box.st6 .btn3{
-    color:#519B87;
+    color:#fff;
+    border: solid #519B87 0.1vw;
+    background: #519B87;
+    line-height: 3vw;
 }
 
 .sec3 .col3 .col3-box.st7{
@@ -568,7 +562,10 @@ width: 100%; height: 0.2vw; background: #888888;
 
 }
 .sec3 .col4 .col4-box.st6 .btn4{
-    color:#FFE600;
+    color:#000;
+    border: solid #FFE600 0.1vw;
+    background: #FFE600;
+    
 }
 
 .sec3 .col4 .col4-box.st7{
@@ -585,7 +582,7 @@ width: 100%; height: 0.2vw; background: #888888;
 /* section4 */
 #section4 .sec4{
     width: 100vw;
-    transform: translateX(35%);
+    transform: translate(35%,0);
     overflow: hidden;
     position: relative;
     text-transform: uppercase;
@@ -637,3 +634,30 @@ width: 100%; height: 0.2vw; background: #888888;
 
 
 /* section5 */
+.sec5{
+
+    width: 100vw;
+    height: 100vh;
+}
+.form{
+    
+    width: 50vw;
+    margin: 0 auto;
+}
+
+.input{
+    display: block;
+    width: 50vw;
+
+    padding: 1vw;
+}
+.textarea{
+    display: block;
+    width: 50vw;
+    height: 10vw;
+    padding: 1vw;
+}
+.submit{
+    display: block;
+
+}

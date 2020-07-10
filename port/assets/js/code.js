@@ -42,12 +42,14 @@ $(".tab-menu > a").click(function (e) {
     let index = $(this).index();
     $(".tab-menu a").removeClass("active")
     $(this).addClass("active");
-
+    $(".pre").hide()
+    $(".pre" + index).show()
 })
 // 테마
 $(".theme").click(function(){
     $(".modal-color").slideToggle()
     $(".theme").toggleClass("on")
+    $(".theme i").toggleClass("fa-chevron-up fa-chevron-down")
 });
 
 $(".modal-color a").click(function(){
@@ -56,11 +58,9 @@ $(".modal-color a").click(function(){
     $(this).addClass("on");
 });
 
-
-
-
-
-
+$(".owl").click(function(){
+    $(".tab-menu").css("background", "#01111D")
+});
 
 
 
