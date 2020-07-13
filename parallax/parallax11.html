@@ -23,9 +23,9 @@
         li{list-style: none;}
         body {
             --color-h1 : #dc6e25;
-            --color-title : #fff;
-            --color-link : #000;
-            --color-bg : #111;
+            --color-title : #62bfad;
+            --color-link : #000000;
+            --color-bg : #f9f7e8;
             --image-widthMax: 500px;
             --aspect-ratio: 32/17;
             color: var(--color-link);
@@ -55,13 +55,13 @@
         }
         .content-item-num {
             position: absolute; top: 30%; right: 10vw; transform: translateY(-50%);
-            font-size: 25vw; opacity: 0.03; line-height: 1;
+            font-size: 25vw; opacity: 0.3; line-height: 1;
             font-weight: 100; 
-            color: #fff;
+            color: var(--color-title);
         }
         .content-item-title {
             text-align: right; font-weight: 300; text-transform: capitalize;
-            color: #999; padding-right: 30px; padding-top: 10vh;
+            color: var(--color-title); padding-right: 30px; padding-top: 10vh;
         }
         .content-item-imgWrap {
             position: absolute;
@@ -88,7 +88,7 @@
             font-size: 5vw; line-height: 1.2;
             font-weight: 600;
             text-transform: uppercase;
-            color: #fff;
+            color: var(--color-title);
             text-align: right;
             word-break: keep-all;
             position: relative; z-index: 20;
@@ -131,11 +131,11 @@
         }
         .title h1 {
             padding-bottom: 10px;
-            color: #fff;
+            color: var(--color-link);
         }
         .title p {
             font-size: 18px;
-            color: #fff;
+            color: var(--color-link);
         }
         .title ul {
             padding-top: 20px;
@@ -146,18 +146,16 @@
         .title li a {
             font-size: 16px;
             font-family: "Abel";
-            color: #fff;
+            color: var(--color-link);
         }
         .title li.active a {
-            border-bottom: 1px dashed #fff;
+            border-bottom: 1px dashed var(--color-link);
         }
     </style>
 </head>
 <body>
 
-    <div class="info">
-        <div>pageYOffset : <span class="pageYOffset">0</span>px</div>
-    </div>
+    
 
     <div class="title">
         <h1>Parallax11</h1>

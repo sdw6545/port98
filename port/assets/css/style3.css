@@ -41,7 +41,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 #section2 {position: fixed;z-index: -1; top: -0px;}
 #section3 {position: fixed; z-index: -10; z-index: -100; transform: translateX(0%); }
 #section4 {position: fixed; z-index: -10000000;}
-#section5 {position: fixed; z-index: 100;}
+#section5 {position: fixed; z-index: 100; left:0; top:100%;}
 
 /* scroll */
 .pageYOffset {
@@ -65,11 +65,12 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
 
 .sec1 .mt {
     line-height: 1.8vw; 
-    font-size: 2.2vw;
-    margin-top: 3vw;
+    font-size: 2.0vw;
+    margin-top: 1.5vw;
     padding-top: 1vw;
     display: inline-block;
     overflow: hidden;
+    font-weight: 200;
 }
 
 .sec1 .mt span {
@@ -80,7 +81,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     font-size: 10vw;
     line-height: .6;
     font-weight: 800;
-    padding: 8vw 0;
+    padding: 6vw 0 8vw;
     color: #2D2D2D;
 }
 .sec1 h1 p {
@@ -106,7 +107,10 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     z-index: 1000;
     transform: translate(0%,-5%);
 }
+.sec1 .img div{
+    background: #4E4E4F;
 
+}
 .sec1 .img p{
     font-family: 'S-CoreDream-2ExtraLight';
     background: #4E4E4F;
@@ -117,7 +121,7 @@ body {background: #000;overflow-x: hidden; position: relative; z-index: -10;}
     letter-spacing: -2px;
     line-height: 1.5;
     margin: -1px;
-
+    opacity: 0;
 }
 
 
@@ -203,13 +207,15 @@ width: 100%; height: 0.2vw; background: #888888;
     text-transform: uppercase;
     font-size: 11vw;
     line-height: .9;
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'Poppins', sans-serif;
     z-index: -1;
     margin-top: 3vw;
     opacity: 0;
 }
-
+.sec2 p{
+    color: rgb(45, 45, 45);
+}
 
 
 .sec2 .site {
@@ -245,14 +251,16 @@ width: 100%; height: 0.2vw; background: #888888;
 }
 
 .sec2 .site .site-img .button{
+    width: 100%; height: 100%;
+    background: rgba(39, 37, 37, 0.8);
     opacity: 0; 
-    transition: opacity 1s;
+    transition: all 1s;
 
 }
 .sec2 .site:hover .site-img .button {
     width: 100%; height: 100%; background: rgba(39, 37, 37, 0.8);
     opacity: 1; 
-    transition: opacity 1s;
+    transition: all 1s;
 }
 
 .sec2 .site .site-img .button .text a{display: none;}
@@ -392,7 +400,7 @@ width: 100%; height: 0.2vw; background: #888888;
 .btn {
     display: inline-block;
     font-size: 1vw;
-    padding: 0 2vw; 
+    padding: 0 3vw; 
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     letter-spacing: 1px;
@@ -582,6 +590,7 @@ width: 100%; height: 0.2vw; background: #888888;
 /* section4 */
 #section4 .sec4{
     width: 100vw;
+    height: 100vh;
     transform: translate(35%,0);
     overflow: hidden;
     position: relative;
@@ -593,6 +602,7 @@ width: 100%; height: 0.2vw; background: #888888;
 /* 배경 글씨 */
 #section4 .sec4 p{
     width: 100%;
+    height: 20vh;
     color: #fff;
     font-size: 10vw;
     font-family: 'Poppins', sans-serif;
@@ -608,8 +618,6 @@ width: 100%; height: 0.2vw; background: #888888;
     color: rgb(34,34,34);
     opacity: 1;
 }
-
-
 
 
 
@@ -635,29 +643,49 @@ width: 100%; height: 0.2vw; background: #888888;
 
 /* section5 */
 .sec5{
-
-    width: 100vw;
-    height: 100vh;
+font-family: 'Poppins', sans-serif;
+position: relative; 
+width: 100vw; height: 100vh;
+}
+.sec5 h2{
+    margin-top: 10vh;
+    font-size: 8vw;
+    color:#fff;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
 }
 .form{
+    position: absolute;
+    left: 50%; top: 50vh;
+    transform: translate(-50%, -50%);
+    width: 60vw;
     
-    width: 50vw;
-    margin: 0 auto;
 }
 
-.input{
-    display: block;
-    width: 50vw;
-
+#full-name{
+    width: 60vw;
+    height: 5vh;
     padding: 1vw;
+    font-size: 1vw;
 }
-.textarea{
-    display: block;
-    width: 50vw;
-    height: 10vw;
+
+#email-address{
+    width: 60vw;
+    height: 5vh;
     padding: 1vw;
+    font-size: 1vw;
+}
+#message{
+    width: 60vw;
+    height: 30vh;
+    padding: 1vw;
+    font-size: 1vw;
 }
 .submit{
-    display: block;
-
+    width: 20vw;
+    height: 5vh;
+    margin-top: 1vw;
+    font-size: 1vw;
+    
 }

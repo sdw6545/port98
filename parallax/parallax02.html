@@ -32,18 +32,16 @@
         body {
             font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
 
-            --color-h1: #dc6e25;
-            --color-title: #fff;
-            --color-sub: #999;
-            --color-link: #000;
-            --color-bg: #111;
-            --font-family: 'lato', sans-serif;
-            --aspect-ratio: 36/17;
-            --image-width-max: 550px;
-
+        
+            --color-h1 : #dc6e25;
+            --color-title : #62bfad;
+            --color-link : #000000;
+            --color-bg : #f9f7e8;
+            --image-widthMax: 500px;
+            --aspect-ratio: 32/17;
+            color: var(--color-link);
             background-color: var(--color-bg);
-            font-family: var(--font-family);
-            color: var(--color-title);
+            font-family: 'Lato', sans-serif;
         }
 
         .title {
@@ -73,6 +71,7 @@
 
         .title li a {
             padding-bottom: 5px;
+            color: var(--color-title) ;
         }
 
         .title li.active a {
@@ -137,7 +136,8 @@
             position: absolute;
             right: -5vw;
             top: -25vh;
-            opacity: 0.04;
+            opacity: 1;
+            color: var(--color-title);
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -149,7 +149,7 @@
             text-align: right;
             font-weight: 300;
             text-transform: capitalize;
-            color: var(--color-sub);
+            color: #000;
             padding-bottom: 0.8vw;
             font-size: 1.5rem;
         }
@@ -212,7 +212,6 @@
             background-image: url(img/so09.jpg);
         }
     </style>
-        <link rel="stylesheet" href="../mouse/css/style.css">
 
 </head>
 

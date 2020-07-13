@@ -6,7 +6,7 @@ for (let i = 0; i <= 10; i++) {
         scrollDisable();
     });
 
-    $(".click").click(function (e) {
+    $(".click-box").click(function (e) {
         e.preventDefault();
         $(".modal0" + i).addClass("out");
         scrollAble();
@@ -59,7 +59,9 @@ $(".modal-color a").click(function(){
 });
 
 $(".owl").click(function(){
-    $(".tab-menu").css("background", "#01111D")
+    $(".tab-menu").css("background", "#01111D");
+    $(".tab-menu a:hover").css({"background": "#062743","color":"#CFDBE4;"});
+    $(".tab-menu a.active").css({"background": "#062743","color":"#CFDBE4;"});
 });
 
 

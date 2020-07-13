@@ -7,9 +7,14 @@
     <title>parallax03</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
         * {
             margin: 0;
             padding: 0;
@@ -30,20 +35,16 @@
         }
 
         body {
-            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
 
-            --color-h1: #dc6e25;
-            --color-title: #fff;
-            --color-sub: #999;
-            --color-link: #000;
-            --color-bg: #111;
-            --font-family: 'lato', sans-serif;
-            --aspect-ratio: 36/17;
-            --image-width-max: 550px;
-
+            --color-h1 : #dc6e25;
+            --color-title : #62bfad;
+            --color-link : #000000;
+            --color-bg : #f9f7e8;
+            --image-widthMax: 500px;
+            --aspect-ratio: 32/17;
+            color: var(--color-link);
             background-color: var(--color-bg);
-            font-family: var(--font-family);
-            color: var(--color-title);
+            font-family: 'Lato', sans-serif;
         }
 
         .title {
@@ -53,6 +54,7 @@
             z-index: 1000;
             padding: 20px;
             text-align: right;
+            font-family: 'GmarketSansMedium';
         }
 
         .title h1 {
@@ -73,10 +75,12 @@
 
         .title li a {
             padding-bottom: 5px;
+            color: var(--color-link);
+            font-family: "Abel";
         }
 
         .title li.active a {
-            border-bottom: 1px #fff dashed;
+            border-bottom: 1px var(--color-link) dashed;
         }
 
         #wrap h1 {
@@ -137,7 +141,8 @@
             position: absolute;
             right: -5vw;
             top: -25vh;
-            opacity: 0.04;
+            opacity: 1;
+            color:var(--color-title);
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -149,7 +154,7 @@
             text-align: right;
             font-weight: 300;
             text-transform: capitalize;
-            color: var(--color-sub);
+            color: #000;
             padding-bottom: 0.8vw;
             font-size: 1.5rem;
         }
@@ -446,7 +451,7 @@
     // }
 
     //한번에
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i &lt; 10; i++) {
         $(".s" + i + "OT").text(parseInt($("#section" + i).offset().top));
 
         if (scrollTop > parseInt($("#section" + i).offset().top)) {

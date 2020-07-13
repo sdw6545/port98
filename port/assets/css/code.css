@@ -19,10 +19,18 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 }
 
 /* 모달 닫는 박스 */
+#modal .click-box{
+   width: 2.5vw;
+   height: 2.5vw;
+   position: absolute;
+   left: 96.5vw;
+   top: 1vw;
+   display: inline-block;
+}
 #modal .click {
    position: relative;
-   left: 97%;
-   top: 2vw;
+   left: 0;
+   top: 50%;
    width: 2.5vw;
    height: 0.2vw;
    background: #fff;
@@ -43,7 +51,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 /* 모달 배경*/
 #modal .modal-bg {
-   background-color: rgba(0, 0, 0, 0.7);
+   background-color: rgba(255, 255, 255, 0.4);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -89,8 +97,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 }
 
 .tab-menu .menu-color span {
-   width: 1.2vw;
-   height: 1.2vw;
+   width: 1vw;
+   height: 1vw;
    border-radius: 50%;
 }
 
@@ -200,7 +208,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 #modal.one.out {
    transform: scale(1);
-   animation: unfoldOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+   animation: unfoldOut 0.5s 0.3s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
 }
 
 @keyframes unfoldIn {
@@ -238,7 +246,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 #modal.one.out .modal-bg .modal-cont {
    transform: scale(0);
-   animation: zoomOut 0.5s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+   animation: zoomOut 1s  cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
 }
 
 @keyframes zoomIn {
