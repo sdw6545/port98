@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="HwangAyoung">
+    <meta name="description" content="항상 함께하는 나만의 트레이너">
+    <meta name="keywords" content="Nike Training, Nike, nike, hearth, 나이키, 나이키 트레이닝, 운동">
+    <title>Nike Training Club App</title>
+
+    <!-- meta -->
+    <meta property="og:title" content="나이키 트레이닝">
+    <meta property="og:url" content="https://ay9318.github.io/port99/">
+    <meta property="og:image" content="https://webstoryboy.github.io/apple/assets/icon/icon.jpg">
+    <meta property="og:description" content="항상 함께하는 나만의 트레이너">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="나이키 트레이닝">
+    <meta name="twitter:url" content="https://ay9318.github.io/port99/">
+    <meta name="twitter:image" content="https://webstoryboy.github.io/apple/assets/icon/icon.jpg">
+    <meta name="twitter:description" content="항상 함께하는 나만의 트레이너">
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="row">
+                <header id="header">           
+                    <a href="#">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </a>                        
+                    <h1>운동</h1>
+                </header>
+                <!-- //header -->
+            </div>
+            <!-- //row -->                         
+        </div>
+        <!-- //container -->
+        
+        <nav id="nav">
+            <div class="container">
+                <ul>
+                    <li class="on"><a href="index.html">맞춤 추천</a></li>
+                    <li><a href="index2.html">탐색</a></li>
+                    <li><a href="index3.html">컬렉션</a></li>
+                    <li><a href="index4.html">플랜</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //nav -->
+
+        <section id="section01">
+            <div class="container">
+                <h2>최고의 맞춤형 추천</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">                        
+                        <div class="swiper-slide">
+                            <img src="assets/img/n1-img01.jpg" alt="릴레이 반복">
+                            <p>릴레이 반복</p>
+                            <span>30분 - 초급</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/n1-img02.jpg" alt="코어 강화">
+                            <p>코어 강화</p>
+                            <span>8분 - 중급</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/n1-img03.jpg" alt="관절 유연성 기르기">
+                            <p>관절 유연성 기르기</p>
+                            <span>15분 - 초급</span> 
+                        </div>
+                    </div>
+                </div>    
+            </div>            
+        </section>
+        <!-- //section01 -->      
+        
+        <section id="section02">
+            <div class="container">
+                <h2>새로운 운동</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">                        
+                        <div class="swiper-slide">
+                            <img src="assets/img/n1-img04.jpg" alt="웨이크업 워밍업">
+                            <p>웨이크업 워밍업</p>
+                            <span>10분 - 초급</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/n1-img05.jpg" alt="선셋 스트레칭">
+                            <p>선셋 스트레칭</p>
+                            <span>10분 - 초급</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/n1-img06.jpg" alt="코어 강화 및 유산소 운동">
+                            <p>코어 강화 및<br> 유산소 운동</p>
+                            <span>30분 - 중급</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section02 -->
+
+        <section id="section03">
+            <div class="container">
+                <div class="row">
+                    <div class="sec3">
+                        <div class="sec3-box">
+                            <img src="assets/img/n1-img07.jpg" alt="10개의 운동 · 모든 수준">
+                            <span>10개의 운동 · 모든 수준</span>
+                            <p>경기의 수준을 높이세요</p>
+                        </div>
+                        <div class="sec3-box">
+                            <img src="assets/img/n1-img08.jpg" alt="10개의 운동 · 초급 및 중급">
+                            <span>10개의 운동 · 초급 및 중급</span>
+                            <p>20분 내 가능한 운동</p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </section>
+    </div>
+    <!-- //wrap -->
+    
+    <script src="assets/js/jquery.min_1.12.4.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: '1.5',
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },            
+        });
+    </script>
+</body>
+</html>

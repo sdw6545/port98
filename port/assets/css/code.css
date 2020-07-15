@@ -33,7 +33,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    top: 50%;
    width: 2.5vw;
    height: 0.2vw;
-   background: #fff;
+   background: #000;
    transform: rotate(45deg);
 }
 
@@ -44,14 +44,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    content: '';
    width: 2.5vw;
    height: 0.2vw;
-   background: #fff;
+   background: #000;
    transform: rotate(-90deg);
-
 }
 
 /* 모달 배경*/
 #modal .modal-bg {
-   background-color: rgba(255, 255, 255, 0.4);
+   background-color: rgb(245, 227, 227);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -63,7 +62,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 #modal .modal-bg .modal-cont {
    position: relative;
    display: inline-block;
-   width: 60vw;
+   width: 50vw;
    height: 40vw;
    display: flex;
    border-radius: 10px;
@@ -72,7 +71,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 /* 코드영역 */
 #modal .modal-bg .modal-cont .code-con {
-   width: 60vw;
+   width: 50vw;
    height: 40vw;
    border-radius: 5px;
    
@@ -81,10 +80,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 /* 메뉴 전체 박스 */
 .tab-menu {
    display: flex;
-   background: #01111D;
-   height: 3.5vw;
+   height: 3vw;
    position: relative;
-   border-bottom: 0.1vw solid  rgba(255, 255, 255, 0.08);
 }
 
 /* 컬러 */
@@ -92,13 +89,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    display: flex;
    justify-content: space-around;
    align-items: center;
-   width: 8vw;
+   width: 6vw;
    padding: 0 1vw;
 }
 
 .tab-menu .menu-color span {
-   width: 1vw;
-   height: 1vw;
+   width: 0.8vw;
+   height: 0.8vw;
    border-radius: 50%;
 }
 
@@ -117,12 +114,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 /* 메뉴 */
 .tab-menu a {
    font-size: 1vw;
-   color: #5F7E97;
-   padding: 0 3vw;
-   line-height: 3.5vw;
-   border: 0.1vw solid  rgba(255, 255, 255, 0.08);
-   border-top: none;
-   border-bottom: none;
+   padding: 0 2.7vw;
+   line-height: 3vw;
    font-weight: 600;
 
 }
@@ -130,17 +123,10 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .tab-menu a:nth-child(3) {
    border: none;
 }
-
-.tab-menu a:hover {
-   background: #062743;
-   color:#CFDBE4;
-}
-
-.tab-menu a.active {
+.code-con .tab-menu > a.active {
    background: #062743;
    color: #CFDBE4;
 }
-
 
 /* 테마 */
 .tab-menu .theme {
@@ -149,16 +135,14 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    top: 0;
    padding: 0 2vw;
    font-size: 1vw;
-   line-height: 3.5vw;
-   color: #5F7E97;
+   line-height: 3vw;
    font-weight: 600;
+   z-index: 5;
 }
 .tab-menu .theme.on{
    color: #CFDBE4;
-   background: #072339;
 }
 .tab-menu .theme:hover {
-   background: #072339;
    color: #CFDBE4;
 }
 
@@ -171,17 +155,14 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    display: none;
    position: absolute; right: 1vw;top: 3vw;
    z-index: 1000;
-   background-color: #092E4B;
 
    border-radius: 10px;
    overflow: hidden;
    padding: 1vw 0.2vw;
-   border: 0.1vw solid  rgba(255, 255, 255, 0.08);
-   width: 18vw;
+   width: 16vw;
 }
 
 .tab-menu .modal-color a {
-   color: #8E9093;
    display: block;
    border: none;
    padding: 0 3vw; 
@@ -192,14 +173,17 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    text-transform: none;
 }
 .tab-menu .modal-color a:hover{
-   border: 3px solid #008FFF;
+   position: relative; z-index: 10;
    margin: -3px;
 }
 .tab-menu .modal-color a.on{
-   color: #fff;
    position: relative;
 }
-
+.tab-menu .modal-color a.on::before{
+   position: absolute; left: 0.5vw; top: 1.3vw;
+   content: '';
+   width: 1.5vw;height: 0.2vw;
+}
 
 #modal.one {
    transform: scaley(0.005) scalex(0);
@@ -271,27 +255,162 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 
 
-.code-editor:before,
-.code-editor:after,
-.code-editor span.after:after {
-   box-sizing: border-box;
-   content: '';
-   position: absolute;
-   z-index: 1;
-   transition: all .5s ease-in-out;
-   width: 35vw;
+/* 테마 클릭시 색 변경 */
+/* owl */
+.code-con.owl .tab-menu {background: #01111D;    border-bottom: 0.1vw solid  rgba(255, 255, 255, 0.08);
 }
 
-.code-editor {
-   box-sizing: border-box;
-   height: 35vw;
-   width: 65vw;
-   text-align: left;
-   border-radius: 0 0 5px 5px;
-   overflow-x: hidden;
-   transition: all .5s ease-in-out;
+/* 메뉴 전체 박스 */
+.code-con.owl .tab-menu > a{
+   color: #5F7E97;
+
+   border-left: 0.1vw solid  rgba(255, 255, 255, 0.08);
+   border-right: 0.1vw solid  rgba(255, 255, 255, 0.08);
+}
+.code-con.owl .tab-menu > a:nth-child(3) {border: none;}
+.code-con.owl .tab-menu > a:hover {background: #062743;
+   color:#CFDBE4;}
+.code-con.owl .tab-menu > a.active {
+      background: #062743;
+      color: #CFDBE4;
+}
+/* 테마 */
+.code-con.owl .tab-menu .theme{
+   color: #5F7E97;
+}
+.code-con.owl .tab-menu .theme.on{
+   color: #CFDBE4;
+   background: #072339;
+}
+.code-con.owl .tab-menu .theme:hover {
+   background: #072339;
+   color: #CFDBE4;
+}
+
+.code-con.owl .tab-menu .modal-color{background-color: #092E4B;border: 0.1vw solid  rgba(255, 255, 255, 0.08);}
+.code-con.owl .tab-menu .modal-color > a{
+   color: #CFDBE4;
+   background: #092E4B;
+}
+.code-con.owl .tab-menu .modal-color > a:hover{
+   border: 3px solid #008FFF;
+   background: rgba(255, 255, 255, 0.04);
+}
+.code-con.owl .tab-menu .modal-color > a.on{
+   color: #CFDBE4;
+}
+.code-con.owl .tab-menu .modal-color a.on::before{background: #CFDBE4;}
+/* 코드전체 */
+.code-con.owl pre[class*="language-"] {
    background: #011627;
 }
+
+
+
+/* monokai */
+.code-con.monokai .tab-menu {background: #21252B;    border-bottom: 0.1vw solid  #282C34;
+}
+
+/* 메뉴 전체 박스 */
+.code-con.monokai .tab-menu > a{
+   color:#8E9093;
+
+   border-left: 0.1vw solid  #282C34;
+   border-right: 0.1vw solid  #282C34;
+}
+.code-con.monokai .tab-menu > a:nth-child(3) {border: none;}
+.code-con.monokai .tab-menu > a:hover {background: #383E4A;
+   color:#fff;}
+.code-con.monokai .tab-menu > a.active {
+      background: #383E4A;
+      color: #fff;
+}
+/* 테마 */
+.code-con.monokai .tab-menu .theme{
+   color: #8E9093;
+}
+.code-con.monokai .tab-menu .theme.on{
+   color: #fff;
+   background: #383E4A;
+   
+}
+.code-con.monokai .tab-menu .theme:hover {
+   background: #383E4A;
+   color: #fff;
+}
+
+.code-con.monokai .tab-menu .modal-color{background-color: #485061;border: 0.1vw solid  rgba(255, 255, 255, 0.08);}
+.code-con.monokai .tab-menu .modal-color > a{
+   color: #CFDBE4;
+}
+.code-con.monokai .tab-menu .modal-color > a:hover{
+   border: 3px solid #00B8F2;
+   background: rgba(255, 255, 255, 0.03);
+}
+.code-con.monokai .tab-menu .modal-color > a.on{
+   color: #CFDBE4;
+   
+}
+.code-con.monokai .tab-menu .modal-color a.on::before{background: #CFDBE4;}
+/* 코드 전체 */
+.code-con.monokai pre[class*="language-"] {
+   background: #282C34;
+}
+
+
+
+
+/* owlLight */
+.code-con.owlLight .tab-menu {background: #F0F0F0;    border-bottom: 0.1vw solid  rgba(240, 240, 240, 0.01);
+}
+
+/* 메뉴 전체 박스 */
+.code-con.owlLight .tab-menu > a{
+   color: #403F53;
+
+   border-left: 0.1vw solid  rgba(240, 240, 240, 0.01);
+   border-right: 0.1vw solid  rgba(240, 240, 240, 0.01);
+}
+.code-con.owlLight .tab-menu > a:nth-child(3) {border: none;}
+.code-con.owlLight .tab-menu > a:hover {background: #F8F8F8;
+   color:#403F53;}
+.code-con.owlLight .tab-menu > a.active {
+      background: #F8F8F8;
+      color: #403F53;
+}
+/* 테마 */
+.code-con.owlLight .tab-menu .theme{
+   color: #2B3033;
+}
+.code-con.owlLight .tab-menu .theme.on{
+   color: #403F53;
+   background: #F6F6F6;
+}
+.code-con.owlLight .tab-menu .theme:hover {
+   background: #F6F6F6;
+   color: #403F53;
+}
+
+.code-con.owlLight .tab-menu .modal-color{background-color: #FFFFFF;border: 0.1vw solid  #E1E1E1;}
+.code-con.owlLight .tab-menu .modal-color > a{
+   color: #2B3033;
+   background: #fff;
+}
+.code-con.owlLight .tab-menu .modal-color > a:hover{
+   border: 3px solid #4876D6;
+   background: rgba(255, 255, 255, 0.03);
+}
+.code-con.owlLight .tab-menu .modal-color > a.on{
+   color: #2B3033;
+}
+.code-con.owlLight .tab-menu .modal-color a.on::before{background: #2B3033;}
+/* 코드전체 */
+.code-con.owlLight pre[class*="language-"] {
+   background: #FBFBFB;
+}
+
+
+
 
 
 
@@ -309,6 +428,7 @@ pre[class*="language-"] {
    word-wrap: normal;
    line-height: 1.5;
    height: 37vw;
+
    -moz-tab-size: 4;
    -o-tab-size: 4;
    tab-size: 4;
@@ -325,11 +445,6 @@ pre[class*="language-"] {
    overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
-   background: #011627;
-
-}
 
 /* Inline code */
 :not(pre)>code[class*="language-"] {
@@ -339,80 +454,7 @@ pre[class*="language-"] {
    
 }
 
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-   color: #999;
-}
 
-.token.punctuation {
-   color: #ccc;
-}
-
-.token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
-   color: #e2777a;
-}
-
-.token.function-name {
-   color: #6196cc;
-}
-
-.token.boolean,
-.token.number,
-.token.function {
-   color: #f08d49;
-}
-
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-   color: #f8c555;
-}
-
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-   color: #cc99cd;
-}
-
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-   color: #7ec699;
-}
-
-.token.operator,
-.token.entity,
-.token.url {
-   color: #67cdcc;
-}
-
-.token.important,
-.token.bold {
-   font-weight: bold;
-}
-
-.token.italic {
-   font-style: italic;
-}
-
-.token.entity {
-   cursor: help;
-}
-
-.token.inserted {
-   color: green;
-}
 
 pre[class*="language-"].line-numbers {
    position: relative;
@@ -454,4 +496,198 @@ pre[class*="language-"].line-numbers>code {
    display: block;
    padding-right: 0.8em;
    text-align: right;
+}
+/* Owl */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #ecad1b;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+/* monokai */
+.monokai .token.comment,
+.monokai .token.prolog,
+.monokai .token.doctype,
+.monokai .token.cdata {
+	color: hsl(0, 0%, 47%); /* #777777 */
+}
+
+.monokai .token.punctuation {
+	opacity: .7;
+}
+
+.monokai .token.namespace {
+	opacity: .7;
+}
+
+.monokai .token.tag,
+.monokai .token.boolean,
+.monokai .token.number,
+.monokai .token.deleted {
+	color: hsl(14, 58%, 55%); /* #CF6A4C */
+}
+
+.monokai .token.keyword,
+.monokai .token.property,
+.monokai .token.selector,
+.monokai .token.constant,
+.monokai .token.symbol,
+.monokai .token.builtin {
+	color: hsl(53, 89%, 79%); /* #F9EE98 */
+}
+
+.monokai .token.attr-name,
+.monokai .token.attr-value,
+.monokai .token.string,
+.monokai .token.char,
+.monokai .token.operator,
+.monokai .token.entity,
+.monokai .token.url,
+.monokai .language-css .token.string,
+.monokai .style .token.string,
+.monokai .token.variable,
+.monokai .token.inserted {
+	color: hsl(76, 21%, 52%); /* #8F9D6A */
+}
+
+.monokai .token.atrule {
+	color: hsl(218, 22%, 55%); /* #7587A6 */
+}
+
+.monokai .token.regex,
+.monokai .token.important {
+	color: hsl(42, 75%, 65%); /* #E9C062 */
+}
+
+/* Owl Light */
+.owlLight code[class*="language-"],
+.owlLight pre[class*="language-"] {
+	color: #ff8303;
+}
+
+.owlLight .token.comment,
+.owlLight .token.prolog,
+.owlLight .token.doctype,
+.owlLight .token.cdata {
+	color: slategray;
+}
+
+.owlLight .token.punctuation {
+	color: #999;
+}
+
+.owlLight .token.namespace {
+	opacity: .7;
+}
+
+.owlLight .token.property,
+.owlLight .token.tag,
+.owlLight .token.boolean,
+.owlLight .token.number,
+.owlLight .token.constant,
+.owlLight .token.symbol,
+.owlLight .token.deleted {
+	color: #905;
+}
+
+.owlLight .token.selector,
+.owlLight .token.attr-name,
+.owlLight .token.string,
+.owlLight .token.char,
+.owlLight .token.builtin,
+.owlLight .token.inserted {
+	color: #690;
+}
+
+.owlLight .token.operator,
+.owlLight .token.entity,
+.owlLight .token.url,
+.owlLight .language-css .token.string,
+.owlLight .style .token.string {
+	color: #9a6e3a;
+}
+
+.owlLight .token.atrule,
+.owlLight .token.attr-value,
+.owlLight .token.keyword {
+	color: #07a;
+}
+
+.owlLight .token.function,
+.owlLight .token.class-name {
+	color: #DD4A68;
+}
+
+.owlLight .token.regex,
+.owlLight .token.important,
+.owlLight .token.variable {
+	color: #e90;
 }

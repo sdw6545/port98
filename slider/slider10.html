@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>slider10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');        
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
         * {
             margin: 0;
@@ -656,15 +656,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="slide-dot">
-                <a href="#" class="active">01</a>
-                <a href="#">02</a>
-                <a href="#">03</a>
-                <a href="#">04</a>
-                <a href="#">05</a>
-                <a href="#">06</a>
-                <a href="#">07</a>
-            </div> -->
+            
         </div>
 
 
@@ -746,7 +738,8 @@
         };
 
         //버튼 클릭하기
-        slideBtn.on("click", "a", function () {
+        slideBtn.on("click", "a", function (e) {
+            e.preventDefault();
             let nextIndex = (currentIndex + 1) % slideCount;
             let prevIndex = (currentIndex - 1) % slideCount;
             //console.log(prevIndex) 

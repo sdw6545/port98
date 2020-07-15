@@ -1,161 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallax11</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
+    <style>
         @font-face {
-            font-family: 'GmarketSansMedium';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-family: 'S-CoreDream-9Black';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
 
-        *, *::after, *::before {box-sizing: border-box;}
-        * {margin: 0; padding: 0;}
-        :root {font-size: 16px;}
-        li{list-style: none;}
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        :root {
+            font-size: 16px;
+        }
+
+        li {
+            list-style: none;
+        }
+
         body {
-            --color-h1 : #dc6e25;
-            --color-title : #62bfad;
-            --color-link : #000000;
-            --color-bg : #f9f7e8;
+            
+            --color-h1: #dc6e25;
+            --color-title: #62bfad;
+            --color-link: #000000;
+            --color-bg: #f9f7e8;
             --image-widthMax: 500px;
             --aspect-ratio: 32/17;
             color: var(--color-link);
             background-color: var(--color-bg);
-            font-family: 'Lato', sans-serif;
+
         }
+        body::-webkit-scrollbar {
+
+display:none;
+
+}
         .wrap h1 {
             font-size: 8vw;
             padding: 5vw;
             color: var(--color-h1);
             text-transform: uppercase;
             font-weight: 700;
+            font-family:'lato', sans-serif;
         }
+
         .wrap h1 em {
-            display: block; 
+            display: block;
             padding-left: 20vw;
             font-weight: 100;
         }
-        .content-item { 
+
+        .content-item {
             --imgwidth: calc(var(--imgwidthmax) * var(--aspect-ratio));
             width: var(--imgwidth);
             position: relative;
             will-change: transform;
         }
-        .content-item:nth-child(even){
+
+        .content-item:nth-child(even) {
             margin-left: auto;
         }
+
         .content-item-num {
-            position: absolute; top: 30%; right: 10vw; transform: translateY(-50%);
-            font-size: 25vw; opacity: 0.3; line-height: 1;
-            font-weight: 100; 
+            position: absolute;
+            top: 30%;
+            right: 10vw;
+            transform: translateY(-50%);
+            font-size: 25vw;
+            opacity: 0.3;
+            line-height: 1;
+            font-weight: 100;
             color: var(--color-title);
         }
+
         .content-item-title {
-            text-align: right; font-weight: 300; text-transform: capitalize;
-            color: var(--color-title); padding-right: 30px; padding-top: 10vh;
+            text-align: right;
+            font-weight: 300;
+            text-transform: capitalize;
+            color: var(--color-title);
+            padding-right: 30px;
+            padding-top: 10vh;
         }
+
         .content-item-imgWrap {
             position: absolute;
-            top: 50%; transform: translateY(-50%);
+            top: 50%;
+            transform: translateY(-50%);
             --imgwidth: 50%;
             overflow: hidden;
             margin: 0 10vw 0 10vw;
-            width: var(--imgwidth); 
+            width: var(--imgwidth);
             padding-top: calc(var(--imgwidth) / (var(--aspect-ratio)));
             will-change: transform;
         }
+
         .content-item-img {
             --overflow: 40px;
             height: calc(100% + (2 * var(--overflow)));
             position: absolute;
-            top: calc( -1 * var(--overflow));
+            top: calc(-1 * var(--overflow));
             width: 100%;
-            background-size: cover; 
+            background-size: cover;
             background-position: 50% 0;
             will-change: transform;
         }
-        .content-item-desc { 
+
+        .content-item-desc {
             margin: 50vh 10vw 0 30vw;
-            font-size: 5vw; line-height: 1.2;
+            font-size: 5vw;
+            line-height: 1.2;
             font-weight: 600;
             text-transform: uppercase;
             color: var(--color-title);
             text-align: right;
             word-break: keep-all;
-            position: relative; z-index: 20;
+            position: relative;
+            z-index: 20;
+            font-family: 'S-CoreDream-9Black';
         }
-        
-        #section1 .content-item-img {background-image: url(img/so01.jpg);}
-        #section2 .content-item-img {background-image: url(img/so02.jpg);}
-        #section3 .content-item-img {background-image: url(img/so03.jpg);}
-        #section4 .content-item-img {background-image: url(img/so04.jpg);}
-        #section5 .content-item-img {background-image: url(img/so05.jpg);}
-        #section6 .content-item-img {background-image: url(img/so06.jpg);}
-        #section7 .content-item-img {background-image: url(img/so07.jpg);}
-        #section8 .content-item-img {background-image: url(img/so08.jpg);}
-        #section9 .content-item-img {background-image: url(img/so09.jpg);}
-        
-        .contents { 
-            position: fixed; width: 1000vw; margin: 0; height: 100vh; 
+
+        #section1 .content-item-img {
+            background-image: url(img/so01.jpg);
         }
-        .contents > section {width: 100vw; float: left; height: 100vh; }
-/*
-        .contents > section:nth-child(1) {background: #999;}
-        .contents > section:nth-child(2) {background: #888;}
-        .contents > section:nth-child(3) {background: #777;}
-        .contents > section:nth-child(4) {background: #666;}
-        .contents > section:nth-child(5) {background: #555;}
-        .contents > section:nth-child(6) {background: #444;}
-        .contents > section:nth-child(7) {background: #333;}
-        .contents > section:nth-child(8) {background: #222;}
-        .contents > section:nth-child(9) {background: #111;}
-*/
+
+        #section2 .content-item-img {
+            background-image: url(img/so02.jpg);
+        }
+
+        #section3 .content-item-img {
+            background-image: url(img/so03.jpg);
+        }
+
+        #section4 .content-item-img {
+            background-image: url(img/so04.jpg);
+        }
+
+        #section5 .content-item-img {
+            background-image: url(img/so05.jpg);
+        }
+
+        #section6 .content-item-img {
+            background-image: url(img/so06.jpg);
+        }
+
+        #section7 .content-item-img {
+            background-image: url(img/so07.jpg);
+        }
+
+        #section8 .content-item-img {
+            background-image: url(img/so08.jpg);
+        }
+
+        #section9 .content-item-img {
+            background-image: url(img/so09.jpg);
+        }
+
+        .contents {
+            position: fixed;
+            width: 1000vw;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .contents>section {
+            width: 100vw;
+            float: left;
+            height: 100vh;
+        }
+
 
         .title {
-            position: fixed; 
+            position: fixed;
             right: 0;
             top: 0;
             z-index: 1000;
             padding: 20px;
-            font-family: 'GmarketSansMedium';
             text-align: right;
         }
+
         .title h1 {
             padding-bottom: 10px;
             color: var(--color-link);
+            font-family:'lato', sans-serif;
         }
+
         .title p {
             font-size: 18px;
             color: var(--color-link);
         }
+
         .title ul {
             padding-top: 20px;
         }
+
         .title li {
             padding-bottom: 5px;
         }
+
         .title li a {
             font-size: 16px;
-            font-family: "Abel";
             color: var(--color-link);
         }
+
         .title li.active a {
             border-bottom: 1px dashed var(--color-link);
         }
     </style>
 </head>
-<body>
 
-    
+<body style=" -ms-overflow-style: none;">
+
+
 
     <div class="title">
         <h1>Parallax11</h1>
@@ -179,7 +253,7 @@
 
 
     <div class="wrap">
-        
+
         <div class="contents">
             <section id="section0">
                 <h1>Parallax<em>Scrolling</em></h1>
@@ -264,16 +338,17 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script>
-        let roadLength = $(".contents").width();    //전체 가로 값
-        $("body").css("height",roadLength);           //전체 세로 값에 전체 가로 값(roadLength)을 할당
+        let roadLength = $(".contents").width(); //전체 가로 값
+        $("body").css("height", roadLength); //전체 세로 값에 전체 가로 값(roadLength)을 할당
 
-        $(window).scroll(function(){
+        $(window).scroll(function () {
             let wScroll = $(window).scrollTop();
 
-            $(".contents").css({"transform":"translateX("+-wScroll+"px)"})
+            $(".contents").css({
+                "transform": "translateX(" + -wScroll + "px)"
+            })
         });
-
-      
     </script>
 </body>
+
 </html>

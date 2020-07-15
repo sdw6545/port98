@@ -7,8 +7,6 @@
     <title>parallax01</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -26,11 +24,10 @@
         }
 
         body {
-            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
 
-            background-color: #111;
-            color: #fff;
-            font-family: 'Lato', sans-serif;
+            background-color: #f9f7e8;
+            color: #62bfad;
+            font-family: 'Lato';
         }
 
         .title {
@@ -40,6 +37,8 @@
             z-index: 1000;
             padding: 20px;
             text-align: right;
+            color: #000;
+            font-family: 'Lato';
         }
 
         .title h1 {
@@ -60,10 +59,12 @@
 
         .title li a {
             padding-bottom: 5px;
+            color: #000;
+            font-family: 'Lato';
         }
 
         .title li.active a {
-            border-bottom: 1px #fff dashed;
+            border-bottom: 1px #000 dashed;
         }
 
         #wrap h1 {
@@ -100,7 +101,7 @@
             position: absolute;
             right: -100px;
             top: -200px;
-            opacity: 0.04;
+            opacity: 0.3;
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -112,7 +113,6 @@
             text-align: right;
             font-size: 24px;
             font-weight: 300;
-            color: #fff;
             padding-bottom: 10px;
             text-transform: capitalize;
         }

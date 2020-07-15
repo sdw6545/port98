@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -31,14 +29,13 @@
         }
 
         body {
-            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
 
             --color-h1: #dc6e25;
-            --color-title: #fff;
+            --color-title: #62bfad;
             --color-sub: #999;
             --color-link: #000;
-            --color-bg: #111;
-            --font-family: 'lato', sans-serif;
+            --color-bg: #f9f7e8;
+            --font-family: 'lato';
             --aspect-ratio: 32/18;
             --image-width-max: 550px;
 
@@ -54,10 +51,12 @@
             z-index: 1000;
             padding: 20px;
             text-align: right;
+            color: var(--color-link);
         }
 
         .title h1 {
             padding-bottom: 10px;
+            
         }
 
         .title p {
@@ -74,10 +73,11 @@
 
         .title li a {
             padding-bottom: 5px;
+            color: var(--color-link);
         }
 
         .title li.active a {
-            border-bottom: 1px #fff dashed;
+            border-bottom: 1px var(--color-link) dashed;
         }
 
         #wrap h1 {
@@ -108,7 +108,7 @@
             max-width: 90vw;
             margin: 0 0 50vh;
             padding-top: 20vh;
-
+            
         }
 
         .content-item-imgWrap {
@@ -140,8 +140,9 @@
             position: absolute;
             right: -5vw;
             top: -3vh;
-            opacity: 0.041;
+            opacity: 0.3;
             will-change: transform;
+            color: var(--color-title);
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -150,14 +151,17 @@
         }
 
         .content-item-title {
+            position: relative;
+            z-index: 10;
             text-align: right;
             font-weight: 300;
             text-transform: capitalize;
-            color: var(--color-sub);
             padding-bottom: 0.8vw;
             font-size: 1.5rem;
         }
-
+        .content-item-title a{
+            color: var(--color-title);
+        }
         .content-item:nth-child(even) .content-item-title {
             text-align: left;
         }
@@ -224,7 +228,7 @@
         #nav {
             position: fixed;
             left: 50%;
-            top: 40px;
+            top: 20px;
             z-index: 1000;
             transform: translateX(-50%);
             font-family: 'Abel';
@@ -236,8 +240,9 @@
 
         #nav li a {
             display: inline-block;
-            padding: 10px;
-            color: #fff;
+            padding: 5px 10px;
+            color: var(--color-link);
+            font-size: 2vw;
         }
         .top{
             text-align: right;

@@ -46,7 +46,8 @@ $(".tab-menu > a").click(function (e) {
     $(".pre" + index).show()
 })
 // 테마
-$(".theme").click(function(){
+$(".theme").click(function(e){
+    e.preventDefault()
     $(".modal-color").slideToggle()
     $(".theme").toggleClass("on")
     $(".theme i").toggleClass("fa-chevron-up fa-chevron-down")
@@ -54,17 +55,21 @@ $(".theme").click(function(){
 
 $(".modal-color a").click(function(){
     let index = $(this).index();
-    $(".modal-color a").removeClass("on")
+    $(".modal-color a").removeClass("on");
     $(this).addClass("on");
 });
-
-$(".owl").click(function(){
-    $(".tab-menu").css("background", "#01111D");
-    $(".tab-menu a:hover").css({"background": "#062743","color":"#CFDBE4;"});
-    $(".tab-menu a.active").css({"background": "#062743","color":"#CFDBE4;"});
+$(".modal-color a:eq(0)").click(function(){
+    $("code").removeClass("owl monokai owlLight").addClass("owl")
+    $(".code-con").removeClass("owl monokai owlLight").addClass("owl")
 });
-
-
+$(".modal-color a:eq(1)").click(function(){
+    $("code").removeClass("owl monokai owlLight").addClass("monokai")
+    $(".code-con").removeClass("owl monokai owlLight").addClass("monokai")
+});
+$(".modal-color a:eq(2)").click(function(){
+    $("code").removeClass("owl monokai owlLight").addClass("owlLight")
+    $(".code-con").removeClass("owl monokai owlLight").addClass("owlLight")
+});
 
 
 

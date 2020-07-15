@@ -7,8 +7,6 @@
     <title>parallax04</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -30,13 +28,11 @@
         }
 
         body {
-            font-family: 'Noto Sans', sans-serif, 'Nanum Gothic Coding', monospace;
 
             --color-h1: #dc6e25;
-            --color-title: #fff;
-            --color-sub: #999;
-            --color-link: #000;
-            --color-bg: #111;
+            --color-title: #62bfad;
+            --color-link: #000000;
+            --color-bg: #f9f7e8;
             --font-family: 'lato', sans-serif;
             --aspect-ratio: 36/17;
             --image-width-max: 550px;
@@ -53,6 +49,7 @@
             z-index: 1000;
             padding: 20px;
             text-align: right;
+            color: var(--color-link);
         }
 
         .title h1 {
@@ -73,10 +70,11 @@
 
         .title li a {
             padding-bottom: 5px;
+            color: var(--color-link);
         }
 
         .title li.active a {
-            border-bottom: 1px #fff dashed;
+            border-bottom: 1px var(--color-link) dashed;
         }
 
         #wrap h1 {
@@ -137,7 +135,7 @@
             position: absolute;
             right: -5vw;
             top: -25vh;
-            opacity: 0.04;
+            opacity: 0.3;
         }
 
         .content-item:nth-child(even) .content-item-num {

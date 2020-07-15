@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 레이아웃 */
+body{
+    background: #000;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#section1{
+    
+}
+
+
+/* section1 */
+.sec1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 30px;
+    margin: 30px;
+    background: #B1B1B0;
+}
+
+.sec1 .mt {
+    line-height: 22px;
+    font-size: 20px;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: 200;
+    padding-top: 10px;
+}
+
+.sec1 .mt span {
+    position: relative;
+    top: 100px;
+}
+
+.sec1 h1 {
+    font-weight: 800;
+    padding-top: 30px;
+    color: #2D2D2D;
+}
+
+.sec1 h1 p {
+    display: block;
+    line-height: 90px;
+    font-weight: 800;
+    display: inline-block;
+    min-width: 25px;
+    font-size: 90px;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.sec1 .h1txt span {
+    position: relative;
+    top: 200px;
+}
+
+.sec1 .img {
+    color: #D0D0D0;
+    font-size:24px;
+    position: relative;
+    z-index: 1000;
+    width: 400px;
+    margin: 0 auto;
+}
+.sec1 .img img{
+    border: 30px #4e4e4f solid;
+}
+
+.sec1 .img div {
+    background: #4E4E4F;
+
+}
+
+.sec1 .img p {
+    font-family: 'S-CoreDream-2ExtraLight';
+    background: #4E4E4F;
+    padding: 30px;
+    padding-bottom: 0vw;
+    font-size: 1.5vw;
+    text-align: justify;
+    letter-spacing: -2px;
+    line-height: 1.5;
+    margin: -1px;
+}
+
+
+/* info1 */
+.sec1 .img .info1 {
+    background: #4E4E4F;
+    margin: -1px;
+
+}
+
+.sec1 .img .info1 .info-img {
+    width: 10vw;
+    margin: 0 auto;
+    padding-top: 4vw;
+
+
+}
+
+.sec1 .img .info1 .info-text {
+    margin-bottom: 1vw;
+}
+
+
+/* info 링크 */
+.sec1 .img .info1 .info-link {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1vw;
+    margin-top: 1vw;
+    text-transform: none;
+    border-top: 1px solid #fff;
+}
+
+.sec1 .img .info1 .info-link li a {
+    color: #888888;
+    position: relative;
+    padding: 0.5vw;
+    transition: all 0.3s;
+}
+
+.sec1 .img .info1 .info-link li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 0.2vw;
+    background: #888888;
+    transition: all 0.5s;
+}
+
+.sec1 .img .info1 .info-link li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 0.2vw;
+    background: #888888;
+}
+
+
+.sec1 .img .info1 .info-link li a .arr {
+    width: 1.3vw;
+    fill: #888888;
+    transition: fill 0.5s;
+}
+
+
+/* info1오버효과 */
+.sec1 .img .info1 .info-link li a:hover {
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.sec1 .img .info1 .info-link li a:hover::before {
+    width: 100%;
+    transition: all 0.5s;
+    background: #fff;
+}
+
+.sec1 .img .info1 .info-link li a:hover::after {
+    width: 0%;
+    transition: all 0.2s;
+}
+
+.sec1 .img .info1 .info-link li a:hover .arr {
+    fill: #fff;
+    transition: fill 0.5s;
+}

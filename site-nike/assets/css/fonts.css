@@ -1,0 +1,15 @@
+@font-face { 
+    font-family: 'BareunDotumPro1';
+    font-weight: 300;
+    src: url(../fonts/BareunDotumPro1.ttf);
+}
+@font-face { 
+    font-family: 'BareunDotumPro2';
+    font-weight: 400;
+    src: url(../fonts/BareunDotumPro2.ttf);
+}
+@font-face { 
+    font-family: 'BareunDotumPro3';
+    font-weight: 500;
+    src: url(../fonts/BareunDotumPro3.ttf);
+}

@@ -15,15 +15,17 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 }
 
 .infor4 a {
-   color: #32b67a;
-   border: 1px solid #32b67a;
+   color: #000;
+   border: 3px solid #000;
    border-radius: 30px;
-   padding: 5px 30px
+   padding: 5px 30px;
+   font-size: 1vw;
+   font-weight: 600;
 }
 
 
 .infor4 .modal {
-   background: rgba(0, 0, 0, 0.8);
+   background: rgba(240, 240, 240, 0.8);
    width: 100%;
    height: 100vh;
    margin: 0;
