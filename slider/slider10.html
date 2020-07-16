@@ -31,10 +31,11 @@
             list-style: none;
         }
 
-        body {
-            overflow: hidden;
-        }
+        body::-webkit-scrollbar {
 
+display:none;
+
+}
         #nav {
             position: fixed;
             left: 0;
@@ -379,7 +380,6 @@
         }
 
         /* slide-btn */
-        .slide-btn {}
 
         .slide-btn a {
             position: absolute;
@@ -477,7 +477,6 @@
             position: absolute;
             width: 30px;
             height: 30px;
-            border: 1px solid rgba(0, 0, 0, 0.4);
             border-radius: 50%;
             user-select: none;
             pointer-events: none;
@@ -527,7 +526,7 @@
 
 </head>
 
-<body>
+<body style=" -ms-overflow-style: none;">
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
