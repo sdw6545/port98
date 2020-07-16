@@ -35,7 +35,10 @@ function scrollAble() {
 setTimeout(function () {
     $(".sec1").addClass("show");
 }, 2000)
-
+$(".pre").hide()
+$(".pre1").show()
+$(".mtext").hide()
+$(".mtext1").show()
 // 메뉴
 $(".tab-menu > a").click(function (e) {
     e.preventDefault();
@@ -44,7 +47,13 @@ $(".tab-menu > a").click(function (e) {
     $(this).addClass("active");
     $(".pre").hide()
     $(".pre" + index).show()
+    $(".mtext").hide()
+    $(".mtext" + index).show()
 })
+
+
+
+
 // 테마
 $(".theme").click(function(e){
     e.preventDefault()
@@ -58,17 +67,22 @@ $(".modal-color a").click(function(){
     $(".modal-color a").removeClass("on");
     $(this).addClass("on");
 });
-$(".modal-color a:eq(0)").click(function(){
-    $("code").removeClass("owl monokai owlLight").addClass("owl")
-    $(".code-con").removeClass("owl monokai owlLight").addClass("owl")
-});
-$(".modal-color a:eq(1)").click(function(){
+
+$(".modal-color > a:nth-child(1)").click(function(){
     $("code").removeClass("owl monokai owlLight").addClass("monokai")
     $(".code-con").removeClass("owl monokai owlLight").addClass("monokai")
+    $(".modal-text").removeClass("owl monokai owlLight").addClass("monokai")
 });
-$(".modal-color a:eq(2)").click(function(){
+$(".modal-color > a:nth-child(2)").click(function(){
+    $("code").removeClass("owl monokai owlLight").addClass("owl")
+    $(".code-con").removeClass("owl monokai owlLight").addClass("owl")
+    $(".modal-text").removeClass("owl monokai owlLight").addClass("owl")
+});
+
+$(".modal-color > a:nth-child(3)").click(function(){
     $("code").removeClass("owl monokai owlLight").addClass("owlLight")
     $(".code-con").removeClass("owl monokai owlLight").addClass("owlLight")
+    $(".modal-text").removeClass("owl monokai owlLight").addClass("owlLight")
 });
 
 

@@ -6,7 +6,40 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 /* modal */
+@font-face {
+   font-family: 'S-CoreDream-2ExtraLight';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
 
+@font-face {
+   font-family: 'S-CoreDream-3Light';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'S-CoreDream-4Regular';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'S-CoreDream-5Medium';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'S-CoreDream-6Bold';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
 
 #modal {
    transform: scale(0);
@@ -18,8 +51,22 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    z-index: 1000;
 }
 
+
+
+
+
+/* 모달 배경*/
+#modal .modal-bg {
+   background-color: rgba(0, 0, 0, 0.9);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   position: relative;
+}
+
 /* 모달 닫는 박스 */
-#modal .click-box{
+#modal .click-box {
    width: 2.5vw;
    height: 2.5vw;
    position: absolute;
@@ -27,13 +74,14 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    top: 1vw;
    display: inline-block;
 }
+
 #modal .click {
    position: relative;
    left: 0;
    top: 50%;
    width: 2.5vw;
    height: 0.2vw;
-   background: #000;
+   background: #fff;
    transform: rotate(45deg);
 }
 
@@ -44,25 +92,17 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    content: '';
    width: 2.5vw;
    height: 0.2vw;
-   background: #000;
+   background: #fff;
    transform: rotate(-90deg);
 }
 
-/* 모달 배경*/
-#modal .modal-bg {
-   background-color: rgb(245, 227, 227);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100%;
-}
 
 
-
+/* 코드 컨텐츠 */
 #modal .modal-bg .modal-cont {
    position: relative;
    display: inline-block;
-   width: 50vw;
+   width: 60vw;
    height: 40vw;
    display: flex;
    border-radius: 10px;
@@ -71,16 +111,19 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 /* 코드영역 */
 #modal .modal-bg .modal-cont .code-con {
-   width: 50vw;
+   width: 60vw;
    height: 40vw;
    border-radius: 5px;
-   
-}
 
+}
+#modal .modal-bg .modal-cont .code-con .pre{
+   height: 37.5vw;
+   overflow-y: auto;
+}
 /* 메뉴 전체 박스 */
 .tab-menu {
    display: flex;
-   height: 3vw;
+   height: 2.5vw;
    position: relative;
 }
 
@@ -115,15 +158,16 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .tab-menu a {
    font-size: 1vw;
    padding: 0 2.7vw;
-   line-height: 3vw;
-   font-weight: 600;
+   line-height: 2.5vw;
+   font-weight: 400;
 
 }
 
 .tab-menu a:nth-child(3) {
    border: none;
 }
-.code-con .tab-menu > a.active {
+
+.code-con .tab-menu>a.active {
    background: #062743;
    color: #CFDBE4;
 }
@@ -135,13 +179,15 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    top: 0;
    padding: 0 2vw;
    font-size: 1vw;
-   line-height: 3vw;
-   font-weight: 600;
+   line-height: 2.5vw;
+   font-weight: 400;
    z-index: 5;
 }
-.tab-menu .theme.on{
+
+.tab-menu .theme.on {
    color: #CFDBE4;
 }
+
 .tab-menu .theme:hover {
    color: #CFDBE4;
 }
@@ -153,7 +199,9 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 .tab-menu .modal-color {
    display: none;
-   position: absolute; right: 1vw;top: 3vw;
+   position: absolute;
+   right: 1vw;
+   top: 2vw;
    z-index: 1000;
 
    border-radius: 10px;
@@ -165,25 +213,78 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .tab-menu .modal-color a {
    display: block;
    border: none;
-   padding: 0 3vw; 
+   padding: 0 3vw;
    line-height: 3vw;
    font-size: 1.5vw;
-   font-weight: 400;
+   font-weight: 200;
    text-align: left;
    text-transform: none;
 }
-.tab-menu .modal-color a:hover{
-   position: relative; z-index: 10;
+
+.tab-menu .modal-color a:hover {
+   position: relative;
+   z-index: 10;
    margin: -3px;
 }
-.tab-menu .modal-color a.on{
+
+.tab-menu .modal-color a.on {
    position: relative;
 }
-.tab-menu .modal-color a.on::before{
-   position: absolute; left: 0.5vw; top: 1.3vw;
+
+.tab-menu .modal-color a.on::before {
+   position: absolute;
+   left: 0.5vw;
+   top: 1.3vw;
    content: '';
-   width: 1.5vw;height: 0.2vw;
+   width: 1.5vw;
+   height: 0.2vw;
 }
+
+
+/* modal-text */
+.modal-text {
+   margin-left: 2vw;
+   width: 20vw; height: 40vw;
+   padding: 2vw;
+   border-radius: 5px;
+   text-align: left;
+   position: relative;
+}
+
+.modal-text h3 {
+   font-size: 2vw;
+   font-family: 'S-CoreDream-6Bold','Poppins', sans-serif;
+   font-weight: 600;
+   margin-bottom: 1vw;
+}
+
+.modal-text p {
+   
+   font-size: 1vw;
+   word-break: break-all;
+   font-family: 'S-CoreDream-2ExtraLight';
+   font-weight: 200;
+   line-height: 1.8vw;
+   text-align: justify;
+}
+/* 사이트 가기 */
+.view a{
+   position: absolute;
+   left: 1vw;
+   bottom: 1vw;
+   font-size: 1vw;
+   padding: 0.5vw 4vw;
+   line-height: 2vw;
+   font-weight: 500;
+}
+
+
+
+
+
+
+
+
 
 #modal.one {
    transform: scaley(0.005) scalex(0);
@@ -230,7 +331,17 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 #modal.one.out .modal-bg .modal-cont {
    transform: scale(0);
-   animation: zoomOut 1s  cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+   animation: zoomOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+#modal.one .modal-bg .modal-text {
+   transform: scale(0);
+   animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+#modal.one.out .modal-bg .modal-text {
+   transform: scale(0);
+   animation: zoomOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
 }
 
 @keyframes zoomIn {
@@ -257,159 +368,276 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 /* 테마 클릭시 색 변경 */
 /* owl */
-.code-con.owl .tab-menu {background: #01111D;    border-bottom: 0.1vw solid  rgba(255, 255, 255, 0.08);
+.code-con.owl .tab-menu {
+   background: #01111D;
+   border-bottom: 0.1vw solid rgba(255, 255, 255, 0.08);
 }
 
 /* 메뉴 전체 박스 */
-.code-con.owl .tab-menu > a{
+.code-con.owl .tab-menu>a {
    color: #5F7E97;
 
-   border-left: 0.1vw solid  rgba(255, 255, 255, 0.08);
-   border-right: 0.1vw solid  rgba(255, 255, 255, 0.08);
+   border-left: 0.1vw solid rgba(255, 255, 255, 0.08);
+   border-right: 0.1vw solid rgba(255, 255, 255, 0.08);
 }
-.code-con.owl .tab-menu > a:nth-child(3) {border: none;}
-.code-con.owl .tab-menu > a:hover {background: #062743;
-   color:#CFDBE4;}
-.code-con.owl .tab-menu > a.active {
-      background: #062743;
-      color: #CFDBE4;
+
+.code-con.owl .tab-menu>a:nth-child(3) {
+   border: none;
 }
+
+.code-con.owl .tab-menu>a:hover {
+   background: #062743;
+   color: #CFDBE4;
+}
+
+.code-con.owl .tab-menu>a.active {
+   background: #062743;
+   color: #CFDBE4;
+}
+
 /* 테마 */
-.code-con.owl .tab-menu .theme{
+.code-con.owl .tab-menu .theme {
    color: #5F7E97;
 }
-.code-con.owl .tab-menu .theme.on{
+
+.code-con.owl .tab-menu .theme.on {
    color: #CFDBE4;
    background: #072339;
 }
+
 .code-con.owl .tab-menu .theme:hover {
    background: #072339;
    color: #CFDBE4;
 }
 
-.code-con.owl .tab-menu .modal-color{background-color: #092E4B;border: 0.1vw solid  rgba(255, 255, 255, 0.08);}
-.code-con.owl .tab-menu .modal-color > a{
+.code-con.owl .tab-menu .modal-color {
+   background-color: #092E4B;
+   border: 0.1vw solid rgba(255, 255, 255, 0.08);
+}
+
+.code-con.owl .tab-menu .modal-color>a {
    color: #CFDBE4;
    background: #092E4B;
 }
-.code-con.owl .tab-menu .modal-color > a:hover{
+
+.code-con.owl .tab-menu .modal-color>a:hover {
    border: 3px solid #008FFF;
    background: rgba(255, 255, 255, 0.04);
 }
-.code-con.owl .tab-menu .modal-color > a.on{
+
+.code-con.owl .tab-menu .modal-color>a.on {
    color: #CFDBE4;
 }
-.code-con.owl .tab-menu .modal-color a.on::before{background: #CFDBE4;}
+
+.code-con.owl .tab-menu .modal-color a.on::before {
+   background: #CFDBE4;
+}
+
 /* 코드전체 */
 .code-con.owl pre[class*="language-"] {
    background: #011627;
 }
-
+.code-con.owl .pre{
+   background: #011627;
+}
+/* modal-text  */
+.modal-text.owl {
+   background: #011627;
+}
+.modal-text.owl h3{
+   color: #CFDBE4;
+}
+.modal-text.owl p{
+   color: #CFDBE4;
+}
+.modal-text.owl .view a{
+   background: #fff;
+   color: #000;
+}
 
 
 /* monokai */
-.code-con.monokai .tab-menu {background: #21252B;    border-bottom: 0.1vw solid  #282C34;
+.code-con.monokai .tab-menu {
+   background: #21252B;
+   border-bottom: 0.1vw solid #282C34;
 }
 
 /* 메뉴 전체 박스 */
-.code-con.monokai .tab-menu > a{
-   color:#8E9093;
+.code-con.monokai .tab-menu>a {
+   color: #8E9093;
 
-   border-left: 0.1vw solid  #282C34;
-   border-right: 0.1vw solid  #282C34;
+   border-left: 0.1vw solid #282C34;
+   border-right: 0.1vw solid #282C34;
 }
-.code-con.monokai .tab-menu > a:nth-child(3) {border: none;}
-.code-con.monokai .tab-menu > a:hover {background: #383E4A;
-   color:#fff;}
-.code-con.monokai .tab-menu > a.active {
-      background: #383E4A;
-      color: #fff;
+
+.code-con.monokai .tab-menu>a:nth-child(3) {
+   border: none;
 }
+
+.code-con.monokai .tab-menu>a:hover {
+   background: #383E4A;
+   color: #fff;
+}
+
+.code-con.monokai .tab-menu>a.active {
+   background: #383E4A;
+   color: #fff;
+}
+
 /* 테마 */
-.code-con.monokai .tab-menu .theme{
+.code-con.monokai .tab-menu .theme {
    color: #8E9093;
 }
-.code-con.monokai .tab-menu .theme.on{
+
+.code-con.monokai .tab-menu .theme.on {
    color: #fff;
    background: #383E4A;
-   
+
 }
+
 .code-con.monokai .tab-menu .theme:hover {
    background: #383E4A;
    color: #fff;
 }
 
-.code-con.monokai .tab-menu .modal-color{background-color: #485061;border: 0.1vw solid  rgba(255, 255, 255, 0.08);}
-.code-con.monokai .tab-menu .modal-color > a{
+.code-con.monokai .tab-menu .modal-color {
+   background-color: #485061;
+   border: 0.1vw solid rgba(255, 255, 255, 0.08);
+}
+
+.code-con.monokai .tab-menu .modal-color>a {
    color: #CFDBE4;
 }
-.code-con.monokai .tab-menu .modal-color > a:hover{
+
+.code-con.monokai .tab-menu .modal-color>a:hover {
    border: 3px solid #00B8F2;
    background: rgba(255, 255, 255, 0.03);
 }
-.code-con.monokai .tab-menu .modal-color > a.on{
+
+.code-con.monokai .tab-menu .modal-color>a.on {
    color: #CFDBE4;
-   
+
 }
-.code-con.monokai .tab-menu .modal-color a.on::before{background: #CFDBE4;}
+
+.code-con.monokai .tab-menu .modal-color a.on::before {
+   background: #CFDBE4;
+}
+
 /* 코드 전체 */
 .code-con.monokai pre[class*="language-"] {
    background: #282C34;
 }
+.code-con.monokai .pre{
+   background: #282C34;
+}
+
+/* modal-text  */
+.modal-text.monokai {
+   background: #282C34;
+}
+.modal-text.monokai h3{
+   color: #CFDBE4;
+}
+.modal-text.monokai p{
+   color: #CFDBE4;
+}
+.modal-text.monokai .view a{
+   background: #fff;
+   color: #000;
+}
+
+
 
 
 
 
 /* owlLight */
-.code-con.owlLight .tab-menu {background: #F0F0F0;    border-bottom: 0.1vw solid  rgba(240, 240, 240, 0.01);
+.code-con.owlLight .tab-menu {
+   background: #F0F0F0;
+   border-bottom: 0.1vw solid rgba(240, 240, 240, 0.01);
 }
 
 /* 메뉴 전체 박스 */
-.code-con.owlLight .tab-menu > a{
+.code-con.owlLight .tab-menu>a {
    color: #403F53;
 
-   border-left: 0.1vw solid  rgba(240, 240, 240, 0.01);
-   border-right: 0.1vw solid  rgba(240, 240, 240, 0.01);
+   border-left: 0.1vw solid rgba(240, 240, 240, 0.01);
+   border-right: 0.1vw solid rgba(240, 240, 240, 0.01);
 }
-.code-con.owlLight .tab-menu > a:nth-child(3) {border: none;}
-.code-con.owlLight .tab-menu > a:hover {background: #F8F8F8;
-   color:#403F53;}
-.code-con.owlLight .tab-menu > a.active {
-      background: #F8F8F8;
-      color: #403F53;
+
+.code-con.owlLight .tab-menu>a:nth-child(3) {
+   border: none;
 }
+
+.code-con.owlLight .tab-menu>a:hover {
+   background: #F8F8F8;
+   color: #403F53;
+}
+
+.code-con.owlLight .tab-menu>a.active {
+   background: #F8F8F8;
+   color: #403F53;
+}
+
 /* 테마 */
-.code-con.owlLight .tab-menu .theme{
+.code-con.owlLight .tab-menu .theme {
    color: #2B3033;
 }
-.code-con.owlLight .tab-menu .theme.on{
+
+.code-con.owlLight .tab-menu .theme.on {
    color: #403F53;
    background: #F6F6F6;
 }
+
 .code-con.owlLight .tab-menu .theme:hover {
    background: #F6F6F6;
    color: #403F53;
 }
 
-.code-con.owlLight .tab-menu .modal-color{background-color: #FFFFFF;border: 0.1vw solid  #E1E1E1;}
-.code-con.owlLight .tab-menu .modal-color > a{
+.code-con.owlLight .tab-menu .modal-color {
+   background-color: #FFFFFF;
+   border: 0.1vw solid #E1E1E1;
+}
+
+.code-con.owlLight .tab-menu .modal-color>a {
    color: #2B3033;
    background: #fff;
 }
-.code-con.owlLight .tab-menu .modal-color > a:hover{
+
+.code-con.owlLight .tab-menu .modal-color>a:hover {
    border: 3px solid #4876D6;
    background: rgba(255, 255, 255, 0.03);
 }
-.code-con.owlLight .tab-menu .modal-color > a.on{
+
+.code-con.owlLight .tab-menu .modal-color>a.on {
    color: #2B3033;
 }
-.code-con.owlLight .tab-menu .modal-color a.on::before{background: #2B3033;}
+
+.code-con.owlLight .tab-menu .modal-color a.on::before {
+   background: #2B3033;
+}
+
 /* 코드전체 */
 .code-con.owlLight pre[class*="language-"] {
    background: #FBFBFB;
 }
-
-
+.code-con.owlLight .pre{
+   background: #FBFBFB;
+}
+/* modal-text  */
+.modal-text.owlLight {
+   background: #FBFBFB;
+}
+.modal-text.owlLight h3{
+   color: #2B3033;
+}
+.modal-text.owlLight p{
+   color: #2B3033;
+}
+.modal-text.owlLight .view a{
+   background: #000;
+   color: #fff;
+}
 
 
 
@@ -427,12 +655,9 @@ pre[class*="language-"] {
    word-break: normal;
    word-wrap: normal;
    line-height: 1.5;
-   height: 37vw;
-
    -moz-tab-size: 4;
    -o-tab-size: 4;
    tab-size: 4;
-
    -webkit-hyphens: none;
    -moz-hyphens: none;
    -ms-hyphens: none;
@@ -442,7 +667,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
    padding-top: 1vw;
-   overflow: auto;
+
 }
 
 
@@ -451,7 +676,7 @@ pre[class*="language-"] {
    padding: .1em;
    border-radius: .3em;
    white-space: normal;
-   
+
 }
 
 
@@ -497,20 +722,21 @@ pre[class*="language-"].line-numbers>code {
    padding-right: 0.8em;
    text-align: right;
 }
+
 /* Owl */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #8292a2;
+   color: #8292a2;
 }
 
 .token.punctuation {
-	color: #ecad1b;
+   color: #ecad1b;
 }
 
 .token.namespace {
-	opacity: .7;
+   opacity: .7;
 }
 
 .token.property,
@@ -518,12 +744,12 @@ pre[class*="language-"].line-numbers>code {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
+   color: #f92672;
 }
 
 .token.boolean,
 .token.number {
-	color: #ae81ff;
+   color: #ae81ff;
 }
 
 .token.selector,
@@ -532,7 +758,7 @@ pre[class*="language-"].line-numbers>code {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+   color: #a6e22e;
 }
 
 .token.operator,
@@ -541,35 +767,36 @@ pre[class*="language-"].line-numbers>code {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #f8f8f2;
+   color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: #e6db74;
+   color: #e6db74;
 }
 
 .token.keyword {
-	color: #66d9ef;
+   color: #66d9ef;
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+   color: #fd971f;
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+   font-weight: bold;
 }
+
 .token.italic {
-	font-style: italic;
+   font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+   cursor: help;
 }
 
 /* monokai */
@@ -577,22 +804,24 @@ pre[class*="language-"].line-numbers>code {
 .monokai .token.prolog,
 .monokai .token.doctype,
 .monokai .token.cdata {
-	color: hsl(0, 0%, 47%); /* #777777 */
+   color: hsl(0, 0%, 47%);
+   /* #777777 */
 }
 
 .monokai .token.punctuation {
-	opacity: .7;
+   opacity: .7;
 }
 
 .monokai .token.namespace {
-	opacity: .7;
+   opacity: .7;
 }
 
 .monokai .token.tag,
 .monokai .token.boolean,
 .monokai .token.number,
 .monokai .token.deleted {
-	color: hsl(14, 58%, 55%); /* #CF6A4C */
+   color: hsl(14, 58%, 55%);
+   /* #CF6A4C */
 }
 
 .monokai .token.keyword,
@@ -601,7 +830,8 @@ pre[class*="language-"].line-numbers>code {
 .monokai .token.constant,
 .monokai .token.symbol,
 .monokai .token.builtin {
-	color: hsl(53, 89%, 79%); /* #F9EE98 */
+   color: hsl(53, 89%, 79%);
+   /* #F9EE98 */
 }
 
 .monokai .token.attr-name,
@@ -615,37 +845,40 @@ pre[class*="language-"].line-numbers>code {
 .monokai .style .token.string,
 .monokai .token.variable,
 .monokai .token.inserted {
-	color: hsl(76, 21%, 52%); /* #8F9D6A */
+   color: hsl(76, 21%, 52%);
+   /* #8F9D6A */
 }
 
 .monokai .token.atrule {
-	color: hsl(218, 22%, 55%); /* #7587A6 */
+   color: hsl(218, 22%, 55%);
+   /* #7587A6 */
 }
 
 .monokai .token.regex,
 .monokai .token.important {
-	color: hsl(42, 75%, 65%); /* #E9C062 */
+   color: hsl(42, 75%, 65%);
+   /* #E9C062 */
 }
 
 /* Owl Light */
 .owlLight code[class*="language-"],
 .owlLight pre[class*="language-"] {
-	color: #ff8303;
+   color: #ff8303;
 }
 
 .owlLight .token.comment,
 .owlLight .token.prolog,
 .owlLight .token.doctype,
 .owlLight .token.cdata {
-	color: slategray;
+   color: slategray;
 }
 
 .owlLight .token.punctuation {
-	color: #999;
+   color: #999;
 }
 
 .owlLight .token.namespace {
-	opacity: .7;
+   opacity: .7;
 }
 
 .owlLight .token.property,
@@ -655,7 +888,7 @@ pre[class*="language-"].line-numbers>code {
 .owlLight .token.constant,
 .owlLight .token.symbol,
 .owlLight .token.deleted {
-	color: #905;
+   color: #905;
 }
 
 .owlLight .token.selector,
@@ -664,7 +897,7 @@ pre[class*="language-"].line-numbers>code {
 .owlLight .token.char,
 .owlLight .token.builtin,
 .owlLight .token.inserted {
-	color: #690;
+   color: #690;
 }
 
 .owlLight .token.operator,
@@ -672,22 +905,22 @@ pre[class*="language-"].line-numbers>code {
 .owlLight .token.url,
 .owlLight .language-css .token.string,
 .owlLight .style .token.string {
-	color: #9a6e3a;
+   color: #9a6e3a;
 }
 
 .owlLight .token.atrule,
 .owlLight .token.attr-value,
 .owlLight .token.keyword {
-	color: #07a;
+   color: #07a;
 }
 
 .owlLight .token.function,
 .owlLight .token.class-name {
-	color: #DD4A68;
+   color: #DD4A68;
 }
 
 .owlLight .token.regex,
 .owlLight .token.important,
 .owlLight .token.variable {
-	color: #e90;
+   color: #e90;
 }

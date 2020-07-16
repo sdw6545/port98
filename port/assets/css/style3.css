@@ -32,6 +32,20 @@
     font-weight: normal;
     font-style: normal;
 }
+/* 스크롤값 */
+/* .info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    z-index: 10000;
+    font-style: normal;
+} */
+
 
 /* layout */
 body {
@@ -183,12 +197,13 @@ body {
     width: 10vw;
     margin: 0 auto;
     padding-top: 4vw;
-
+    opacity: 0;
 
 }
 
 .sec1 .img .info1 .info-text {
     margin-bottom: 1vw;
+    opacity: 0;
 }
 
 
@@ -200,6 +215,7 @@ body {
     margin-top: 1vw;
     text-transform: none;
     border-top: 1px solid #fff;
+    opacity: 0;
 }
 
 .sec1 .img .info1 .info-link li a {
@@ -556,7 +572,7 @@ body {
 .sec3 .col1 .col1-box.st6 {
     transform: translate3d(-120%, -50%, 50vw);
     font-size: 4vw;
-    line-height: 2.5vw;
+    line-height: 2.8vw;
     color: #1B8567;
     z-index: 1;
     
@@ -574,7 +590,7 @@ body {
 .sec3 .col1 .col1-box.st6 .st6-te {
     font-weight: 800;
     z-index: 100;
-    line-height: 4vw;
+    line-height: 5vw;
 }
 
 .sec3 .col1 .col1-box.st7 {
@@ -632,13 +648,13 @@ body {
 .sec3 .col2 .col2-box.st6 {
     transform: translate3d(-120%, -50%, 50vw);
     font-size: 4vw;
-    line-height: 2.5vw;
+    line-height: 2.8vw;
     color: #C85452;
 }
 
 .sec3 .col2 .col2-box.st6 .st6-te {
     font-weight: 800;
-    line-height: 4vw;
+    line-height: 5vw;
 }
 
 .sec3 .col2 .col2-box.st6 .btn2 {
@@ -705,13 +721,13 @@ body {
 .sec3 .col3 .col3-box.st6 {
     transform: translate3d(-120%, -50%, 50vw);
     font-size: 4vw;
-    line-height: 2.5vw;
+    line-height: 2.8vw;
     color: #519B87;
 }
 
 .sec3 .col3 .col3-box.st6 .st6-te {
     font-weight: 800;
-    line-height: 4vw;
+    line-height: 5vw;
 }
 
 .sec3 .col3 .col3-box.st6 .btn3 {
@@ -779,7 +795,7 @@ body {
 .sec3 .col4 .col4-box.st6 {
     transform: translate3d(-120%, -50%, 100px);
     font-size: 4vw;
-    line-height: 2.5vw;
+    line-height: 2.8vw;
     color: #FFE600;
     z-index: 5000;
 
@@ -787,7 +803,7 @@ body {
 
 .sec3 .col4 .col4-box.st6 .st6-te {
     font-weight: 800;
-    line-height: 4vw;
+    line-height: 5vw;
 }
 
 .sec3 .col4 .col4-box.st6 .btn4 {
@@ -821,7 +837,7 @@ body {
 }
 
 /* 배경 글씨 */
-#section4 .sec4 p {
+#section4 .sec4 h2 > p {
     width: 100%;
     height: 20vh;
     color: #fff;
@@ -907,6 +923,7 @@ body {
     height: 5vh;
     padding: 1vw;
     font-size: 1vw;
+    margin: 1.5vw 0;
 }
 
 #message {
