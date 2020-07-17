@@ -1,14 +1,20 @@
 for (let i = 0; i <= 10; i++) {
     $(".modal-btn0" + i).click(function (e) {
         e.preventDefault();
-
         $(".modal0" + i).removeClass("one out").addClass("one");
+        $(".first").addClass("active")
+        $(".pre").hide()
+        $(".pre1").show()
+        $(".mtext").hide()
+        $(".mtext1").show()
         scrollDisable();
     });
 
     $(".click-box").click(function (e) {
         e.preventDefault();
         $(".modal0" + i).addClass("out");
+        $(".tab-menu a").removeClass("active")
+    
         scrollAble();
     });
 
@@ -35,10 +41,7 @@ function scrollAble() {
 setTimeout(function () {
     $(".sec1").addClass("show");
 }, 2000)
-$(".pre").hide()
-$(".pre1").show()
-$(".mtext").hide()
-$(".mtext1").show()
+
 // 메뉴
 $(".tab-menu > a").click(function (e) {
     e.preventDefault();
@@ -49,6 +52,7 @@ $(".tab-menu > a").click(function (e) {
     $(".pre" + index).show()
     $(".mtext").hide()
     $(".mtext" + index).show()
+    console.log(index);
 })
 
 

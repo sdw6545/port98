@@ -268,14 +268,15 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    text-align: justify;
 }
 /* 사이트 가기 */
-.view a{
+.view{
    position: absolute;
    left: 1vw;
-   bottom: 1vw;
-   font-size: 1vw;
-   padding: 0.5vw 4vw;
-   line-height: 2vw;
-   font-weight: 500;
+   bottom: 2vw;
+}
+.view a{
+   font-size: 0.8vw;
+   font-family: 'S-CoreDream-4Regular';
+   padding: 0.5vw 2vw;
 }
 
 

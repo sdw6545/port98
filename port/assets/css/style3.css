@@ -860,13 +860,16 @@ body {
 
 /* 스크립트 */
 #section4 .sec4 .sec4-col1 {
-    width: 61vw;
-    height: 82vh;
     position: absolute;
     left: 100%;
     top: 50%;
     transform: translate(0%, -50%);
 }
+#section4 .sec4 .sec4-col1 iframe {
+ padding: 7% 0;
+}
+
+
 
 /* 소스보기 */
 #section4 .sec4 .modal-btn a {
@@ -894,49 +897,65 @@ body {
 }
 
 .sec5 h2 {
-    margin-top: 10vh;
+    margin: 10vh 0;
     font-size: 8vw;
     color: #fff;
     font-weight: 800;
     line-height: 1;
     text-align: center;
 }
-
-.form {
-    position: absolute;
-    left: 50%;
-    top: 50vh;
-    transform: translate(-50%, -50%);
-    width: 60vw;
+.contact{
+    width: 55vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 
 }
 
-#full-name {
-    width: 60vw;
+.form{
+   width: 30vw;
+}
+#full-name{
+    display: block;
+    width: 30vw;
     height: 5vh;
-    padding: 1vw;
     font-size: 1vw;
-}
+    padding: 1vw;
 
-#email-address {
-    width: 60vw;
+}
+#email-address{
+    display: block;
+    width: 30vw;
     height: 5vh;
-    padding: 1vw;
+    margin: 1vw 0;
     font-size: 1vw;
-    margin: 1.5vw 0;
+    padding: 1vw;
 }
-
-#message {
-    width: 60vw;
+#message{
+    display: block;
+    width: 30vw;
     height: 30vh;
     padding: 1vw;
     font-size: 1vw;
 }
-
-.submit {
-    width: 20vw;
-    height: 5vh;
+.submit{
     margin-top: 1vw;
-    font-size: 1vw;
-
+    padding: 1vw 3vw;
+}
+.email{
+    margin-left: 2vw;
+    width: 23vw;
+}
+.email h2{
+    font-size: 4vw;
+    padding: 0;
+    margin: -0.5vw 0 0;
+    font-weight: 400;
+    text-align: left;
+}
+.email h3{
+    color: #fff;
+    font-size: 2vw;
+    margin: 1vw 0;
+    font-family: 'S-CoreDream-2ExtraLight';
 }

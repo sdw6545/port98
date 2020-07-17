@@ -693,7 +693,6 @@ display:none;
         //글자 분할
         slide.each(function () {
             let txt = $(this).find(".stext > h2").text();
-            console.log(txt)
             let split = txt.split("").join("</span><span aria-hidden='true'>");
             split = "<span aria-hidden='true'>" + split + "</span>";
             $(this).find(".stext > h2").html(split).attr("aria-lable", txt);

@@ -22,10 +22,10 @@
             <div class="sec1">
                 <span class="splice mt">Open to select my project</span>
                 <h1 class="h1txt">
-                    <p class="splice mt1">KIM YONG TAE</p>
-                    <p class="splice mt2">PUBLISHER</p>
-                    <p class="splice mt3">SEOUL KOREAN</p>
-                    <p class="splice mt4">23 YEARS OLD</p>
+                    <span class="splice mt1">KIM YONG TAE</span>
+                    <span class="splice mt2">PUBLISHER</span>
+                    <span class="splice mt3">SEOUL KOREAN</span>
+                    <span class="splice mt4">23 YEARS OLD</span>
                 </h1>
                 <!-- //제목 -->
                 <div class="img">
@@ -130,52 +130,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/gsap.min.js"></script>
     <script>
-        //시작시 gasp 효과
-        setTimeout(function () {
-            gsap.to(".sec1 .mt span", {
-                top: 0,
-                duration: 1,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt1 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 1,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt2 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 2,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt3 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 3,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt4 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 4,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-
-        }, 2000);
-        
-         //글씨 쪼깨기
-         $(".splice").each(function () {
-            let txt = $(this).text();
-            let split = txt.split("").join("</span><span aria-hidden='true'>");
-            split = "<span aria-hidden='true'>" + split + "</span>";
-            $(this).html(split).attr("aria-label", txt);
-        });
+       
     </script>
 </body>
 </html>
