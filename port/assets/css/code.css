@@ -14,32 +14,14 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 }
 
 @font-face {
-   font-family: 'S-CoreDream-3Light';
-   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-}
-
-@font-face {
    font-family: 'S-CoreDream-4Regular';
    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
    font-weight: normal;
    font-style: normal;
 }
 
-@font-face {
-   font-family: 'S-CoreDream-5Medium';
-   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-}
 
-@font-face {
-   font-family: 'S-CoreDream-6Bold';
-   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-}
+
 
 #modal {
    transform: scale(0);
@@ -48,7 +30,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    top: 0;
    width: 100vw;
    height: 100vh;
-   z-index: 1000;
+   z-index: 5000000;
 }
 
 
@@ -158,7 +140,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .tab-menu a {
    font-size: 1vw;
    padding: 0 2.7vw;
-   line-height: 2.5vw;
+   line-height: 2.7vw;
    font-weight: 400;
 
 }
@@ -238,6 +220,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
    content: '';
    width: 1.5vw;
    height: 0.2vw;
+   display: inline-block;
 }
 
 
@@ -270,13 +253,19 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 /* 사이트 가기 */
 .view{
    position: absolute;
-   left: 1vw;
+   left: 0;
    bottom: 2vw;
+   width: 20vw;
+   display: flex;
+   justify-content: space-around;
 }
 .view a{
+   text-align: center;
+   height: 2.5vw;
+   line-height: 2.5vw;
+   width: 8vw;
    font-size: 0.8vw;
    font-family: 'S-CoreDream-4Regular';
-   padding: 0.5vw 2vw;
 }
 
 
@@ -377,13 +366,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 /* 메뉴 전체 박스 */
 .code-con.owl .tab-menu>a {
    color: #5F7E97;
-
-   border-left: 0.1vw solid rgba(255, 255, 255, 0.08);
-   border-right: 0.1vw solid rgba(255, 255, 255, 0.08);
-}
-
-.code-con.owl .tab-menu>a:nth-child(3) {
-   border: none;
 }
 
 .code-con.owl .tab-menu>a:hover {
@@ -466,13 +448,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 /* 메뉴 전체 박스 */
 .code-con.monokai .tab-menu>a {
    color: #8E9093;
-
-   border-left: 0.1vw solid #282C34;
-   border-right: 0.1vw solid #282C34;
-}
-
-.code-con.monokai .tab-menu>a:nth-child(3) {
-   border: none;
 }
 
 .code-con.monokai .tab-menu>a:hover {
@@ -561,13 +536,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 /* 메뉴 전체 박스 */
 .code-con.owlLight .tab-menu>a {
    color: #403F53;
-
-   border-left: 0.1vw solid rgba(240, 240, 240, 0.01);
-   border-right: 0.1vw solid rgba(240, 240, 240, 0.01);
-}
-
-.code-con.owlLight .tab-menu>a:nth-child(3) {
-   border: none;
 }
 
 .code-con.owlLight .tab-menu>a:hover {
@@ -924,4 +892,43 @@ pre[class*="language-"].line-numbers>code {
 .owlLight .token.important,
 .owlLight .token.variable {
    color: #e90;
+}
+
+
+@media (max-width: 800px){
+   #modal .modal-bg {
+      display: inline-block;
+   }
+   #modal .click-box{width: 5vw;height: 5vw; left: 90vw; top: 2vw;}
+   #modal .click{width: 5vw;height: 0.5vw; }
+   #modal .click::before{width: 5vw;height: 0.5vw;}
+   #modal .modal-bg .modal-cont{
+      top: 30%;
+      width: 95vw;
+   }
+   #modal .modal-bg .modal-cont .code-con {
+      width: 95vw;
+      height: 40vw;
+   }
+   .tab-menu{height: 5vw;}
+   .tab-menu a {font-size: 2.5vw; line-height: 5vw;}
+   .modal-text{width: 95vw;margin-left: 0; margin-top: 3vw; top: 30%; }
+   .modal-text h3{font-size: 3vw; line-height: 3vw;}
+   .modal-text p{font-size: 2vw; line-height: 3vw;}
+   .view {width: 100%;}
+   .view a {width: 30vw; height: 5vw; font-size: 1.5vw;line-height: 5vw;}
+   .tab-menu .theme{font-size: 2.5vw; line-height: 5vw;}
+   .tab-menu .modal-color{width: 25vw;top: 4vw; }
+   .tab-menu .modal-color a{font-size: 2.5vw; line-height: 5vw;}
+   .tab-menu .modal-color a.on{}
+   .code-con .tab-menu .modal-color a.on::before{display:none;}
+
+   .tab-menu .theme .fas{
+      line-height: 5vw;
+
+   }
+   code[class*="language-"],
+   pre[class*="language-"]{
+      font-size: 2vw;
+   }
 }

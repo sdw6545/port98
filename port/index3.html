@@ -23,6 +23,24 @@
 </head>
 
 <body>
+   
+   
+   
+    <!-- progress -->
+    <div class="progress" id ="progress">
+		<span class="progress-text"></span> 
+        <div id="loader">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+          </div> 
+    </div>
+    <!-- // progress -->
+   
     <!-- <div class="info">
     <span>scrollTop():<strong class="scrollTop">0</strong>px</span><br>
     </div> -->
@@ -909,8 +927,8 @@
                         <!-- //modal-cont -->
                         <div class="modal-text monokai">
                             <div class="mtext1 mtext">
-                                <h3>SVG 애니메이션</h3>
-                                <p>SVG를 이용하여 애니메이션을 만들었습니다.</p>
+                                <h3>NAVER 사이트</h3>
+                                <p>SVG를 이용하여 애니메이션을 만들었습니다. (수정중인 사이트입니다.)</p>
                             </div>
                                 <div class="view"><a href="https://github.com/sdw6545/port98/tree/master/naver" target="blank">전체 코드</a>
                                     <a href="../naver/index.html" target="blank">사이트 보기</a>
@@ -1009,7 +1027,7 @@
                         <!-- //modal-cont -->
                         <div class="modal-text monokai">
                             <div class="mtext1 mtext">
-                                <h3>animate</h3>
+                                <h3>농심사이트</h3>
                                 <p>https://animate.style/ 에서 효과를 가져와서 적용시켰습니다.</p>
                             </div>
                             <div class="view"><a href="https://github.com/sdw6545/port98/tree/master/nongshim" target="blank">전체 코드</a>
@@ -1143,33 +1161,33 @@
                 data-19200="left:0%" 
                 data-21900="left:-110%">
                     <div class="col4-box st1" 
-                        data-17600="transform: translate3d(30%,-40%,5vw)"
-                        data-19200="transform: translate3d(-60%,-40%,5vw)"
-                        data-21800="transform: translate3d(-170%,-40%,5vw)"
+                        data-17600="transform: translate3d(30%,-40%,5px)"
+                        data-19200="transform: translate3d(-60%,-40%,5px)"
+                        data-21800="transform: translate3d(-170%,-40%,5px)"
                         >
                         <img src="assets/img/col4/aaa.png" alt="이질감 이미지"></div>
                     <div class="col4-box st2" 
-                        data-17600="transform: translate3d(-20%,-50%,2vw);"
-                        data-19200="transform: translate3d(-50%,-50%,2vw);"
-                        data-21800="transform: translate3d(-80%,-50%,2vw);"
+                        data-17600="transform: translate3d(-20%,-50%,-2px);"
+                        data-19200="transform: translate3d(-50%,-50%,-2px);"
+                        data-21800="transform: translate3d(-80%,-50%,-2px);"
                         >
                         <img src="assets/img/col4/aaa1.png" alt="이질감 이미지"></div>
                     <div class="col4-box st2-1" 
-                        data-17600="transform: translate3d(-90%,-50%,-3vw);"
-                        data-19200="transform: translate3d(-45%,-50%,-3vw);"
-                        data-21800="transform: translate3d(0%,-50%,-3vw);"
+                        data-17600="transform: translate3d(-90%,-50%,-3px);"
+                        data-19200="transform: translate3d(-45%,-50%,-3px);"
+                        data-21800="transform: translate3d(0%,-50%,-3px);"
                         >
                         <img src="assets/img/col4/aaa4.png" alt="이질감 이미지"></div>
                     <div class="col4-box st3" 
-                        data-17600="transform: translate3d(350%,40%,10vw);"
-                        data-19200="transform: translate3d(45%,40%,10vw);"
-                        data-21800="transform: translate3d(-305%,40%,10vw);"
+                        data-17600="transform: translate(350%,40%);"
+                        data-19200="transform: translate(45%,40%);"
+                        data-21800="transform: translate(-305%,40%);"
                         >
                         <img src="assets/img/col4/aaa2.png" alt="이질감 이미지"></div>
                     <div class="col4-box st4" 
-                        data-17600="transform: translate3d(50%,-10%,10vw);"
-                        data-19200="transform: translate3d(-140%,-10%,10vw);"
-                        data-21800="transform: translate3d(-330%,-10%,10vw);"
+                        data-17600="transform: translate(50%,-10%);"
+                        data-19200="transform: translate(-140%,-10%);"
+                        data-21800="transform: translate(-330%,-10%);"
                         >
                         <img src="assets/img/col4/aaa3.png" alt="이질감 이미지"></div>
                     <div class="col4-box st5" 
@@ -1543,9 +1561,7 @@ $(window).scroll(function () {
                                         <span></span>
                                         <span></span>
                                     </div>
-                                    <a class="first active" href="#">HTML</a>
-                                    <a href="#">CSS</a>
-                                    <a href="#">JAVASCRIPT</a>
+                                    <a class="first active" href="#">MOUSE.js</a>
                                     <div class="theme">theme<i class="fas fa-chevron-down"></i></div>
                                     <div class="modal-color">
                                         <a class="on monokai" href="#">Monokai</a>
@@ -1553,35 +1569,34 @@ $(window).scroll(function () {
                                         <a class="owllight" href="#">Owl Light</a>
                                     </div>
                                 </div>
-                                <div class="pre pre1">
-                                    <pre class="line-numbers"><code class="language-html"></code></pre>
-                                </div>
+<div class="pre pre1">
+<pre class="line-numbers"><code class="language-js">const spanSlow = $(".spanSlow")
+const spanFast = $(".spanFast")
+
+$(window).on("mousemove",mouseMove )
+
+function mouseMove(e){
+    let postion = (e.pageX- ($(window).width()/2))*0.1;
+    spanSlow.css({"transform":"translate("+postion+"px)"})
+
+
+    spanFast.css({"transform":"translate("+-postion+"px)"})
+
+
+}</code></pre>
+</div>
                                 <!-- //코드1 -->
-                                <div class="pre pre2">
-                                    <pre class="line-numbers"><code class="language-html"></code></pre>
-                                </div>
-                                <!-- //코드2 -->
-                                <div class="pre pre3">
-                                    <pre class="line-numbers"><code class="language-html"></code></pre>
-                                </div>
-                                <!-- //코드3 -->
                             </div>
                             <!-- //code-con -->
                         </div>
                         <!-- //modal-cont -->
                         <div class="modal-text monokai">
                             <div class="mtext1 mtext">
-                                <h3>dsdsd</h3>
-                                <p>505050505a32sd1a3sd1as3d21as32da123d</p>
+                                <h3>MOUSE</h3>
+                                <p>마우스를 움직일때 마다 서클이 따라오게 작업을 하였고 각 Mouse Effect 마다 마우스 위치값을 이용한  효과가 나옵니다.
+                                </p>
                             </div>
-                            <div class="mtext2 mtext">
-                                <h3>dddd</h3>
-                                <p>505050505a32sd1a3sd1as3d21as32da123d</p>
-                            </div>
-                            <div class="mtext3 mtext">
-                                <h3>ddsss</h3>
-                                <p>505050505a32sd1a3sd1as3d21as32da123d</p>
-                            </div>
+
                                 <div class="view"><a href="https://github.com/sdw6545/port98/tree/master/mouse" target="blank">전체 코드</a>
                                     <a href="../mouse/mouse08.html" target="blank">사이트 보기</a>
 
@@ -1611,9 +1626,7 @@ $(window).scroll(function () {
                                         <span></span>
                                         <span></span>
                                     </div>
-                                    <a class="first active" href="#">HTML</a>
-                                    <a href="#">CSS</a>
-                                    <a href="#">JAVASCRIPT</a>
+                                    <a class="first active" href="#">GAME.js</a>
                                     <div class="theme">theme<i class="fas fa-chevron-down"></i></div>
                                     <div class="modal-color">
                                         <a class="on monokai" href="#">Monokai</a>
@@ -1621,34 +1634,176 @@ $(window).scroll(function () {
                                         <a class="owllight" href="#">Owl Light</a>
                                     </div>
                                 </div>
-                                <div class="pre pre1">
-                                    <pre class="line-numbers"><code class="language-html"></code></pre>
-                                </div>
-                                <!-- //코드1 -->
-                                <div class="pre pre2">
-                                    <pre class="line-numbers"><code class="language-html"></code></pre>
-                                </div>
-                                <!-- //코드2 -->
-                                <div class="pre pre3">
-                                    <pre class="line-numbers"><code class="language-html"></code></pre>
-                                </div>
-                                <!-- //코드3 -->
+<div class="pre pre1">
+<pre class="line-numbers"><code class="language-js">const $board = $('main'),
+    $card = $('.card'),
+    $btnSound = $('.btn-sound'),
+    $themeSongEl = $('#theme-song')[0],
+    $turns = $('.turns span'),
+    $attempts = $('.attempts span'),
+    $wins = $('.wins span'),
+    $success = $('.success'),
+    $btnContinue = $('.btn-continue'),
+    $successMsg = $('.success-message'),
+    selectedClass = 'is-selected',       //카드를 선택했을 때
+    dataMatch = 'data-matched',
+    dataType = 'data-type',
+    playSoundClass = 'is-playing',
+    visibleClass = 'is-visible',
+    lastTrunClass = 'last-turn',
+    timeoutLength = 900;
+
+
+let sound = [
+    'music/Zzzz.mp3',
+    'music/zzssss.mp3',
+    'music/sdsdsd.mp3'
+],
+    soundMatch = new Audio(sound[0]),
+    soundNoMatch = new Audio(sound[1]),
+    soundSuccess = new Audio(sound[2]),
+    trunsCount = 2,     //기회 횟수 2
+    attemptsCount = 0,  //시도 횟수
+    winCount = 0,       //우승 횟수
+    card1, card2, msg;
+
+//카드 셔플
+shuffleCards();
+
+//음악 아이콘을 클릭했을 때 음악이 나오고 또 클릭했을 때 정지
+$btnSound.on('click', function () {
+    $(this).toggleClass(playSoundClass);
+    if ($(this).hasClass(playSoundClass)) {
+        $themeSongEl.play();
+    } else {
+        $themeSongEl.pause();
+    }
+});
+
+//카드를 클릭하면 클릭한 카드한테 is-selected를 추가
+$card.click(function () {
+    if ($(this).attr(dataMatch) == 'false') {
+        $(this).addClass(selectedClass);
+    }
+
+    let selectedCards = $('.' + selectedClass);     //선택된 카드를 클래스로 변경 //.is-selected
+
+    //만약에 카드가 똑같다면
+    if (selectedCards.length == 2) {
+        card1 = selectedCards.eq(0).attr(dataType);
+        card2 = selectedCards.eq(1).attr(dataType);
+
+        //만약에 카드1과 카드2가 같다면
+        if (card1 == card2) {
+            if ($btnSound.hasClass(playSoundClass)) {
+                soundMatch.play()
+            }
+            selectedCards.attr(dataMatch, true).removeClass(selectedClass);
+        } else {
+            //카드가 맞지 않으면 원래 상태로 되돌림
+            if ($btnSound.hasClass(playSoundClass)) {
+                soundNoMatch.play()
+            }
+
+            setTimeout(function () {
+                selectedCards.removeClass(selectedClass);
+                trunsCount--;       //카운트 줄이고
+                $turns.html(trunsCount);
+            }, timeoutLength);
+
+            //카운드 기회가 없을 때(주의)
+            if (trunsCount === 1) {
+                setTimeout(function () {
+                    $turns.addClass(lastTrunClass);
+                }, timeoutLength)
+            }
+
+            //카운드 기회가 없을 때(시도+1) , 카운트->2 
+            if (trunsCount &lt;= 0) {
+                setTimeout(function () {
+                    trunsCount = 2;     //기회를 2번 복구
+                    $turns.removeClass(lastTrunClass).html(trunsCount); //주의 표시 삭제, 카운트 표시
+                    $card.attr(dataMatch, false);  //모든 카드 초기화
+                    attemptsCount += 1;
+                    $attempts.html(attemptsCount);
+                }, timeoutLength)
+            }
+        }
+    }
+
+    //완성했을 때 
+    //dataMatch가 true이면서 갯수가 전체 카드 갯수랑 같을 때
+    if ($('[' + dataMatch + '= "true"]').length == $card.length) {
+        setTimeout(() => {
+            $success.addClass(visibleClass);
+            soundSuccess.play()
+            winCount += 1;
+            $wins.html(winCount);
+        }, timeoutLength);
+
+        //시도 횟수에 따른 메세지
+        switch (true) {
+            case (attemptsCount &lt;= 2):
+                msg = "최고입니다. 최고의 아이큐";
+                break;
+            case (attemptsCount > 2 && attemptsCount &lt;= 5):
+                msg = "잘했네요~~~~";
+                break;
+            case (attemptsCount > 5 && attemptsCount &lt;= 8):
+                msg = "쫌만 더 잘해봐~~~ 바보야~~~";
+                break;
+            case (attemptsCount > 8):
+                msg = "진짜 못하네~~~~ 다시 도전해봐~~~";
+                break;
+        }
+        $successMsg.text(msg);
+
+        //카드 초기화
+        setTimeout(() => {
+            $card.attr(dataMatch, false);
+        }, 1200);
+
+    }
+});
+
+//다시 게임 할 때 
+$btnContinue.on('click', function () {
+    $success.removeClass(visibleClass);
+    shuffleCards();             //카드 셔플, 점수 초기화 
+    trunsCount = 2;
+    $turns.removeClass(lastTrunClass).html(trunsCount);
+    attemptsCount = 0;
+    $attempts.html(attemptsCount);
+});
+
+
+//카드 셔플
+function shuffleCards() {
+    let cards = $board.children();
+    while (cards.length) {
+        $board.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0])
+    }
+    $card.each(function (index) {
+        setTimeout(() => {
+            $(this).addClass(selectedClass);
+        }, timeoutLength + 100 * index);
+    });
+
+    setTimeout(() => {
+        $card.removeClass(selectedClass);
+    }, 5000);
+
+}</code></pre>
+</div>
+<!-- //코드1 -->
                             </div>
                             <!-- //code-con -->
                         </div>
                         <!-- //modal-cont -->
                         <div class="modal-text monokai">
                             <div class="mtext1 mtext">
-                                <h3>dsdsd</h3>
-                                <p>505050505a32sd1a3sd1as3d21as32da123d</p>
-                            </div>
-                            <div class="mtext2 mtext">
-                                <h3>dddd</h3>
-                                <p>505050505a32sd1a3sd1as3d21as32da123d</p>
-                            </div>
-                            <div class="mtext3 mtext">
-                                <h3>ddsss</h3>
-                                <p>505050505a32sd1a3sd1as3d21as32da123d</p>
+                                <h3>GAME</h3>
+                                <p>카드를 클릭하여 같은 그림의 카드를  맞추는 게임입니다.  2번 틀리면 시도가 올라가며, 맞추었던 카드들이 다시 뒤집힙니다.또는 모든 카드들이 같은 그림으로 뒤집히면 시도 횟수마다 다른 우승 멘트가 나타납니다</p>
                             </div>
                                 <div class="view"><a href="" target="blank">전체 코드</a>
                                     <a href="../game/index.html" target="blank">사이트 보기</a>
@@ -1750,11 +1905,94 @@ $(window).scroll(function () {
 
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="assets/js/gsap.min.js"></script>
     <script src="assets/js/skrollr.min.js"></script>
     <script src="assets/js/code.js"></script>
     <script>
+        
+        //imageProgress
+        function imagesProgress(){
+            var $container = $("#progress"),
+                $progressText = $container.find(".progress-text"),
+                imgLoad = imagesLoaded("body"),	
+                imgTotal = imgLoad.images.length,	
+                imgLoaded = 0,										
+                current = 0,							
+                progressTimer = setInterval(updateProgress, 2000 / 60);	
+                $progressText.css("display","block");
+                scrollDisable()
+            imgLoad.on("progress", function(){
+                imgLoaded++;
+            });
+
+            function updateProgress(){
+                var target = ( imgLoaded / imgTotal) * 100;
+                
+                current += ( target - current) * 0.1;
+                $progressText.text( Math.floor(current) + '%' );
+
+                if(current >= 100){
+                    clearInterval(progressTimer);
+                    $progressText
+                        .delay(300)
+                        .animate({opacity: 0},2000,function(){
+                            $container.animate({opacity: '0'},1500,'easeInOutQuint').animate({top: '-100%'},1500,'easeInOutQuint');
+                            $("body").addClass("active");
+                            //시작시 gasp 효과
+        setTimeout(function () {
+            gsap.to(".sec1 .mt span", {
+                top: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: Back.easeOut.config(1.3)
+            });
+            gsap.to(".sec1 .h1txt .mt1 span", {
+                top: 0,
+                duration: 0.7,
+                delay: 2,
+                stagger: 0.1,
+                ease: Back.easeOut.config(1.7)
+            });
+            gsap.to(".sec1 .h1txt .mt2 span", {
+                top: 0,
+                duration: 0.7,
+                delay: 3,
+                stagger: 0.1,
+                ease: Back.easeOut.config(1.7)
+            });
+            gsap.to(".sec1 .h1txt .mt3 span", {
+                top: 0,
+                duration: 0.7,
+                delay: 4,
+                stagger: 0.1,
+                ease: Back.easeOut.config(1.7)
+            });
+            gsap.to(".sec1 .h1txt .mt4 span", {
+                top: 0,
+                duration: 0.7,
+                delay: 5,
+                stagger: 0.1,
+                ease: Back.easeOut.config(1.7)
+            });
+            scrollAble()
+
+        }, 2000);
+        
+                        });
+                    
+                }
+                if(current > 99.9){
+                    current = 100;
+                };
+
+            };
+        };
+        imagesProgress();
+        
+        
+        
+        
         //skrollr 
         var s = skrollr.init({
             edgeStrategy: 'set',
@@ -1777,44 +2015,7 @@ $(window).scroll(function () {
         });
 
 
-        //시작시 gasp 효과
-        setTimeout(function () {
-            gsap.to(".sec1 .mt span", {
-                top: 0,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.3)
-            });
-            gsap.to(".sec1 .h1txt .mt1 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 1.5,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt2 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 2.5,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt3 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 3.5,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-            gsap.to(".sec1 .h1txt .mt4 span", {
-                top: 0,
-                duration: 0.7,
-                delay: 4.5,
-                stagger: 0.1,
-                ease: Back.easeOut.config(1.7)
-            });
-
-        }, 2000);
+        
     </script>
 </body>
 

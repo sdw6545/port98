@@ -5,7 +5,7 @@ a {color: #222; text-decoration: none;}
 a:hover {color: #390;}
 body, input, textarea, select, button, table {
     font-family: 'Montserrat', AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
-    color: #222; font-size: 13px; line-height: 1.5;
+    color: #222; font-size: 13px;
 }
 h1, h2, h3, h4, h5, h6 {font-size: 13px; color: #222; font-weight: normal;}
 li, ol, ul, menu {list-style: none;}
