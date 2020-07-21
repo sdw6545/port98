@@ -13,8 +13,7 @@ for (let i = 0; i <= 10; i++) {
     $(".click-box").click(function (e) {
         e.preventDefault();
         $(".modal0" + i).addClass("out");
-        $(".tab-menu a").removeClass("active")
-    
+        $(".tab-menu a").removeClass("active");
         scrollAble();
     });
 
