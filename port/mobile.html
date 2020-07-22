@@ -1066,7 +1066,6 @@
             });
 
         }, 2000);
-        $(window).scroll(function(){
             if($("#section2").offset().top <= $(window).scrollTop() * 1.5 ){
                 gsap.to(".s1", {opacity: 1,  })
                 gsap.to(".s2", {opacity: 1,delay:1})
@@ -1075,7 +1074,6 @@
                 gsap.to(".s5", {opacity: 1,delay:4})
             }
 
-        });
 
         
     </script>
