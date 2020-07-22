@@ -1,0 +1,293 @@
+<?php
+	include '../connect/connect.php';
+	include '../connect/session.php';
+?>
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- head-meta -->
+	<?php
+	include '../dom/head-meta.php';
+	?>
+	<!-- //head-meta -->
+	<title>PHP Reference</title>
+
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+	<?php
+	include '../dom/head-link.php';
+	?>
+
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- blog-header -->
+		<?php
+		include'../dom/blog-header.php';
+		?>
+		<!-- blog-header -->
+		<!-- blog-nav -->
+		<?php
+		include'../dom/blog-nav.php';
+		?>
+		<!-- //blog-nav -->
+
+	</div>
+
+	<main role="main" class="container">
+		<div class="row">
+			<div class="col-md-8 blog-main">
+				<div class="blog-post">
+					<h2 class="blog-post-title">3.1 로그인</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>로그인 페이지를 만듭니다.</p>
+					<hr>
+					<p>sign 폴더에 <a href="../sign/signInForm.php">signInForm.php</a> 파일을 만듭니다.</p>
+					<pre class="language-markup"><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+    &lt;meta name="description" content=""&gt;
+    &lt;meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"&gt;
+    &lt;meta name="generator" content="Jekyll v4.0.1"&gt;
+    &lt;title&gt;회원가입&lt;/title&gt;
+
+    &lt;!-- Bootstrap core CSS --&gt;
+    &lt;link href="../assets/css/bootstrap.css" rel="stylesheet"&gt;
+
+    &lt;style&gt;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input {
+            margin-bottom: 2px;
+        }
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body class="text-center"&gt;
+    
+    &lt;form class="form-signin mt-5" name="signUp" method="post" action="signUpSave.php"&gt;
+        &lt;h1 class="h3 mb-3 font-weight-normal"&gt;회원가입 페이지입니다.&lt;/h1&gt;
+        
+        &lt;label for="userEmail" class="sr-only" &gt;Email address&lt;/label&gt;
+        &lt;input type="email" type="email" name="userEmail" id="userEmail" class="form-control" placeholder="이메일을 적어주세요." required autofocus&gt;
+
+        &lt;label for="userNickname" class="sr-only"&gt;NickName&lt;/label&gt;
+        &lt;input type="text" type="email" name="userNickname" id="userNickname" class="form-control" placeholder="닉네임을 적어주세요." required&gt;
+
+        &lt;label for="userPw" class="sr-only"&gt;Password&lt;/label&gt;
+        &lt;input type="password" name="userPw" id="userPw" class="form-control" placeholder="패스워드" required&gt;
+        
+        &lt;div class="row"&gt;
+            &lt;div class="col-md-4 mt-3"&gt;
+                &lt;label for="birthYear"&gt;년도&lt;/label&gt;
+                &lt;select class="custom-select d-block w-100" id="birthYear" name="birthYear" required&gt;
+                    &lt;?php
+                        $thisYear = date('Y', time());
+
+                        for($i = $thisYear; $i &gt;= 1930; $i--){
+                            echo "&lt;option value='{$i}'&gt;{$i}&lt;/option&gt;";
+                        }
+                    ?&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-4 mt-3"&gt;
+                &lt;label for="birthMonth"&gt;생일&lt;/label&gt;
+                &lt;select class="custom-select d-block w-100" id="birthMonth" name="birthMonth" required&gt;
+                    &lt;?php
+                        for($i = 1; $i &lt;= 12; $i++){
+                            echo "&lt;option value='{$i}'&gt;{$i}&lt;/option&gt;";
+                        }
+                    ?&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-4 mt-3"&gt;
+                &lt;label for="birthDay"&gt;일&lt;/label&gt;
+                &lt;select class="custom-select d-block w-100" id="birthDay" name="birthDay" required&gt;
+                    &lt;?php
+                        for($i = 1; $i &lt;= 31; $i++){
+                            echo "&lt;option value='{$i}'&gt;{$i}&lt;/option&gt;";
+                        }
+                    ?&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-lg btn-primary btn-block mt-3" type="submit" value="가입하기"&gt;가입하기&lt;/button&gt;
+        
+        &lt;p class="mt-5 mb-3 text-muted"&gt;© 2017-2020&lt;/p&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">3.2 로그인 기능 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>로그인 정보를 받아 로그인 기능을 생성하는 페이지입니다.</p>
+					<hr>
+					<p>sign 폴더에 <a href="../sign/signInProcessing.php">signInProcessing.php</a> 파일을 만듭니다.</p>
+					<pre class="language-markup"><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;?php
+    include '../connect/session.php';
+    include '../connect/connect.php';
+
+    $email = $_POST['userEmail'];
+    $pw = $_POST['userPw'];
+
+    function goSignInPage($alert){
+        echo $alert.'&lt;br&gt;';
+        echo "&lt;a href='signInForm.php'&gt;로그인폼으로 이동&lt;/a&gt;";
+        return;
+    }
+
+    //유효성 검사
+    //이메일 검사
+    if(!filter_Var($email, FILTER_VALIDATE_EMAIL)){
+        goSignInPage('올바른 이메일이 아닙니다.');
+        exit;
+    }
+
+    //비밀번호 검사
+    if($pw == null || $pw == '') {
+        goSignInPage('비밀번호를 입력해 주세요.');
+        exit;
+    }
+
+    //$pw = sha1('php200'.$pw);
+
+    $sql = "SELECT email, nickname, memberID FROM member ";
+    $sql .= "WHERE email = '{$email}' AND pw = '{$pw}'";
+    $result = $dbConnect-&gt;query($sql);
+
+    if($result){
+        if($result-&gt;num_rows == 0){
+            goSignInPage('로그인 정보가 일치하지 않습니다.');
+            exit;
+        } else {
+            $memberInfo = $result-&gt;fetch_array(MYSQLI_ASSOC);
+            $_SESSION['memberID'] = $memberInfo['memberID'];
+            $_SESSION['nickName'] = $memberInfo['nickname'];
+            Header("Location:../main/index.html");
+        }
+    }
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+						
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+
+				
+
+
+
+
+		<nav class="blog-pagination">
+			<a class="btn btn-outline-primary " href="project01.html">Older</a>
+			<a class="btn btn-outline-primary " href="project03.html">Newer</a>
+		</nav>
+	</div>
+	<!-- //col-md-8 blog-main -->
+
+
+
+	<aside class="col-md-4 blog-sidebar">
+		<!-- blog-sidebar -->
+		<?php
+		include'../dom/blog-sidebar.php';
+		?>
+		<!-- //blog-sidebar -->
+	</aside>
+	<!-- //blog-sidebar -->
+</div>
+<!-- //row -->
+</main>
+<!-- //container -->
+<!-- blog-footer -->
+<?php
+include'../dom/blog-footer.php';
+?>
+<!-- //blog-footer -->
+</body>
+</html>

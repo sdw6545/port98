@@ -1,0 +1,355 @@
+<?php
+	include '../connect/connect.php';
+	include '../connect/session.php';
+?>
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- head-meta -->
+	<?php
+	include '../dom/head-meta.php';
+	?>
+	<!-- //head-meta -->
+	<title>PHP Reference</title>
+
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+	<?php
+	include '../dom/head-link.php';
+	?>
+
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- blog-header -->
+		<?php
+		include'../dom/blog-header.php';
+		?>
+		<!-- blog-header -->
+		<!-- blog-nav -->
+		<?php
+		include'../dom/blog-nav.php';
+		?>
+		<!-- //blog-nav -->
+
+	</div>
+
+	<main role="main" class="container">
+		<div class="row">
+			<div class="col-md-8 blog-main">
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.1 게시판 테이블 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>게시판을 만들기 위해서 게시판 테이블을 만듭니다.</p>
+					<hr>
+					<p>create 폴더에 <a href="../create/createBoard.php">createBoard.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;?php
+	include '../connect/connect.php';
+
+    $sql = "CREATE TABLE board (";
+    $sql .= "boardID int(10) unsigned NOT NULL AUTO_INCREMENT,";
+    $sql .= "memberID int(10) unsigned NOT NULL,";
+    $sql .= "title varchar(50) NOT NULL,";
+    $sql .= "content longtext NOT NULL,";
+    $sql .= "regTime int(10) unsigned NOT NULL,";
+    $sql .= "PRIMARY KEY (boardID)";
+    $sql .= ") CHARSET=utf8";
+
+    $res = $dbConnect->query($sql);
+
+    if ( $res ) {
+        echo "Create Table Complete";
+    } else {
+        echo "Create Table False";
+    }
+?&gt;
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.2 로그인 세션 처리하기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>로그인이 되지 않은 경우 게시판 기능을 사용할 수 없습니다. 로그인이 되어 있는 경우 게시판을 사용 할 수 있도록 합니다.
+
+</p>
+					<hr>
+					<p>connect 폴더에 <a href="../sign/checkSession.php">checkSession.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;?php
+	if(!isset($_SESSION['memberID'])){
+		Header("Location:../sign/signInForm.php");
+		exit;
+	}
+?&lt;
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.3 게시글 작성페이지 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>게시글의 내용을 입력하는 페이지을 제작합니다.</p>
+					<hr>
+					<p>board 폴더에 <a href="../board/writeBoard.php">writeBoard.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;?php
+    include '../connect/connect.php';
+    include '../connect/session.php';
+    include '../connect/checkSession.php';
+?&gt;   
+
+
+&lt;!doctype html&gt;
+&lt;html lang="ko"&gt;
+	&lt;head&gt;
+		&lt;?php
+		    include '../dom/head-meta.php';
+		?&gt;
+		&lt;title&gt;PHP Reference&lt;/title&gt;
+		&lt;?php
+		    include '../dom/head-link.php';
+		?&gt;
+		
+		&lt;style&gt;
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div class="container"&gt;
+			&lt;!-- blog-header --&gt;
+			&lt;?php
+			    include '../dom/blog-header.php';
+			?&gt;
+			&lt;!-- //blog-header --&gt;
+
+			&lt;!-- blog-nav --&gt;
+			&lt;?php
+			    include '../dom/blog-nav.php';
+			?&gt;
+			&lt;!-- //blog-nav --&gt;
+
+			&lt;div class="jumbotron p-4 p-md-5 text-white rounded bg-dark"&gt;
+				&lt;div class="col-md-6 px-0"&gt;
+					&lt;h2 class="display-5"&gt;무엇이든지 물어보세요!! 게시판&lt;/h2&gt;
+					&lt;p class="my-3"&gt;궁금한 부분을 적어주세요!!!.&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		
+		&lt;main role="main" class="container"&gt;
+			&lt;div class="row"&gt;
+				&lt;div class="col-md-12 blog-main"&gt;
+					&lt;div class="board table-responsive"&gt;
+						&lt;form action="saveBoard.php" name="boardWrite" method="post"&gt;
+							&lt;div class="form-group"&gt;
+								&lt;label for="title"&gt;제목&lt;/label&gt;
+								&lt;input type="text" name="title" class="form-control" id="title" required&gt;
+							&lt;/div&gt;
+							&lt;div class="form-group"&gt;
+								&lt;label for="content"&gt;내용&lt;/label&gt;
+								&lt;textarea class="form-control" name="content" id="content" rows="13" required&gt;&lt;/textarea&gt;
+							&lt;/div&gt;
+							&lt;div class="form-group mb-5 text-right"&gt;
+								&lt;input type="submit" value="저장하기" class="btn btn-primary"&gt;
+							&lt;/div&gt;
+						&lt;/form&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;!— //col-md-8 —&gt;
+				
+			&lt;/div&gt;
+			&lt;!— //row —&gt; 
+		&lt;/main&gt;
+		&lt;!— //container —&gt;
+		
+		&lt;!— blog-footer —&gt;
+		&lt;?php
+		    include '../dom/blog-footer.php';
+		?&gt;
+		&lt;!— //blog-footer —&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.4 게시글 데이터 저장하기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>게시글을 내용을 board 테이블에 저장을 합니다.</p>
+					<hr>
+					<p>board 폴더에 <a href="../board/saveBoard.php">saveBoard.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+    include '../connect/session.php';
+    include '../connect/connect.php';
+    include '../connect/checkSession.php';
+
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+
+    if($title != null && $title != ''){
+        $title = $dbConnect-&gt;real_escape_string($title);
+    } else {
+        echo "제목을 입력하세요~";
+        echo "&lt;a href='writeBoard.php'&gt;작성 페이지로 이동하기&lt;/a&gt;";
+        exit;
+    }
+
+    if($content != null && $content != ''){
+        $content = $dbConnect-&gt;real_escape_string($content);
+    } else {
+        echo "내용을 입력하세요~";
+        echo "&lt;a href='writeBoard.php'&gt;작성 페이지로 이동하기&lt;/a&gt;";
+        exit;
+    }
+
+
+    $memberID = $_SESSION['memberID'];
+    $regTime = time();
+
+    $sql = "INSERT INTO board (memberID, title, content, regTime) ";
+    $sql .= "VALUES ('{$memberID}', '{$title}', '{$content}', {$regTime})";
+    $result = $dbConnect-&gt;query($sql);
+
+    if($result){
+        echo "저장 완료";
+        echo "&lt;a href='listBoard.php'&gt;게시판 목록으로 이동하기&lt;/a&gt;";
+        exit;
+    } else {
+        echo "저장 실패 - 관리자에게 문의하세요~";
+        echo "&lt;a href='listBoard.php'&gt;게시판 목록으로 이동하기&lt;/a&gt;";
+        exit;
+    }
+
+?&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.5 임의로 게시글 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>게시판 테스트를 위하여 임의로 게시글을 만듭니다.</p>
+					<hr>
+					<p>board 폴더에 <a href="../board/inputData.php">inputData.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;?php
+
+?&lt;
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.6 게시판 목록 페이지 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>게시물 목록을 보여주기 위한 페이지 제작합니다.</p>
+					<hr>
+					<p>board 폴더에 <a href="../board/listBoard.php">listBoard.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;?php
+
+?&lt;
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">5.7 검색폼 생성하기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>특정 단어가 포함된 게시물을 검색하는 기능을 구현합니다.</p>
+					<hr>
+					<p>board 폴더에 <a href="../board/listBoard.php">listBoard.php</a> 파일을 만듭니다.</p>
+					<pre><code class="language-php">&lt;?php
+
+?&lt;
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+
+				
+
+
+
+
+		<nav class="blog-pagination">
+			<a class="btn btn-outline-primary " href="project01.html">Older</a>
+			<a class="btn btn-outline-primary " href="project03.html">Newer</a>
+		</nav>
+	</div>
+	<!-- //col-md-8 blog-main -->
+
+
+
+	<aside class="col-md-4 blog-sidebar">
+		<!-- blog-sidebar -->
+		<?php
+		include'../dom/blog-sidebar.php';
+		?>
+		<!-- //blog-sidebar -->
+	</aside>
+	<!-- //blog-sidebar -->
+</div>
+<!-- //row -->
+</main>
+<!-- //container -->
+<!-- blog-footer -->
+<?php
+include'../dom/blog-footer.php';
+?>
+<!-- //blog-footer -->
+</body>
+</html>

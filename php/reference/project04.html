@@ -1,0 +1,146 @@
+<?php
+	include '../connect/connect.php';
+	include '../connect/session.php';
+?>
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- head-meta -->
+	<?php
+	include '../dom/head-meta.php';
+	?>
+	<!-- //head-meta -->
+	<title>PHP Reference</title>
+
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+	<?php
+	include '../dom/head-link.php';
+	?>
+
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- blog-header -->
+		<?php
+		include'../dom/blog-header.php';
+		?>
+		<!-- blog-header -->
+		<!-- blog-nav -->
+		<?php
+		include'../dom/blog-nav.php';
+		?>
+		<!-- //blog-nav -->
+
+	</div>
+
+	<main role="main" class="container">
+		<div class="row">
+			<div class="col-md-8 blog-main">
+				<div class="blog-post">
+					<h2 class="blog-post-title">4.1 로그아웃</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>로그아웃 기능은 섹션을 삭제합니다.</p>
+					<hr>
+					<p>sign 폴더에 <a href="../sign/signOut.php">signOut.php</a> 파일을 만듭니다.</p>
+					<pre class="language-markup"><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;?php
+    include '../connect/session.php';
+    unset($_SESSION['memberID']);
+    unset($_SESSION['nickname']);
+    echo "로그아웃 되었습니다.";
+    echo "&lt;a href='../main/index.html'&gt;메인으로 이동&lt;/a&gt;";
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">4.2 로그인/로그아웃 표현하기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>로그인이 되었을 경우와 로그아웃이 되었을 경우 메인 페이지에 표시를 합니다.</p>
+					<hr>
+					<p>main 폴더에 index.php 파일에 인크루트 되어 있는 dom 폴더 blog-header.php을 수정합니다.</p>
+					<pre class="language-markup"><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;?php
+    include '../connect/session.php';
+    unset($_SESSION['memberID']);
+    unset($_SESSION['nickname']);
+    echo "로그아웃 되었습니다.";
+    echo "&lt;a href='../main/index.html'&gt;메인으로 이동&lt;/a&gt;";
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+
+
+				
+
+
+
+
+		<nav class="blog-pagination">
+			<a class="btn btn-outline-primary " href="project01.html">Older</a>
+			<a class="btn btn-outline-primary " href="project03.html">Newer</a>
+		</nav>
+	</div>
+	<!-- //col-md-8 blog-main -->
+
+
+
+	<aside class="col-md-4 blog-sidebar">
+		<!-- blog-sidebar -->
+		<?php
+		include'../dom/blog-sidebar.php';
+		?>
+		<!-- //blog-sidebar -->
+	</aside>
+	<!-- //blog-sidebar -->
+</div>
+<!-- //row -->
+</main>
+<!-- //container -->
+<!-- blog-footer -->
+<?php
+include'../dom/blog-footer.php';
+?>
+<!-- //blog-footer -->
+</body>
+</html>

@@ -1,0 +1,419 @@
+<?php
+	include '../connect/connect.php';
+	include '../connect/session.php';
+?>
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- head-meta -->
+	<?php
+	include '../dom/head-meta.php';
+	?>
+	<!-- //head-meta -->
+	<title>PHP Reference</title>
+
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+	<?php
+	include '../dom/head-link.php';
+	?>
+
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- blog-header -->
+		<?php
+		include'../dom/blog-header.php';
+		?>
+		<!-- blog-header -->
+		<!-- blog-nav -->
+		<?php
+		include'../dom/blog-nav.php';
+		?>
+		<!-- //blog-nav -->
+
+	</div>
+
+	<main role="main" class="container">
+		<div class="row">
+			<div class="col-md-8 blog-main">
+				<div class="blog-post">
+					<h2 class="blog-post-title">2.1 회원가입</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>메인 사이트를 만들고, 회원가입을 위해서 회원 가입페이지를 만듭니다.</p>
+					<hr>
+					<p>메인 사이트는 main 폴더에 index.html 파일을 만듭니다. 회원가입을 위해서 sign 폴더를 만들고 회원가입 페이지(signUpForm.php)와 로그인 페이지(signInForm.php)를 만듭니다.</p>
+				</div>
+				<!-- //blog-post -->
+
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">2.2 섹션 파일 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>섹션 만들기</p>
+					<hr>
+					<p>connect 폴더에 session.php 파일을 만듭니다.</p>
+
+					<pre><code class="language-php">&lt;?php
+session_start();
+?&gt;
+					</code></pre>
+				</div>
+				<!-- //blog-post -->
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">2.3 멤버 테이블 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>회원 가입을 위한 member 테이블 만들기 입니다.</p>
+					<hr>
+					<p>create 폴더를 만들고 createMember.php 파일을 만듭니다. 멥버 버튼을 클릭하면 멤버 테이블이 만들어집니다.<a href="../create/createMember.php">멤버 테이블 만들기</a></p>
+
+					<pre><code class="language-php">&lt;?php
+	include '../connect/connect.php';
+
+	$sql = "CREATE TABLE member (";
+	$sql .= "memberID int(10) unsigned NOT NULL AUTO_INCREMENT,";
+	$sql .= "email varchar(40) UNIQUE NOT NULL,";
+	$sql .= "nickname varchar(10) NOT NULL,";
+	$sql .= "pw varchar(20) DEFAULT NULL,";
+	$sql .= "birthday varchar(10) NOT NULL,";
+	$sql .= "regTime int(11) NOT NULL,";
+	$sql .= "PRIMARY KEY (memberID)";
+	$sql .= ") CHARSET=utf8";
+
+
+	$res = $dbConnect->query($sql);
+
+	if($res){
+	echo "Create Table Complete";
+}else {
+	echo "cccc";
+}
+?&gt;
+			</code></pre>
+		</div>
+		<!-- //blog-post -->
+
+		<div class="blog-post">
+					<h2 class="blog-post-title">2.4 회원가입 페이지 만들기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>회원 가입을 위한 페이지 제작입니다.</p>
+					<hr>
+					<p>sign 폴더 <a href="../sign/signUpForm.php">signUpForm.php</a>를 만듭니다.</p>
+
+					<pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+    &lt;meta name="description" content=""&gt;
+    &lt;meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"&gt;
+    &lt;meta name="generator" content="Jekyll v4.0.1"&gt;
+    &lt;title&gt;회원가입&lt;/title&gt;
+
+    &lt;!-- Bootstrap core CSS --&gt;
+    &lt;link href="../assets/css/bootstrap.css" rel="stylesheet"&gt;
+
+    &lt;style&gt;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input {
+            margin-bottom: 2px;
+        }
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body class="text-center"&gt;
+    
+    &lt;form class="form-signin mt-5" name="signUp" method="post" action="signUpSave.php"&gt;
+        &lt;h1 class="h3 mb-3 font-weight-normal"&gt;회원가입 페이지입니다.&lt;/h1&gt;
+        
+        &lt;label for="userEmail" class="sr-only" &gt;Email address&lt;/label&gt;
+        &lt;input type="email" type="email" name="userEmail" id="userEmail" class="form-control" placeholder="이메일을 적어주세요." required autofocus&gt;
+
+        &lt;label for="userNickname" class="sr-only"&gt;NickName&lt;/label&gt;
+        &lt;input type="text" type="email" name="userNickname" id="userNickname" class="form-control" placeholder="닉네임을 적어주세요." required&gt;
+
+        &lt;label for="userPw" class="sr-only"&gt;Password&lt;/label&gt;
+        &lt;input type="password" name="userPw" id="userPw" class="form-control" placeholder="패스워드" required&gt;
+        
+        &lt;div class="row"&gt;
+            &lt;div class="col-md-4 mt-3"&gt;
+                &lt;label for="birthYear"&gt;년도&lt;/label&gt;
+                &lt;select class="custom-select d-block w-100" id="birthYear" name="birthYear" required&gt;
+                    &lt;?php
+                        $thisYear = date('Y', time());
+
+                        for($i = $thisYear; $i &gt;= 1930; $i--){
+                            echo "&lt;option value='{$i}'&gt;{$i}&lt;/option&gt;";
+                        }
+                    ?&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-4 mt-3"&gt;
+                &lt;label for="birthMonth"&gt;생일&lt;/label&gt;
+                &lt;select class="custom-select d-block w-100" id="birthMonth" name="birthMonth" required&gt;
+                    &lt;?php
+                        for($i = 1; $i &lt;= 12; $i++){
+                            echo "&lt;option value='{$i}'&gt;{$i}&lt;/option&gt;";
+                        }
+                    ?&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-4 mt-3"&gt;
+                &lt;label for="birthDay"&gt;일&lt;/label&gt;
+                &lt;select class="custom-select d-block w-100" id="birthDay" name="birthDay" required&gt;
+                    &lt;?php
+                        for($i = 1; $i &lt;= 31; $i++){
+                            echo "&lt;option value='{$i}'&gt;{$i}&lt;/option&gt;";
+                        }
+                    ?&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-lg btn-primary btn-block mt-3" type="submit" value="가입하기"&gt;가입하기&lt;/button&gt;
+        
+        &lt;p class="mt-5 mb-3 text-muted"&gt;© 2017-2020&lt;/p&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+			</code></pre>
+		</div>
+		<!-- //blog-post -->
+
+		<div class="blog-post">
+					<h2 class="blog-post-title">2.5 회원가입 데이터 저장하기</h2>
+					<p class="blog-post-meta">by <a href="#">Youg Tae</a></p>
+					<p>회원가입 데이터 정보를 저장합니다.</p>
+					<hr>
+					<p>sign 폴더 <a href="../sign/signUpSave.php">signUpSave.php</a>를 만듭니다.</p>
+
+					<pre class="language-markup"><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;회원가입&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+   include '../connect/connect.php';
+   include '../connect/session.php';
+
+   $email = $_POST['userEmail'];
+   $nickname = $_POST['userNickname'];
+   $pw = $_POST['userPw'];
+   $birthYear = (int) $_POST['birthYear'];
+   $birthMonth = (int) $_POST['birthMonth'];
+   $birthDay = (int) $_POST['birthDay'];
+
+   function goSignUpPage($alert) {
+      echo $alert.'&lt;br&gt;';
+      echo "&lt;a href='signUpForm.php'&gt;회원가입 페이지로 이동&lt;/a&gt;";
+      return;
+   };
+
+   //이메일 유효성 검사
+   if(!filter_Var($email, FILTER_VALIDATE_EMAIL)) {
+      goSignUpPage("올바른 이메일 형식이 아닙니다.");
+      exit;
+   };
+
+   //닉네임 유효성 검사(한글만) 정규식 표현 방법
+   $nickNameRegPattern = '/^[가-힣]{1,}$/';
+   if(!preg_match($nickNameRegPattern, $nickname, $matches)) {
+      goSignUpPage("닉네임은 한글만 사용이 가능합니다.");
+      exit;
+   }
+
+   //비밀번호 검사
+   if($pw == null || $pw == '') {
+      goSignUpPage("비밀번호를 입력하세요.");
+      exit;
+   }
+
+   //$pw = sha1('webs'.$pw);
+
+   //생일년도 검사
+   if($birthYear == 0) {
+      goSignUpPage("년도를 선택해주세요.");
+      exit;
+   }
+
+   //생일 월 검사
+   if($birthMonth == 0) {
+      goSignUpPage("생월을 선택해주세요.");
+      exit;
+   }
+
+   //생일 일 검사
+   if($birthDay == 0) {
+      goSignUpPage("생일을 선택해주세요.");
+      exit;
+   }
+
+   $birth = $birthYear.'-'.$birthMonth.'-'.$birthDay;
+
+   //이메일 중복 검사
+   $isEmailCheck = false;
+
+   //이메일 찾는 쿼리문
+   $sql = "SELECT email FROM member WHERE email = '{$email}'";
+   $result = $dbConnect -&gt; query($sql);
+
+   if($result) {
+      $count = $result -&gt; num_rows;
+      if($count == 0) {
+         $isEmailCheck = true;
+      } else {
+         goSignUpPage("이미 존재하는 이메일입니다.");
+         exit;
+      }
+   } else {
+      echo "에러 발생 : 관리자 문의 요망";
+      exit;
+   }
+
+   //닉네임 중복 검사
+   $isNickNameCheck = false;
+
+   //닉네임 찾는 쿼리문
+   $sql = "SELECT nickname FROM member WHERE nickname = '{$nickname}'";
+   $result = $dbConnect-&gt;query($sql);
+
+   if($result) {
+      $count = $result-&gt;num_rows;
+      if($count == 0) {
+         $isNickNameCheck = true;
+      } else {
+         goSignUpPage("이미 존재하는 닉네임입니다.");
+         exit;
+      }
+   } else {
+      echo "에러 발생 : 관리자 문의 요망";
+      exit;
+   }
+
+   //이메일, 닉네임 true --&gt; 가입
+   if($isEmailCheck == true && $isNickNameCheck == true) {
+      $regTime = time();
+      $sql = "INSERT INTO member(email, nickname, pw, birthday, regTime)";
+      $sql .= "VALUES('{$email}','{$nickname}','{$pw}','{$birth}','{$regTime}')";
+      $result = $dbConnect-&gt;query($sql);
+
+      if($result){
+         $_SESSION['memberID'] = $dbConnect-&gt;insert_id;
+         $_SESSION['nickname'] = $nickname;
+         Header("Location:../main/index.html");
+      } else {
+         echo "회원가입 실패";
+      }
+
+   } else {
+      goSignUpPage("이메일 또는 닉네임이 중복됩니다.");
+      exit;
+   }
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+			</code></pre>
+		</div>
+		<!-- //blog-post -->
+
+
+
+
+		<nav class="blog-pagination">
+			<a class="btn btn-outline-primary " href="project01.html">Older</a>
+			<a class="btn btn-outline-primary " href="project03.html">Newer</a>
+		</nav>
+	</div>
+	<!-- //col-md-8 blog-main -->
+
+
+
+	<aside class="col-md-4 blog-sidebar">
+		<!-- blog-sidebar -->
+		<?php
+		include'../dom/blog-sidebar.php';
+		?>
+		<!-- //blog-sidebar -->
+	</aside>
+	<!-- //blog-sidebar -->
+</div>
+<!-- //row -->
+</main>
+<!-- //container -->
+<!-- blog-footer -->
+<?php
+include'../dom/blog-footer.php';
+?>
+<!-- //blog-footer -->
+</body>
+</html>
